@@ -1,0 +1,61 @@
+// Mirrors backend/app/schemas.py + models.py
+
+export type Severity = "critical" | "high" | "medium" | "low";
+export type RiskType =
+  | "vulnerable"
+  | "transitive_vuln"
+  | "license_conflict"
+  | "unmaintained"
+  | "clean";
+
+export interface Finding {
+  app_id: string;
+  library: string;
+  version: string;
+  is_direct: boolean;
+  risk_type: RiskType;
+  severity: Severity;
+  cve_ids: string[];
+  is_reachable: boolean | null;
+  detail: string;
+  score: number;
+  paths: string[][];
+  fixed_versions: Record<string, string | null>;
+  max_cvss: number;
+  kev: boolean;
+  epss: number;
+}
+
+export interface AppRisk {
+  app_id: string;
+  name: string;
+  business_criticality: Severity;
+  owner: string;
+  internet_facing: boolean;
+  environment: string;
+  ecosystem: string;
+  license_context: string;
+  risk_score: number;
+  risk_band: Severity;
+  dependency_count: number;
+  direct_count: number;
+  counts: Record<string, number>;
+  top_findings: Finding[];
+}
+
+export interface Summary {
+  app_count: number;
+  dependency_count: number;
+  finding_count: number;
+  exploitable_criticals: number;
+  counts: Record<string, number>;
+  highest_risk_app: string;
+}
+
+export interface AnalysisResult {
+  generated_at: string;
+  apps: AppRisk[];
+  findings: Finding[];
+  summary: Summary;
+  metrics: Record<string, any>;
+}

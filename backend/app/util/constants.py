@@ -9,8 +9,18 @@ REFERENCE_DATE = date(2026, 4, 1)
 # A library is "stale" if not updated within this many years.
 STALE_YEARS = 2
 
-# Severity -> numeric weight used in scoring.
+# Severity ordering (ascending) + numeric weight used in scoring.
+SEVERITY_ORDER = ["low", "medium", "high", "critical"]
 SEVERITY_WEIGHT = {"critical": 10.0, "high": 7.0, "medium": 4.0, "low": 1.5}
+
+
+def max_severity(severities):
+    """Return the highest severity from an iterable (default 'low')."""
+    best = "low"
+    for s in severities:
+        if SEVERITY_ORDER.index(s) > SEVERITY_ORDER.index(best):
+            best = s
+    return best
 
 # Business criticality -> multiplier on aggregated app risk.
 CRITICALITY_MULTIPLIER = {"critical": 1.5, "high": 1.25, "medium": 1.0, "low": 0.8}

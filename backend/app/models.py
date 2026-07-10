@@ -88,6 +88,30 @@ class Label(BaseModel):
     explanation: str
 
 
+class Finding(BaseModel):
+    """A single detected risk on one dependency of one app (engine output)."""
+
+    app_id: str
+    library: str
+    version: str
+    is_direct: bool
+    risk_type: RiskType
+    severity: Severity
+    cve_ids: list[str] = []
+    is_reachable: Optional[bool] = None  # set by the reachability engine
+    detail: str = ""
+    score: float = 0.0
+    paths: list[list[str]] = []          # attack paths (library@version chains)
+    fixed_versions: dict[str, Optional[str]] = {}  # cve_id -> fixed_version
+    max_cvss: float = 0.0
+    kev: bool = False
+    epss: float = 0.0
+
+    @property
+    def key(self) -> tuple[str, str, str, str]:
+        return (self.app_id, self.library, self.version, self.risk_type)
+
+
 class Dataset(BaseModel):
     """The whole synthetic dataset in memory."""
 

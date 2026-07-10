@@ -1,0 +1,42 @@
+"""API output schemas (what the dashboard consumes)."""
+from __future__ import annotations
+
+from typing import Any
+
+from pydantic import BaseModel
+
+from .models import Finding
+
+
+class AppRisk(BaseModel):
+    app_id: str
+    name: str
+    business_criticality: str
+    owner: str
+    internet_facing: bool
+    environment: str
+    ecosystem: str
+    license_context: str
+    risk_score: float
+    risk_band: str
+    dependency_count: int
+    direct_count: int
+    counts: dict[str, int]          # risk_type -> count (+ exploitable_criticals)
+    top_findings: list[Finding]
+
+
+class Summary(BaseModel):
+    app_count: int
+    dependency_count: int
+    finding_count: int
+    exploitable_criticals: int
+    counts: dict[str, int]          # risk_type totals across the portfolio
+    highest_risk_app: str
+
+
+class AnalysisResult(BaseModel):
+    generated_at: str
+    apps: list[AppRisk]
+    findings: list[Finding]
+    summary: Summary
+    metrics: dict[str, Any] = {}     # evaluation harness output (Slice 4)
