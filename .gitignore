@@ -13,3 +13,4 @@ data/cache/
 .pytest_cache/
 frontend/dist/
 *.local
+*.tsbuildinfo
