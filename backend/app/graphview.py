@@ -47,11 +47,12 @@ def build_app_graph(ctx: AnalysisContext, app_id: str) -> Optional[AppGraph]:
         severity = max_severity([f.severity for f in fs]) if fs else None
         cve_ids = sorted({c for f in vuln_fs for c in f.cve_ids})
         is_reachable = (node in reach) if vuln_fs else None
+        risk_types = sorted({rt for f in fs for rt in [f.risk_type, *f.secondary_risks]})
         nodes.append(GraphNode(
             id=node, library=data["library"], version=data["version"], kind="library",
             is_direct=bool(data.get("is_direct")), is_vulnerable=bool(vuln_fs),
             is_reachable=is_reachable, severity=severity,
-            risk_types=sorted({f.risk_type for f in fs}), cve_ids=cve_ids,
+            risk_types=risk_types, cve_ids=cve_ids,
             license=data.get("license", ""), last_updated=data.get("last_updated", ""),
             maintainer_count=data.get("maintainer_count", 0),
             score=max((f.score for f in fs), default=0.0), depth=depth.get(node, 1),

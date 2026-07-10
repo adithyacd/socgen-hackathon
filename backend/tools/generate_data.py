@@ -421,6 +421,7 @@ def _label_node(app, library, version, is_direct, license_name, last_updated,
                 maintainer_count, cves, reachable) -> dict:
     node = f"{library}@{version}"
     is_reachable = node in reachable
+    # Priority: reachable vuln > license conflict > unmaintained > unreachable vuln (suppressed).
     if cves and is_reachable:
         sev = max((c["severity"] for c in cves),
                   key=lambda s: ["low", "medium", "high", "critical"].index(s))
@@ -428,10 +429,6 @@ def _label_node(app, library, version, is_direct, license_name, last_updated,
                     risk_type="vulnerable" if is_direct else "transitive_vuln",
                     severity=sev, is_reachable=True,
                     explanation=f"Reachable vulnerable dependency ({', '.join(c['cve_id'] for c in cves)}).")
-    if cves and not is_reachable:
-        return dict(app_id=app["app_id"], library=library, version=version, is_risk=False,
-                    risk_type="clean", severity="low", is_reachable=False,
-                    explanation="Vulnerable version present but unreachable (no used path); suppressed.")
     if _license_conflict(license_name, app["license_context"]):
         rule = RULES_BY_LICENSE.get(license_name, RULES_BY_LICENSE["Unknown"])
         return dict(app_id=app["app_id"], library=library, version=version, is_risk=True,
@@ -441,6 +438,10 @@ def _label_node(app, library, version, is_direct, license_name, last_updated,
         return dict(app_id=app["app_id"], library=library, version=version, is_risk=True,
                     risk_type="unmaintained", severity="medium", is_reachable=is_reachable,
                     explanation=f"Unmaintained: last updated {last_updated}, {maintainer_count} maintainer(s).")
+    if cves and not is_reachable:
+        return dict(app_id=app["app_id"], library=library, version=version, is_risk=False,
+                    risk_type="clean", severity="low", is_reachable=False,
+                    explanation="Vulnerable version present but unreachable (no used path); suppressed.")
     return dict(app_id=app["app_id"], library=library, version=version, is_risk=False,
                 risk_type="clean", severity="low", is_reachable=is_reachable,
                 explanation="No detected risk.")

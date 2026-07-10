@@ -13,6 +13,8 @@ from typing import Optional
 import networkx as nx
 
 from .data.loader import load_dataset
+from .engines.license import find_license_conflicts
+from .engines.maintenance import find_unmaintained
 from .engines.reachability import annotate_reachability
 from .engines.transitive import annotate_paths
 from .engines.vuln import find_vulnerabilities
@@ -35,7 +37,39 @@ def collect_findings(g, ds: Dataset) -> list[Finding]:
     findings += find_vulnerabilities(g)
     annotate_paths(g, findings)        # transitive engine: attack paths
     annotate_reachability(g, findings)  # reachability engine: exploitable vs unreachable
-    return findings
+    findings += find_license_conflicts(g, ds)
+    findings += find_unmaintained(g)
+    return _merge_by_node(findings)
+
+
+def _merge_by_node(findings: list[Finding]) -> list[Finding]:
+    """Collapse multiple findings on one dependency into a single primary finding.
+
+    Priority (matches the ground-truth labels): reachable vuln > license conflict >
+    unmaintained > unreachable vuln (suppressed). Other detected types are kept on
+    `secondary_risks` so compounding risk is still visible.
+    """
+    groups: dict[tuple, list[Finding]] = defaultdict(list)
+    for f in findings:
+        groups[(f.app_id, f.library, f.version)].append(f)
+
+    merged: list[Finding] = []
+    for _key, fs in groups.items():
+        vulns = [f for f in fs if f.risk_type in ("vulnerable", "transitive_vuln")]
+        reach_vulns = [f for f in vulns if f.is_reachable is not False]
+        lic = [f for f in fs if f.risk_type == "license_conflict"]
+        maint = [f for f in fs if f.risk_type == "unmaintained"]
+        if reach_vulns:
+            primary = reach_vulns[0]
+        elif lic:
+            primary = lic[0]
+        elif maint:
+            primary = maint[0]
+        else:
+            primary = vulns[0] if vulns else fs[0]
+        primary.secondary_risks = sorted({f.risk_type for f in fs} - {primary.risk_type})
+        merged.append(primary)
+    return merged
 
 
 def _is_exploitable_critical(f: Finding) -> bool:

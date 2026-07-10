@@ -95,8 +95,9 @@ class Finding(BaseModel):
     library: str
     version: str
     is_direct: bool
-    risk_type: RiskType
+    risk_type: RiskType                  # primary risk on this dependency
     severity: Severity
+    secondary_risks: list[str] = []      # other risk types also present on this node
     cve_ids: list[str] = []
     is_reachable: Optional[bool] = None  # set by the reachability engine
     detail: str = ""

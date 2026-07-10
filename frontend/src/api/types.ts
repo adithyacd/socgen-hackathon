@@ -15,6 +15,7 @@ export interface Finding {
   is_direct: boolean;
   risk_type: RiskType;
   severity: Severity;
+  secondary_risks: string[];
   cve_ids: string[];
   is_reachable: boolean | null;
   detail: string;
