@@ -1,0 +1,109 @@
+[
+  {
+    "license": "MIT",
+    "category": "permissive",
+    "incompatible_with": [],
+    "risk_level": "low"
+  },
+  {
+    "license": "Apache-2.0",
+    "category": "permissive",
+    "incompatible_with": [],
+    "risk_level": "low"
+  },
+  {
+    "license": "BSD-3-Clause",
+    "category": "permissive",
+    "incompatible_with": [],
+    "risk_level": "low"
+  },
+  {
+    "license": "ISC",
+    "category": "permissive",
+    "incompatible_with": [],
+    "risk_level": "low"
+  },
+  {
+    "license": "MPL-2.0",
+    "category": "weak-copyleft",
+    "incompatible_with": [],
+    "risk_level": "medium"
+  },
+  {
+    "license": "LGPL-3.0",
+    "category": "weak-copyleft",
+    "incompatible_with": [
+      "Proprietary-Static"
+    ],
+    "risk_level": "medium"
+  },
+  {
+    "license": "EPL-2.0",
+    "category": "weak-copyleft",
+    "incompatible_with": [],
+    "risk_level": "medium"
+  },
+  {
+    "license": "GPL-2.0",
+    "category": "copyleft",
+    "incompatible_with": [
+      "Proprietary",
+      "Proprietary-Static",
+      "Commercial"
+    ],
+    "risk_level": "high"
+  },
+  {
+    "license": "GPL-3.0",
+    "category": "copyleft",
+    "incompatible_with": [
+      "Proprietary",
+      "Proprietary-Static",
+      "Commercial"
+    ],
+    "risk_level": "high"
+  },
+  {
+    "license": "AGPL-3.0",
+    "category": "copyleft",
+    "incompatible_with": [
+      "Proprietary",
+      "Proprietary-Static",
+      "Commercial"
+    ],
+    "risk_level": "critical"
+  },
+  {
+    "license": "CC0-1.0",
+    "category": "permissive",
+    "incompatible_with": [],
+    "risk_level": "low"
+  },
+  {
+    "license": "Unlicense",
+    "category": "permissive",
+    "incompatible_with": [],
+    "risk_level": "low"
+  },
+  {
+    "license": "Commercial",
+    "category": "proprietary",
+    "incompatible_with": [],
+    "risk_level": "medium"
+  },
+  {
+    "license": "Proprietary",
+    "category": "proprietary",
+    "incompatible_with": [],
+    "risk_level": "medium"
+  },
+  {
+    "license": "Unknown",
+    "category": "unknown",
+    "incompatible_with": [
+      "Proprietary",
+      "Commercial"
+    ],
+    "risk_level": "medium"
+  }
+]

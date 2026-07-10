@@ -1,0 +1,102 @@
+[
+  {
+    "app_id": "APP-01",
+    "name": "payments-gateway",
+    "business_criticality": "critical",
+    "owner": "Payments Platform",
+    "internet_facing": true,
+    "environment": "prod",
+    "ecosystem": "maven",
+    "license_context": "Proprietary"
+  },
+  {
+    "app_id": "APP-02",
+    "name": "customer-portal",
+    "business_criticality": "high",
+    "owner": "Digital Channels",
+    "internet_facing": true,
+    "environment": "prod",
+    "ecosystem": "npm",
+    "license_context": "Proprietary"
+  },
+  {
+    "app_id": "APP-03",
+    "name": "trading-engine",
+    "business_criticality": "critical",
+    "owner": "Markets Tech",
+    "internet_facing": false,
+    "environment": "prod",
+    "ecosystem": "maven",
+    "license_context": "Proprietary"
+  },
+  {
+    "app_id": "APP-04",
+    "name": "mobile-banking-api",
+    "business_criticality": "critical",
+    "owner": "Retail Banking",
+    "internet_facing": true,
+    "environment": "prod",
+    "ecosystem": "pypi",
+    "license_context": "Proprietary"
+  },
+  {
+    "app_id": "APP-05",
+    "name": "fraud-detection",
+    "business_criticality": "high",
+    "owner": "Risk & Fraud",
+    "internet_facing": false,
+    "environment": "prod",
+    "ecosystem": "pypi",
+    "license_context": "Proprietary"
+  },
+  {
+    "app_id": "APP-06",
+    "name": "loan-origination",
+    "business_criticality": "high",
+    "owner": "Lending",
+    "internet_facing": false,
+    "environment": "prod",
+    "ecosystem": "maven",
+    "license_context": "Proprietary"
+  },
+  {
+    "app_id": "APP-07",
+    "name": "market-data-feed",
+    "business_criticality": "medium",
+    "owner": "Markets Tech",
+    "internet_facing": true,
+    "environment": "prod",
+    "ecosystem": "npm",
+    "license_context": "Commercial"
+  },
+  {
+    "app_id": "APP-08",
+    "name": "hr-portal",
+    "business_criticality": "medium",
+    "owner": "People Systems",
+    "internet_facing": false,
+    "environment": "staging",
+    "ecosystem": "pypi",
+    "license_context": "Proprietary"
+  },
+  {
+    "app_id": "APP-09",
+    "name": "internal-wiki",
+    "business_criticality": "low",
+    "owner": "IT Platform",
+    "internet_facing": false,
+    "environment": "staging",
+    "ecosystem": "maven",
+    "license_context": "Proprietary"
+  },
+  {
+    "app_id": "APP-10",
+    "name": "notifications-service",
+    "business_criticality": "medium",
+    "owner": "Platform Eng",
+    "internet_facing": true,
+    "environment": "prod",
+    "ecosystem": "npm",
+    "license_context": "Proprietary"
+  }
+]

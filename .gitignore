@@ -7,4 +7,9 @@ dist/
 build/
 .env
 .env.*
+!.env.example
+!backend/.env.example
 data/cache/
+.pytest_cache/
+frontend/dist/
+*.local
