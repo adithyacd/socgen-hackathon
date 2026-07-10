@@ -59,3 +59,35 @@ export interface AnalysisResult {
   summary: Summary;
   metrics: Record<string, any>;
 }
+
+export interface GraphNode {
+  id: string;
+  library: string;
+  version: string;
+  kind: "app" | "library";
+  is_direct: boolean;
+  is_vulnerable: boolean;
+  is_reachable: boolean | null;
+  severity: Severity | null;
+  risk_types: string[];
+  cve_ids: string[];
+  license: string;
+  last_updated: string;
+  maintainer_count: number;
+  score: number;
+  depth: number;
+}
+
+export interface GraphEdge {
+  source: string;
+  target: string;
+  used: boolean;
+  is_direct: boolean;
+}
+
+export interface AppGraph {
+  app: AppRisk;
+  nodes: GraphNode[];
+  edges: GraphEdge[];
+  findings: Finding[];
+}

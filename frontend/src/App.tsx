@@ -3,6 +3,7 @@ import Layout from "./components/Layout";
 import Placeholder from "./components/Placeholder";
 import { AnalysisProvider } from "./lib/analysisContext";
 import Portfolio from "./views/Portfolio";
+import AppDetail from "./views/AppDetail";
 
 export default function App() {
   return (
@@ -10,7 +11,7 @@ export default function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Portfolio />} />
-          <Route path="/app/:appId" element={<Placeholder title="App Detail" />} />
+          <Route path="/app/:appId" element={<AppDetail />} />
           <Route path="/warroom" element={<Placeholder title="Zero-Day War Room" />} />
           <Route path="/optimizer" element={<Placeholder title="Fix Optimizer" />} />
           <Route path="/copilot" element={<Placeholder title="Copilot" />} />

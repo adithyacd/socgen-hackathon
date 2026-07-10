@@ -6,10 +6,15 @@ together and produces the object the API and static export both serve.
 from __future__ import annotations
 
 from collections import defaultdict
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
 
+import networkx as nx
+
 from .data.loader import load_dataset
+from .engines.reachability import annotate_reachability
+from .engines.transitive import annotate_paths
 from .engines.vuln import find_vulnerabilities
 from .graph.builder import build_graph, library_nodes
 from .models import Application, Dataset, Finding
@@ -21,13 +26,15 @@ RISK_TYPES = ["vulnerable", "transitive_vuln", "license_conflict", "unmaintained
 
 
 def collect_findings(g, ds: Dataset) -> list[Finding]:
-    """Run every engine and return the merged finding list.
+    """Run every engine and return the merged, annotated finding list.
 
-    Slice 1: vulnerabilities only. Later slices append license/maintenance and
-    annotate reachability + attack paths.
+    Vulnerabilities are detected, then transitive attack paths and reachability
+    are annotated onto them. Later slices append license + maintenance findings.
     """
     findings: list[Finding] = []
     findings += find_vulnerabilities(g)
+    annotate_paths(g, findings)        # transitive engine: attack paths
+    annotate_reachability(g, findings)  # reachability engine: exploitable vs unreachable
     return findings
 
 
@@ -78,7 +85,17 @@ def _summarize(apps: list[AppRisk], findings: list[Finding]) -> Summary:
     )
 
 
-def run_analysis(data_dir: Optional[Path] = None) -> AnalysisResult:
+@dataclass
+class AnalysisContext:
+    """Everything computed once and reused by the API (analysis + graph queries)."""
+
+    ds: Dataset
+    g: nx.DiGraph
+    findings: list[Finding]
+    result: AnalysisResult
+
+
+def build_context(data_dir: Optional[Path] = None) -> AnalysisContext:
     ds = load_dataset(data_dir)
     g = build_graph(ds)
     findings = collect_findings(g, ds)
@@ -86,7 +103,12 @@ def run_analysis(data_dir: Optional[Path] = None) -> AnalysisResult:
         f.score = score_finding(f)
     apps = _aggregate(ds, g, findings)
     summary = _summarize(apps, findings)
-    return AnalysisResult(
+    result = AnalysisResult(
         generated_at=REFERENCE_DATE.isoformat(),
         apps=apps, findings=findings, summary=summary,
     )
+    return AnalysisContext(ds=ds, g=g, findings=findings, result=result)
+
+
+def run_analysis(data_dir: Optional[Path] = None) -> AnalysisResult:
+    return build_context(data_dir).result

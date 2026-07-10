@@ -40,3 +40,35 @@ class AnalysisResult(BaseModel):
     findings: list[Finding]
     summary: Summary
     metrics: dict[str, Any] = {}     # evaluation harness output (Slice 4)
+
+
+class GraphNode(BaseModel):
+    id: str
+    library: str
+    version: str
+    kind: str                    # "app" | "library"
+    is_direct: bool = False
+    is_vulnerable: bool = False
+    is_reachable: bool | None = None
+    severity: str | None = None  # worst finding severity on this node
+    risk_types: list[str] = []
+    cve_ids: list[str] = []
+    license: str = ""
+    last_updated: str = ""
+    maintainer_count: int = 0
+    score: float = 0.0
+    depth: int = 0               # hops from the app node
+
+
+class GraphEdge(BaseModel):
+    source: str
+    target: str
+    used: bool = True
+    is_direct: bool = False
+
+
+class AppGraph(BaseModel):
+    app: AppRisk
+    nodes: list[GraphNode]
+    edges: list[GraphEdge]
+    findings: list[Finding]
