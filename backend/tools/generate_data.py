@@ -329,6 +329,17 @@ USED_OVERRIDES = {
     ("APP-09", "enterprise-logging", "log4j-core"): False,  # present but UNREACHABLE (FP killer)
 }
 
+# Libraries that carry a matching CVE. Real-world insight: a large share of
+# TRANSITIVE vulnerable deps are never actually exercised, so we mark ~45% of
+# transitive edges into these libs as unused -> unreachable -> naive false positives
+# that the reachability engine suppresses. Direct deps stay reachable.
+VULN_LIB_NAMES = {
+    "log4j-core", "jackson-databind", "snakeyaml", "commons-text", "lodash",
+    "minimist", "follow-redirects", "ws", "urllib3", "pyyaml", "bcprov-jdk15on",
+    "qs", "express",
+}
+REACHABLE_TRANSITIVE_PROB = 0.55
+
 
 def _pick_direct(app: dict) -> list[str]:
     roots = list(STACK_ROOTS[app["stack"]])
@@ -383,6 +394,9 @@ def _app_edges(app: dict) -> list[dict]:
                     used, constraint = u, c
                     break
             parent_version = LIBS[parent].version
+            # Most transitive vulnerable deps aren't actually exercised.
+            if lib in VULN_LIB_NAMES:
+                used = RNG.random() < REACHABLE_TRANSITIVE_PROB
         key = (app["app_id"], parent, lib)
         if key in USED_OVERRIDES:
             used = USED_OVERRIDES[key]

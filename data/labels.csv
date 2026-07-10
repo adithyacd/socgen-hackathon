@@ -42,58 +42,54 @@ APP-02,ejs,3.1.6,False,clean,low,True,No detected risk.
 APP-02,node-fetch,2.6.1,True,unmaintained,medium,True,"Unmaintained: last updated 2024-01-19, 9 maintainer(s)."
 APP-02,tar,6.1.0,False,clean,low,True,No detected risk.
 APP-02,analytics-widget,1.2.0,True,license_conflict,high,True,License 'GPL-3.0' incompatible with Proprietary context.
-APP-02,np-text-10,6.7.2,False,clean,low,True,No detected risk.
-APP-02,np-net-37,1.11.8,False,clean,low,True,No detected risk.
-APP-02,np-parser-55,3.3.3,False,clean,low,True,No detected risk.
-APP-02,np-parser-34,1.7.9,False,clean,low,True,No detected risk.
 APP-02,np-model-52,5.4.6,True,unmaintained,medium,True,"Unmaintained: last updated 2023-05-11, 1 maintainer(s)."
-APP-02,np-server-19,2.8.3,False,clean,low,True,No detected risk.
 APP-02,np-pool-61,2.4.7,False,clean,low,True,No detected risk.
 APP-02,np-queue-40,5.0.1,False,clean,low,True,No detected risk.
-APP-02,np-math-1,1.3.3,True,unmaintained,medium,True,"Unmaintained: last updated 2021-09-09, 1 maintainer(s)."
+APP-02,np-text-10,6.7.2,False,clean,low,True,No detected risk.
 APP-02,np-common-31,2.6.1,False,clean,low,True,No detected risk.
+APP-02,np-server-19,2.8.3,False,clean,low,True,No detected risk.
+APP-02,np-cache-46,3.1.4,False,clean,low,True,No detected risk.
+APP-02,np-stream-64,1.12.9,False,clean,low,True,No detected risk.
+APP-02,np-logger-58,5.7.0,False,clean,low,True,No detected risk.
+APP-02,np-proto-13,5.4.8,False,clean,low,True,No detected risk.
+APP-02,np-pool-16,2.5.2,False,clean,low,True,No detected risk.
+APP-02,np-net-37,1.11.8,False,clean,low,True,No detected risk.
+APP-02,np-math-1,1.3.3,True,unmaintained,medium,True,"Unmaintained: last updated 2021-09-09, 1 maintainer(s)."
+APP-02,np-config-43,2.6.0,False,clean,low,True,No detected risk.
 APP-02,np-metrics-22,2.8.2,False,clean,low,True,No detected risk.
 APP-02,np-queue-67,4.9.9,True,unmaintained,medium,True,"Unmaintained: last updated 2021-03-11, 6 maintainer(s)."
-APP-02,np-logger-58,5.7.0,False,clean,low,True,No detected risk.
-APP-02,np-cache-49,6.6.0,False,clean,low,True,No detected risk.
-APP-02,np-pool-16,2.5.2,False,clean,low,True,No detected risk.
-APP-02,np-crypto-4,1.11.7,False,clean,low,True,No detected risk.
-APP-02,np-cache-25,2.6.2,False,clean,low,True,No detected risk.
-APP-02,np-logger-28,4.11.8,False,clean,low,True,No detected risk.
-APP-02,np-stream-64,1.12.9,False,clean,low,True,No detected risk.
-APP-02,np-cache-46,3.1.4,False,clean,low,True,No detected risk.
 APP-02,np-cache-7,6.10.1,False,clean,low,True,No detected risk.
-APP-02,express,4.17.1,True,transitive_vuln,high,True,Reachable vulnerable dependency (CVE-2022-24999).
-APP-02,ws,7.4.5,True,transitive_vuln,medium,True,Reachable vulnerable dependency (CVE-2021-3807).
+APP-02,np-cache-49,6.6.0,False,clean,low,True,No detected risk.
+APP-02,np-parser-34,1.7.9,False,clean,low,True,No detected risk.
+APP-02,np-crypto-4,1.11.7,False,clean,low,True,No detected risk.
+APP-02,np-parser-55,3.3.3,False,clean,low,True,No detected risk.
+APP-02,express,4.17.1,False,clean,low,False,Vulnerable version present but unreachable (no used path); suppressed.
+APP-02,ws,7.4.5,False,clean,low,False,Vulnerable version present but unreachable (no used path); suppressed.
 APP-02,log-agent,2.3.0,False,clean,low,True,No detected risk.
 APP-02,follow-redirects,1.14.0,True,transitive_vuln,medium,True,Reachable vulnerable dependency (CVE-2022-0536).
-APP-02,qs,6.10.1,True,transitive_vuln,high,True,Reachable vulnerable dependency (CVE-2022-25883).
-APP-02,minimist,1.2.5,True,transitive_vuln,critical,True,Reachable vulnerable dependency (CVE-2021-44906).
+APP-02,qs,6.10.1,False,clean,low,False,Vulnerable version present but unreachable (no used path); suppressed.
+APP-02,minimist,1.2.5,True,unmaintained,medium,False,"Unmaintained: last updated 2023-08-26, 5 maintainer(s)."
 APP-03,spring-boot-starter,2.5.4,False,clean,low,True,No detected risk.
 APP-03,hibernate-core,5.4.32,False,clean,low,True,No detected risk.
 APP-03,commons-text,1.9,True,vulnerable,critical,True,Reachable vulnerable dependency (CVE-2022-42889).
 APP-03,snakeyaml,1.29,True,vulnerable,high,True,Reachable vulnerable dependency (CVE-2022-1471).
 APP-03,bcprov-jdk15on,1.68,True,vulnerable,high,True,Reachable vulnerable dependency (CVE-2023-0286).
 APP-03,chart-lib,2.2.0,True,license_conflict,high,True,License 'GPL-2.0' incompatible with Proprietary context.
-APP-03,ma-text-57,2.2.0,False,clean,low,True,No detected risk.
-APP-03,ma-client-39,1.5.2,False,clean,low,True,No detected risk.
-APP-03,ma-async-27,4.0.2,False,clean,low,True,No detected risk.
-APP-03,ma-crypto-48,3.6.9,False,clean,low,True,No detected risk.
-APP-03,ma-utils-9,4.4.1,False,clean,low,True,No detected risk.
-APP-03,ma-session-33,3.6.2,False,clean,low,True,No detected risk.
-APP-03,ma-math-66,4.5.6,False,clean,low,True,No detected risk.
-APP-03,ma-store-60,2.11.7,False,clean,low,True,No detected risk.
-APP-03,ma-common-6,1.6.4,False,clean,low,True,No detected risk.
-APP-03,ma-utils-24,6.1.0,False,clean,low,True,No detected risk.
 APP-03,ma-session-36,6.8.0,False,clean,low,True,No detected risk.
-APP-03,ma-template-15,3.8.2,False,clean,low,True,No detected risk.
-APP-03,ma-math-63,4.6.0,False,clean,low,True,No detected risk.
-APP-03,ma-common-21,1.3.1,False,clean,low,True,No detected risk.
-APP-03,ma-schema-0,6.4.3,True,unmaintained,medium,True,"Unmaintained: last updated 2023-10-07, 19 maintainer(s)."
-APP-03,ma-parser-12,1.2.2,True,unmaintained,medium,True,"Unmaintained: last updated 2022-10-13, 1 maintainer(s)."
+APP-03,ma-math-51,6.4.8,False,clean,low,True,No detected risk.
 APP-03,ma-server-45,2.7.5,False,clean,low,True,No detected risk.
-APP-03,ma-async-30,5.2.0,False,clean,low,True,No detected risk.
+APP-03,ma-schema-0,6.4.3,True,unmaintained,medium,True,"Unmaintained: last updated 2023-10-07, 19 maintainer(s)."
+APP-03,ma-math-63,4.6.0,False,clean,low,True,No detected risk.
 APP-03,ma-client-18,5.12.2,True,unmaintained,medium,True,"Unmaintained: last updated 2023-03-06, 7 maintainer(s)."
+APP-03,ma-math-66,4.5.6,False,clean,low,True,No detected risk.
+APP-03,ma-parser-12,1.2.2,True,unmaintained,medium,True,"Unmaintained: last updated 2022-10-13, 1 maintainer(s)."
+APP-03,ma-session-33,3.6.2,False,clean,low,True,No detected risk.
+APP-03,ma-model-54,6.2.1,False,clean,low,True,No detected risk.
+APP-03,ma-store-60,2.11.7,False,clean,low,True,No detected risk.
+APP-03,ma-async-27,4.0.2,False,clean,low,True,No detected risk.
+APP-03,ma-client-39,1.5.2,False,clean,low,True,No detected risk.
+APP-03,ma-utils-24,6.1.0,False,clean,low,True,No detected risk.
+APP-03,ma-text-57,2.2.0,False,clean,low,True,No detected risk.
 APP-03,spring-core,5.3.8,False,clean,low,True,No detected risk.
 APP-03,spring-web,5.3.8,False,clean,low,True,No detected risk.
 APP-03,jackson-databind,2.12.3,True,transitive_vuln,high,True,Reachable vulnerable dependency (CVE-2020-36518).
@@ -110,26 +106,26 @@ APP-04,cryptography,3.4.7,False,clean,low,True,No detected risk.
 APP-04,pillow,8.2.0,True,license_conflict,medium,True,License 'HPND' incompatible with Proprietary context.
 APP-04,numpy,1.20.3,False,clean,low,True,No detected risk.
 APP-04,pyyaml,5.3.1,True,vulnerable,critical,True,Reachable vulnerable dependency (CVE-2020-14343).
-APP-04,py-server-44,2.4.2,False,clean,low,True,No detected risk.
-APP-04,py-codec-68,4.5.3,True,unmaintained,medium,True,"Unmaintained: last updated 2023-02-18, 14 maintainer(s)."
-APP-04,py-template-11,5.6.5,False,clean,low,True,No detected risk.
-APP-04,py-time-59,5.9.5,False,clean,low,True,No detected risk.
-APP-04,py-http-62,1.2.2,False,clean,low,True,No detected risk.
-APP-04,py-session-2,2.7.9,False,clean,low,True,No detected risk.
-APP-04,py-logger-23,1.1.6,False,clean,low,True,No detected risk.
-APP-04,py-core-47,3.2.9,True,unmaintained,medium,True,"Unmaintained: last updated 2022-01-31, 1 maintainer(s)."
-APP-04,py-text-65,4.8.8,False,clean,low,True,No detected risk.
-APP-04,py-queue-14,6.5.1,False,clean,low,True,No detected risk.
-APP-04,py-pool-20,2.3.1,False,clean,low,True,No detected risk.
-APP-04,py-auth-50,5.5.1,False,clean,low,True,No detected risk.
-APP-04,py-server-26,1.0.8,False,clean,low,True,No detected risk.
-APP-04,py-logger-53,6.5.7,False,clean,low,True,No detected risk.
 APP-04,py-io-17,3.3.0,False,clean,low,True,No detected risk.
-APP-04,py-codec-8,3.10.8,False,clean,low,True,No detected risk.
-APP-04,py-proto-56,1.7.6,False,clean,low,True,No detected risk.
+APP-04,py-session-2,2.7.9,False,clean,low,True,No detected risk.
+APP-04,py-cache-38,3.8.7,False,clean,low,True,No detected risk.
+APP-04,py-codec-68,4.5.3,True,unmaintained,medium,True,"Unmaintained: last updated 2023-02-18, 14 maintainer(s)."
+APP-04,py-cache-29,5.11.8,False,clean,low,True,No detected risk.
+APP-04,py-template-11,5.6.5,False,clean,low,True,No detected risk.
+APP-04,py-logger-23,1.1.6,False,clean,low,True,No detected risk.
+APP-04,py-server-44,2.4.2,False,clean,low,True,No detected risk.
 APP-04,py-client-5,3.9.3,False,clean,low,True,No detected risk.
-APP-04,py-utils-32,4.10.9,False,clean,low,True,No detected risk.
+APP-04,py-logger-53,6.5.7,False,clean,low,True,No detected risk.
+APP-04,py-pool-20,2.3.1,False,clean,low,True,No detected risk.
 APP-04,py-crypto-41,2.6.2,False,clean,low,True,No detected risk.
+APP-04,py-core-47,3.2.9,True,unmaintained,medium,True,"Unmaintained: last updated 2022-01-31, 1 maintainer(s)."
+APP-04,py-proto-56,1.7.6,False,clean,low,True,No detected risk.
+APP-04,py-auth-50,5.5.1,False,clean,low,True,No detected risk.
+APP-04,py-pool-35,3.1.3,False,clean,low,True,No detected risk.
+APP-04,py-http-62,1.2.2,False,clean,low,True,No detected risk.
+APP-04,py-codec-8,3.10.8,False,clean,low,True,No detected risk.
+APP-04,py-utils-32,4.10.9,False,clean,low,True,No detected risk.
+APP-04,py-queue-14,6.5.1,False,clean,low,True,No detected risk.
 APP-04,flask,2.0.1,False,clean,low,True,No detected risk.
 APP-04,report-engine,1.1.0,True,license_conflict,critical,True,License 'AGPL-3.0' incompatible with Proprietary context.
 APP-04,urllib3,1.26.4,True,transitive_vuln,high,True,Reachable vulnerable dependency (CVE-2021-33503).
@@ -142,27 +138,22 @@ APP-05,cryptography,3.4.7,False,clean,low,True,No detected risk.
 APP-05,pillow,8.2.0,True,license_conflict,medium,True,License 'HPND' incompatible with Proprietary context.
 APP-05,numpy,1.20.3,False,clean,low,True,No detected risk.
 APP-05,pyyaml,5.3.1,True,vulnerable,critical,True,Reachable vulnerable dependency (CVE-2020-14343).
-APP-05,py-core-47,3.2.9,True,unmaintained,medium,True,"Unmaintained: last updated 2022-01-31, 1 maintainer(s)."
-APP-05,py-template-11,5.6.5,False,clean,low,True,No detected risk.
-APP-05,py-proto-56,1.7.6,False,clean,low,True,No detected risk.
-APP-05,py-text-65,4.8.8,False,clean,low,True,No detected risk.
-APP-05,py-logger-23,1.1.6,False,clean,low,True,No detected risk.
-APP-05,py-http-62,1.2.2,False,clean,low,True,No detected risk.
-APP-05,py-session-2,2.7.9,False,clean,low,True,No detected risk.
-APP-05,py-io-17,3.3.0,False,clean,low,True,No detected risk.
-APP-05,py-pool-20,2.3.1,False,clean,low,True,No detected risk.
-APP-05,py-client-5,3.9.3,False,clean,low,True,No detected risk.
-APP-05,py-server-26,1.0.8,False,clean,low,True,No detected risk.
-APP-05,py-server-44,2.4.2,False,clean,low,True,No detected risk.
-APP-05,py-crypto-41,2.6.2,False,clean,low,True,No detected risk.
-APP-05,py-pool-35,3.1.3,False,clean,low,True,No detected risk.
 APP-05,py-auth-50,5.5.1,False,clean,low,True,No detected risk.
-APP-05,py-codec-68,4.5.3,True,unmaintained,medium,True,"Unmaintained: last updated 2023-02-18, 14 maintainer(s)."
-APP-05,py-utils-32,4.10.9,False,clean,low,True,No detected risk.
-APP-05,py-cache-38,3.8.7,False,clean,low,True,No detected risk.
+APP-05,py-template-11,5.6.5,False,clean,low,True,No detected risk.
 APP-05,py-logger-53,6.5.7,False,clean,low,True,No detected risk.
-APP-05,py-cache-29,5.11.8,False,clean,low,True,No detected risk.
+APP-05,py-pool-35,3.1.3,False,clean,low,True,No detected risk.
+APP-05,py-cache-38,3.8.7,False,clean,low,True,No detected risk.
+APP-05,py-server-44,2.4.2,False,clean,low,True,No detected risk.
+APP-05,py-text-65,4.8.8,False,clean,low,True,No detected risk.
+APP-05,py-session-2,2.7.9,False,clean,low,True,No detected risk.
+APP-05,py-codec-68,4.5.3,True,unmaintained,medium,True,"Unmaintained: last updated 2023-02-18, 14 maintainer(s)."
+APP-05,py-time-59,5.9.5,False,clean,low,True,No detected risk.
+APP-05,py-server-26,1.0.8,False,clean,low,True,No detected risk.
+APP-05,py-crypto-41,2.6.2,False,clean,low,True,No detected risk.
+APP-05,py-proto-56,1.7.6,False,clean,low,True,No detected risk.
+APP-05,py-client-5,3.9.3,False,clean,low,True,No detected risk.
 APP-05,py-codec-8,3.10.8,False,clean,low,True,No detected risk.
+APP-05,py-queue-14,6.5.1,False,clean,low,True,No detected risk.
 APP-05,flask,2.0.1,False,clean,low,True,No detected risk.
 APP-05,report-engine,1.1.0,True,license_conflict,critical,True,License 'AGPL-3.0' incompatible with Proprietary context.
 APP-05,urllib3,1.26.4,True,transitive_vuln,high,True,Reachable vulnerable dependency (CVE-2021-33503).
@@ -176,27 +167,34 @@ APP-06,snakeyaml,1.29,True,vulnerable,high,True,Reachable vulnerable dependency 
 APP-06,bcprov-jdk15on,1.68,True,vulnerable,high,True,Reachable vulnerable dependency (CVE-2023-0286).
 APP-06,chart-lib,2.2.0,True,license_conflict,high,True,License 'GPL-2.0' incompatible with Proprietary context.
 APP-06,ma-schema-0,6.4.3,True,unmaintained,medium,True,"Unmaintained: last updated 2023-10-07, 19 maintainer(s)."
-APP-06,ma-math-51,6.4.8,False,clean,low,True,No detected risk.
-APP-06,ma-math-66,4.5.6,False,clean,low,True,No detected risk.
-APP-06,ma-client-39,1.5.2,False,clean,low,True,No detected risk.
-APP-06,ma-store-60,2.11.7,False,clean,low,True,No detected risk.
-APP-06,ma-utils-24,6.1.0,False,clean,low,True,No detected risk.
-APP-06,ma-server-45,2.7.5,False,clean,low,True,No detected risk.
-APP-06,ma-cache-42,6.1.5,False,clean,low,True,No detected risk.
 APP-06,ma-client-69,1.7.0,False,clean,low,True,No detected risk.
-APP-06,ma-session-33,3.6.2,False,clean,low,True,No detected risk.
-APP-06,ma-text-57,2.2.0,False,clean,low,True,No detected risk.
+APP-06,ma-math-66,4.5.6,False,clean,low,True,No detected risk.
+APP-06,ma-common-6,1.6.4,False,clean,low,True,No detected risk.
+APP-06,ma-store-60,2.11.7,False,clean,low,True,No detected risk.
+APP-06,ma-server-45,2.7.5,False,clean,low,True,No detected risk.
+APP-06,ma-client-18,5.12.2,True,unmaintained,medium,True,"Unmaintained: last updated 2023-03-06, 7 maintainer(s)."
+APP-06,ma-parser-12,1.2.2,True,unmaintained,medium,True,"Unmaintained: last updated 2022-10-13, 1 maintainer(s)."
+APP-06,ma-async-30,5.2.0,False,clean,low,True,No detected risk.
+APP-06,ma-utils-24,6.1.0,False,clean,low,True,No detected risk.
+APP-06,ma-utils-9,4.4.1,False,clean,low,True,No detected risk.
+APP-06,ma-math-51,6.4.8,False,clean,low,True,No detected risk.
+APP-06,ma-crypto-48,3.6.9,False,clean,low,True,No detected risk.
 APP-06,ma-model-54,6.2.1,False,clean,low,True,No detected risk.
 APP-06,ma-session-36,6.8.0,False,clean,low,True,No detected risk.
-APP-06,ma-template-15,3.8.2,False,clean,low,True,No detected risk.
+APP-06,ma-async-27,4.0.2,False,clean,low,True,No detected risk.
+APP-06,ma-math-63,4.6.0,False,clean,low,True,No detected risk.
+APP-06,ma-common-21,1.3.1,False,clean,low,True,No detected risk.
+APP-06,ma-session-33,3.6.2,False,clean,low,True,No detected risk.
+APP-06,ma-client-39,1.5.2,False,clean,low,True,No detected risk.
+APP-06,ma-http-3,2.12.5,False,clean,low,True,No detected risk.
 APP-06,spring-core,5.3.8,False,clean,low,True,No detected risk.
 APP-06,spring-web,5.3.8,False,clean,low,True,No detected risk.
-APP-06,jackson-databind,2.12.3,True,transitive_vuln,high,True,Reachable vulnerable dependency (CVE-2020-36518).
+APP-06,jackson-databind,2.12.3,False,clean,low,False,Vulnerable version present but unreachable (no used path); suppressed.
 APP-06,enterprise-logging,1.4.0,False,clean,low,True,No detected risk.
 APP-06,jboss-logging,3.4.1,False,clean,low,True,No detected risk.
 APP-06,commons-lang3,3.12.0,False,clean,low,True,No detected risk.
 APP-06,commons-logging,1.2,True,unmaintained,medium,True,"Unmaintained: last updated 2022-04-02, 8 maintainer(s)."
-APP-06,jackson-core,2.12.3,False,clean,low,True,No detected risk.
+APP-06,jackson-core,2.12.3,False,clean,low,False,No detected risk.
 APP-06,log4j-core,2.14.1,False,clean,low,False,Vulnerable version present but unreachable (no used path); suppressed.
 APP-06,slf4j-api,1.7.30,True,unmaintained,medium,True,"Unmaintained: last updated 2023-11-07, 12 maintainer(s)."
 APP-07,web-server-kit,3.1.0,False,clean,low,True,No detected risk.
@@ -207,27 +205,31 @@ APP-07,ejs,3.1.6,False,clean,low,True,No detected risk.
 APP-07,node-fetch,2.6.1,True,unmaintained,medium,True,"Unmaintained: last updated 2024-01-19, 9 maintainer(s)."
 APP-07,tar,6.1.0,False,clean,low,True,No detected risk.
 APP-07,analytics-widget,1.2.0,True,license_conflict,high,True,License 'GPL-3.0' incompatible with Commercial context.
-APP-07,np-crypto-4,1.11.7,False,clean,low,True,No detected risk.
-APP-07,np-parser-55,3.3.3,False,clean,low,True,No detected risk.
+APP-07,np-config-43,2.6.0,False,clean,low,True,No detected risk.
 APP-07,np-math-1,1.3.3,True,unmaintained,medium,True,"Unmaintained: last updated 2021-09-09, 1 maintainer(s)."
-APP-07,np-model-52,5.4.6,True,unmaintained,medium,True,"Unmaintained: last updated 2023-05-11, 1 maintainer(s)."
 APP-07,np-common-31,2.6.1,False,clean,low,True,No detected risk.
-APP-07,np-cache-7,6.10.1,False,clean,low,True,No detected risk.
-APP-07,np-server-19,2.8.3,False,clean,low,True,No detected risk.
-APP-07,np-cache-25,2.6.2,False,clean,low,True,No detected risk.
-APP-07,np-stream-64,1.12.9,False,clean,low,True,No detected risk.
-APP-07,np-pool-16,2.5.2,False,clean,low,True,No detected risk.
 APP-07,np-text-10,6.7.2,False,clean,low,True,No detected risk.
-APP-07,np-cache-46,3.1.4,False,clean,low,True,No detected risk.
-APP-07,np-queue-67,4.9.9,True,unmaintained,medium,True,"Unmaintained: last updated 2021-03-11, 6 maintainer(s)."
+APP-07,np-cache-7,6.10.1,False,clean,low,True,No detected risk.
+APP-07,np-metrics-22,2.8.2,False,clean,low,True,No detected risk.
+APP-07,np-pool-61,2.4.7,False,clean,low,True,No detected risk.
+APP-07,np-logger-28,4.11.8,False,clean,low,True,No detected risk.
+APP-07,np-parser-55,3.3.3,False,clean,low,True,No detected risk.
+APP-07,np-parser-34,1.7.9,False,clean,low,True,No detected risk.
 APP-07,np-net-37,1.11.8,False,clean,low,True,No detected risk.
-APP-07,np-proto-13,5.4.8,False,clean,low,True,No detected risk.
 APP-07,np-cache-49,6.6.0,False,clean,low,True,No detected risk.
+APP-07,np-model-52,5.4.6,True,unmaintained,medium,True,"Unmaintained: last updated 2023-05-11, 1 maintainer(s)."
+APP-07,np-stream-64,1.12.9,False,clean,low,True,No detected risk.
+APP-07,np-queue-67,4.9.9,True,unmaintained,medium,True,"Unmaintained: last updated 2021-03-11, 6 maintainer(s)."
+APP-07,np-cache-46,3.1.4,False,clean,low,True,No detected risk.
+APP-07,np-crypto-4,1.11.7,False,clean,low,True,No detected risk.
+APP-07,np-cache-25,2.6.2,False,clean,low,True,No detected risk.
+APP-07,np-proto-13,5.4.8,False,clean,low,True,No detected risk.
+APP-07,np-logger-58,5.7.0,False,clean,low,True,No detected risk.
 APP-07,express,4.17.1,True,transitive_vuln,high,True,Reachable vulnerable dependency (CVE-2022-24999).
-APP-07,ws,7.4.5,True,transitive_vuln,medium,True,Reachable vulnerable dependency (CVE-2021-3807).
+APP-07,ws,7.4.5,False,clean,low,False,Vulnerable version present but unreachable (no used path); suppressed.
 APP-07,log-agent,2.3.0,False,clean,low,True,No detected risk.
-APP-07,follow-redirects,1.14.0,True,transitive_vuln,medium,True,Reachable vulnerable dependency (CVE-2022-0536).
-APP-07,qs,6.10.1,True,transitive_vuln,high,True,Reachable vulnerable dependency (CVE-2022-25883).
+APP-07,follow-redirects,1.14.0,False,clean,low,False,Vulnerable version present but unreachable (no used path); suppressed.
+APP-07,qs,6.10.1,False,clean,low,False,Vulnerable version present but unreachable (no used path); suppressed.
 APP-07,minimist,1.2.5,True,transitive_vuln,critical,True,Reachable vulnerable dependency (CVE-2021-44906).
 APP-08,web-toolkit,2.0.0,False,clean,low,True,No detected risk.
 APP-08,requests,2.25.1,False,clean,low,True,No detected risk.
@@ -235,23 +237,30 @@ APP-08,cryptography,3.4.7,False,clean,low,True,No detected risk.
 APP-08,pillow,8.2.0,True,license_conflict,medium,True,License 'HPND' incompatible with Proprietary context.
 APP-08,numpy,1.20.3,False,clean,low,True,No detected risk.
 APP-08,pyyaml,5.3.1,True,vulnerable,critical,True,Reachable vulnerable dependency (CVE-2020-14343).
-APP-08,py-utils-32,4.10.9,False,clean,low,True,No detected risk.
+APP-08,py-pool-20,2.3.1,False,clean,low,True,No detected risk.
+APP-08,py-queue-14,6.5.1,False,clean,low,True,No detected risk.
 APP-08,py-cache-29,5.11.8,False,clean,low,True,No detected risk.
-APP-08,py-io-17,3.3.0,False,clean,low,True,No detected risk.
+APP-08,py-proto-56,1.7.6,False,clean,low,True,No detected risk.
+APP-08,py-template-11,5.6.5,False,clean,low,True,No detected risk.
+APP-08,py-core-47,3.2.9,True,unmaintained,medium,True,"Unmaintained: last updated 2022-01-31, 1 maintainer(s)."
+APP-08,py-server-44,2.4.2,False,clean,low,True,No detected risk.
+APP-08,py-server-26,1.0.8,False,clean,low,True,No detected risk.
+APP-08,py-logger-53,6.5.7,False,clean,low,True,No detected risk.
 APP-08,py-crypto-41,2.6.2,False,clean,low,True,No detected risk.
+APP-08,py-utils-32,4.10.9,False,clean,low,True,No detected risk.
+APP-08,py-text-65,4.8.8,False,clean,low,True,No detected risk.
+APP-08,py-client-5,3.9.3,False,clean,low,True,No detected risk.
+APP-08,py-io-17,3.3.0,False,clean,low,True,No detected risk.
 APP-08,py-session-2,2.7.9,False,clean,low,True,No detected risk.
 APP-08,py-time-59,5.9.5,False,clean,low,True,No detected risk.
-APP-08,py-pool-20,2.3.1,False,clean,low,True,No detected risk.
-APP-08,py-proto-56,1.7.6,False,clean,low,True,No detected risk.
+APP-08,py-http-62,1.2.2,False,clean,low,True,No detected risk.
+APP-08,py-codec-8,3.10.8,False,clean,low,True,No detected risk.
 APP-08,py-codec-68,4.5.3,True,unmaintained,medium,True,"Unmaintained: last updated 2023-02-18, 14 maintainer(s)."
 APP-08,py-logger-23,1.1.6,False,clean,low,True,No detected risk.
-APP-08,py-server-44,2.4.2,False,clean,low,True,No detected risk.
-APP-08,py-codec-8,3.10.8,False,clean,low,True,No detected risk.
-APP-08,py-cache-38,3.8.7,False,clean,low,True,No detected risk.
-APP-08,py-text-65,4.8.8,False,clean,low,True,No detected risk.
+APP-08,py-pool-35,3.1.3,False,clean,low,True,No detected risk.
 APP-08,flask,2.0.1,False,clean,low,True,No detected risk.
 APP-08,report-engine,1.1.0,True,license_conflict,critical,True,License 'AGPL-3.0' incompatible with Proprietary context.
-APP-08,urllib3,1.26.4,True,transitive_vuln,high,True,Reachable vulnerable dependency (CVE-2021-33503).
+APP-08,urllib3,1.26.4,False,clean,low,False,Vulnerable version present but unreachable (no used path); suppressed.
 APP-08,certifi,2021.5.30,False,clean,low,True,No detected risk.
 APP-08,jinja2,3.0.1,False,clean,low,True,No detected risk.
 APP-08,werkzeug,2.0.1,False,clean,low,True,No detected risk.
@@ -261,27 +270,22 @@ APP-09,commons-text,1.9,True,vulnerable,critical,True,Reachable vulnerable depen
 APP-09,snakeyaml,1.29,True,vulnerable,high,True,Reachable vulnerable dependency (CVE-2022-1471).
 APP-09,bcprov-jdk15on,1.68,True,vulnerable,high,True,Reachable vulnerable dependency (CVE-2023-0286).
 APP-09,chart-lib,2.2.0,True,license_conflict,high,True,License 'GPL-2.0' incompatible with Proprietary context.
-APP-09,ma-client-18,5.12.2,True,unmaintained,medium,True,"Unmaintained: last updated 2023-03-06, 7 maintainer(s)."
-APP-09,ma-parser-12,1.2.2,True,unmaintained,medium,True,"Unmaintained: last updated 2022-10-13, 1 maintainer(s)."
-APP-09,ma-async-27,4.0.2,False,clean,low,True,No detected risk.
-APP-09,ma-server-45,2.7.5,False,clean,low,True,No detected risk.
-APP-09,ma-cache-42,6.1.5,False,clean,low,True,No detected risk.
-APP-09,ma-model-54,6.2.1,False,clean,low,True,No detected risk.
-APP-09,ma-client-69,1.7.0,False,clean,low,True,No detected risk.
-APP-09,ma-utils-24,6.1.0,False,clean,low,True,No detected risk.
-APP-09,ma-store-60,2.11.7,False,clean,low,True,No detected risk.
-APP-09,ma-math-51,6.4.8,False,clean,low,True,No detected risk.
-APP-09,ma-async-30,5.2.0,False,clean,low,True,No detected risk.
 APP-09,ma-math-66,4.5.6,False,clean,low,True,No detected risk.
 APP-09,ma-template-15,3.8.2,False,clean,low,True,No detected risk.
-APP-09,ma-schema-0,6.4.3,True,unmaintained,medium,True,"Unmaintained: last updated 2023-10-07, 19 maintainer(s)."
-APP-09,ma-utils-9,4.4.1,False,clean,low,True,No detected risk.
-APP-09,ma-text-57,2.2.0,False,clean,low,True,No detected risk.
 APP-09,ma-common-6,1.6.4,False,clean,low,True,No detected risk.
-APP-09,ma-math-63,4.6.0,False,clean,low,True,No detected risk.
-APP-09,ma-common-21,1.3.1,False,clean,low,True,No detected risk.
+APP-09,ma-server-45,2.7.5,False,clean,low,True,No detected risk.
+APP-09,ma-text-57,2.2.0,False,clean,low,True,No detected risk.
+APP-09,ma-async-30,5.2.0,False,clean,low,True,No detected risk.
 APP-09,ma-session-33,3.6.2,False,clean,low,True,No detected risk.
-APP-09,ma-crypto-48,3.6.9,False,clean,low,True,No detected risk.
+APP-09,ma-session-36,6.8.0,False,clean,low,True,No detected risk.
+APP-09,ma-common-21,1.3.1,False,clean,low,True,No detected risk.
+APP-09,ma-math-63,4.6.0,False,clean,low,True,No detected risk.
+APP-09,ma-cache-42,6.1.5,False,clean,low,True,No detected risk.
+APP-09,ma-client-69,1.7.0,False,clean,low,True,No detected risk.
+APP-09,ma-http-3,2.12.5,False,clean,low,True,No detected risk.
+APP-09,ma-store-60,2.11.7,False,clean,low,True,No detected risk.
+APP-09,ma-model-54,6.2.1,False,clean,low,True,No detected risk.
+APP-09,ma-async-27,4.0.2,False,clean,low,True,No detected risk.
 APP-09,spring-core,5.3.8,False,clean,low,True,No detected risk.
 APP-09,spring-web,5.3.8,False,clean,low,True,No detected risk.
 APP-09,jackson-databind,2.12.3,True,transitive_vuln,high,True,Reachable vulnerable dependency (CVE-2020-36518).
@@ -300,30 +304,24 @@ APP-10,ejs,3.1.6,False,clean,low,True,No detected risk.
 APP-10,node-fetch,2.6.1,True,unmaintained,medium,True,"Unmaintained: last updated 2024-01-19, 9 maintainer(s)."
 APP-10,tar,6.1.0,False,clean,low,True,No detected risk.
 APP-10,analytics-widget,1.2.0,True,license_conflict,high,True,License 'GPL-3.0' incompatible with Proprietary context.
-APP-10,np-logger-28,4.11.8,False,clean,low,True,No detected risk.
-APP-10,np-pool-61,2.4.7,False,clean,low,True,No detected risk.
-APP-10,np-parser-55,3.3.3,False,clean,low,True,No detected risk.
-APP-10,np-model-52,5.4.6,True,unmaintained,medium,True,"Unmaintained: last updated 2023-05-11, 1 maintainer(s)."
-APP-10,np-common-31,2.6.1,False,clean,low,True,No detected risk.
-APP-10,np-pool-16,2.5.2,False,clean,low,True,No detected risk.
-APP-10,np-metrics-22,2.8.2,False,clean,low,True,No detected risk.
-APP-10,np-parser-34,1.7.9,False,clean,low,True,No detected risk.
-APP-10,np-queue-67,4.9.9,True,unmaintained,medium,True,"Unmaintained: last updated 2021-03-11, 6 maintainer(s)."
-APP-10,np-config-43,2.6.0,False,clean,low,True,No detected risk.
-APP-10,np-cache-46,3.1.4,False,clean,low,True,No detected risk.
-APP-10,np-text-10,6.7.2,False,clean,low,True,No detected risk.
-APP-10,np-cache-49,6.6.0,False,clean,low,True,No detected risk.
 APP-10,np-net-37,1.11.8,False,clean,low,True,No detected risk.
+APP-10,np-text-10,6.7.2,False,clean,low,True,No detected risk.
 APP-10,np-crypto-4,1.11.7,False,clean,low,True,No detected risk.
-APP-10,np-queue-40,5.0.1,False,clean,low,True,No detected risk.
-APP-10,np-proto-13,5.4.8,False,clean,low,True,No detected risk.
-APP-10,np-server-19,2.8.3,False,clean,low,True,No detected risk.
+APP-10,np-logger-28,4.11.8,False,clean,low,True,No detected risk.
+APP-10,np-queue-67,4.9.9,True,unmaintained,medium,True,"Unmaintained: last updated 2021-03-11, 6 maintainer(s)."
+APP-10,np-model-52,5.4.6,True,unmaintained,medium,True,"Unmaintained: last updated 2023-05-11, 1 maintainer(s)."
 APP-10,np-cache-25,2.6.2,False,clean,low,True,No detected risk.
+APP-10,np-proto-13,5.4.8,False,clean,low,True,No detected risk.
+APP-10,np-pool-61,2.4.7,False,clean,low,True,No detected risk.
+APP-10,np-config-43,2.6.0,False,clean,low,True,No detected risk.
+APP-10,np-common-31,2.6.1,False,clean,low,True,No detected risk.
+APP-10,np-cache-46,3.1.4,False,clean,low,True,No detected risk.
+APP-10,np-metrics-22,2.8.2,False,clean,low,True,No detected risk.
 APP-10,np-stream-64,1.12.9,False,clean,low,True,No detected risk.
-APP-10,np-cache-7,6.10.1,False,clean,low,True,No detected risk.
-APP-10,express,4.17.1,True,transitive_vuln,high,True,Reachable vulnerable dependency (CVE-2022-24999).
-APP-10,ws,7.4.5,True,transitive_vuln,medium,True,Reachable vulnerable dependency (CVE-2021-3807).
+APP-10,np-server-19,2.8.3,False,clean,low,True,No detected risk.
+APP-10,express,4.17.1,False,clean,low,False,Vulnerable version present but unreachable (no used path); suppressed.
+APP-10,ws,7.4.5,False,clean,low,False,Vulnerable version present but unreachable (no used path); suppressed.
 APP-10,log-agent,2.3.0,False,clean,low,True,No detected risk.
 APP-10,follow-redirects,1.14.0,True,transitive_vuln,medium,True,Reachable vulnerable dependency (CVE-2022-0536).
-APP-10,qs,6.10.1,True,transitive_vuln,high,True,Reachable vulnerable dependency (CVE-2022-25883).
-APP-10,minimist,1.2.5,True,transitive_vuln,critical,True,Reachable vulnerable dependency (CVE-2021-44906).
+APP-10,qs,6.10.1,False,clean,low,False,Vulnerable version present but unreachable (no used path); suppressed.
+APP-10,minimist,1.2.5,True,unmaintained,medium,False,"Unmaintained: last updated 2023-08-26, 5 maintainer(s)."

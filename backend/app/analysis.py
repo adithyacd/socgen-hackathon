@@ -13,6 +13,7 @@ from typing import Optional
 import networkx as nx
 
 from .data.loader import load_dataset
+from .evaluation.evaluate import evaluate
 from .engines.license import find_license_conflicts
 from .engines.maintenance import find_unmaintained
 from .engines.reachability import annotate_reachability
@@ -137,9 +138,10 @@ def build_context(data_dir: Optional[Path] = None) -> AnalysisContext:
         f.score = score_finding(f)
     apps = _aggregate(ds, g, findings)
     summary = _summarize(apps, findings)
+    metrics = evaluate(ds, findings)
     result = AnalysisResult(
         generated_at=REFERENCE_DATE.isoformat(),
-        apps=apps, findings=findings, summary=summary,
+        apps=apps, findings=findings, summary=summary, metrics=metrics,
     )
     return AnalysisContext(ds=ds, g=g, findings=findings, result=result)
 
