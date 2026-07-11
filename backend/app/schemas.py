@@ -72,3 +72,37 @@ class AppGraph(BaseModel):
     nodes: list[GraphNode]
     edges: list[GraphEdge]
     findings: list[Finding]
+
+
+class WarRoomCve(BaseModel):
+    cve_id: str
+    description: str
+    cvss: float
+    severity: str
+    kev: bool
+    epss: float
+    affected_library: str
+    fixed_version: str | None = None
+    affected_apps: int
+    exploitable_apps: int
+
+
+class AppImpact(BaseModel):
+    app_id: str
+    name: str
+    business_criticality: str
+    internet_facing: bool
+    environment: str
+    library: str
+    version: str
+    is_direct: bool
+    is_reachable: bool
+    path: list[str]
+
+
+class WarRoomImpact(BaseModel):
+    cve: WarRoomCve
+    affected: list[AppImpact]
+    affected_count: int
+    exploitable_count: int
+    blast_radius: str

@@ -92,3 +92,37 @@ export interface AppGraph {
   edges: GraphEdge[];
   findings: Finding[];
 }
+
+export interface WarRoomCve {
+  cve_id: string;
+  description: string;
+  cvss: number;
+  severity: Severity;
+  kev: boolean;
+  epss: number;
+  affected_library: string;
+  fixed_version: string | null;
+  affected_apps: number;
+  exploitable_apps: number;
+}
+
+export interface AppImpact {
+  app_id: string;
+  name: string;
+  business_criticality: Severity;
+  internet_facing: boolean;
+  environment: string;
+  library: string;
+  version: string;
+  is_direct: boolean;
+  is_reachable: boolean;
+  path: string[];
+}
+
+export interface WarRoomImpact {
+  cve: WarRoomCve;
+  affected: AppImpact[];
+  affected_count: number;
+  exploitable_count: number;
+  blast_radius: string;
+}

@@ -10,7 +10,8 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from .analysis import build_context
 from .graphview import build_app_graph
-from .schemas import AnalysisResult, AppGraph
+from .schemas import AnalysisResult, AppGraph, WarRoomCve, WarRoomImpact
+from .warroom import notable_cves, war_room_impact
 
 app = FastAPI(title="Sentinel — Supply Chain Risk Intelligence", version="0.2.0")
 
@@ -41,3 +42,16 @@ def app_graph(app_id: str) -> AppGraph:
     if graph is None:
         raise HTTPException(status_code=404, detail=f"Unknown app: {app_id}")
     return graph
+
+
+@app.get("/api/warroom/cves", response_model=list[WarRoomCve])
+def warroom_cves() -> list[WarRoomCve]:
+    return notable_cves(CTX)
+
+
+@app.get("/api/warroom/impact/{cve_id}", response_model=WarRoomImpact)
+def warroom_impact(cve_id: str) -> WarRoomImpact:
+    impact = war_room_impact(CTX, cve_id)
+    if impact is None:
+        raise HTTPException(status_code=404, detail=f"Unknown CVE: {cve_id}")
+    return impact

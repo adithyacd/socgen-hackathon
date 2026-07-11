@@ -1,4 +1,4 @@
-import type { AnalysisResult, AppGraph } from "./types";
+import type { AnalysisResult, AppGraph, WarRoomCve, WarRoomImpact } from "./types";
 
 // In dev, hit the FastAPI server. For the static deploy build, set
 // VITE_API_BASE="" and drop a prebuilt analysis.json next to index.html.
@@ -21,6 +21,14 @@ export async function fetchAppGraph(appId: string): Promise<AppGraph> {
   return getJSON<AppGraph>(
     API_BASE ? `/api/apps/${appId}/graph` : `/graphs/${appId}.json`,
   );
+}
+
+export async function fetchWarRoomCves(): Promise<WarRoomCve[]> {
+  return getJSON<WarRoomCve[]>(API_BASE ? "/api/warroom/cves" : "/warroom/cves.json");
+}
+
+export async function fetchWarRoomImpact(cve: string): Promise<WarRoomImpact> {
+  return getJSON<WarRoomImpact>(API_BASE ? `/api/warroom/impact/${cve}` : `/warroom/${cve}.json`);
 }
 
 export { API_BASE };
