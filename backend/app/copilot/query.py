@@ -18,6 +18,15 @@ from ..schemas import CopilotAnswer
 RISK_TYPES = {"vulnerable", "transitive_vuln", "license_conflict", "unmaintained"}
 SEVERITIES = {"critical", "high", "medium", "low"}
 
+# Suggested questions surfaced in the UI and precomputed for the static build.
+SUGGESTIONS = [
+    "Which internet-facing apps have exploitable criticals?",
+    "Show all GPL license conflicts",
+    "Which apps are exposed to Log4Shell?",
+    "List unmaintained libraries",
+    "Which transitive dependencies are exploitable?",
+]
+
 
 class QuerySpec(BaseModel):
     entity: str = "findings"                 # "apps" | "findings"

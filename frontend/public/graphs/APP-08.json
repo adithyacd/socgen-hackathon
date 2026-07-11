@@ -1,0 +1,1073 @@
+{
+  "app": {
+    "app_id": "APP-08",
+    "name": "hr-portal",
+    "business_criticality": "medium",
+    "owner": "People Systems",
+    "internet_facing": false,
+    "environment": "staging",
+    "ecosystem": "pypi",
+    "license_context": "Proprietary",
+    "risk_score": 32.3,
+    "risk_band": "medium",
+    "dependency_count": 33,
+    "direct_count": 27,
+    "counts": {
+      "vulnerable": 1,
+      "transitive_vuln": 1,
+      "license_conflict": 2,
+      "unmaintained": 2,
+      "exploitable_criticals": 1
+    },
+    "top_findings": [
+      {
+        "app_id": "APP-08",
+        "library": "pyyaml",
+        "version": "5.3.1",
+        "is_direct": true,
+        "risk_type": "vulnerable",
+        "severity": "critical",
+        "secondary_risks": [
+          "unmaintained"
+        ],
+        "cve_ids": [
+          "CVE-2020-14343"
+        ],
+        "is_reachable": true,
+        "detail": "1 known vulnerability (max CVSS 9.8).",
+        "score": 12.4,
+        "paths": [
+          [
+            "pyyaml@5.3.1"
+          ]
+        ],
+        "fixed_versions": {
+          "CVE-2020-14343": "5.4"
+        },
+        "max_cvss": 9.8,
+        "kev": false,
+        "epss": 0.48
+      },
+      {
+        "app_id": "APP-08",
+        "library": "report-engine",
+        "version": "1.1.0",
+        "is_direct": false,
+        "risk_type": "license_conflict",
+        "severity": "critical",
+        "secondary_risks": [
+          "unmaintained"
+        ],
+        "cve_ids": [],
+        "is_reachable": null,
+        "detail": "License 'AGPL-3.0' (copyleft) is incompatible with the Proprietary application context.",
+        "score": 10.0,
+        "paths": [],
+        "fixed_versions": {},
+        "max_cvss": 0.0,
+        "kev": false,
+        "epss": 0.0
+      },
+      {
+        "app_id": "APP-08",
+        "library": "pillow",
+        "version": "8.2.0",
+        "is_direct": true,
+        "risk_type": "license_conflict",
+        "severity": "medium",
+        "secondary_risks": [
+          "unmaintained"
+        ],
+        "cve_ids": [],
+        "is_reachable": null,
+        "detail": "License 'HPND' (unknown) is incompatible with the Proprietary application context.",
+        "score": 4.0,
+        "paths": [],
+        "fixed_versions": {},
+        "max_cvss": 0.0,
+        "kev": false,
+        "epss": 0.0
+      },
+      {
+        "app_id": "APP-08",
+        "library": "py-core-47",
+        "version": "3.2.9",
+        "is_direct": true,
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "secondary_risks": [],
+        "cve_ids": [],
+        "is_reachable": null,
+        "detail": "Unmaintained: last updated 2022-01-31, 1 maintainer (bus factor = 1).",
+        "score": 2.0,
+        "paths": [],
+        "fixed_versions": {},
+        "max_cvss": 0.0,
+        "kev": false,
+        "epss": 0.0
+      },
+      {
+        "app_id": "APP-08",
+        "library": "py-codec-68",
+        "version": "4.5.3",
+        "is_direct": true,
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "secondary_risks": [],
+        "cve_ids": [],
+        "is_reachable": null,
+        "detail": "Unmaintained: last updated 2023-02-18, 14 maintainers.",
+        "score": 2.0,
+        "paths": [],
+        "fixed_versions": {},
+        "max_cvss": 0.0,
+        "kev": false,
+        "epss": 0.0
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "app:APP-08",
+      "library": "hr-portal",
+      "version": "",
+      "kind": "app",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "",
+      "last_updated": "",
+      "maintainer_count": 0,
+      "score": 0.0,
+      "depth": 0
+    },
+    {
+      "id": "APP-08::web-toolkit@2.0.0",
+      "library": "web-toolkit",
+      "version": "2.0.0",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "BSD-3-Clause",
+      "last_updated": "2025-02-24",
+      "maintainer_count": 18,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-08::requests@2.25.1",
+      "library": "requests",
+      "version": "2.25.1",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "Apache-2.0",
+      "last_updated": "2024-05-08",
+      "maintainer_count": 28,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-08::cryptography@3.4.7",
+      "library": "cryptography",
+      "version": "3.4.7",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "Apache-2.0",
+      "last_updated": "2024-08-25",
+      "maintainer_count": 24,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-08::pillow@8.2.0",
+      "library": "pillow",
+      "version": "8.2.0",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": "medium",
+      "risk_types": [
+        "license_conflict",
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "license": "HPND",
+      "last_updated": "2024-02-25",
+      "maintainer_count": 10,
+      "score": 4.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-08::numpy@1.20.3",
+      "library": "numpy",
+      "version": "1.20.3",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "BSD-3-Clause",
+      "last_updated": "2024-12-13",
+      "maintainer_count": 40,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-08::pyyaml@5.3.1",
+      "library": "pyyaml",
+      "version": "5.3.1",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "severity": "critical",
+      "risk_types": [
+        "unmaintained",
+        "vulnerable"
+      ],
+      "cve_ids": [
+        "CVE-2020-14343"
+      ],
+      "license": "MIT",
+      "last_updated": "2023-05-09",
+      "maintainer_count": 8,
+      "score": 12.4,
+      "depth": 1
+    },
+    {
+      "id": "APP-08::py-pool-20@2.3.1",
+      "library": "py-pool-20",
+      "version": "2.3.1",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "Apache-2.0",
+      "last_updated": "2025-09-04",
+      "maintainer_count": 20,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-08::py-queue-14@6.5.1",
+      "library": "py-queue-14",
+      "version": "6.5.1",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "Apache-2.0",
+      "last_updated": "2026-01-16",
+      "maintainer_count": 16,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-08::py-cache-29@5.11.8",
+      "library": "py-cache-29",
+      "version": "5.11.8",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "BSD-3-Clause",
+      "last_updated": "2025-12-18",
+      "maintainer_count": 3,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-08::py-proto-56@1.7.6",
+      "library": "py-proto-56",
+      "version": "1.7.6",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "CC0-1.0",
+      "last_updated": "2024-10-30",
+      "maintainer_count": 8,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-08::py-template-11@5.6.5",
+      "library": "py-template-11",
+      "version": "5.6.5",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "Apache-2.0",
+      "last_updated": "2025-03-18",
+      "maintainer_count": 18,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-08::py-core-47@3.2.9",
+      "library": "py-core-47",
+      "version": "3.2.9",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": "medium",
+      "risk_types": [
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "license": "Unlicense",
+      "last_updated": "2022-01-31",
+      "maintainer_count": 1,
+      "score": 2.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-08::py-server-44@2.4.2",
+      "library": "py-server-44",
+      "version": "2.4.2",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "MIT",
+      "last_updated": "2024-07-26",
+      "maintainer_count": 14,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-08::py-server-26@1.0.8",
+      "library": "py-server-26",
+      "version": "1.0.8",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "MIT",
+      "last_updated": "2025-10-07",
+      "maintainer_count": 9,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-08::py-logger-53@6.5.7",
+      "library": "py-logger-53",
+      "version": "6.5.7",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "Apache-2.0",
+      "last_updated": "2025-03-31",
+      "maintainer_count": 18,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-08::py-crypto-41@2.6.2",
+      "library": "py-crypto-41",
+      "version": "2.6.2",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "BSD-3-Clause",
+      "last_updated": "2024-07-10",
+      "maintainer_count": 3,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-08::py-utils-32@4.10.9",
+      "library": "py-utils-32",
+      "version": "4.10.9",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "BSD-3-Clause",
+      "last_updated": "2025-09-14",
+      "maintainer_count": 10,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-08::py-text-65@4.8.8",
+      "library": "py-text-65",
+      "version": "4.8.8",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "Apache-2.0",
+      "last_updated": "2025-09-04",
+      "maintainer_count": 17,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-08::py-client-5@3.9.3",
+      "library": "py-client-5",
+      "version": "3.9.3",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "MIT",
+      "last_updated": "2024-09-26",
+      "maintainer_count": 9,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-08::py-io-17@3.3.0",
+      "library": "py-io-17",
+      "version": "3.3.0",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "MIT",
+      "last_updated": "2024-10-21",
+      "maintainer_count": 4,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-08::py-session-2@2.7.9",
+      "library": "py-session-2",
+      "version": "2.7.9",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "MIT",
+      "last_updated": "2024-11-11",
+      "maintainer_count": 7,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-08::py-time-59@5.9.5",
+      "library": "py-time-59",
+      "version": "5.9.5",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "Unlicense",
+      "last_updated": "2025-04-29",
+      "maintainer_count": 18,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-08::py-http-62@1.2.2",
+      "library": "py-http-62",
+      "version": "1.2.2",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "Apache-2.0",
+      "last_updated": "2025-12-10",
+      "maintainer_count": 8,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-08::py-codec-8@3.10.8",
+      "library": "py-codec-8",
+      "version": "3.10.8",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "BSD-3-Clause",
+      "last_updated": "2025-08-29",
+      "maintainer_count": 3,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-08::py-codec-68@4.5.3",
+      "library": "py-codec-68",
+      "version": "4.5.3",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": "medium",
+      "risk_types": [
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "license": "BSD-3-Clause",
+      "last_updated": "2023-02-18",
+      "maintainer_count": 14,
+      "score": 2.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-08::py-logger-23@1.1.6",
+      "library": "py-logger-23",
+      "version": "1.1.6",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "ISC",
+      "last_updated": "2024-07-31",
+      "maintainer_count": 16,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-08::py-pool-35@3.1.3",
+      "library": "py-pool-35",
+      "version": "3.1.3",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "Apache-2.0",
+      "last_updated": "2024-08-19",
+      "maintainer_count": 16,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-08::flask@2.0.1",
+      "library": "flask",
+      "version": "2.0.1",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "BSD-3-Clause",
+      "last_updated": "2024-11-07",
+      "maintainer_count": 20,
+      "score": 0.0,
+      "depth": 2
+    },
+    {
+      "id": "APP-08::report-engine@1.1.0",
+      "library": "report-engine",
+      "version": "1.1.0",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": "critical",
+      "risk_types": [
+        "license_conflict",
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "license": "AGPL-3.0",
+      "last_updated": "2023-07-21",
+      "maintainer_count": 2,
+      "score": 10.0,
+      "depth": 2
+    },
+    {
+      "id": "APP-08::urllib3@1.26.4",
+      "library": "urllib3",
+      "version": "1.26.4",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": true,
+      "is_reachable": false,
+      "severity": "high",
+      "risk_types": [
+        "transitive_vuln"
+      ],
+      "cve_ids": [
+        "CVE-2021-33503"
+      ],
+      "license": "MIT",
+      "last_updated": "2024-06-13",
+      "maintainer_count": 16,
+      "score": 0.841575,
+      "depth": 2
+    },
+    {
+      "id": "APP-08::certifi@2021.5.30",
+      "library": "certifi",
+      "version": "2021.5.30",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "MPL-2.0",
+      "last_updated": "2024-07-20",
+      "maintainer_count": 6,
+      "score": 0.0,
+      "depth": 2
+    },
+    {
+      "id": "APP-08::jinja2@3.0.1",
+      "library": "jinja2",
+      "version": "3.0.1",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "BSD-3-Clause",
+      "last_updated": "2024-10-01",
+      "maintainer_count": 15,
+      "score": 0.0,
+      "depth": 3
+    },
+    {
+      "id": "APP-08::werkzeug@2.0.1",
+      "library": "werkzeug",
+      "version": "2.0.1",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "BSD-3-Clause",
+      "last_updated": "2024-10-01",
+      "maintainer_count": 15,
+      "score": 0.0,
+      "depth": 3
+    }
+  ],
+  "edges": [
+    {
+      "source": "app:APP-08",
+      "target": "APP-08::web-toolkit@2.0.0",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-08",
+      "target": "APP-08::requests@2.25.1",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-08",
+      "target": "APP-08::cryptography@3.4.7",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-08",
+      "target": "APP-08::pillow@8.2.0",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-08",
+      "target": "APP-08::numpy@1.20.3",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-08",
+      "target": "APP-08::pyyaml@5.3.1",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-08",
+      "target": "APP-08::py-pool-20@2.3.1",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-08",
+      "target": "APP-08::py-queue-14@6.5.1",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-08",
+      "target": "APP-08::py-cache-29@5.11.8",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-08",
+      "target": "APP-08::py-proto-56@1.7.6",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-08",
+      "target": "APP-08::py-template-11@5.6.5",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-08",
+      "target": "APP-08::py-core-47@3.2.9",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-08",
+      "target": "APP-08::py-server-44@2.4.2",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-08",
+      "target": "APP-08::py-server-26@1.0.8",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-08",
+      "target": "APP-08::py-logger-53@6.5.7",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-08",
+      "target": "APP-08::py-crypto-41@2.6.2",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-08",
+      "target": "APP-08::py-utils-32@4.10.9",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-08",
+      "target": "APP-08::py-text-65@4.8.8",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-08",
+      "target": "APP-08::py-client-5@3.9.3",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-08",
+      "target": "APP-08::py-io-17@3.3.0",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-08",
+      "target": "APP-08::py-session-2@2.7.9",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-08",
+      "target": "APP-08::py-time-59@5.9.5",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-08",
+      "target": "APP-08::py-http-62@1.2.2",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-08",
+      "target": "APP-08::py-codec-8@3.10.8",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-08",
+      "target": "APP-08::py-codec-68@4.5.3",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-08",
+      "target": "APP-08::py-logger-23@1.1.6",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-08",
+      "target": "APP-08::py-pool-35@3.1.3",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "APP-08::web-toolkit@2.0.0",
+      "target": "APP-08::flask@2.0.1",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-08::web-toolkit@2.0.0",
+      "target": "APP-08::requests@2.25.1",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-08::web-toolkit@2.0.0",
+      "target": "APP-08::report-engine@1.1.0",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-08::requests@2.25.1",
+      "target": "APP-08::urllib3@1.26.4",
+      "used": false,
+      "is_direct": false
+    },
+    {
+      "source": "APP-08::requests@2.25.1",
+      "target": "APP-08::certifi@2021.5.30",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-08::flask@2.0.1",
+      "target": "APP-08::jinja2@3.0.1",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-08::flask@2.0.1",
+      "target": "APP-08::werkzeug@2.0.1",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-08::report-engine@1.1.0",
+      "target": "APP-08::pyyaml@5.3.1",
+      "used": false,
+      "is_direct": false
+    }
+  ],
+  "findings": [
+    {
+      "app_id": "APP-08",
+      "library": "pyyaml",
+      "version": "5.3.1",
+      "is_direct": true,
+      "risk_type": "vulnerable",
+      "severity": "critical",
+      "secondary_risks": [
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2020-14343"
+      ],
+      "is_reachable": true,
+      "detail": "1 known vulnerability (max CVSS 9.8).",
+      "score": 12.4,
+      "paths": [
+        [
+          "pyyaml@5.3.1"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2020-14343": "5.4"
+      },
+      "max_cvss": 9.8,
+      "kev": false,
+      "epss": 0.48
+    },
+    {
+      "app_id": "APP-08",
+      "library": "report-engine",
+      "version": "1.1.0",
+      "is_direct": false,
+      "risk_type": "license_conflict",
+      "severity": "critical",
+      "secondary_risks": [
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "is_reachable": null,
+      "detail": "License 'AGPL-3.0' (copyleft) is incompatible with the Proprietary application context.",
+      "score": 10.0,
+      "paths": [],
+      "fixed_versions": {},
+      "max_cvss": 0.0,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-08",
+      "library": "pillow",
+      "version": "8.2.0",
+      "is_direct": true,
+      "risk_type": "license_conflict",
+      "severity": "medium",
+      "secondary_risks": [
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "is_reachable": null,
+      "detail": "License 'HPND' (unknown) is incompatible with the Proprietary application context.",
+      "score": 4.0,
+      "paths": [],
+      "fixed_versions": {},
+      "max_cvss": 0.0,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-08",
+      "library": "py-core-47",
+      "version": "3.2.9",
+      "is_direct": true,
+      "risk_type": "unmaintained",
+      "severity": "medium",
+      "secondary_risks": [],
+      "cve_ids": [],
+      "is_reachable": null,
+      "detail": "Unmaintained: last updated 2022-01-31, 1 maintainer (bus factor = 1).",
+      "score": 2.0,
+      "paths": [],
+      "fixed_versions": {},
+      "max_cvss": 0.0,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-08",
+      "library": "py-codec-68",
+      "version": "4.5.3",
+      "is_direct": true,
+      "risk_type": "unmaintained",
+      "severity": "medium",
+      "secondary_risks": [],
+      "cve_ids": [],
+      "is_reachable": null,
+      "detail": "Unmaintained: last updated 2023-02-18, 14 maintainers.",
+      "score": 2.0,
+      "paths": [],
+      "fixed_versions": {},
+      "max_cvss": 0.0,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-08",
+      "library": "urllib3",
+      "version": "1.26.4",
+      "is_direct": false,
+      "risk_type": "transitive_vuln",
+      "severity": "high",
+      "secondary_risks": [],
+      "cve_ids": [
+        "CVE-2021-33503"
+      ],
+      "is_reachable": false,
+      "detail": "1 known vulnerability (max CVSS 7.5). Transitive via 2-hop chain (2 paths). Present but UNREACHABLE — no used call path.",
+      "score": 0.841575,
+      "paths": [
+        [
+          "requests@2.25.1",
+          "urllib3@1.26.4"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2021-33503": "1.26.5"
+      },
+      "max_cvss": 7.5,
+      "kev": false,
+      "epss": 0.29
+    }
+  ]
+}

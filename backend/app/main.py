@@ -9,6 +9,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
 from .analysis import build_context
+from .copilot.query import SUGGESTIONS as COPILOT_SUGGESTIONS
 from .copilot.query import answer as copilot_answer
 from .graphview import build_app_graph
 from .narratives.incident import incident_brief
@@ -24,14 +25,6 @@ from .schemas import (
     WarRoomImpact,
 )
 from .warroom import notable_cves, war_room_impact
-
-COPILOT_SUGGESTIONS = [
-    "Which internet-facing apps have exploitable criticals?",
-    "Show all GPL license conflicts",
-    "Which apps are exposed to Log4Shell?",
-    "List unmaintained libraries",
-    "Which transitive dependencies are exploitable?",
-]
 
 app = FastAPI(title="Sentinel — Supply Chain Risk Intelligence", version="0.2.0")
 

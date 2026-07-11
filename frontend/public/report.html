@@ -1,0 +1,55 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Sentinel — Supply Chain Risk Report</title>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, Segoe UI, Roboto, sans-serif; color:#1a2233; margin:0; padding:40px; max-width:900px; margin:0 auto; }
+  h1 { font-size:26px; margin:0; }
+  h2 { font-size:16px; margin:28px 0 8px; border-bottom:2px solid #E8B23A; padding-bottom:4px; }
+  .sub { color:#66708a; font-size:13px; }
+  .grid { display:flex; gap:16px; margin:16px 0; }
+  .kpi { flex:1; border:1px solid #e2e6ee; border-radius:8px; padding:12px; }
+  .kpi .n { font-size:26px; font-weight:800; }
+  .kpi .l { font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:#66708a; }
+  table { width:100%; border-collapse:collapse; font-size:12.5px; margin-top:6px; }
+  th,td { text-align:left; padding:6px 8px; border-bottom:1px solid #eceef4; }
+  th { background:#f6f8fc; font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:#66708a; }
+  .brief { background:#fbf7ec; border:1px solid #ecdcb0; border-radius:8px; padding:12px; font-size:13px; }
+  .foot { margin-top:32px; color:#9aa3b8; font-size:11px; }
+</style></head><body>
+  <div style="display:flex;align-items:baseline;justify-content:space-between">
+    <h1>Sentinel — Supply Chain Risk Report</h1>
+    <span class="sub">Generated 2026-04-01</span>
+  </div>
+  <p class="sub">Software Bill of Materials risk across 10 applications ·
+  326 dependencies analyzed.</p>
+
+  <div class="grid">
+    <div class="kpi"><div class="n" style="color:#c81e3a">10</div><div class="l">Exploitable criticals</div></div>
+    <div class="kpi"><div class="n">42&rarr;29</div><div class="l">Vuln alerts after reachability</div></div>
+    <div class="kpi"><div class="n" style="color:#1f8a6d">31%</div><div class="l">Alert noise removed</div></div>
+    <div class="kpi"><div class="n">payments-gateway</div><div class="l">Highest-risk app</div></div>
+  </div>
+
+  <h2>Application risk ranking</h2>
+  <table><thead><tr><th>Application</th><th>Criticality</th><th>Internet</th><th>Score</th>
+    <th>Exploitable</th><th>Vulnerable</th><th>License</th><th>Unmaintained</th></tr></thead>
+    <tbody><tr><td>payments-gateway</td><td>critical</td><td>yes</td><td style='color:#c81e3a;font-weight:700'>82</td><td>2</td><td>5</td><td>1</td><td>4</td></tr><tr><td>trading-engine</td><td>critical</td><td>no</td><td style='color:#c26a12;font-weight:700'>75</td><td>2</td><td>5</td><td>1</td><td>5</td></tr><tr><td>loan-origination</td><td>high</td><td>no</td><td style='color:#c26a12;font-weight:700'>59</td><td>1</td><td>5</td><td>1</td><td>5</td></tr><tr><td>mobile-banking-api</td><td>critical</td><td>yes</td><td style='color:#c26a12;font-weight:700'>58</td><td>1</td><td>2</td><td>2</td><td>2</td></tr><tr><td>market-data-feed</td><td>medium</td><td>yes</td><td style='color:#9a7d10;font-weight:700'>49</td><td>1</td><td>6</td><td>1</td><td>5</td></tr><tr><td>customer-portal</td><td>high</td><td>yes</td><td style='color:#9a7d10;font-weight:700'>48</td><td>0</td><td>5</td><td>1</td><td>6</td></tr><tr><td>internal-wiki</td><td>low</td><td>no</td><td style='color:#9a7d10;font-weight:700'>43</td><td>1</td><td>5</td><td>1</td><td>2</td></tr><tr><td>fraud-detection</td><td>high</td><td>no</td><td style='color:#9a7d10;font-weight:700'>41</td><td>1</td><td>2</td><td>2</td><td>1</td></tr><tr><td>notifications-service</td><td>medium</td><td>yes</td><td style='color:#9a7d10;font-weight:700'>39</td><td>0</td><td>5</td><td>1</td><td>5</td></tr><tr><td>hr-portal</td><td>medium</td><td>no</td><td style='color:#9a7d10;font-weight:700'>32</td><td>1</td><td>2</td><td>2</td><td>2</td></tr></tbody></table>
+
+  <h2>Zero-day exposure — Log4Shell (CVE-2021-44228)</h2>
+  <div class="brief">CVE-2021-44228 in log4j-core (CVSS 10.0, CISA KEV) is present in 4 applications; 2 are actually exploitable and 2 carry the vulnerable code on an unreachable path. Highest priority is payments-gateway (critical, internet-facing), reached via app → spring-boot-starter@2.5.4 → enterprise-logging@1.4.0 → log4j-core@2.14.1. Remediate by upgrading log4j-core to 2.17.1. Blast radius: 2 app(s) exploitable · 2 business-critical · 1 internet-facing.</div>
+
+  <h2>Recommended remediation — cheapest path to safe</h2>
+  <table><thead><tr><th>Library</th><th>Upgrade</th><th>Apps fixed</th><th>CVEs</th>
+    <th>Criticals</th><th>Conflict</th></tr></thead><tbody><tr><td>commons-text</td><td>&rarr; 1.10.0</td><td>4</td><td>1</td><td>4</td><td>—</td></tr><tr><td>pyyaml</td><td>&rarr; 5.4</td><td>3</td><td>1</td><td>3</td><td>—</td></tr><tr><td>snakeyaml</td><td>&rarr; 2.0</td><td>4</td><td>1</td><td>0</td><td>—</td></tr><tr><td>bcprov-jdk15on</td><td>&rarr; 1.70</td><td>4</td><td>1</td><td>0</td><td>—</td></tr><tr><td>log4j-core</td><td>&rarr; 2.17.1</td><td>2</td><td>1</td><td>2</td><td>⚠ enterprise-logging</td></tr><tr><td>lodash</td><td>&rarr; 4.17.21</td><td>3</td><td>1</td><td>0</td><td>—</td></tr><tr><td>jackson-databind</td><td>&rarr; 2.13.2.1</td><td>3</td><td>1</td><td>0</td><td>—</td></tr><tr><td>urllib3</td><td>&rarr; 1.26.5</td><td>2</td><td>1</td><td>0</td><td>⚠ requests</td></tr></tbody></table>
+
+  <h2>Detection accuracy (vs. ground-truth labels)</h2>
+  <table><tbody>
+    <tr><td>Vulnerability detection</td><td>100%</td></tr>
+    <tr><td>Transitive resolution</td><td>100%</td></tr>
+    <tr><td>License-conflict detection</td><td>100%</td></tr>
+    <tr><td>False-positive rate (naive &rarr; reachability)</td><td>5% &rarr; 0%</td></tr>
+    <tr><td>Vulnerability-alert precision (naive &rarr; reachability)</td><td>69% &rarr; 100%</td></tr>
+  </tbody></table>
+
+  <p class="foot">Sentinel · Société Générale PSG Hackathon · synthetic dataset · generated by build_static.py</p>
+</body></html>

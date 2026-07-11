@@ -1,0 +1,1322 @@
+{
+  "app": {
+    "app_id": "APP-06",
+    "name": "loan-origination",
+    "business_criticality": "high",
+    "owner": "Lending",
+    "internet_facing": false,
+    "environment": "prod",
+    "ecosystem": "maven",
+    "license_context": "Proprietary",
+    "risk_score": 58.6,
+    "risk_band": "high",
+    "dependency_count": 37,
+    "direct_count": 27,
+    "counts": {
+      "vulnerable": 3,
+      "transitive_vuln": 2,
+      "license_conflict": 1,
+      "unmaintained": 5,
+      "exploitable_criticals": 1
+    },
+    "top_findings": [
+      {
+        "app_id": "APP-06",
+        "library": "commons-text",
+        "version": "1.9",
+        "is_direct": true,
+        "risk_type": "vulnerable",
+        "severity": "critical",
+        "secondary_risks": [
+          "unmaintained"
+        ],
+        "cve_ids": [
+          "CVE-2022-42889"
+        ],
+        "is_reachable": true,
+        "detail": "1 known vulnerability (max CVSS 9.8) — CISA KEV.",
+        "score": 19.5,
+        "paths": [
+          [
+            "commons-text@1.9"
+          ]
+        ],
+        "fixed_versions": {
+          "CVE-2022-42889": "1.10.0"
+        },
+        "max_cvss": 9.8,
+        "kev": true,
+        "epss": 0.9
+      },
+      {
+        "app_id": "APP-06",
+        "library": "snakeyaml",
+        "version": "1.29",
+        "is_direct": true,
+        "risk_type": "vulnerable",
+        "severity": "high",
+        "secondary_risks": [
+          "unmaintained"
+        ],
+        "cve_ids": [
+          "CVE-2022-1471"
+        ],
+        "is_reachable": true,
+        "detail": "1 known vulnerability (max CVSS 8.3).",
+        "score": 9.135,
+        "paths": [
+          [
+            "snakeyaml@1.29"
+          ]
+        ],
+        "fixed_versions": {
+          "CVE-2022-1471": "2.0"
+        },
+        "max_cvss": 8.3,
+        "kev": false,
+        "epss": 0.61
+      },
+      {
+        "app_id": "APP-06",
+        "library": "bcprov-jdk15on",
+        "version": "1.68",
+        "is_direct": true,
+        "risk_type": "vulnerable",
+        "severity": "high",
+        "secondary_risks": [
+          "unmaintained"
+        ],
+        "cve_ids": [
+          "CVE-2023-0286"
+        ],
+        "is_reachable": true,
+        "detail": "1 known vulnerability (max CVSS 7.4).",
+        "score": 7.875,
+        "paths": [
+          [
+            "bcprov-jdk15on@1.68"
+          ]
+        ],
+        "fixed_versions": {
+          "CVE-2023-0286": "1.70"
+        },
+        "max_cvss": 7.4,
+        "kev": false,
+        "epss": 0.25
+      },
+      {
+        "app_id": "APP-06",
+        "library": "chart-lib",
+        "version": "2.2.0",
+        "is_direct": true,
+        "risk_type": "license_conflict",
+        "severity": "high",
+        "secondary_risks": [
+          "unmaintained"
+        ],
+        "cve_ids": [],
+        "is_reachable": null,
+        "detail": "License 'GPL-2.0' (copyleft) is incompatible with the Proprietary application context.",
+        "score": 7.0,
+        "paths": [],
+        "fixed_versions": {},
+        "max_cvss": 0.0,
+        "kev": false,
+        "epss": 0.0
+      },
+      {
+        "app_id": "APP-06",
+        "library": "log4j-core",
+        "version": "2.14.1",
+        "is_direct": false,
+        "risk_type": "transitive_vuln",
+        "severity": "critical",
+        "secondary_risks": [],
+        "cve_ids": [
+          "CVE-2021-44228"
+        ],
+        "is_reachable": false,
+        "detail": "1 known vulnerability (max CVSS 10.0) — CISA KEV. Transitive via 3-hop chain. Present but UNREACHABLE — no used call path.",
+        "score": 2.086875,
+        "paths": [
+          [
+            "spring-boot-starter@2.5.4",
+            "enterprise-logging@1.4.0",
+            "log4j-core@2.14.1"
+          ]
+        ],
+        "fixed_versions": {
+          "CVE-2021-44228": "2.17.1"
+        },
+        "max_cvss": 10.0,
+        "kev": true,
+        "epss": 0.975
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "app:APP-06",
+      "library": "loan-origination",
+      "version": "",
+      "kind": "app",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "",
+      "last_updated": "",
+      "maintainer_count": 0,
+      "score": 0.0,
+      "depth": 0
+    },
+    {
+      "id": "APP-06::spring-boot-starter@2.5.4",
+      "library": "spring-boot-starter",
+      "version": "2.5.4",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "Apache-2.0",
+      "last_updated": "2025-01-18",
+      "maintainer_count": 40,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-06::hibernate-core@5.4.32",
+      "library": "hibernate-core",
+      "version": "5.4.32",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "LGPL-3.0",
+      "last_updated": "2024-07-20",
+      "maintainer_count": 35,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-06::commons-text@1.9",
+      "library": "commons-text",
+      "version": "1.9",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "severity": "critical",
+      "risk_types": [
+        "unmaintained",
+        "vulnerable"
+      ],
+      "cve_ids": [
+        "CVE-2022-42889"
+      ],
+      "license": "Apache-2.0",
+      "last_updated": "2023-12-14",
+      "maintainer_count": 10,
+      "score": 19.5,
+      "depth": 1
+    },
+    {
+      "id": "APP-06::snakeyaml@1.29",
+      "library": "snakeyaml",
+      "version": "1.29",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "severity": "high",
+      "risk_types": [
+        "unmaintained",
+        "vulnerable"
+      ],
+      "cve_ids": [
+        "CVE-2022-1471"
+      ],
+      "license": "Apache-2.0",
+      "last_updated": "2024-02-25",
+      "maintainer_count": 4,
+      "score": 9.135,
+      "depth": 1
+    },
+    {
+      "id": "APP-06::bcprov-jdk15on@1.68",
+      "library": "bcprov-jdk15on",
+      "version": "1.68",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "severity": "high",
+      "risk_types": [
+        "unmaintained",
+        "vulnerable"
+      ],
+      "cve_ids": [
+        "CVE-2023-0286"
+      ],
+      "license": "MIT",
+      "last_updated": "2024-01-19",
+      "maintainer_count": 7,
+      "score": 7.875,
+      "depth": 1
+    },
+    {
+      "id": "APP-06::chart-lib@2.2.0",
+      "library": "chart-lib",
+      "version": "2.2.0",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": "high",
+      "risk_types": [
+        "license_conflict",
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "license": "GPL-2.0",
+      "last_updated": "2023-11-07",
+      "maintainer_count": 3,
+      "score": 7.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-06::ma-schema-0@6.4.3",
+      "library": "ma-schema-0",
+      "version": "6.4.3",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": "medium",
+      "risk_types": [
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "license": "MIT",
+      "last_updated": "2023-10-07",
+      "maintainer_count": 19,
+      "score": 2.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-06::ma-client-69@1.7.0",
+      "library": "ma-client-69",
+      "version": "1.7.0",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "MIT",
+      "last_updated": "2025-09-01",
+      "maintainer_count": 13,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-06::ma-math-66@4.5.6",
+      "library": "ma-math-66",
+      "version": "4.5.6",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "ISC",
+      "last_updated": "2024-05-20",
+      "maintainer_count": 6,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-06::ma-common-6@1.6.4",
+      "library": "ma-common-6",
+      "version": "1.6.4",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "BSD-3-Clause",
+      "last_updated": "2025-06-03",
+      "maintainer_count": 7,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-06::ma-store-60@2.11.7",
+      "library": "ma-store-60",
+      "version": "2.11.7",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "Apache-2.0",
+      "last_updated": "2024-09-30",
+      "maintainer_count": 10,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-06::ma-server-45@2.7.5",
+      "library": "ma-server-45",
+      "version": "2.7.5",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "Apache-2.0",
+      "last_updated": "2026-01-04",
+      "maintainer_count": 9,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-06::ma-client-18@5.12.2",
+      "library": "ma-client-18",
+      "version": "5.12.2",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": "medium",
+      "risk_types": [
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "license": "ISC",
+      "last_updated": "2023-03-06",
+      "maintainer_count": 7,
+      "score": 2.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-06::ma-parser-12@1.2.2",
+      "library": "ma-parser-12",
+      "version": "1.2.2",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": "medium",
+      "risk_types": [
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "license": "ISC",
+      "last_updated": "2022-10-13",
+      "maintainer_count": 1,
+      "score": 2.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-06::ma-async-30@5.2.0",
+      "library": "ma-async-30",
+      "version": "5.2.0",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "MPL-2.0",
+      "last_updated": "2025-12-07",
+      "maintainer_count": 7,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-06::ma-utils-24@6.1.0",
+      "library": "ma-utils-24",
+      "version": "6.1.0",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "BSD-3-Clause",
+      "last_updated": "2025-08-17",
+      "maintainer_count": 5,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-06::ma-utils-9@4.4.1",
+      "library": "ma-utils-9",
+      "version": "4.4.1",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "BSD-3-Clause",
+      "last_updated": "2024-12-08",
+      "maintainer_count": 8,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-06::ma-math-51@6.4.8",
+      "library": "ma-math-51",
+      "version": "6.4.8",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "ISC",
+      "last_updated": "2024-11-24",
+      "maintainer_count": 14,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-06::ma-crypto-48@3.6.9",
+      "library": "ma-crypto-48",
+      "version": "3.6.9",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "MPL-2.0",
+      "last_updated": "2024-07-09",
+      "maintainer_count": 14,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-06::ma-model-54@6.2.1",
+      "library": "ma-model-54",
+      "version": "6.2.1",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "BSD-3-Clause",
+      "last_updated": "2024-08-29",
+      "maintainer_count": 4,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-06::ma-session-36@6.8.0",
+      "library": "ma-session-36",
+      "version": "6.8.0",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "BSD-3-Clause",
+      "last_updated": "2024-06-15",
+      "maintainer_count": 5,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-06::ma-async-27@4.0.2",
+      "library": "ma-async-27",
+      "version": "4.0.2",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "ISC",
+      "last_updated": "2024-06-23",
+      "maintainer_count": 10,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-06::ma-math-63@4.6.0",
+      "library": "ma-math-63",
+      "version": "4.6.0",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "ISC",
+      "last_updated": "2024-07-06",
+      "maintainer_count": 14,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-06::ma-common-21@1.3.1",
+      "library": "ma-common-21",
+      "version": "1.3.1",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "Unlicense",
+      "last_updated": "2025-03-05",
+      "maintainer_count": 4,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-06::ma-session-33@3.6.2",
+      "library": "ma-session-33",
+      "version": "3.6.2",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "BSD-3-Clause",
+      "last_updated": "2025-07-06",
+      "maintainer_count": 16,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-06::ma-client-39@1.5.2",
+      "library": "ma-client-39",
+      "version": "1.5.2",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "BSD-3-Clause",
+      "last_updated": "2024-10-16",
+      "maintainer_count": 7,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-06::ma-http-3@2.12.5",
+      "library": "ma-http-3",
+      "version": "2.12.5",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "ISC",
+      "last_updated": "2025-06-10",
+      "maintainer_count": 5,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-06::spring-core@5.3.8",
+      "library": "spring-core",
+      "version": "5.3.8",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "Apache-2.0",
+      "last_updated": "2025-02-24",
+      "maintainer_count": 55,
+      "score": 0.0,
+      "depth": 2
+    },
+    {
+      "id": "APP-06::spring-web@5.3.8",
+      "library": "spring-web",
+      "version": "5.3.8",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "Apache-2.0",
+      "last_updated": "2025-02-24",
+      "maintainer_count": 55,
+      "score": 0.0,
+      "depth": 2
+    },
+    {
+      "id": "APP-06::jackson-databind@2.12.3",
+      "library": "jackson-databind",
+      "version": "2.12.3",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": true,
+      "is_reachable": false,
+      "severity": "high",
+      "risk_types": [
+        "transitive_vuln"
+      ],
+      "cve_ids": [
+        "CVE-2020-36518"
+      ],
+      "license": "Apache-2.0",
+      "last_updated": "2024-08-25",
+      "maintainer_count": 30,
+      "score": 0.8966999999999998,
+      "depth": 2
+    },
+    {
+      "id": "APP-06::enterprise-logging@1.4.0",
+      "library": "enterprise-logging",
+      "version": "1.4.0",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "Apache-2.0",
+      "last_updated": "2024-10-01",
+      "maintainer_count": 6,
+      "score": 0.0,
+      "depth": 2
+    },
+    {
+      "id": "APP-06::jboss-logging@3.4.1",
+      "library": "jboss-logging",
+      "version": "3.4.1",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "Apache-2.0",
+      "last_updated": "2024-04-01",
+      "maintainer_count": 9,
+      "score": 0.0,
+      "depth": 2
+    },
+    {
+      "id": "APP-06::commons-lang3@3.12.0",
+      "library": "commons-lang3",
+      "version": "3.12.0",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "Apache-2.0",
+      "last_updated": "2024-05-08",
+      "maintainer_count": 14,
+      "score": 0.0,
+      "depth": 2
+    },
+    {
+      "id": "APP-06::commons-logging@1.2",
+      "library": "commons-logging",
+      "version": "1.2",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": "medium",
+      "risk_types": [
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "license": "Apache-2.0",
+      "last_updated": "2022-04-02",
+      "maintainer_count": 8,
+      "score": 2.0,
+      "depth": 3
+    },
+    {
+      "id": "APP-06::jackson-core@2.12.3",
+      "library": "jackson-core",
+      "version": "2.12.3",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "Apache-2.0",
+      "last_updated": "2024-08-25",
+      "maintainer_count": 30,
+      "score": 0.0,
+      "depth": 3
+    },
+    {
+      "id": "APP-06::log4j-core@2.14.1",
+      "library": "log4j-core",
+      "version": "2.14.1",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": true,
+      "is_reachable": false,
+      "severity": "critical",
+      "risk_types": [
+        "transitive_vuln"
+      ],
+      "cve_ids": [
+        "CVE-2021-44228"
+      ],
+      "license": "Apache-2.0",
+      "last_updated": "2024-06-13",
+      "maintainer_count": 25,
+      "score": 2.086875,
+      "depth": 3
+    },
+    {
+      "id": "APP-06::slf4j-api@1.7.30",
+      "library": "slf4j-api",
+      "version": "1.7.30",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "severity": "medium",
+      "risk_types": [
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "license": "MIT",
+      "last_updated": "2023-11-07",
+      "maintainer_count": 12,
+      "score": 2.0,
+      "depth": 3
+    }
+  ],
+  "edges": [
+    {
+      "source": "app:APP-06",
+      "target": "APP-06::spring-boot-starter@2.5.4",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-06",
+      "target": "APP-06::hibernate-core@5.4.32",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-06",
+      "target": "APP-06::commons-text@1.9",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-06",
+      "target": "APP-06::snakeyaml@1.29",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-06",
+      "target": "APP-06::bcprov-jdk15on@1.68",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-06",
+      "target": "APP-06::chart-lib@2.2.0",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-06",
+      "target": "APP-06::ma-schema-0@6.4.3",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-06",
+      "target": "APP-06::ma-client-69@1.7.0",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-06",
+      "target": "APP-06::ma-math-66@4.5.6",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-06",
+      "target": "APP-06::ma-common-6@1.6.4",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-06",
+      "target": "APP-06::ma-store-60@2.11.7",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-06",
+      "target": "APP-06::ma-server-45@2.7.5",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-06",
+      "target": "APP-06::ma-client-18@5.12.2",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-06",
+      "target": "APP-06::ma-parser-12@1.2.2",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-06",
+      "target": "APP-06::ma-async-30@5.2.0",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-06",
+      "target": "APP-06::ma-utils-24@6.1.0",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-06",
+      "target": "APP-06::ma-utils-9@4.4.1",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-06",
+      "target": "APP-06::ma-math-51@6.4.8",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-06",
+      "target": "APP-06::ma-crypto-48@3.6.9",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-06",
+      "target": "APP-06::ma-model-54@6.2.1",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-06",
+      "target": "APP-06::ma-session-36@6.8.0",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-06",
+      "target": "APP-06::ma-async-27@4.0.2",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-06",
+      "target": "APP-06::ma-math-63@4.6.0",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-06",
+      "target": "APP-06::ma-common-21@1.3.1",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-06",
+      "target": "APP-06::ma-session-33@3.6.2",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-06",
+      "target": "APP-06::ma-client-39@1.5.2",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-06",
+      "target": "APP-06::ma-http-3@2.12.5",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "APP-06::spring-boot-starter@2.5.4",
+      "target": "APP-06::spring-core@5.3.8",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-06::spring-boot-starter@2.5.4",
+      "target": "APP-06::spring-web@5.3.8",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-06::spring-boot-starter@2.5.4",
+      "target": "APP-06::jackson-databind@2.12.3",
+      "used": false,
+      "is_direct": false
+    },
+    {
+      "source": "APP-06::spring-boot-starter@2.5.4",
+      "target": "APP-06::enterprise-logging@1.4.0",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-06::hibernate-core@5.4.32",
+      "target": "APP-06::jboss-logging@3.4.1",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-06::commons-text@1.9",
+      "target": "APP-06::commons-lang3@3.12.0",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-06::spring-core@5.3.8",
+      "target": "APP-06::commons-logging@1.2",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-06::spring-web@5.3.8",
+      "target": "APP-06::jackson-databind@2.12.3",
+      "used": false,
+      "is_direct": false
+    },
+    {
+      "source": "APP-06::jackson-databind@2.12.3",
+      "target": "APP-06::jackson-core@2.12.3",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-06::enterprise-logging@1.4.0",
+      "target": "APP-06::log4j-core@2.14.1",
+      "used": false,
+      "is_direct": false
+    },
+    {
+      "source": "APP-06::enterprise-logging@1.4.0",
+      "target": "APP-06::slf4j-api@1.7.30",
+      "used": true,
+      "is_direct": false
+    }
+  ],
+  "findings": [
+    {
+      "app_id": "APP-06",
+      "library": "commons-text",
+      "version": "1.9",
+      "is_direct": true,
+      "risk_type": "vulnerable",
+      "severity": "critical",
+      "secondary_risks": [
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2022-42889"
+      ],
+      "is_reachable": true,
+      "detail": "1 known vulnerability (max CVSS 9.8) — CISA KEV.",
+      "score": 19.5,
+      "paths": [
+        [
+          "commons-text@1.9"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2022-42889": "1.10.0"
+      },
+      "max_cvss": 9.8,
+      "kev": true,
+      "epss": 0.9
+    },
+    {
+      "app_id": "APP-06",
+      "library": "snakeyaml",
+      "version": "1.29",
+      "is_direct": true,
+      "risk_type": "vulnerable",
+      "severity": "high",
+      "secondary_risks": [
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2022-1471"
+      ],
+      "is_reachable": true,
+      "detail": "1 known vulnerability (max CVSS 8.3).",
+      "score": 9.135,
+      "paths": [
+        [
+          "snakeyaml@1.29"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2022-1471": "2.0"
+      },
+      "max_cvss": 8.3,
+      "kev": false,
+      "epss": 0.61
+    },
+    {
+      "app_id": "APP-06",
+      "library": "bcprov-jdk15on",
+      "version": "1.68",
+      "is_direct": true,
+      "risk_type": "vulnerable",
+      "severity": "high",
+      "secondary_risks": [
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2023-0286"
+      ],
+      "is_reachable": true,
+      "detail": "1 known vulnerability (max CVSS 7.4).",
+      "score": 7.875,
+      "paths": [
+        [
+          "bcprov-jdk15on@1.68"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2023-0286": "1.70"
+      },
+      "max_cvss": 7.4,
+      "kev": false,
+      "epss": 0.25
+    },
+    {
+      "app_id": "APP-06",
+      "library": "chart-lib",
+      "version": "2.2.0",
+      "is_direct": true,
+      "risk_type": "license_conflict",
+      "severity": "high",
+      "secondary_risks": [
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "is_reachable": null,
+      "detail": "License 'GPL-2.0' (copyleft) is incompatible with the Proprietary application context.",
+      "score": 7.0,
+      "paths": [],
+      "fixed_versions": {},
+      "max_cvss": 0.0,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-06",
+      "library": "log4j-core",
+      "version": "2.14.1",
+      "is_direct": false,
+      "risk_type": "transitive_vuln",
+      "severity": "critical",
+      "secondary_risks": [],
+      "cve_ids": [
+        "CVE-2021-44228"
+      ],
+      "is_reachable": false,
+      "detail": "1 known vulnerability (max CVSS 10.0) — CISA KEV. Transitive via 3-hop chain. Present but UNREACHABLE — no used call path.",
+      "score": 2.086875,
+      "paths": [
+        [
+          "spring-boot-starter@2.5.4",
+          "enterprise-logging@1.4.0",
+          "log4j-core@2.14.1"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2021-44228": "2.17.1"
+      },
+      "max_cvss": 10.0,
+      "kev": true,
+      "epss": 0.975
+    },
+    {
+      "app_id": "APP-06",
+      "library": "ma-schema-0",
+      "version": "6.4.3",
+      "is_direct": true,
+      "risk_type": "unmaintained",
+      "severity": "medium",
+      "secondary_risks": [],
+      "cve_ids": [],
+      "is_reachable": null,
+      "detail": "Unmaintained: last updated 2023-10-07, 19 maintainers.",
+      "score": 2.0,
+      "paths": [],
+      "fixed_versions": {},
+      "max_cvss": 0.0,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-06",
+      "library": "ma-client-18",
+      "version": "5.12.2",
+      "is_direct": true,
+      "risk_type": "unmaintained",
+      "severity": "medium",
+      "secondary_risks": [],
+      "cve_ids": [],
+      "is_reachable": null,
+      "detail": "Unmaintained: last updated 2023-03-06, 7 maintainers.",
+      "score": 2.0,
+      "paths": [],
+      "fixed_versions": {},
+      "max_cvss": 0.0,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-06",
+      "library": "ma-parser-12",
+      "version": "1.2.2",
+      "is_direct": true,
+      "risk_type": "unmaintained",
+      "severity": "medium",
+      "secondary_risks": [],
+      "cve_ids": [],
+      "is_reachable": null,
+      "detail": "Unmaintained: last updated 2022-10-13, 1 maintainer (bus factor = 1).",
+      "score": 2.0,
+      "paths": [],
+      "fixed_versions": {},
+      "max_cvss": 0.0,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-06",
+      "library": "commons-logging",
+      "version": "1.2",
+      "is_direct": false,
+      "risk_type": "unmaintained",
+      "severity": "medium",
+      "secondary_risks": [],
+      "cve_ids": [],
+      "is_reachable": null,
+      "detail": "Unmaintained: last updated 2022-04-02, 8 maintainers.",
+      "score": 2.0,
+      "paths": [],
+      "fixed_versions": {},
+      "max_cvss": 0.0,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-06",
+      "library": "slf4j-api",
+      "version": "1.7.30",
+      "is_direct": false,
+      "risk_type": "unmaintained",
+      "severity": "medium",
+      "secondary_risks": [],
+      "cve_ids": [],
+      "is_reachable": null,
+      "detail": "Unmaintained: last updated 2023-11-07, 12 maintainers.",
+      "score": 2.0,
+      "paths": [],
+      "fixed_versions": {},
+      "max_cvss": 0.0,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-06",
+      "library": "jackson-databind",
+      "version": "2.12.3",
+      "is_direct": false,
+      "risk_type": "transitive_vuln",
+      "severity": "high",
+      "secondary_risks": [],
+      "cve_ids": [
+        "CVE-2020-36518"
+      ],
+      "is_reachable": false,
+      "detail": "1 known vulnerability (max CVSS 7.5). Transitive via 2-hop chain (2 paths). Present but UNREACHABLE — no used call path.",
+      "score": 0.8966999999999998,
+      "paths": [
+        [
+          "spring-boot-starter@2.5.4",
+          "jackson-databind@2.12.3"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2020-36518": "2.13.2.1"
+      },
+      "max_cvss": 7.5,
+      "kev": false,
+      "epss": 0.44
+    }
+  ]
+}

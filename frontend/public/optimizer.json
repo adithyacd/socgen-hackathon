@@ -1,0 +1,236 @@
+{
+  "total_exploitable_risk": 285.2,
+  "total_exploitable_criticals": 10,
+  "total_exploitable_findings": 29,
+  "recommended": [
+    {
+      "library": "commons-text",
+      "to_version": "1.10.0",
+      "from_versions": [
+        "1.9"
+      ],
+      "cves_fixed": [
+        "CVE-2022-42889"
+      ],
+      "apps_affected": [
+        "APP-01",
+        "APP-03",
+        "APP-06",
+        "APP-09"
+      ],
+      "app_count": 4,
+      "risk_removed": 78.0,
+      "criticals_removed": 4,
+      "conflicts": []
+    },
+    {
+      "library": "pyyaml",
+      "to_version": "5.4",
+      "from_versions": [
+        "5.3.1"
+      ],
+      "cves_fixed": [
+        "CVE-2020-14343"
+      ],
+      "apps_affected": [
+        "APP-04",
+        "APP-05",
+        "APP-08"
+      ],
+      "app_count": 3,
+      "risk_removed": 37.2,
+      "criticals_removed": 3,
+      "conflicts": []
+    },
+    {
+      "library": "snakeyaml",
+      "to_version": "2.0",
+      "from_versions": [
+        "1.29"
+      ],
+      "cves_fixed": [
+        "CVE-2022-1471"
+      ],
+      "apps_affected": [
+        "APP-01",
+        "APP-03",
+        "APP-06",
+        "APP-09"
+      ],
+      "app_count": 4,
+      "risk_removed": 36.5,
+      "criticals_removed": 0,
+      "conflicts": []
+    },
+    {
+      "library": "bcprov-jdk15on",
+      "to_version": "1.70",
+      "from_versions": [
+        "1.68"
+      ],
+      "cves_fixed": [
+        "CVE-2023-0286"
+      ],
+      "apps_affected": [
+        "APP-01",
+        "APP-03",
+        "APP-06",
+        "APP-09"
+      ],
+      "app_count": 4,
+      "risk_removed": 31.5,
+      "criticals_removed": 0,
+      "conflicts": []
+    },
+    {
+      "library": "log4j-core",
+      "to_version": "2.17.1",
+      "from_versions": [
+        "2.14.1"
+      ],
+      "cves_fixed": [
+        "CVE-2021-44228"
+      ],
+      "apps_affected": [
+        "APP-01",
+        "APP-03"
+      ],
+      "app_count": 2,
+      "risk_removed": 27.8,
+      "criticals_removed": 2,
+      "conflicts": [
+        {
+          "app_id": "APP-01",
+          "parent_library": "enterprise-logging",
+          "constraint": ">=2.0.0,<2.16.0"
+        }
+      ]
+    },
+    {
+      "library": "lodash",
+      "to_version": "4.17.21",
+      "from_versions": [
+        "4.17.15"
+      ],
+      "cves_fixed": [
+        "CVE-2021-23337"
+      ],
+      "apps_affected": [
+        "APP-02",
+        "APP-07",
+        "APP-10"
+      ],
+      "app_count": 3,
+      "risk_removed": 24.5,
+      "criticals_removed": 0,
+      "conflicts": []
+    },
+    {
+      "library": "jackson-databind",
+      "to_version": "2.13.2.1",
+      "from_versions": [
+        "2.12.3"
+      ],
+      "cves_fixed": [
+        "CVE-2020-36518"
+      ],
+      "apps_affected": [
+        "APP-01",
+        "APP-03",
+        "APP-09"
+      ],
+      "app_count": 3,
+      "risk_removed": 17.9,
+      "criticals_removed": 0,
+      "conflicts": []
+    },
+    {
+      "library": "urllib3",
+      "to_version": "1.26.5",
+      "from_versions": [
+        "1.26.4"
+      ],
+      "cves_fixed": [
+        "CVE-2021-33503"
+      ],
+      "apps_affected": [
+        "APP-04",
+        "APP-05"
+      ],
+      "app_count": 2,
+      "risk_removed": 11.2,
+      "criticals_removed": 0,
+      "conflicts": [
+        {
+          "app_id": "APP-04",
+          "parent_library": "requests",
+          "constraint": ">=1.26.0,<1.26.5"
+        }
+      ]
+    },
+    {
+      "library": "minimist",
+      "to_version": "1.2.6",
+      "from_versions": [
+        "1.2.5"
+      ],
+      "cves_fixed": [
+        "CVE-2021-44906"
+      ],
+      "apps_affected": [
+        "APP-07"
+      ],
+      "app_count": 1,
+      "risk_removed": 8.9,
+      "criticals_removed": 1,
+      "conflicts": [
+        {
+          "app_id": "APP-02",
+          "parent_library": "log-agent",
+          "constraint": ">=1.2.0,<1.2.6"
+        }
+      ]
+    },
+    {
+      "library": "follow-redirects",
+      "to_version": "1.14.8",
+      "from_versions": [
+        "1.14.0"
+      ],
+      "cves_fixed": [
+        "CVE-2022-0536"
+      ],
+      "apps_affected": [
+        "APP-02",
+        "APP-10"
+      ],
+      "app_count": 2,
+      "risk_removed": 6.2,
+      "criticals_removed": 0,
+      "conflicts": [
+        {
+          "app_id": "APP-02",
+          "parent_library": "axios",
+          "constraint": ">=1.0.0,<1.14.7"
+        }
+      ]
+    },
+    {
+      "library": "express",
+      "to_version": "4.17.3",
+      "from_versions": [
+        "4.17.1"
+      ],
+      "cves_fixed": [
+        "CVE-2022-24999"
+      ],
+      "apps_affected": [
+        "APP-07"
+      ],
+      "app_count": 1,
+      "risk_removed": 5.4,
+      "criticals_removed": 0,
+      "conflicts": []
+    }
+  ]
+}

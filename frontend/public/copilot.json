@@ -1,0 +1,885 @@
+{
+  "Which internet-facing apps have exploitable criticals?": {
+    "question": "Which internet-facing apps have exploitable criticals?",
+    "answer": "3 critical exploitable internet-facing applications: payments-gateway, mobile-banking-api, market-data-feed.",
+    "query": {
+      "entity": "apps",
+      "severity": "critical",
+      "reachable": true,
+      "internet_facing": true
+    },
+    "matches": [
+      {
+        "app_id": "APP-01",
+        "app": "payments-gateway"
+      },
+      {
+        "app_id": "APP-04",
+        "app": "mobile-banking-api"
+      },
+      {
+        "app_id": "APP-07",
+        "app": "market-data-feed"
+      }
+    ],
+    "match_count": 3,
+    "source": "rules"
+  },
+  "Show all GPL license conflicts": {
+    "question": "Show all GPL license conflicts",
+    "answer": "10 GPL license-conflicting dependencies: chart-lib in payments-gateway, analytics-widget in customer-portal, chart-lib in trading-engine, report-engine in mobile-banking-api, report-engine in fraud-detection, chart-lib in loan-origination\u2026.",
+    "query": {
+      "entity": "findings",
+      "risk_type": "license_conflict",
+      "license_family": "GPL"
+    },
+    "matches": [
+      {
+        "app_id": "APP-01",
+        "app": "payments-gateway",
+        "library": "chart-lib",
+        "version": "2.2.0",
+        "risk_type": "license_conflict",
+        "severity": "high",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-02",
+        "app": "customer-portal",
+        "library": "analytics-widget",
+        "version": "1.2.0",
+        "risk_type": "license_conflict",
+        "severity": "high",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-03",
+        "app": "trading-engine",
+        "library": "chart-lib",
+        "version": "2.2.0",
+        "risk_type": "license_conflict",
+        "severity": "high",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-04",
+        "app": "mobile-banking-api",
+        "library": "report-engine",
+        "version": "1.1.0",
+        "risk_type": "license_conflict",
+        "severity": "critical",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-05",
+        "app": "fraud-detection",
+        "library": "report-engine",
+        "version": "1.1.0",
+        "risk_type": "license_conflict",
+        "severity": "critical",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-06",
+        "app": "loan-origination",
+        "library": "chart-lib",
+        "version": "2.2.0",
+        "risk_type": "license_conflict",
+        "severity": "high",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-07",
+        "app": "market-data-feed",
+        "library": "analytics-widget",
+        "version": "1.2.0",
+        "risk_type": "license_conflict",
+        "severity": "high",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-08",
+        "app": "hr-portal",
+        "library": "report-engine",
+        "version": "1.1.0",
+        "risk_type": "license_conflict",
+        "severity": "critical",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-09",
+        "app": "internal-wiki",
+        "library": "chart-lib",
+        "version": "2.2.0",
+        "risk_type": "license_conflict",
+        "severity": "high",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-10",
+        "app": "notifications-service",
+        "library": "analytics-widget",
+        "version": "1.2.0",
+        "risk_type": "license_conflict",
+        "severity": "high",
+        "reachable": null,
+        "cves": []
+      }
+    ],
+    "match_count": 10,
+    "source": "rules"
+  },
+  "Which apps are exposed to Log4Shell?": {
+    "question": "Which apps are exposed to Log4Shell?",
+    "answer": "4 log4j  applications: payments-gateway, trading-engine, loan-origination, internal-wiki.",
+    "query": {
+      "entity": "apps",
+      "library": "log4j"
+    },
+    "matches": [
+      {
+        "app_id": "APP-01",
+        "app": "payments-gateway"
+      },
+      {
+        "app_id": "APP-03",
+        "app": "trading-engine"
+      },
+      {
+        "app_id": "APP-06",
+        "app": "loan-origination"
+      },
+      {
+        "app_id": "APP-09",
+        "app": "internal-wiki"
+      }
+    ],
+    "match_count": 4,
+    "source": "rules"
+  },
+  "List unmaintained libraries": {
+    "question": "List unmaintained libraries",
+    "answer": "69 unmaintained dependencies: commons-text in payments-gateway, snakeyaml in payments-gateway, bcprov-jdk15on in payments-gateway, lodash in customer-portal, minimist in customer-portal, commons-text in trading-engine\u2026.",
+    "query": {
+      "entity": "findings",
+      "risk_type": "unmaintained"
+    },
+    "matches": [
+      {
+        "app_id": "APP-01",
+        "app": "payments-gateway",
+        "library": "commons-text",
+        "version": "1.9",
+        "risk_type": "vulnerable",
+        "severity": "critical",
+        "reachable": null,
+        "cves": [
+          "CVE-2022-42889"
+        ]
+      },
+      {
+        "app_id": "APP-01",
+        "app": "payments-gateway",
+        "library": "snakeyaml",
+        "version": "1.29",
+        "risk_type": "vulnerable",
+        "severity": "high",
+        "reachable": null,
+        "cves": [
+          "CVE-2022-1471"
+        ]
+      },
+      {
+        "app_id": "APP-01",
+        "app": "payments-gateway",
+        "library": "bcprov-jdk15on",
+        "version": "1.68",
+        "risk_type": "vulnerable",
+        "severity": "high",
+        "reachable": null,
+        "cves": [
+          "CVE-2023-0286"
+        ]
+      },
+      {
+        "app_id": "APP-02",
+        "app": "customer-portal",
+        "library": "lodash",
+        "version": "4.17.15",
+        "risk_type": "vulnerable",
+        "severity": "high",
+        "reachable": null,
+        "cves": [
+          "CVE-2021-23337"
+        ]
+      },
+      {
+        "app_id": "APP-02",
+        "app": "customer-portal",
+        "library": "minimist",
+        "version": "1.2.5",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-03",
+        "app": "trading-engine",
+        "library": "commons-text",
+        "version": "1.9",
+        "risk_type": "vulnerable",
+        "severity": "critical",
+        "reachable": null,
+        "cves": [
+          "CVE-2022-42889"
+        ]
+      },
+      {
+        "app_id": "APP-03",
+        "app": "trading-engine",
+        "library": "snakeyaml",
+        "version": "1.29",
+        "risk_type": "vulnerable",
+        "severity": "high",
+        "reachable": null,
+        "cves": [
+          "CVE-2022-1471"
+        ]
+      },
+      {
+        "app_id": "APP-03",
+        "app": "trading-engine",
+        "library": "bcprov-jdk15on",
+        "version": "1.68",
+        "risk_type": "vulnerable",
+        "severity": "high",
+        "reachable": null,
+        "cves": [
+          "CVE-2023-0286"
+        ]
+      },
+      {
+        "app_id": "APP-04",
+        "app": "mobile-banking-api",
+        "library": "pyyaml",
+        "version": "5.3.1",
+        "risk_type": "vulnerable",
+        "severity": "critical",
+        "reachable": null,
+        "cves": [
+          "CVE-2020-14343"
+        ]
+      },
+      {
+        "app_id": "APP-05",
+        "app": "fraud-detection",
+        "library": "pyyaml",
+        "version": "5.3.1",
+        "risk_type": "vulnerable",
+        "severity": "critical",
+        "reachable": null,
+        "cves": [
+          "CVE-2020-14343"
+        ]
+      },
+      {
+        "app_id": "APP-06",
+        "app": "loan-origination",
+        "library": "commons-text",
+        "version": "1.9",
+        "risk_type": "vulnerable",
+        "severity": "critical",
+        "reachable": null,
+        "cves": [
+          "CVE-2022-42889"
+        ]
+      },
+      {
+        "app_id": "APP-06",
+        "app": "loan-origination",
+        "library": "snakeyaml",
+        "version": "1.29",
+        "risk_type": "vulnerable",
+        "severity": "high",
+        "reachable": null,
+        "cves": [
+          "CVE-2022-1471"
+        ]
+      },
+      {
+        "app_id": "APP-06",
+        "app": "loan-origination",
+        "library": "bcprov-jdk15on",
+        "version": "1.68",
+        "risk_type": "vulnerable",
+        "severity": "high",
+        "reachable": null,
+        "cves": [
+          "CVE-2023-0286"
+        ]
+      },
+      {
+        "app_id": "APP-07",
+        "app": "market-data-feed",
+        "library": "lodash",
+        "version": "4.17.15",
+        "risk_type": "vulnerable",
+        "severity": "high",
+        "reachable": null,
+        "cves": [
+          "CVE-2021-23337"
+        ]
+      },
+      {
+        "app_id": "APP-07",
+        "app": "market-data-feed",
+        "library": "minimist",
+        "version": "1.2.5",
+        "risk_type": "transitive_vuln",
+        "severity": "critical",
+        "reachable": true,
+        "cves": [
+          "CVE-2021-44906"
+        ]
+      },
+      {
+        "app_id": "APP-08",
+        "app": "hr-portal",
+        "library": "pyyaml",
+        "version": "5.3.1",
+        "risk_type": "vulnerable",
+        "severity": "critical",
+        "reachable": null,
+        "cves": [
+          "CVE-2020-14343"
+        ]
+      },
+      {
+        "app_id": "APP-09",
+        "app": "internal-wiki",
+        "library": "commons-text",
+        "version": "1.9",
+        "risk_type": "vulnerable",
+        "severity": "critical",
+        "reachable": null,
+        "cves": [
+          "CVE-2022-42889"
+        ]
+      },
+      {
+        "app_id": "APP-09",
+        "app": "internal-wiki",
+        "library": "snakeyaml",
+        "version": "1.29",
+        "risk_type": "vulnerable",
+        "severity": "high",
+        "reachable": null,
+        "cves": [
+          "CVE-2022-1471"
+        ]
+      },
+      {
+        "app_id": "APP-09",
+        "app": "internal-wiki",
+        "library": "bcprov-jdk15on",
+        "version": "1.68",
+        "risk_type": "vulnerable",
+        "severity": "high",
+        "reachable": null,
+        "cves": [
+          "CVE-2023-0286"
+        ]
+      },
+      {
+        "app_id": "APP-10",
+        "app": "notifications-service",
+        "library": "lodash",
+        "version": "4.17.15",
+        "risk_type": "vulnerable",
+        "severity": "high",
+        "reachable": null,
+        "cves": [
+          "CVE-2021-23337"
+        ]
+      },
+      {
+        "app_id": "APP-10",
+        "app": "notifications-service",
+        "library": "minimist",
+        "version": "1.2.5",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-01",
+        "app": "payments-gateway",
+        "library": "chart-lib",
+        "version": "2.2.0",
+        "risk_type": "license_conflict",
+        "severity": "high",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-02",
+        "app": "customer-portal",
+        "library": "analytics-widget",
+        "version": "1.2.0",
+        "risk_type": "license_conflict",
+        "severity": "high",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-03",
+        "app": "trading-engine",
+        "library": "chart-lib",
+        "version": "2.2.0",
+        "risk_type": "license_conflict",
+        "severity": "high",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-04",
+        "app": "mobile-banking-api",
+        "library": "pillow",
+        "version": "8.2.0",
+        "risk_type": "license_conflict",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-04",
+        "app": "mobile-banking-api",
+        "library": "report-engine",
+        "version": "1.1.0",
+        "risk_type": "license_conflict",
+        "severity": "critical",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-05",
+        "app": "fraud-detection",
+        "library": "pillow",
+        "version": "8.2.0",
+        "risk_type": "license_conflict",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-05",
+        "app": "fraud-detection",
+        "library": "report-engine",
+        "version": "1.1.0",
+        "risk_type": "license_conflict",
+        "severity": "critical",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-06",
+        "app": "loan-origination",
+        "library": "chart-lib",
+        "version": "2.2.0",
+        "risk_type": "license_conflict",
+        "severity": "high",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-07",
+        "app": "market-data-feed",
+        "library": "analytics-widget",
+        "version": "1.2.0",
+        "risk_type": "license_conflict",
+        "severity": "high",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-08",
+        "app": "hr-portal",
+        "library": "pillow",
+        "version": "8.2.0",
+        "risk_type": "license_conflict",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-08",
+        "app": "hr-portal",
+        "library": "report-engine",
+        "version": "1.1.0",
+        "risk_type": "license_conflict",
+        "severity": "critical",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-09",
+        "app": "internal-wiki",
+        "library": "chart-lib",
+        "version": "2.2.0",
+        "risk_type": "license_conflict",
+        "severity": "high",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-10",
+        "app": "notifications-service",
+        "library": "analytics-widget",
+        "version": "1.2.0",
+        "risk_type": "license_conflict",
+        "severity": "high",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-01",
+        "app": "payments-gateway",
+        "library": "ma-schema-0",
+        "version": "6.4.3",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-01",
+        "app": "payments-gateway",
+        "library": "ma-client-18",
+        "version": "5.12.2",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-01",
+        "app": "payments-gateway",
+        "library": "commons-logging",
+        "version": "1.2",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-01",
+        "app": "payments-gateway",
+        "library": "slf4j-api",
+        "version": "1.7.30",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-02",
+        "app": "customer-portal",
+        "library": "moment",
+        "version": "2.29.1",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-02",
+        "app": "customer-portal",
+        "library": "node-fetch",
+        "version": "2.6.1",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-02",
+        "app": "customer-portal",
+        "library": "np-model-52",
+        "version": "5.4.6",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-02",
+        "app": "customer-portal",
+        "library": "np-math-1",
+        "version": "1.3.3",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-02",
+        "app": "customer-portal",
+        "library": "np-queue-67",
+        "version": "4.9.9",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-03",
+        "app": "trading-engine",
+        "library": "ma-schema-0",
+        "version": "6.4.3",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-03",
+        "app": "trading-engine",
+        "library": "ma-client-18",
+        "version": "5.12.2",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-03",
+        "app": "trading-engine",
+        "library": "ma-parser-12",
+        "version": "1.2.2",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-03",
+        "app": "trading-engine",
+        "library": "commons-logging",
+        "version": "1.2",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-03",
+        "app": "trading-engine",
+        "library": "slf4j-api",
+        "version": "1.7.30",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-04",
+        "app": "mobile-banking-api",
+        "library": "py-codec-68",
+        "version": "4.5.3",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-04",
+        "app": "mobile-banking-api",
+        "library": "py-core-47",
+        "version": "3.2.9",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      }
+    ],
+    "match_count": 69,
+    "source": "rules"
+  },
+  "Which transitive dependencies are exploitable?": {
+    "question": "Which transitive dependencies are exploitable?",
+    "answer": "13 exploitable transitive vulnerable dependencies: jackson-databind in payments-gateway, log4j-core in payments-gateway, follow-redirects in customer-portal, minimist in customer-portal, jackson-databind in trading-engine, log4j-core in trading-engine\u2026.",
+    "query": {
+      "entity": "findings",
+      "risk_type": "transitive_vuln",
+      "reachable": true,
+      "transitive": true
+    },
+    "matches": [
+      {
+        "app_id": "APP-01",
+        "app": "payments-gateway",
+        "library": "jackson-databind",
+        "version": "2.12.3",
+        "risk_type": "transitive_vuln",
+        "severity": "high",
+        "reachable": true,
+        "cves": [
+          "CVE-2020-36518"
+        ]
+      },
+      {
+        "app_id": "APP-01",
+        "app": "payments-gateway",
+        "library": "log4j-core",
+        "version": "2.14.1",
+        "risk_type": "transitive_vuln",
+        "severity": "critical",
+        "reachable": true,
+        "cves": [
+          "CVE-2021-44228"
+        ]
+      },
+      {
+        "app_id": "APP-02",
+        "app": "customer-portal",
+        "library": "follow-redirects",
+        "version": "1.14.0",
+        "risk_type": "transitive_vuln",
+        "severity": "medium",
+        "reachable": true,
+        "cves": [
+          "CVE-2022-0536"
+        ]
+      },
+      {
+        "app_id": "APP-02",
+        "app": "customer-portal",
+        "library": "minimist",
+        "version": "1.2.5",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-03",
+        "app": "trading-engine",
+        "library": "jackson-databind",
+        "version": "2.12.3",
+        "risk_type": "transitive_vuln",
+        "severity": "high",
+        "reachable": true,
+        "cves": [
+          "CVE-2020-36518"
+        ]
+      },
+      {
+        "app_id": "APP-03",
+        "app": "trading-engine",
+        "library": "log4j-core",
+        "version": "2.14.1",
+        "risk_type": "transitive_vuln",
+        "severity": "critical",
+        "reachable": true,
+        "cves": [
+          "CVE-2021-44228"
+        ]
+      },
+      {
+        "app_id": "APP-04",
+        "app": "mobile-banking-api",
+        "library": "urllib3",
+        "version": "1.26.4",
+        "risk_type": "transitive_vuln",
+        "severity": "high",
+        "reachable": true,
+        "cves": [
+          "CVE-2021-33503"
+        ]
+      },
+      {
+        "app_id": "APP-05",
+        "app": "fraud-detection",
+        "library": "urllib3",
+        "version": "1.26.4",
+        "risk_type": "transitive_vuln",
+        "severity": "high",
+        "reachable": true,
+        "cves": [
+          "CVE-2021-33503"
+        ]
+      },
+      {
+        "app_id": "APP-07",
+        "app": "market-data-feed",
+        "library": "express",
+        "version": "4.17.1",
+        "risk_type": "transitive_vuln",
+        "severity": "high",
+        "reachable": true,
+        "cves": [
+          "CVE-2022-24999"
+        ]
+      },
+      {
+        "app_id": "APP-07",
+        "app": "market-data-feed",
+        "library": "minimist",
+        "version": "1.2.5",
+        "risk_type": "transitive_vuln",
+        "severity": "critical",
+        "reachable": true,
+        "cves": [
+          "CVE-2021-44906"
+        ]
+      },
+      {
+        "app_id": "APP-09",
+        "app": "internal-wiki",
+        "library": "jackson-databind",
+        "version": "2.12.3",
+        "risk_type": "transitive_vuln",
+        "severity": "high",
+        "reachable": true,
+        "cves": [
+          "CVE-2020-36518"
+        ]
+      },
+      {
+        "app_id": "APP-10",
+        "app": "notifications-service",
+        "library": "follow-redirects",
+        "version": "1.14.0",
+        "risk_type": "transitive_vuln",
+        "severity": "medium",
+        "reachable": true,
+        "cves": [
+          "CVE-2022-0536"
+        ]
+      },
+      {
+        "app_id": "APP-10",
+        "app": "notifications-service",
+        "library": "minimist",
+        "version": "1.2.5",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      }
+    ],
+    "match_count": 13,
+    "source": "rules"
+  }
+}
