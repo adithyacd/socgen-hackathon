@@ -1,4 +1,10 @@
-import type { AnalysisResult, AppGraph, WarRoomCve, WarRoomImpact } from "./types";
+import type {
+  AnalysisResult,
+  AppGraph,
+  FixPlan,
+  WarRoomCve,
+  WarRoomImpact,
+} from "./types";
 
 // In dev, hit the FastAPI server. For the static deploy build, set
 // VITE_API_BASE="" and drop a prebuilt analysis.json next to index.html.
@@ -29,6 +35,10 @@ export async function fetchWarRoomCves(): Promise<WarRoomCve[]> {
 
 export async function fetchWarRoomImpact(cve: string): Promise<WarRoomImpact> {
   return getJSON<WarRoomImpact>(API_BASE ? `/api/warroom/impact/${cve}` : `/warroom/${cve}.json`);
+}
+
+export async function fetchFixPlan(): Promise<FixPlan> {
+  return getJSON<FixPlan>(API_BASE ? "/api/optimizer/plan" : "/optimizer.json");
 }
 
 export { API_BASE };

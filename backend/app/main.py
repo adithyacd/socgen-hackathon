@@ -10,7 +10,8 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from .analysis import build_context
 from .graphview import build_app_graph
-from .schemas import AnalysisResult, AppGraph, WarRoomCve, WarRoomImpact
+from .optimizer import build_fix_plan
+from .schemas import AnalysisResult, AppGraph, FixPlan, WarRoomCve, WarRoomImpact
 from .warroom import notable_cves, war_room_impact
 
 app = FastAPI(title="Sentinel — Supply Chain Risk Intelligence", version="0.2.0")
@@ -55,3 +56,8 @@ def warroom_impact(cve_id: str) -> WarRoomImpact:
     if impact is None:
         raise HTTPException(status_code=404, detail=f"Unknown CVE: {cve_id}")
     return impact
+
+
+@app.get("/api/optimizer/plan", response_model=FixPlan)
+def optimizer_plan() -> FixPlan:
+    return build_fix_plan(CTX)

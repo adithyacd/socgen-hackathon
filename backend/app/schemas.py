@@ -106,3 +106,28 @@ class WarRoomImpact(BaseModel):
     affected_count: int
     exploitable_count: int
     blast_radius: str
+
+
+class UpgradeConflict(BaseModel):
+    app_id: str
+    parent_library: str
+    constraint: str
+
+
+class Upgrade(BaseModel):
+    library: str
+    to_version: str
+    from_versions: list[str]
+    cves_fixed: list[str]
+    apps_affected: list[str]
+    app_count: int
+    risk_removed: float
+    criticals_removed: int
+    conflicts: list[UpgradeConflict] = []
+
+
+class FixPlan(BaseModel):
+    total_exploitable_risk: float
+    total_exploitable_criticals: int
+    total_exploitable_findings: int
+    recommended: list[Upgrade]

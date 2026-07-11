@@ -126,3 +126,28 @@ export interface WarRoomImpact {
   exploitable_count: number;
   blast_radius: string;
 }
+
+export interface UpgradeConflict {
+  app_id: string;
+  parent_library: string;
+  constraint: string;
+}
+
+export interface Upgrade {
+  library: string;
+  to_version: string;
+  from_versions: string[];
+  cves_fixed: string[];
+  apps_affected: string[];
+  app_count: number;
+  risk_removed: number;
+  criticals_removed: number;
+  conflicts: UpgradeConflict[];
+}
+
+export interface FixPlan {
+  total_exploitable_risk: number;
+  total_exploitable_criticals: number;
+  total_exploitable_findings: number;
+  recommended: Upgrade[];
+}
