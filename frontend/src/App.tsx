@@ -7,6 +7,7 @@ import AppDetail from "./views/AppDetail";
 import Accuracy from "./views/Accuracy";
 import WarRoom from "./views/WarRoom";
 import Optimizer from "./views/Optimizer";
+import Copilot from "./views/Copilot";
 
 export default function App() {
   return (
@@ -17,7 +18,7 @@ export default function App() {
           <Route path="/app/:appId" element={<AppDetail />} />
           <Route path="/warroom" element={<WarRoom />} />
           <Route path="/optimizer" element={<Optimizer />} />
-          <Route path="/copilot" element={<Placeholder title="Copilot" />} />
+          <Route path="/copilot" element={<Copilot />} />
           <Route path="/accuracy" element={<Accuracy />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

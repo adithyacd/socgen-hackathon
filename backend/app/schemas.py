@@ -106,6 +106,7 @@ class WarRoomImpact(BaseModel):
     affected_count: int
     exploitable_count: int
     blast_radius: str
+    narrative: str = ""
 
 
 class UpgradeConflict(BaseModel):
@@ -131,3 +132,16 @@ class FixPlan(BaseModel):
     total_exploitable_criticals: int
     total_exploitable_findings: int
     recommended: list[Upgrade]
+
+
+class CopilotRequest(BaseModel):
+    question: str
+
+
+class CopilotAnswer(BaseModel):
+    question: str
+    answer: str
+    query: dict[str, Any]
+    matches: list[dict[str, Any]]
+    match_count: int
+    source: str  # "llm" | "rules"

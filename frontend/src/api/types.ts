@@ -125,6 +125,7 @@ export interface WarRoomImpact {
   affected_count: number;
   exploitable_count: number;
   blast_radius: string;
+  narrative: string;
 }
 
 export interface UpgradeConflict {
@@ -150,4 +151,24 @@ export interface FixPlan {
   total_exploitable_criticals: number;
   total_exploitable_findings: number;
   recommended: Upgrade[];
+}
+
+export interface CopilotMatch {
+  app_id: string;
+  app: string;
+  library?: string;
+  version?: string;
+  risk_type?: string;
+  severity?: Severity;
+  reachable?: boolean | null;
+  cves?: string[];
+}
+
+export interface CopilotAnswer {
+  question: string;
+  answer: string;
+  query: Record<string, any>;
+  matches: CopilotMatch[];
+  match_count: number;
+  source: "llm" | "rules";
 }

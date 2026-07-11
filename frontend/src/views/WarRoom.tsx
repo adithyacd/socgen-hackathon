@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { Siren, Zap, ShieldAlert, ShieldCheck, Globe, Timer, Radiation } from "lucide-react";
+import { Siren, Zap, ShieldAlert, ShieldCheck, Globe, Timer, Radiation, Sparkles } from "lucide-react";
 import { fetchWarRoomCves, fetchWarRoomImpact } from "../api/client";
 import type { AppImpact, WarRoomCve, WarRoomImpact } from "../api/types";
 import { severityText, SEVERITY_HEX } from "../lib/risk";
@@ -158,6 +158,14 @@ export default function WarRoom() {
               </span>
               <span className="font-mono text-xs text-mist">· manual tracing ≈ 40 hours</span>
             </div>
+            {impact.narrative && (
+              <div className="mt-3 rounded-lg border border-line bg-panel2/50 p-3">
+                <div className="eyebrow mb-1 flex items-center gap-1">
+                  <Sparkles size={12} /> Incident brief
+                </div>
+                <p className="text-sm leading-relaxed text-paper">{impact.narrative}</p>
+              </div>
+            )}
           </div>
 
           {/* Blast radius */}

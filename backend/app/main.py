@@ -9,10 +9,29 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
 from .analysis import build_context
+from .copilot.query import answer as copilot_answer
 from .graphview import build_app_graph
+from .narratives.incident import incident_brief
+from .narratives.llm import llm_available
 from .optimizer import build_fix_plan
-from .schemas import AnalysisResult, AppGraph, FixPlan, WarRoomCve, WarRoomImpact
+from .schemas import (
+    AnalysisResult,
+    AppGraph,
+    CopilotAnswer,
+    CopilotRequest,
+    FixPlan,
+    WarRoomCve,
+    WarRoomImpact,
+)
 from .warroom import notable_cves, war_room_impact
+
+COPILOT_SUGGESTIONS = [
+    "Which internet-facing apps have exploitable criticals?",
+    "Show all GPL license conflicts",
+    "Which apps are exposed to Log4Shell?",
+    "List unmaintained libraries",
+    "Which transitive dependencies are exploitable?",
+]
 
 app = FastAPI(title="Sentinel — Supply Chain Risk Intelligence", version="0.2.0")
 
@@ -55,9 +74,20 @@ def warroom_impact(cve_id: str) -> WarRoomImpact:
     impact = war_room_impact(CTX, cve_id)
     if impact is None:
         raise HTTPException(status_code=404, detail=f"Unknown CVE: {cve_id}")
+    impact.narrative = incident_brief(impact)
     return impact
 
 
 @app.get("/api/optimizer/plan", response_model=FixPlan)
 def optimizer_plan() -> FixPlan:
     return build_fix_plan(CTX)
+
+
+@app.get("/api/copilot/suggestions")
+def copilot_suggestions() -> dict:
+    return {"suggestions": COPILOT_SUGGESTIONS, "llm_enabled": llm_available()}
+
+
+@app.post("/api/copilot/ask", response_model=CopilotAnswer)
+def copilot_ask(req: CopilotRequest) -> CopilotAnswer:
+    return copilot_answer(CTX, req.question)
