@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import {
   LayoutGrid,
   Siren,
@@ -14,7 +14,7 @@ import {
 import type { ReactNode } from "react";
 
 const NAV: { to: string; label: string; icon: LucideIcon }[] = [
-  { to: "/", label: "Portfolio", icon: LayoutGrid },
+  { to: "/portfolio", label: "Portfolio", icon: LayoutGrid },
   { to: "/warroom", label: "War Room", icon: Siren },
   { to: "/optimizer", label: "Fix Optimizer", icon: Wrench },
   { to: "/threats", label: "Threats", icon: Bug },
@@ -26,7 +26,7 @@ const NAV: { to: string; label: string; icon: LucideIcon }[] = [
 
 function Brand() {
   return (
-    <div className="flex items-center gap-3 px-3 py-1">
+    <Link to="/portfolio" className="flex items-center gap-3 px-3 py-1">
       <div className="grid h-9 w-9 place-items-center rounded-lg border border-signal/40 bg-signal/10 text-signal shadow-glow">
         <Radar size={18} strokeWidth={2.2} />
       </div>
@@ -34,7 +34,7 @@ function Brand() {
         <div className="font-display text-lg font-bold tracking-tight text-paper">Sentinel</div>
         <div className="eyebrow !tracking-[0.14em]">Supply Chain Risk</div>
       </div>
-    </div>
+    </Link>
   );
 }
 
@@ -48,7 +48,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             <NavLink
               key={to}
               to={to}
-              end={to === "/"}
+              end={to === "/portfolio"}
               className={({ isActive }) => `navlink ${isActive ? "navlink-active" : ""}`}
             >
               <Icon size={18} strokeWidth={2} />
@@ -74,7 +74,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             <NavLink
               key={to}
               to={to}
-              end={to === "/"}
+              end={to === "/portfolio"}
               className={({ isActive }) =>
                 `grid h-9 w-9 place-items-center rounded-lg ${
                   isActive ? "bg-panel2 text-paper" : "text-mist"
