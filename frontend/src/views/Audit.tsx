@@ -4,7 +4,7 @@ import { fetchAudit } from "../api/client";
 import type { AuditIssue, AuditReport } from "../api/types";
 import { Loading, ErrorState } from "../components/States";
 
-const SEV_HEX: Record<string, string> = { high: "#F0546D", medium: "#F2913D", low: "#E7C548", info: "#5AA6FF" };
+const SEV_HEX: Record<string, string> = { high: "#F0324F", medium: "#F2913D", low: "#E7C548", info: "#5AA6FF" };
 
 function IssueCard({ issue }: { issue: AuditIssue }) {
   const hex = SEV_HEX[issue.severity] ?? "#8A97B1";

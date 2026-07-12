@@ -61,7 +61,7 @@ const STYLE: any[] = [
       height: "data(size)",
       label: "data(label)",
       color: "#B9C4DB",
-      "font-family": "IBM Plex Mono, monospace",
+      "font-family": "JetBrains Mono, monospace",
       "font-size": 8,
       "text-valign": "bottom",
       "text-margin-y": 3,

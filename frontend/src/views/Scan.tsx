@@ -18,11 +18,11 @@ const SAMPLE = `{
 }`;
 
 const T_ICON: Record<string, any> = { known_malicious: ShieldX, typosquat: Copy, dependency_confusion: PackageX };
-const T_HEX: Record<string, string> = { known_malicious: "#F0546D", typosquat: "#F2913D", dependency_confusion: "#E7C548" };
+const T_HEX: Record<string, string> = { known_malicious: "#F0324F", typosquat: "#F2913D", dependency_confusion: "#E7C548" };
 
 function ThreatRow({ t }: { t: Threat }) {
   const Icon = T_ICON[t.threat_type] ?? ShieldX;
-  const hex = T_HEX[t.threat_type] ?? "#F0546D";
+  const hex = T_HEX[t.threat_type] ?? "#F0324F";
   return (
     <div className="flex items-start gap-2 rounded-lg border p-2.5" style={{ borderColor: `${hex}44` }}>
       <Icon size={15} className="mt-0.5 shrink-0" style={{ color: hex }} />
@@ -92,7 +92,7 @@ export default function Scan() {
           <div className="grid grid-cols-4 gap-3">
             {[
               ["Dependencies", result.dependency_count, "#E8ECF5"],
-              ["Vulnerable", result.summary.vulnerable, "#F0546D"],
+              ["Vulnerable", result.summary.vulnerable, "#F0324F"],
               ["License issues", result.summary.license, "#B47DFF"],
               ["Threats", result.summary.threats, "#F2913D"],
             ].map(([l, v, c]) => (

@@ -7,7 +7,7 @@ import RiskMeter from "../components/RiskMeter";
 import type { AppRisk } from "../api/types";
 import { RISK_TYPE_HEX } from "../lib/risk";
 
-const CRIT_HEX = "#F0546D";
+const CRIT_HEX = "#F0324F";
 
 function CountDot({ color, label, n }: { color: string; label: string; n: number }) {
   return (

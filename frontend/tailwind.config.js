@@ -11,7 +11,7 @@ export default {
         mist: "#8A97B1",      // secondary text
         paper: "#E8ECF5",     // primary text
         signal: "#E8B23A",    // brand accent — "the watch" (use with restraint)
-        crit: "#F0546D",      // risk: critical
+        crit: "#F0324F",      // risk: critical — the ember red that spreads on the landing
         high: "#F2913D",      // risk: high
         med: "#E7C548",       // risk: medium
         low: "#4CC9A0",       // risk: low / ok
@@ -20,7 +20,7 @@ export default {
       fontFamily: {
         display: ['"Space Grotesk"', "system-ui", "sans-serif"],
         sans: ['"IBM Plex Sans"', "system-ui", "sans-serif"],
-        mono: ['"IBM Plex Mono"', "ui-monospace", "monospace"],
+        mono: ['"JetBrains Mono"', "ui-monospace", "monospace"],
       },
       boxShadow: {
         panel: "0 1px 0 0 rgba(255,255,255,0.03) inset, 0 8px 24px -12px rgba(0,0,0,0.6)",

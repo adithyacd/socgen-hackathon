@@ -6,7 +6,7 @@ import type { Threat } from "../api/types";
 import { Loading, ErrorState } from "../components/States";
 
 const TYPE_META: Record<string, { label: string; hex: string; icon: any }> = {
-  known_malicious: { label: "Known malicious", hex: "#F0546D", icon: ShieldX },
+  known_malicious: { label: "Known malicious", hex: "#F0324F", icon: ShieldX },
   typosquat: { label: "Typosquat", hex: "#F2913D", icon: Copy },
   dependency_confusion: { label: "Dependency confusion", hex: "#E7C548", icon: PackageX },
 };

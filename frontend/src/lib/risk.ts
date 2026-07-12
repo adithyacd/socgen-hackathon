@@ -1,7 +1,7 @@
 import type { RiskType, Severity } from "../api/types";
 
 export const SEVERITY_HEX: Record<Severity, string> = {
-  critical: "#F0546D",
+  critical: "#F0324F", // the landing's ember red — danger, everywhere
   high: "#F2913D",
   medium: "#E7C548",
   low: "#4CC9A0",
@@ -26,7 +26,7 @@ export const RISK_TYPE_LABEL: Record<RiskType, string> = {
 };
 
 export const RISK_TYPE_HEX: Record<string, string> = {
-  vulnerable: "#F0546D",
+  vulnerable: "#F0324F",
   transitive_vuln: "#F2913D",
   license_conflict: "#B47DFF",
   transitive_license_conflict: "#9A6BFF",
@@ -35,7 +35,7 @@ export const RISK_TYPE_HEX: Record<string, string> = {
 };
 
 export const EXPLOIT_HEX: Record<string, string> = {
-  high: "#F0546D",
+  high: "#F0324F",
   medium: "#F2913D",
   low: "#E7C548",
   none: "#8A97B1",
