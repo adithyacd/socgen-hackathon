@@ -1,4 +1,93 @@
 {
-  "threats": [],
-  "count": 0
+  "threats": [
+    {
+      "app_id": "APP-001",
+      "app": "CustomerPortal",
+      "library": "event-stream",
+      "version": "3.3.6",
+      "threat_type": "known_malicious",
+      "severity": "critical",
+      "confidence": 0.95,
+      "detail": "'event-stream' matches a known compromised/protestware package (bad version 3.3.6).",
+      "suggested": ""
+    },
+    {
+      "app_id": "APP-003",
+      "app": "InternalAPI",
+      "library": "node-ipc",
+      "version": "10.1.1",
+      "threat_type": "known_malicious",
+      "severity": "critical",
+      "confidence": 0.95,
+      "detail": "'node-ipc' matches a known compromised/protestware package (bad version 10.1.1).",
+      "suggested": ""
+    },
+    {
+      "app_id": "APP-004",
+      "app": "HRPortal",
+      "library": "colors",
+      "version": "1.4.44-liberty-2",
+      "threat_type": "known_malicious",
+      "severity": "critical",
+      "confidence": 0.95,
+      "detail": "'colors' matches a known compromised/protestware package (bad version 1.4.44-liberty-2).",
+      "suggested": ""
+    },
+    {
+      "app_id": "APP-001",
+      "app": "CustomerPortal",
+      "library": "lodahs",
+      "version": "1.0.0",
+      "threat_type": "typosquat",
+      "severity": "high",
+      "confidence": 0.85,
+      "detail": "'lodahs' is one edit from the popular package 'lodash' \u2014 likely typosquat.",
+      "suggested": "lodash"
+    },
+    {
+      "app_id": "APP-002",
+      "app": "PaymentService",
+      "library": "requsts",
+      "version": "2.28.0",
+      "threat_type": "typosquat",
+      "severity": "high",
+      "confidence": 0.85,
+      "detail": "'requsts' is one edit from the popular package 'requests' \u2014 likely typosquat.",
+      "suggested": "requests"
+    },
+    {
+      "app_id": "APP-003",
+      "app": "InternalAPI",
+      "library": "axioss",
+      "version": "1.6.2",
+      "threat_type": "typosquat",
+      "severity": "high",
+      "confidence": 0.85,
+      "detail": "'axioss' is one edit from the popular package 'axios' \u2014 likely typosquat.",
+      "suggested": "axios"
+    },
+    {
+      "app_id": "APP-005",
+      "app": "AnalyticsDashboard",
+      "library": "urllib",
+      "version": "1.26.0",
+      "threat_type": "typosquat",
+      "severity": "high",
+      "confidence": 0.85,
+      "detail": "'urllib' is one edit from the popular package 'urllib3' \u2014 likely typosquat.",
+      "suggested": "urllib3"
+    },
+    {
+      "app_id": "APP-002",
+      "app": "PaymentService",
+      "library": "express",
+      "version": "99.0.0",
+      "threat_type": "dependency_confusion",
+      "severity": "high",
+      "confidence": 0.7,
+      "detail": "'express' is a well-known public package pinned to an implausible version 99.0.0 \u2014 a classic dependency-confusion signal.",
+      "suggested": "express"
+    }
+  ],
+  "count": 8
 }

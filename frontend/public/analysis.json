@@ -178,10 +178,10 @@
       "license_context": "proprietary",
       "risk_score": 83.0,
       "risk_band": "critical",
-      "dependency_count": 80,
-      "direct_count": 35,
+      "dependency_count": 82,
+      "direct_count": 37,
       "counts": {
-        "vulnerable": 13,
+        "vulnerable": 14,
         "transitive_vuln": 18,
         "license_conflict": 1,
         "transitive_license_conflict": 0,
@@ -330,8 +330,8 @@
       "license_context": "proprietary",
       "risk_score": 82.5,
       "risk_band": "critical",
-      "dependency_count": 97,
-      "direct_count": 35,
+      "dependency_count": 98,
+      "direct_count": 36,
       "counts": {
         "vulnerable": 18,
         "transitive_vuln": 22,
@@ -508,8 +508,8 @@
       "license_context": "proprietary",
       "risk_score": 79.8,
       "risk_band": "critical",
-      "dependency_count": 82,
-      "direct_count": 35,
+      "dependency_count": 84,
+      "direct_count": 37,
       "counts": {
         "vulnerable": 17,
         "transitive_vuln": 27,
@@ -1017,8 +1017,8 @@
       "license_context": "proprietary",
       "risk_score": 75.1,
       "risk_band": "critical",
-      "dependency_count": 92,
-      "direct_count": 35,
+      "dependency_count": 93,
+      "direct_count": 36,
       "counts": {
         "vulnerable": 18,
         "transitive_vuln": 20,
@@ -1333,8 +1333,8 @@
       "license_context": "proprietary",
       "risk_score": 66.9,
       "risk_band": "high",
-      "dependency_count": 84,
-      "direct_count": 35,
+      "dependency_count": 86,
+      "direct_count": 37,
       "counts": {
         "vulnerable": 18,
         "transitive_vuln": 28,
@@ -14766,6 +14766,33 @@
       "epss": 0.0
     },
     {
+      "app_id": "APP-002",
+      "library": "express",
+      "version": "99.0.0",
+      "is_direct": true,
+      "risk_type": "vulnerable",
+      "severity": "medium",
+      "secondary_risks": [],
+      "cve_ids": [
+        "CVE-2022-1171"
+      ],
+      "exploitability": "none",
+      "is_reachable": false,
+      "detail": "1 known vulnerability (max CVSS 5.5). Exploitability NONE — deprioritized.",
+      "score": 1.2,
+      "paths": [
+        [
+          "express@99.0.0"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2022-1171": null
+      },
+      "max_cvss": 5.5,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
       "app_id": "APP-001",
       "library": "kafka-clients",
       "version": "4.8.5",
@@ -18705,11 +18732,11 @@
   ],
   "summary": {
     "app_count": 10,
-    "dependency_count": 869,
-    "finding_count": 670,
+    "dependency_count": 877,
+    "finding_count": 671,
     "exploitable_criticals": 43,
     "counts": {
-      "vulnerable": 158,
+      "vulnerable": 159,
       "transitive_vuln": 221,
       "license_conflict": 10,
       "transitive_license_conflict": 2,
@@ -18771,14 +18798,14 @@
       "target": 0.9
     },
     "exploitability": {
-      "total_vuln_alerts": 379,
+      "total_vuln_alerts": 380,
       "high": 106,
       "medium": 220,
       "low": 43,
-      "none": 10,
+      "none": 11,
       "actionable": 326,
-      "actionable_pct": 0.8602,
-      "deprioritized_pct": 0.1398
+      "actionable_pct": 0.8579,
+      "deprioritized_pct": 0.1421
     }
   }
 }

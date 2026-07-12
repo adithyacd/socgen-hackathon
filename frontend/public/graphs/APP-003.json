@@ -10,8 +10,8 @@
     "license_context": "proprietary",
     "risk_score": 66.9,
     "risk_band": "high",
-    "dependency_count": 84,
-    "direct_count": 35,
+    "dependency_count": 86,
+    "direct_count": 37,
     "counts": {
       "vulnerable": 18,
       "transitive_vuln": 28,
@@ -1961,6 +1961,42 @@
       "maintainer_count": 2,
       "score": 7.0,
       "depth": 1
+    },
+    {
+      "id": "APP-003::node-ipc@10.1.1",
+      "library": "node-ipc",
+      "version": "10.1.1",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "MIT",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-003::axioss@1.6.2",
+      "library": "axioss",
+      "version": "1.6.2",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "MIT",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 0.0,
+      "depth": 1
     }
   ],
   "edges": [
@@ -2263,6 +2299,18 @@
       "target": "APP-003::pillow@3.12.7",
       "used": true,
       "is_direct": false
+    },
+    {
+      "source": "app:APP-003",
+      "target": "APP-003::node-ipc@10.1.1",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-003",
+      "target": "APP-003::axioss@1.6.2",
+      "used": true,
+      "is_direct": true
     },
     {
       "source": "APP-003::pip@2.4.2",

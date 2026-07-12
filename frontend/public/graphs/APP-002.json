@@ -10,10 +10,10 @@
     "license_context": "proprietary",
     "risk_score": 83.0,
     "risk_band": "critical",
-    "dependency_count": 80,
-    "direct_count": 35,
+    "dependency_count": 82,
+    "direct_count": 37,
     "counts": {
-      "vulnerable": 13,
+      "vulnerable": 14,
       "transitive_vuln": 18,
       "license_conflict": 1,
       "transitive_license_conflict": 0,
@@ -1831,6 +1831,46 @@
       "maintainer_count": 2,
       "score": 2.6950000000000003,
       "depth": 1
+    },
+    {
+      "id": "APP-002::requsts@2.28.0",
+      "library": "requsts",
+      "version": "2.28.0",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "MIT",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-002::express@99.0.0",
+      "library": "express",
+      "version": "99.0.0",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": true,
+      "is_reachable": false,
+      "exploitability": "none",
+      "severity": "medium",
+      "risk_types": [
+        "vulnerable"
+      ],
+      "cve_ids": [
+        "CVE-2022-1171"
+      ],
+      "license": "MIT",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 1.2,
+      "depth": 1
     }
   ],
   "edges": [
@@ -2133,6 +2173,18 @@
       "target": "APP-002::bandit@3.6.3",
       "used": true,
       "is_direct": false
+    },
+    {
+      "source": "app:APP-002",
+      "target": "APP-002::requsts@2.28.0",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-002",
+      "target": "APP-002::express@99.0.0",
+      "used": true,
+      "is_direct": true
     },
     {
       "source": "APP-002::snakeyaml@3.15.2",
@@ -3716,6 +3768,33 @@
         "CVE-2025-1195": "6.0.0"
       },
       "max_cvss": 1.1,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-002",
+      "library": "express",
+      "version": "99.0.0",
+      "is_direct": true,
+      "risk_type": "vulnerable",
+      "severity": "medium",
+      "secondary_risks": [],
+      "cve_ids": [
+        "CVE-2022-1171"
+      ],
+      "exploitability": "none",
+      "is_reachable": false,
+      "detail": "1 known vulnerability (max CVSS 5.5). Exploitability NONE — deprioritized.",
+      "score": 1.2,
+      "paths": [
+        [
+          "express@99.0.0"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2022-1171": null
+      },
+      "max_cvss": 5.5,
       "kev": false,
       "epss": 0.0
     }

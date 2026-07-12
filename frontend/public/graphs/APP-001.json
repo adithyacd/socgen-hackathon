@@ -10,8 +10,8 @@
     "license_context": "proprietary",
     "risk_score": 79.8,
     "risk_band": "critical",
-    "dependency_count": 82,
-    "direct_count": 35,
+    "dependency_count": 84,
+    "direct_count": 37,
     "counts": {
       "vulnerable": 17,
       "transitive_vuln": 27,
@@ -1934,6 +1934,42 @@
       "maintainer_count": 2,
       "score": 2.8,
       "depth": 1
+    },
+    {
+      "id": "APP-001::lodahs@1.0.0",
+      "library": "lodahs",
+      "version": "1.0.0",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "MIT",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-001::event-stream@3.3.6",
+      "library": "event-stream",
+      "version": "3.3.6",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "MIT",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 0.0,
+      "depth": 1
     }
   ],
   "edges": [
@@ -2236,6 +2272,18 @@
       "target": "APP-001::netty-handler@1.7.3",
       "used": true,
       "is_direct": false
+    },
+    {
+      "source": "app:APP-001",
+      "target": "APP-001::lodahs@1.0.0",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-001",
+      "target": "APP-001::event-stream@3.3.6",
+      "used": true,
+      "is_direct": true
     },
     {
       "source": "APP-001::micrometer-core@3.0.10",

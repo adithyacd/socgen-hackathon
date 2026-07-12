@@ -24,9 +24,13 @@ def _base():
 
 # --- Malicious / threat engine ---
 def test_no_false_positive_typosquats_on_official():
-    # grpc-go, protobuf-java etc. are legit — must NOT be flagged.
     threats = scan_threats(_base())
-    assert not any(t["threat_type"] == "typosquat" for t in threats)
+    flagged = {t["library"] for t in threats if t["threat_type"] == "typosquat"}
+    # Legit ecosystem packages must NOT be flagged as typosquats.
+    for legit in ("grpc-go", "protobuf-java", "junit-jupiter", "grpc-core", "protobuf-go"):
+        assert legit not in flagged
+    # The planted typosquats should be caught.
+    assert "lodahs" in flagged and "requsts" in flagged
 
 
 def test_scan_catches_planted_threats():

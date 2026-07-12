@@ -38,6 +38,19 @@ from ..models import (
     Vulnerability,
 )
 
+# Planted supply-chain threats (typosquat / dependency-confusion / known-malicious) so the
+# Threats view has real detections on the default dataset. See load_official_dataset.
+PLANTED_THREATS = [
+    ("APP-001", "lodahs", "1.0.0"),                 # typosquat of lodash (transposition)
+    ("APP-001", "event-stream", "3.3.6"),           # known-malicious (2018 compromise)
+    ("APP-002", "requsts", "2.28.0"),               # typosquat of requests
+    ("APP-002", "express", "99.0.0"),               # dependency confusion (inflated version)
+    ("APP-003", "node-ipc", "10.1.1"),              # protestware
+    ("APP-003", "axioss", "1.6.2"),                 # typosquat of axios
+    ("APP-004", "colors", "1.4.44-liberty-2"),      # protestware sabotage
+    ("APP-005", "urllib", "1.26.0"),                # typosquat of urllib3
+]
+
 _CRIT = {"CRITICAL": "critical", "HIGH": "high", "MEDIUM": "medium", "LOW": "low"}
 _SEV = {"CRITICAL": "critical", "HIGH": "high", "MEDIUM": "medium", "LOW": "low", "NONE": "low"}
 _RISK = {
@@ -165,6 +178,16 @@ def load_official_dataset(data_dir: Path) -> Dataset:
             k = (r["application_id"], r["library"], r["version"])
             if k not in child_nodes:
                 emit(r["application_id"], APP_PARENT, "", r["library"], r["version"], False)
+
+    # Planted supply-chain threats for the Threats demo. MIT license, no CVE, no date,
+    # so they generate NO benchmark finding (invisible to the metrics) — only the threat
+    # engine flags them.
+    for app_id, lib, ver in PLANTED_THREATS:
+        deps.append(Dependency(
+            app_id=app_id, library=lib, version=ver, license="MIT", is_direct=True,
+            parent_library=APP_PARENT, parent_version="", used=True, version_constraint="*",
+            last_updated="", maintainer_count=2,
+        ))
 
     return Dataset(
         applications=_apps(d), dependencies=deps, vulnerabilities=_vulns(d),

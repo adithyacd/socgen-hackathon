@@ -5,7 +5,6 @@ import {
   Wrench,
   Sparkles,
   Target,
-  Radar,
   Bug,
   ShieldQuestion,
   FileUp,
@@ -27,11 +26,13 @@ const NAV: { to: string; label: string; icon: LucideIcon }[] = [
 function Brand() {
   return (
     <Link to="/portfolio" className="flex items-center gap-3 px-3 py-1">
-      <div className="grid h-9 w-9 place-items-center rounded-lg border border-signal/40 bg-signal/10 text-signal shadow-glow">
-        <Radar size={18} strokeWidth={2.2} />
-      </div>
+      {/* Société Générale mark — red over black */}
+      <span className="grid h-8 w-8 grid-rows-2 overflow-hidden rounded-[2px] ring-1 ring-white/15">
+        <span className="bg-signal" />
+        <span className="bg-black" />
+      </span>
       <div className="leading-tight">
-        <div className="font-display text-lg font-bold tracking-tight text-paper">Sentinel</div>
+        <div className="font-display text-lg font-bold tracking-tight text-white">Sentinel</div>
         <div className="eyebrow !tracking-[0.14em]">Supply Chain Risk</div>
       </div>
     </Link>
@@ -56,14 +57,6 @@ export default function Layout({ children }: { children: ReactNode }) {
             </NavLink>
           ))}
         </nav>
-        <div className="mt-auto px-3">
-          <div className="rounded-lg border border-line bg-panel2/60 p-3 text-xs text-mist">
-            <div className="font-mono text-[11px] uppercase tracking-widest text-signal">Demo</div>
-            <p className="mt-1 leading-relaxed">
-              10 apps · synthetic SBOMs · a planted Log4Shell scenario across the portfolio.
-            </p>
-          </div>
-        </div>
       </aside>
 
       {/* Mobile top bar */}

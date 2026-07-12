@@ -10,8 +10,8 @@
     "license_context": "proprietary",
     "risk_score": 75.1,
     "risk_band": "critical",
-    "dependency_count": 92,
-    "direct_count": 35,
+    "dependency_count": 93,
+    "direct_count": 36,
     "counts": {
       "vulnerable": 18,
       "transitive_vuln": 20,
@@ -2099,6 +2099,24 @@
       "maintainer_count": 2,
       "score": 0.0,
       "depth": 1
+    },
+    {
+      "id": "APP-005::urllib@1.26.0",
+      "library": "urllib",
+      "version": "1.26.0",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "MIT",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 0.0,
+      "depth": 1
     }
   ],
   "edges": [
@@ -2401,6 +2419,12 @@
       "target": "APP-005::mysql-connector-java@1.6.8",
       "used": true,
       "is_direct": false
+    },
+    {
+      "source": "app:APP-005",
+      "target": "APP-005::urllib@1.26.0",
+      "used": true,
+      "is_direct": true
     },
     {
       "source": "APP-005::formidable@5.8.5",

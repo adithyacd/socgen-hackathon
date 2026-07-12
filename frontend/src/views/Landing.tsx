@@ -142,9 +142,9 @@ export default function Landing() {
       const np = clamp(p / NARR, 0, 1);                       // narrative progress
       const dp = clamp((p - NARR) / (1 - NARR), 0, 1);        // dive progress
 
-      // graph spins with the scroll during the narrative, then holds for the dive
-      group.rotation.y = np * Math.PI * 2.4 + dp * 0.35;
-      group.rotation.x = 0.14 * Math.sin(np * Math.PI);
+      // the graph is always rotating; scrolling spins it faster
+      group.rotation.y = time * 0.11 + np * Math.PI * 2.2 + dp * 0.35;
+      group.rotation.x = 0.12 * Math.sin(time * 0.2) * (1 - smooth(0.2, 0.6, dp));
       group.position.x = 6 * (1 - smooth(0, 0.4, dp));         // sits right, recenters for the dive
 
       const pulse = 0.5 + 0.5 * Math.sin(time * 3);
@@ -173,8 +173,8 @@ export default function Landing() {
 
       renderer.render(scene, camera);
 
-      // narrative sections cross-fade as you scroll
-      s1.style.opacity = String(smooth(0.02, 0.08, np) - smooth(0.26, 0.34, np));
+      // narrative sections cross-fade as you scroll (section 1 shows immediately)
+      s1.style.opacity = String(1 - smooth(0.26, 0.34, np));
       s2.style.opacity = String(Math.max(0, smooth(0.30, 0.38, np) - smooth(0.58, 0.66, np)));
       s3.style.opacity = String(Math.max(0, smooth(0.62, 0.70, np) - smooth(0.0, 0.08, dp)));
       scr.style.opacity = String((1 - smooth(0.05, 0.16, np)) * (1 - smooth(0.6, 0.9, np)));
