@@ -34,6 +34,19 @@ have exploitable criticals?"* — grounded in the real graph, with the structure
 "Detection is the easy part — a lookup. The hard, valuable part is telling you what's
 *actually exploitable* and the cheapest way to fix it. That's Sentinel."
 
+## The differentiation punch (what sets us apart from every other AI-assisted team)
+
+Everyone using an AI assistant builds the same scanner. Lead with whichever lands:
+
+- **Threats / Scan** — "CVE scanners miss the actual attacks." Open **Scan SBOM → Load
+  sample**: we catch a **typosquat** (`lodahs`), a **known-malicious** package
+  (`event-stream@3.3.6`), and **dependency confusion** (`express@99`) — none is a CVE.
+- **Benchmark Audit** — "We didn't trust your labels, we audited them." Show the **42/100**
+  integrity score and the evidence (a version inside a CVE's affected range labeled *clean*).
+  The senior, adversarial move no other team makes.
+- **CI gate** — `python -m backend.cli examples/sample-sbom.cdx.json` fails the build. "Runs
+  in the pull request, not a quarterly audit." Governance as code.
+
 ---
 
 ## Slide outline (7 slides)

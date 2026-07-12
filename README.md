@@ -36,6 +36,29 @@ Sentinel ingests the official PB‑10 sample data and scores against the provide
 The **Accuracy** page shows all of this live. A richer *synthetic* dataset (with a planted
 Log4Shell reachability scenario) is also included as an optional mode.
 
+### Beyond the brief — four things most teams won't do
+
+Anyone can build the SBOM scanner the brief describes. These break from it:
+
+1. **Supply-chain threat hunting** (`Threats` + the threat engine) — the risks a CVE list
+   *can't* see: **typosquatting** (Damerau distance-1, zero false positives on the official
+   data), **dependency confusion** (public namesakes at implausible versions), and a
+   **known-malicious feed** (event-stream, ua-parser-js, xz-utils…). This is the
+   SolarWinds/xz attack axis the CVE-centric dataset ignores.
+2. **Benchmark Integrity Auditor** (`Benchmark Audit`) — instead of blindly optimizing to
+   the provided labels, we **audit them** and prove they're version-inconsistent with the
+   vuln DB (42/100 integrity, with concrete evidence). A detector should be robust to a
+   noisy benchmark, not overfit to it.
+3. **Real SBOM ingestion** (`Scan SBOM`) — paste a real `package.json`, `requirements.txt`,
+   or CycloneDX/SPDX file and analyze it live. It's a tool, not a demo.
+4. **CI/CD policy gate** (`backend/cli.py` + `.github/workflows/supply-chain-gate.yml`) — a
+   command that **fails a pull request** when a dependency change introduces supply-chain
+   risk. Governance as code, for developers — not just a security dashboard.
+
+```bash
+python -m backend.cli examples/sample-sbom.cdx.json --policy sentinel-policy.json  # exits 1 on violation
+```
+
 ---
 
 ## Quick start
