@@ -1,9 +1,11 @@
 from backend.app.analysis import build_context
 from backend.app.optimizer import build_fix_plan
+from backend.app.config import settings
+SYNTH = settings.data_dir  # synthetic dataset (official is default)
 
 
 def test_plan_ranked_by_risk_removed():
-    ctx = build_context()
+    ctx = build_context(SYNTH)
     plan = build_fix_plan(ctx)
     risks = [u.risk_removed for u in plan.recommended]
     assert risks == sorted(risks, reverse=True)
@@ -11,7 +13,7 @@ def test_plan_ranked_by_risk_removed():
 
 
 def test_shared_library_fixes_many_apps():
-    ctx = build_context()
+    ctx = build_context(SYNTH)
     plan = build_fix_plan(ctx)
     # commons-text (Text4Shell) is present across several apps -> one upgrade, many apps.
     multi = [u for u in plan.recommended if u.app_count >= 3]
@@ -19,7 +21,7 @@ def test_shared_library_fixes_many_apps():
 
 
 def test_log4j_upgrade_flags_diamond_conflict():
-    ctx = build_context()
+    ctx = build_context(SYNTH)
     plan = build_fix_plan(ctx)
     log4j = next((u for u in plan.recommended if u.library == "log4j-core"), None)
     assert log4j is not None
@@ -29,7 +31,7 @@ def test_log4j_upgrade_flags_diamond_conflict():
 
 
 def test_criticals_covered_by_full_plan():
-    ctx = build_context()
+    ctx = build_context(SYNTH)
     plan = build_fix_plan(ctx)
     total_fixed = sum(u.criticals_removed for u in plan.recommended)
     assert total_fixed == plan.total_exploitable_criticals

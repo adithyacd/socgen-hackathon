@@ -1,0 +1,4199 @@
+{
+  "app": {
+    "app_id": "APP-009",
+    "name": "NotificationService",
+    "business_criticality": "medium",
+    "owner": "Nina Sharma",
+    "internet_facing": true,
+    "environment": "cloud",
+    "ecosystem": "JavaScript",
+    "license_context": "proprietary",
+    "risk_score": 99.1,
+    "risk_band": "critical",
+    "dependency_count": 85,
+    "direct_count": 35,
+    "counts": {
+      "vulnerable": 14,
+      "transitive_vuln": 27,
+      "license_conflict": 1,
+      "transitive_license_conflict": 1,
+      "license_unknown": 15,
+      "unmaintained": 3,
+      "exploitable_criticals": 8
+    },
+    "top_findings": [
+      {
+        "app_id": "APP-009",
+        "library": "babel-core",
+        "version": "5.0.0",
+        "is_direct": true,
+        "risk_type": "vulnerable",
+        "severity": "critical",
+        "secondary_risks": [],
+        "cve_ids": [
+          "CVE-2024-1035",
+          "CVE-2025-1106"
+        ],
+        "exploitability": "medium",
+        "is_reachable": true,
+        "detail": "2 known vulnerabilities (max CVSS 9.8).",
+        "score": 10.0,
+        "paths": [
+          [
+            "babel-core@5.0.0"
+          ]
+        ],
+        "fixed_versions": {
+          "CVE-2024-1035": null,
+          "CVE-2025-1106": "6.0.0"
+        },
+        "max_cvss": 9.8,
+        "kev": false,
+        "epss": 0.0
+      },
+      {
+        "app_id": "APP-009",
+        "library": "sequelize",
+        "version": "2.12.8",
+        "is_direct": true,
+        "risk_type": "vulnerable",
+        "severity": "critical",
+        "secondary_risks": [
+          "unmaintained"
+        ],
+        "cve_ids": [
+          "CVE-2023-1167"
+        ],
+        "exploitability": "medium",
+        "is_reachable": true,
+        "detail": "1 known vulnerability (max CVSS 9.4).",
+        "score": 10.0,
+        "paths": [
+          [
+            "sequelize@2.12.8"
+          ]
+        ],
+        "fixed_versions": {
+          "CVE-2023-1167": "6.0.0"
+        },
+        "max_cvss": 9.4,
+        "kev": false,
+        "epss": 0.0
+      },
+      {
+        "app_id": "APP-009",
+        "library": "lodash",
+        "version": "2.12.4",
+        "is_direct": true,
+        "risk_type": "license_conflict",
+        "severity": "critical",
+        "secondary_risks": [],
+        "cve_ids": [],
+        "exploitability": "",
+        "is_reachable": null,
+        "detail": "Copyleft license 'GPL-2.0' is incompatible with the proprietary application.",
+        "score": 10.0,
+        "paths": [],
+        "fixed_versions": {},
+        "max_cvss": 0.0,
+        "kev": false,
+        "epss": 0.0
+      },
+      {
+        "app_id": "APP-009",
+        "library": "moment",
+        "version": "4.10.3",
+        "is_direct": false,
+        "risk_type": "transitive_license_conflict",
+        "severity": "critical",
+        "secondary_risks": [],
+        "cve_ids": [],
+        "exploitability": "",
+        "is_reachable": null,
+        "detail": "Transitive copyleft license 'AGPL-3.0' incompatible with the proprietary application.",
+        "score": 10.0,
+        "paths": [],
+        "fixed_versions": {},
+        "max_cvss": 0.0,
+        "kev": false,
+        "epss": 0.0
+      },
+      {
+        "app_id": "APP-009",
+        "library": "react-dom",
+        "version": "1.10.9",
+        "is_direct": true,
+        "risk_type": "vulnerable",
+        "severity": "high",
+        "secondary_risks": [
+          "unmaintained"
+        ],
+        "cve_ids": [
+          "CVE-2022-1166",
+          "CVE-2025-1179",
+          "CVE-2022-1194"
+        ],
+        "exploitability": "high",
+        "is_reachable": true,
+        "detail": "3 known vulnerabilities (max CVSS 8.3).",
+        "score": 9.1,
+        "paths": [
+          [
+            "react-dom@1.10.9"
+          ]
+        ],
+        "fixed_versions": {
+          "CVE-2022-1166": null,
+          "CVE-2025-1179": "4.0.0",
+          "CVE-2022-1194": "6.0.0"
+        },
+        "max_cvss": 8.3,
+        "kev": false,
+        "epss": 0.0
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "app:APP-009",
+      "library": "NotificationService",
+      "version": "",
+      "kind": "app",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "",
+      "last_updated": "",
+      "maintainer_count": 0,
+      "score": 0.0,
+      "depth": 0
+    },
+    {
+      "id": "APP-009::react-dom@1.10.9",
+      "library": "react-dom",
+      "version": "1.10.9",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "high",
+      "severity": "high",
+      "risk_types": [
+        "unmaintained",
+        "vulnerable"
+      ],
+      "cve_ids": [
+        "CVE-2022-1166",
+        "CVE-2022-1194",
+        "CVE-2025-1179"
+      ],
+      "license": "Apache-2.0",
+      "last_updated": "2023-02-06",
+      "maintainer_count": 2,
+      "score": 9.1,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::yaml-go@5.15.0",
+      "library": "yaml-go",
+      "version": "5.15.0",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "BSD-2-Clause",
+      "last_updated": "2025-03-26",
+      "maintainer_count": 2,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::jest@3.13.6",
+      "library": "jest",
+      "version": "3.13.6",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "BSD-3-Clause",
+      "last_updated": "2025-07-04",
+      "maintainer_count": 2,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::cryptography@3.6.0",
+      "library": "cryptography",
+      "version": "3.6.0",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "ISC",
+      "last_updated": "2025-11-21",
+      "maintainer_count": 2,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::redis@5.1.1",
+      "library": "redis",
+      "version": "5.1.1",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "Unlicense",
+      "last_updated": "2025-04-01",
+      "maintainer_count": 2,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::next@2.13.7",
+      "library": "next",
+      "version": "2.13.7",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "MIT",
+      "last_updated": "2024-07-15",
+      "maintainer_count": 2,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::ansible-core@2.8.10",
+      "library": "ansible-core",
+      "version": "2.8.10",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "medium",
+      "severity": "medium",
+      "risk_types": [
+        "vulnerable"
+      ],
+      "cve_ids": [
+        "CVE-2022-1157",
+        "CVE-2025-1114",
+        "CVE-2025-1141"
+      ],
+      "license": "LGPL-3.0",
+      "last_updated": "2025-01-09",
+      "maintainer_count": 2,
+      "score": 4.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::sharp@1.14.0",
+      "library": "sharp",
+      "version": "1.14.0",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "medium",
+      "severity": "high",
+      "risk_types": [
+        "vulnerable"
+      ],
+      "cve_ids": [
+        "CVE-2022-1098",
+        "CVE-2024-1099"
+      ],
+      "license": "BSD-3-Clause",
+      "last_updated": "2025-07-14",
+      "maintainer_count": 2,
+      "score": 7.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::axios@4.14.1",
+      "library": "axios",
+      "version": "4.14.1",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": "medium",
+      "risk_types": [
+        "unmaintained",
+        "vulnerable"
+      ],
+      "cve_ids": [],
+      "license": "BSD-3-Clause",
+      "last_updated": "2021-07-25",
+      "maintainer_count": 2,
+      "score": 2.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::winston@2.2.10",
+      "library": "winston",
+      "version": "2.2.10",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "medium",
+      "severity": "low",
+      "risk_types": [
+        "vulnerable"
+      ],
+      "cve_ids": [
+        "CVE-2023-1150"
+      ],
+      "license": "BSD-2-Clause",
+      "last_updated": "2024-07-06",
+      "maintainer_count": 2,
+      "score": 1.5,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::babel-core@5.0.0",
+      "library": "babel-core",
+      "version": "5.0.0",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "medium",
+      "severity": "critical",
+      "risk_types": [
+        "vulnerable"
+      ],
+      "cve_ids": [
+        "CVE-2024-1035",
+        "CVE-2025-1106"
+      ],
+      "license": "BSD-2-Clause",
+      "last_updated": "2024-12-22",
+      "maintainer_count": 2,
+      "score": 10.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::chalk@3.6.10",
+      "library": "chalk",
+      "version": "3.6.10",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "medium",
+      "severity": "low",
+      "risk_types": [
+        "vulnerable"
+      ],
+      "cve_ids": [
+        "CVE-2022-1170"
+      ],
+      "license": "Dual-MIT/Commercial",
+      "last_updated": "2026-04-12",
+      "maintainer_count": 2,
+      "score": 1.5,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::twisted@5.3.5",
+      "library": "twisted",
+      "version": "5.3.5",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "ISC",
+      "last_updated": "2025-08-13",
+      "maintainer_count": 2,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::nanoid@2.3.5",
+      "library": "nanoid",
+      "version": "2.3.5",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "medium",
+      "severity": "low",
+      "risk_types": [
+        "license_unknown",
+        "vulnerable"
+      ],
+      "cve_ids": [
+        "CVE-2025-1012"
+      ],
+      "license": "UNKNOWN",
+      "last_updated": "2024-06-13",
+      "maintainer_count": 2,
+      "score": 1.5,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::inquirer@5.11.0",
+      "library": "inquirer",
+      "version": "5.11.0",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "ISC",
+      "last_updated": "2024-09-13",
+      "maintainer_count": 2,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::mocha@3.5.10",
+      "library": "mocha",
+      "version": "3.5.10",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "Unlicense",
+      "last_updated": "2025-05-10",
+      "maintainer_count": 2,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::vue@5.14.6",
+      "library": "vue",
+      "version": "5.14.6",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "Unlicense",
+      "last_updated": "2025-01-25",
+      "maintainer_count": 2,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::puppeteer@1.9.3",
+      "library": "puppeteer",
+      "version": "1.9.3",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": "medium",
+      "risk_types": [
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "license": "MIT",
+      "last_updated": "2022-10-18",
+      "maintainer_count": 2,
+      "score": 2.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::postgresql-jdbc@2.12.3",
+      "library": "postgresql-jdbc",
+      "version": "2.12.3",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "BSD-3-Clause",
+      "last_updated": "2025-05-03",
+      "maintainer_count": 2,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::socket.io@5.13.10",
+      "library": "socket.io",
+      "version": "5.13.10",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "high",
+      "severity": "medium",
+      "risk_types": [
+        "vulnerable"
+      ],
+      "cve_ids": [
+        "CVE-2021-1038",
+        "CVE-2022-1143"
+      ],
+      "license": "Unlicense",
+      "last_updated": "2025-02-04",
+      "maintainer_count": 2,
+      "score": 5.2,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::sequelize@2.12.8",
+      "library": "sequelize",
+      "version": "2.12.8",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "medium",
+      "severity": "critical",
+      "risk_types": [
+        "unmaintained",
+        "vulnerable"
+      ],
+      "cve_ids": [
+        "CVE-2023-1167"
+      ],
+      "license": "LGPL-2.1",
+      "last_updated": "2021-01-29",
+      "maintainer_count": 2,
+      "score": 10.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::dayjs@2.4.1",
+      "library": "dayjs",
+      "version": "2.4.1",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "Apache-2.0",
+      "last_updated": "2024-08-20",
+      "maintainer_count": 2,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::chai@2.7.6",
+      "library": "chai",
+      "version": "2.7.6",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "high",
+      "severity": "medium",
+      "risk_types": [
+        "vulnerable"
+      ],
+      "cve_ids": [
+        "CVE-2023-1089",
+        "CVE-2024-1090",
+        "CVE-2024-1165"
+      ],
+      "license": "BSD-3-Clause",
+      "last_updated": "2024-12-24",
+      "maintainer_count": 2,
+      "score": 5.2,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::graphql@1.11.6",
+      "library": "graphql",
+      "version": "1.11.6",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "high",
+      "severity": "low",
+      "risk_types": [
+        "vulnerable"
+      ],
+      "cve_ids": [
+        "CVE-2025-1158"
+      ],
+      "license": "ISC",
+      "last_updated": "2024-11-07",
+      "maintainer_count": 2,
+      "score": 1.9500000000000002,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::commander@3.12.7",
+      "library": "commander",
+      "version": "3.12.7",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": "medium",
+      "risk_types": [
+        "unmaintained",
+        "vulnerable"
+      ],
+      "cve_ids": [],
+      "license": "BSD-3-Clause",
+      "last_updated": "2020-10-06",
+      "maintainer_count": 2,
+      "score": 2.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::morgan@4.11.6",
+      "library": "morgan",
+      "version": "4.11.6",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "medium",
+      "severity": "medium",
+      "risk_types": [
+        "vulnerable"
+      ],
+      "cve_ids": [
+        "CVE-2025-1105"
+      ],
+      "license": "BSD-3-Clause",
+      "last_updated": "2024-10-06",
+      "maintainer_count": 2,
+      "score": 4.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::django@3.15.10",
+      "library": "django",
+      "version": "3.15.10",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "medium",
+      "severity": "medium",
+      "risk_types": [
+        "vulnerable"
+      ],
+      "cve_ids": [
+        "CVE-2022-1033"
+      ],
+      "license": "BSD-3-Clause",
+      "last_updated": "2025-02-04",
+      "maintainer_count": 2,
+      "score": 4.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::multer@2.8.9",
+      "library": "multer",
+      "version": "2.8.9",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "ISC",
+      "last_updated": "2026-04-10",
+      "maintainer_count": 2,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::uuid@5.6.6",
+      "library": "uuid",
+      "version": "5.6.6",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "ISC",
+      "last_updated": "2026-04-06",
+      "maintainer_count": 2,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::lodash@2.12.4",
+      "library": "lodash",
+      "version": "2.12.4",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": "critical",
+      "risk_types": [
+        "license_conflict"
+      ],
+      "cve_ids": [],
+      "license": "GPL-2.0",
+      "last_updated": "2024-06-02",
+      "maintainer_count": 2,
+      "score": 10.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::webpack@4.13.10",
+      "library": "webpack",
+      "version": "4.13.10",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "Apache-2.0",
+      "last_updated": "2024-12-20",
+      "maintainer_count": 2,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::helmet@2.6.0",
+      "library": "helmet",
+      "version": "2.6.0",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "Dual-MIT/Commercial",
+      "last_updated": "2026-03-04",
+      "maintainer_count": 2,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::knex@1.7.7",
+      "library": "knex",
+      "version": "1.7.7",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "LGPL-2.1",
+      "last_updated": "2024-06-08",
+      "maintainer_count": 2,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::express@5.0.6",
+      "library": "express",
+      "version": "5.0.6",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": true,
+      "is_reachable": false,
+      "exploitability": "none",
+      "severity": "medium",
+      "risk_types": [
+        "vulnerable"
+      ],
+      "cve_ids": [
+        "CVE-2022-1171"
+      ],
+      "license": "BSD-3-Clause",
+      "last_updated": "2025-05-12",
+      "maintainer_count": 2,
+      "score": 1.2,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::passport@2.11.10",
+      "library": "passport",
+      "version": "2.11.10",
+      "kind": "library",
+      "is_direct": true,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "Dual-MIT/Commercial",
+      "last_updated": "2024-09-11",
+      "maintainer_count": 2,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::moment@4.0.2",
+      "library": "moment",
+      "version": "4.0.2",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": "high",
+      "risk_types": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 7.0,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::bcrypt@2.4.3",
+      "library": "bcrypt",
+      "version": "2.4.3",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "medium",
+      "severity": "critical",
+      "risk_types": [
+        "license_unknown",
+        "transitive_vuln",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2022-1075",
+        "CVE-2023-1074",
+        "CVE-2024-1138"
+      ],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 7.0,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::react@4.2.4",
+      "library": "react",
+      "version": "4.2.4",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "medium",
+      "severity": "low",
+      "risk_types": [
+        "license_unknown",
+        "transitive_vuln",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2022-1058",
+        "CVE-2024-1059"
+      ],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 1.0499999999999998,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::cors@3.9.1",
+      "library": "cors",
+      "version": "3.9.1",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": "high",
+      "risk_types": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 7.0,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::nodemon@4.7.3",
+      "library": "nodemon",
+      "version": "4.7.3",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "medium",
+      "severity": "low",
+      "risk_types": [
+        "license_unknown",
+        "transitive_vuln",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2023-1132"
+      ],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 1.0499999999999998,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::bcrypt@2.6.1",
+      "library": "bcrypt",
+      "version": "2.6.1",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "medium",
+      "severity": "critical",
+      "risk_types": [
+        "license_unknown",
+        "transitive_vuln",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2022-1075",
+        "CVE-2023-1074",
+        "CVE-2024-1138"
+      ],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 7.0,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::pm2@1.5.0",
+      "library": "pm2",
+      "version": "1.5.0",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": "high",
+      "risk_types": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 7.0,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::angular-core@1.8.2",
+      "library": "angular-core",
+      "version": "1.8.2",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": "high",
+      "risk_types": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 7.0,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::dotenv@4.7.1",
+      "library": "dotenv",
+      "version": "4.7.1",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "medium",
+      "severity": "low",
+      "risk_types": [
+        "license_unknown",
+        "transitive_vuln",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2023-1109",
+        "CVE-2023-1152"
+      ],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 1.0499999999999998,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::pm2@1.4.0",
+      "library": "pm2",
+      "version": "1.4.0",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": "high",
+      "risk_types": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 7.0,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::node-fetch@2.5.5",
+      "library": "node-fetch",
+      "version": "2.5.5",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "medium",
+      "severity": "high",
+      "risk_types": [
+        "license_unknown",
+        "transitive_vuln",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2023-1119",
+        "CVE-2023-1173"
+      ],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 4.8999999999999995,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::cors@1.9.0",
+      "library": "cors",
+      "version": "1.9.0",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": "high",
+      "risk_types": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 7.0,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::bcrypt@2.4.0",
+      "library": "bcrypt",
+      "version": "2.4.0",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "medium",
+      "severity": "critical",
+      "risk_types": [
+        "license_unknown",
+        "transitive_vuln",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2022-1075",
+        "CVE-2023-1074",
+        "CVE-2024-1138"
+      ],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 7.0,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::dotenv@4.0.5",
+      "library": "dotenv",
+      "version": "4.0.5",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "medium",
+      "severity": "low",
+      "risk_types": [
+        "license_unknown",
+        "transitive_vuln",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2023-1109",
+        "CVE-2023-1152"
+      ],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 1.0499999999999998,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::react@1.6.5",
+      "library": "react",
+      "version": "1.6.5",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "medium",
+      "severity": "low",
+      "risk_types": [
+        "license_unknown",
+        "transitive_vuln",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2022-1058",
+        "CVE-2024-1059"
+      ],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 1.0499999999999998,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::prettier@2.1.5",
+      "library": "prettier",
+      "version": "2.1.5",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "high",
+      "severity": "medium",
+      "risk_types": [
+        "license_unknown",
+        "transitive_vuln",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2023-1187"
+      ],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 3.6399999999999997,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::angular-core@2.4.0",
+      "library": "angular-core",
+      "version": "2.4.0",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": "high",
+      "risk_types": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 7.0,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::bcrypt@3.10.5",
+      "library": "bcrypt",
+      "version": "3.10.5",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "medium",
+      "severity": "critical",
+      "risk_types": [
+        "license_unknown",
+        "transitive_vuln",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2022-1075",
+        "CVE-2023-1074",
+        "CVE-2024-1138"
+      ],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 7.0,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::prettier@3.2.5",
+      "library": "prettier",
+      "version": "3.2.5",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "high",
+      "severity": "medium",
+      "risk_types": [
+        "license_unknown",
+        "transitive_vuln",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2023-1187"
+      ],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 3.6399999999999997,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::angular-core@1.6.3",
+      "library": "angular-core",
+      "version": "1.6.3",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": "high",
+      "risk_types": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 7.0,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::prettier@1.4.4",
+      "library": "prettier",
+      "version": "1.4.4",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "high",
+      "severity": "medium",
+      "risk_types": [
+        "license_unknown",
+        "transitive_vuln",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2023-1187"
+      ],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 3.6399999999999997,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::react@2.0.0",
+      "library": "react",
+      "version": "2.0.0",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "medium",
+      "severity": "low",
+      "risk_types": [
+        "license_unknown",
+        "transitive_vuln",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2022-1058",
+        "CVE-2024-1059"
+      ],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 1.0499999999999998,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::cors@3.7.3",
+      "library": "cors",
+      "version": "3.7.3",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": "high",
+      "risk_types": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 7.0,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::nodemon@2.3.3",
+      "library": "nodemon",
+      "version": "2.3.3",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "medium",
+      "severity": "low",
+      "risk_types": [
+        "license_unknown",
+        "transitive_vuln",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2023-1132"
+      ],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 1.0499999999999998,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::nats@3.10.5",
+      "library": "nats",
+      "version": "3.10.5",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": "high",
+      "risk_types": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 7.0,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::node-fetch@1.10.5",
+      "library": "node-fetch",
+      "version": "1.10.5",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "medium",
+      "severity": "high",
+      "risk_types": [
+        "license_unknown",
+        "transitive_vuln",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2023-1119",
+        "CVE-2023-1173"
+      ],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 4.8999999999999995,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::moment@4.6.5",
+      "library": "moment",
+      "version": "4.6.5",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": "high",
+      "risk_types": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 7.0,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::nodemon@4.1.0",
+      "library": "nodemon",
+      "version": "4.1.0",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "medium",
+      "severity": "low",
+      "risk_types": [
+        "license_unknown",
+        "transitive_vuln",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2023-1132"
+      ],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 1.0499999999999998,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::mapstruct@3.2.2",
+      "library": "mapstruct",
+      "version": "3.2.2",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": "high",
+      "risk_types": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 7.0,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::dotenv@1.7.4",
+      "library": "dotenv",
+      "version": "1.7.4",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "high",
+      "severity": "low",
+      "risk_types": [
+        "license_unknown",
+        "transitive_vuln",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2023-1109",
+        "CVE-2023-1152",
+        "CVE-2024-1139"
+      ],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 1.365,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::moment@2.1.2",
+      "library": "moment",
+      "version": "2.1.2",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": "high",
+      "risk_types": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 7.0,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::bcrypt@1.6.0",
+      "library": "bcrypt",
+      "version": "1.6.0",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "medium",
+      "severity": "critical",
+      "risk_types": [
+        "license_unknown",
+        "transitive_vuln",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2022-1075",
+        "CVE-2023-1074",
+        "CVE-2024-1138"
+      ],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 7.0,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::eslint@3.1.2",
+      "library": "eslint",
+      "version": "3.1.2",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "medium",
+      "severity": "medium",
+      "risk_types": [
+        "license_unknown",
+        "transitive_vuln",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2022-1016"
+      ],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 2.8,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::angular-core@1.1.1",
+      "library": "angular-core",
+      "version": "1.1.1",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": "high",
+      "risk_types": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 7.0,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::formidable@3.10.2",
+      "library": "formidable",
+      "version": "3.10.2",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": "high",
+      "risk_types": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "license": "UNKNOWN",
+      "last_updated": "",
+      "maintainer_count": 2,
+      "score": 7.0,
+      "depth": 2
+    },
+    {
+      "id": "APP-009::node-fetch@4.11.2",
+      "library": "node-fetch",
+      "version": "4.11.2",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "medium",
+      "severity": "high",
+      "risk_types": [
+        "transitive_vuln"
+      ],
+      "cve_ids": [
+        "CVE-2023-1119",
+        "CVE-2023-1173"
+      ],
+      "license": "ISC",
+      "last_updated": "2025-02-10",
+      "maintainer_count": 2,
+      "score": 4.8999999999999995,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::moment@4.10.3",
+      "library": "moment",
+      "version": "4.10.3",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": "critical",
+      "risk_types": [
+        "transitive_license_conflict"
+      ],
+      "cve_ids": [],
+      "license": "AGPL-3.0",
+      "last_updated": "2025-04-26",
+      "maintainer_count": 2,
+      "score": 10.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::cors@1.10.5",
+      "library": "cors",
+      "version": "1.10.5",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "Unlicense",
+      "last_updated": "2025-08-29",
+      "maintainer_count": 2,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::react@2.9.7",
+      "library": "react",
+      "version": "2.9.7",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "medium",
+      "severity": "low",
+      "risk_types": [
+        "transitive_vuln"
+      ],
+      "cve_ids": [
+        "CVE-2022-1058",
+        "CVE-2024-1059"
+      ],
+      "license": "MIT",
+      "last_updated": "2025-10-01",
+      "maintainer_count": 2,
+      "score": 1.0499999999999998,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::mapstruct@1.11.6",
+      "library": "mapstruct",
+      "version": "1.11.6",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "Apache-2.0",
+      "last_updated": "2026-01-07",
+      "maintainer_count": 2,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::formidable@1.2.7",
+      "library": "formidable",
+      "version": "1.2.7",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "Unlicense",
+      "last_updated": "2025-09-22",
+      "maintainer_count": 2,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::pm2@2.7.1",
+      "library": "pm2",
+      "version": "2.7.1",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "Apache-2.0",
+      "last_updated": "2026-04-07",
+      "maintainer_count": 2,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::prettier@1.1.6",
+      "library": "prettier",
+      "version": "1.1.6",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "high",
+      "severity": "medium",
+      "risk_types": [
+        "license_unknown",
+        "transitive_vuln"
+      ],
+      "cve_ids": [
+        "CVE-2023-1187"
+      ],
+      "license": "UNKNOWN",
+      "last_updated": "2025-05-01",
+      "maintainer_count": 2,
+      "score": 3.6399999999999997,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::dotenv@3.3.4",
+      "library": "dotenv",
+      "version": "3.3.4",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "medium",
+      "severity": "low",
+      "risk_types": [
+        "transitive_vuln",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2023-1109",
+        "CVE-2023-1152"
+      ],
+      "license": "Unlicense",
+      "last_updated": "2020-10-05",
+      "maintainer_count": 2,
+      "score": 1.0499999999999998,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::nodemon@4.1.5",
+      "library": "nodemon",
+      "version": "4.1.5",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "medium",
+      "severity": "low",
+      "risk_types": [
+        "transitive_vuln"
+      ],
+      "cve_ids": [
+        "CVE-2023-1132"
+      ],
+      "license": "Dual-MIT/Commercial",
+      "last_updated": "2024-08-06",
+      "maintainer_count": 2,
+      "score": 1.0499999999999998,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::eslint@4.11.6",
+      "library": "eslint",
+      "version": "4.11.6",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "Dual-MIT/Commercial",
+      "last_updated": "2025-01-25",
+      "maintainer_count": 2,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::jsonwebtoken@3.1.1",
+      "library": "jsonwebtoken",
+      "version": "3.1.1",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "Apache-2.0",
+      "last_updated": "2024-09-27",
+      "maintainer_count": 2,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::angular-core@3.2.5",
+      "library": "angular-core",
+      "version": "3.2.5",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": false,
+      "is_reachable": null,
+      "exploitability": "",
+      "severity": null,
+      "risk_types": [],
+      "cve_ids": [],
+      "license": "MIT",
+      "last_updated": "2026-01-26",
+      "maintainer_count": 2,
+      "score": 0.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::bcrypt@2.6.6",
+      "library": "bcrypt",
+      "version": "2.6.6",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "medium",
+      "severity": "critical",
+      "risk_types": [
+        "transitive_vuln"
+      ],
+      "cve_ids": [
+        "CVE-2022-1075",
+        "CVE-2023-1074",
+        "CVE-2024-1138"
+      ],
+      "license": "Unlicense",
+      "last_updated": "2024-10-08",
+      "maintainer_count": 2,
+      "score": 7.0,
+      "depth": 1
+    },
+    {
+      "id": "APP-009::nats@2.1.6",
+      "library": "nats",
+      "version": "2.1.6",
+      "kind": "library",
+      "is_direct": false,
+      "is_vulnerable": true,
+      "is_reachable": true,
+      "exploitability": "medium",
+      "severity": "medium",
+      "risk_types": [
+        "transitive_license_conflict",
+        "transitive_vuln"
+      ],
+      "cve_ids": [
+        "CVE-2022-1051"
+      ],
+      "license": "GPL-3.0",
+      "last_updated": "2025-03-31",
+      "maintainer_count": 2,
+      "score": 2.8,
+      "depth": 1
+    }
+  ],
+  "edges": [
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::react-dom@1.10.9",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::yaml-go@5.15.0",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::jest@3.13.6",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::cryptography@3.6.0",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::redis@5.1.1",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::next@2.13.7",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::ansible-core@2.8.10",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::sharp@1.14.0",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::axios@4.14.1",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::winston@2.2.10",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::babel-core@5.0.0",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::chalk@3.6.10",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::twisted@5.3.5",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::nanoid@2.3.5",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::inquirer@5.11.0",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::mocha@3.5.10",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::vue@5.14.6",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::puppeteer@1.9.3",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::postgresql-jdbc@2.12.3",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::socket.io@5.13.10",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::sequelize@2.12.8",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::dayjs@2.4.1",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::chai@2.7.6",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::graphql@1.11.6",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::commander@3.12.7",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::morgan@4.11.6",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::django@3.15.10",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::multer@2.8.9",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::uuid@5.6.6",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::lodash@2.12.4",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::webpack@4.13.10",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::helmet@2.6.0",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::knex@1.7.7",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::express@5.0.6",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::passport@2.11.10",
+      "used": true,
+      "is_direct": true
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::node-fetch@4.11.2",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::moment@4.10.3",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::cors@1.10.5",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::react@2.9.7",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::mapstruct@1.11.6",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::formidable@1.2.7",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::pm2@2.7.1",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::prettier@1.1.6",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::dotenv@3.3.4",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::nodemon@4.1.5",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::eslint@4.11.6",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::jsonwebtoken@3.1.1",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::angular-core@3.2.5",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::bcrypt@2.6.6",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "app:APP-009",
+      "target": "APP-009::nats@2.1.6",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::yaml-go@5.15.0",
+      "target": "APP-009::moment@4.0.2",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::jest@3.13.6",
+      "target": "APP-009::bcrypt@2.4.3",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::jest@3.13.6",
+      "target": "APP-009::react@4.2.4",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::jest@3.13.6",
+      "target": "APP-009::cors@3.9.1",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::cryptography@3.6.0",
+      "target": "APP-009::nodemon@4.7.3",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::redis@5.1.1",
+      "target": "APP-009::bcrypt@2.6.1",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::ansible-core@2.8.10",
+      "target": "APP-009::pm2@1.5.0",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::ansible-core@2.8.10",
+      "target": "APP-009::angular-core@1.8.2",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::ansible-core@2.8.10",
+      "target": "APP-009::dotenv@4.7.1",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::sharp@1.14.0",
+      "target": "APP-009::pm2@1.4.0",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::sharp@1.14.0",
+      "target": "APP-009::node-fetch@2.5.5",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::axios@4.14.1",
+      "target": "APP-009::cors@1.9.0",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::axios@4.14.1",
+      "target": "APP-009::bcrypt@2.4.0",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::winston@2.2.10",
+      "target": "APP-009::dotenv@4.0.5",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::winston@2.2.10",
+      "target": "APP-009::react@1.6.5",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::nanoid@2.3.5",
+      "target": "APP-009::prettier@2.1.5",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::inquirer@5.11.0",
+      "target": "APP-009::angular-core@2.4.0",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::inquirer@5.11.0",
+      "target": "APP-009::bcrypt@3.10.5",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::dayjs@2.4.1",
+      "target": "APP-009::prettier@3.2.5",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::graphql@1.11.6",
+      "target": "APP-009::angular-core@1.6.3",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::graphql@1.11.6",
+      "target": "APP-009::prettier@1.4.4",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::commander@3.12.7",
+      "target": "APP-009::react@2.0.0",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::commander@3.12.7",
+      "target": "APP-009::cors@3.7.3",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::morgan@4.11.6",
+      "target": "APP-009::nodemon@2.3.3",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::django@3.15.10",
+      "target": "APP-009::nats@3.10.5",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::multer@2.8.9",
+      "target": "APP-009::node-fetch@1.10.5",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::multer@2.8.9",
+      "target": "APP-009::moment@4.6.5",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::uuid@5.6.6",
+      "target": "APP-009::nodemon@4.1.0",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::uuid@5.6.6",
+      "target": "APP-009::mapstruct@3.2.2",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::webpack@4.13.10",
+      "target": "APP-009::dotenv@1.7.4",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::helmet@2.6.0",
+      "target": "APP-009::moment@2.1.2",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::helmet@2.6.0",
+      "target": "APP-009::bcrypt@1.6.0",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::helmet@2.6.0",
+      "target": "APP-009::eslint@3.1.2",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::knex@1.7.7",
+      "target": "APP-009::angular-core@1.1.1",
+      "used": true,
+      "is_direct": false
+    },
+    {
+      "source": "APP-009::express@5.0.6",
+      "target": "APP-009::formidable@3.10.2",
+      "used": true,
+      "is_direct": false
+    }
+  ],
+  "findings": [
+    {
+      "app_id": "APP-009",
+      "library": "babel-core",
+      "version": "5.0.0",
+      "is_direct": true,
+      "risk_type": "vulnerable",
+      "severity": "critical",
+      "secondary_risks": [],
+      "cve_ids": [
+        "CVE-2024-1035",
+        "CVE-2025-1106"
+      ],
+      "exploitability": "medium",
+      "is_reachable": true,
+      "detail": "2 known vulnerabilities (max CVSS 9.8).",
+      "score": 10.0,
+      "paths": [
+        [
+          "babel-core@5.0.0"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2024-1035": null,
+        "CVE-2025-1106": "6.0.0"
+      },
+      "max_cvss": 9.8,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "sequelize",
+      "version": "2.12.8",
+      "is_direct": true,
+      "risk_type": "vulnerable",
+      "severity": "critical",
+      "secondary_risks": [
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2023-1167"
+      ],
+      "exploitability": "medium",
+      "is_reachable": true,
+      "detail": "1 known vulnerability (max CVSS 9.4).",
+      "score": 10.0,
+      "paths": [
+        [
+          "sequelize@2.12.8"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2023-1167": "6.0.0"
+      },
+      "max_cvss": 9.4,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "lodash",
+      "version": "2.12.4",
+      "is_direct": true,
+      "risk_type": "license_conflict",
+      "severity": "critical",
+      "secondary_risks": [],
+      "cve_ids": [],
+      "exploitability": "",
+      "is_reachable": null,
+      "detail": "Copyleft license 'GPL-2.0' is incompatible with the proprietary application.",
+      "score": 10.0,
+      "paths": [],
+      "fixed_versions": {},
+      "max_cvss": 0.0,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "moment",
+      "version": "4.10.3",
+      "is_direct": false,
+      "risk_type": "transitive_license_conflict",
+      "severity": "critical",
+      "secondary_risks": [],
+      "cve_ids": [],
+      "exploitability": "",
+      "is_reachable": null,
+      "detail": "Transitive copyleft license 'AGPL-3.0' incompatible with the proprietary application.",
+      "score": 10.0,
+      "paths": [],
+      "fixed_versions": {},
+      "max_cvss": 0.0,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "react-dom",
+      "version": "1.10.9",
+      "is_direct": true,
+      "risk_type": "vulnerable",
+      "severity": "high",
+      "secondary_risks": [
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2022-1166",
+        "CVE-2025-1179",
+        "CVE-2022-1194"
+      ],
+      "exploitability": "high",
+      "is_reachable": true,
+      "detail": "3 known vulnerabilities (max CVSS 8.3).",
+      "score": 9.1,
+      "paths": [
+        [
+          "react-dom@1.10.9"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2022-1166": null,
+        "CVE-2025-1179": "4.0.0",
+        "CVE-2022-1194": "6.0.0"
+      },
+      "max_cvss": 8.3,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "sharp",
+      "version": "1.14.0",
+      "is_direct": true,
+      "risk_type": "vulnerable",
+      "severity": "high",
+      "secondary_risks": [],
+      "cve_ids": [
+        "CVE-2022-1098",
+        "CVE-2024-1099"
+      ],
+      "exploitability": "medium",
+      "is_reachable": true,
+      "detail": "2 known vulnerabilities (max CVSS 7.3).",
+      "score": 7.0,
+      "paths": [
+        [
+          "sharp@1.14.0"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2022-1098": "4.11.0",
+        "CVE-2024-1099": "5.13.0"
+      },
+      "max_cvss": 7.3,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "bcrypt",
+      "version": "2.4.3",
+      "is_direct": false,
+      "risk_type": "transitive_vuln",
+      "severity": "critical",
+      "secondary_risks": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2023-1074",
+        "CVE-2022-1075",
+        "CVE-2024-1138"
+      ],
+      "exploitability": "medium",
+      "is_reachable": true,
+      "detail": "3 known vulnerabilities (max CVSS 9.4). Transitive via 2-hop chain.",
+      "score": 7.0,
+      "paths": [
+        [
+          "jest@3.13.6",
+          "bcrypt@2.4.3"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2023-1074": null,
+        "CVE-2022-1075": null,
+        "CVE-2024-1138": "5.0.0"
+      },
+      "max_cvss": 9.4,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "bcrypt",
+      "version": "2.6.1",
+      "is_direct": false,
+      "risk_type": "transitive_vuln",
+      "severity": "critical",
+      "secondary_risks": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2023-1074",
+        "CVE-2022-1075",
+        "CVE-2024-1138"
+      ],
+      "exploitability": "medium",
+      "is_reachable": true,
+      "detail": "3 known vulnerabilities (max CVSS 9.4). Transitive via 2-hop chain.",
+      "score": 7.0,
+      "paths": [
+        [
+          "redis@5.1.1",
+          "bcrypt@2.6.1"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2023-1074": null,
+        "CVE-2022-1075": null,
+        "CVE-2024-1138": "5.0.0"
+      },
+      "max_cvss": 9.4,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "bcrypt",
+      "version": "2.4.0",
+      "is_direct": false,
+      "risk_type": "transitive_vuln",
+      "severity": "critical",
+      "secondary_risks": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2023-1074",
+        "CVE-2022-1075",
+        "CVE-2024-1138"
+      ],
+      "exploitability": "medium",
+      "is_reachable": true,
+      "detail": "3 known vulnerabilities (max CVSS 9.4). Transitive via 2-hop chain.",
+      "score": 7.0,
+      "paths": [
+        [
+          "axios@4.14.1",
+          "bcrypt@2.4.0"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2023-1074": null,
+        "CVE-2022-1075": null,
+        "CVE-2024-1138": "5.0.0"
+      },
+      "max_cvss": 9.4,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "bcrypt",
+      "version": "3.10.5",
+      "is_direct": false,
+      "risk_type": "transitive_vuln",
+      "severity": "critical",
+      "secondary_risks": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2023-1074",
+        "CVE-2022-1075",
+        "CVE-2024-1138"
+      ],
+      "exploitability": "medium",
+      "is_reachable": true,
+      "detail": "3 known vulnerabilities (max CVSS 9.4). Transitive via 2-hop chain.",
+      "score": 7.0,
+      "paths": [
+        [
+          "inquirer@5.11.0",
+          "bcrypt@3.10.5"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2023-1074": null,
+        "CVE-2022-1075": null,
+        "CVE-2024-1138": "5.0.0"
+      },
+      "max_cvss": 9.4,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "bcrypt",
+      "version": "1.6.0",
+      "is_direct": false,
+      "risk_type": "transitive_vuln",
+      "severity": "critical",
+      "secondary_risks": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2023-1074",
+        "CVE-2022-1075",
+        "CVE-2024-1138"
+      ],
+      "exploitability": "medium",
+      "is_reachable": true,
+      "detail": "3 known vulnerabilities (max CVSS 9.4). Transitive via 2-hop chain.",
+      "score": 7.0,
+      "paths": [
+        [
+          "helmet@2.6.0",
+          "bcrypt@1.6.0"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2023-1074": null,
+        "CVE-2022-1075": null,
+        "CVE-2024-1138": "5.0.0"
+      },
+      "max_cvss": 9.4,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "bcrypt",
+      "version": "2.6.6",
+      "is_direct": false,
+      "risk_type": "transitive_vuln",
+      "severity": "critical",
+      "secondary_risks": [],
+      "cve_ids": [
+        "CVE-2023-1074",
+        "CVE-2022-1075",
+        "CVE-2024-1138"
+      ],
+      "exploitability": "medium",
+      "is_reachable": true,
+      "detail": "3 known vulnerabilities (max CVSS 9.4). Transitive via 1-hop chain.",
+      "score": 7.0,
+      "paths": [
+        [
+          "bcrypt@2.6.6"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2023-1074": null,
+        "CVE-2022-1075": null,
+        "CVE-2024-1138": "5.0.0"
+      },
+      "max_cvss": 9.4,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "moment",
+      "version": "4.0.2",
+      "is_direct": false,
+      "risk_type": "license_unknown",
+      "severity": "high",
+      "secondary_risks": [
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "exploitability": "",
+      "is_reachable": null,
+      "detail": "License 'UNKNOWN' is unrecognized — legal review needed.",
+      "score": 7.0,
+      "paths": [],
+      "fixed_versions": {},
+      "max_cvss": 0.0,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "cors",
+      "version": "3.9.1",
+      "is_direct": false,
+      "risk_type": "license_unknown",
+      "severity": "high",
+      "secondary_risks": [
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "exploitability": "",
+      "is_reachable": null,
+      "detail": "License 'UNKNOWN' is unrecognized — legal review needed.",
+      "score": 7.0,
+      "paths": [],
+      "fixed_versions": {},
+      "max_cvss": 0.0,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "pm2",
+      "version": "1.5.0",
+      "is_direct": false,
+      "risk_type": "license_unknown",
+      "severity": "high",
+      "secondary_risks": [
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "exploitability": "",
+      "is_reachable": null,
+      "detail": "License 'UNKNOWN' is unrecognized — legal review needed.",
+      "score": 7.0,
+      "paths": [],
+      "fixed_versions": {},
+      "max_cvss": 0.0,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "angular-core",
+      "version": "1.8.2",
+      "is_direct": false,
+      "risk_type": "license_unknown",
+      "severity": "high",
+      "secondary_risks": [
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "exploitability": "",
+      "is_reachable": null,
+      "detail": "License 'UNKNOWN' is unrecognized — legal review needed.",
+      "score": 7.0,
+      "paths": [],
+      "fixed_versions": {},
+      "max_cvss": 0.0,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "pm2",
+      "version": "1.4.0",
+      "is_direct": false,
+      "risk_type": "license_unknown",
+      "severity": "high",
+      "secondary_risks": [
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "exploitability": "",
+      "is_reachable": null,
+      "detail": "License 'UNKNOWN' is unrecognized — legal review needed.",
+      "score": 7.0,
+      "paths": [],
+      "fixed_versions": {},
+      "max_cvss": 0.0,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "cors",
+      "version": "1.9.0",
+      "is_direct": false,
+      "risk_type": "license_unknown",
+      "severity": "high",
+      "secondary_risks": [
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "exploitability": "",
+      "is_reachable": null,
+      "detail": "License 'UNKNOWN' is unrecognized — legal review needed.",
+      "score": 7.0,
+      "paths": [],
+      "fixed_versions": {},
+      "max_cvss": 0.0,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "angular-core",
+      "version": "2.4.0",
+      "is_direct": false,
+      "risk_type": "license_unknown",
+      "severity": "high",
+      "secondary_risks": [
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "exploitability": "",
+      "is_reachable": null,
+      "detail": "License 'UNKNOWN' is unrecognized — legal review needed.",
+      "score": 7.0,
+      "paths": [],
+      "fixed_versions": {},
+      "max_cvss": 0.0,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "angular-core",
+      "version": "1.6.3",
+      "is_direct": false,
+      "risk_type": "license_unknown",
+      "severity": "high",
+      "secondary_risks": [
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "exploitability": "",
+      "is_reachable": null,
+      "detail": "License 'UNKNOWN' is unrecognized — legal review needed.",
+      "score": 7.0,
+      "paths": [],
+      "fixed_versions": {},
+      "max_cvss": 0.0,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "cors",
+      "version": "3.7.3",
+      "is_direct": false,
+      "risk_type": "license_unknown",
+      "severity": "high",
+      "secondary_risks": [
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "exploitability": "",
+      "is_reachable": null,
+      "detail": "License 'UNKNOWN' is unrecognized — legal review needed.",
+      "score": 7.0,
+      "paths": [],
+      "fixed_versions": {},
+      "max_cvss": 0.0,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "nats",
+      "version": "3.10.5",
+      "is_direct": false,
+      "risk_type": "license_unknown",
+      "severity": "high",
+      "secondary_risks": [
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "exploitability": "",
+      "is_reachable": null,
+      "detail": "License 'UNKNOWN' is unrecognized — legal review needed.",
+      "score": 7.0,
+      "paths": [],
+      "fixed_versions": {},
+      "max_cvss": 0.0,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "moment",
+      "version": "4.6.5",
+      "is_direct": false,
+      "risk_type": "license_unknown",
+      "severity": "high",
+      "secondary_risks": [
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "exploitability": "",
+      "is_reachable": null,
+      "detail": "License 'UNKNOWN' is unrecognized — legal review needed.",
+      "score": 7.0,
+      "paths": [],
+      "fixed_versions": {},
+      "max_cvss": 0.0,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "mapstruct",
+      "version": "3.2.2",
+      "is_direct": false,
+      "risk_type": "license_unknown",
+      "severity": "high",
+      "secondary_risks": [
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "exploitability": "",
+      "is_reachable": null,
+      "detail": "License 'UNKNOWN' is unrecognized — legal review needed.",
+      "score": 7.0,
+      "paths": [],
+      "fixed_versions": {},
+      "max_cvss": 0.0,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "moment",
+      "version": "2.1.2",
+      "is_direct": false,
+      "risk_type": "license_unknown",
+      "severity": "high",
+      "secondary_risks": [
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "exploitability": "",
+      "is_reachable": null,
+      "detail": "License 'UNKNOWN' is unrecognized — legal review needed.",
+      "score": 7.0,
+      "paths": [],
+      "fixed_versions": {},
+      "max_cvss": 0.0,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "angular-core",
+      "version": "1.1.1",
+      "is_direct": false,
+      "risk_type": "license_unknown",
+      "severity": "high",
+      "secondary_risks": [
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "exploitability": "",
+      "is_reachable": null,
+      "detail": "License 'UNKNOWN' is unrecognized — legal review needed.",
+      "score": 7.0,
+      "paths": [],
+      "fixed_versions": {},
+      "max_cvss": 0.0,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "formidable",
+      "version": "3.10.2",
+      "is_direct": false,
+      "risk_type": "license_unknown",
+      "severity": "high",
+      "secondary_risks": [
+        "unmaintained"
+      ],
+      "cve_ids": [],
+      "exploitability": "",
+      "is_reachable": null,
+      "detail": "License 'UNKNOWN' is unrecognized — legal review needed.",
+      "score": 7.0,
+      "paths": [],
+      "fixed_versions": {},
+      "max_cvss": 0.0,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "socket.io",
+      "version": "5.13.10",
+      "is_direct": true,
+      "risk_type": "vulnerable",
+      "severity": "medium",
+      "secondary_risks": [],
+      "cve_ids": [
+        "CVE-2021-1038",
+        "CVE-2022-1143"
+      ],
+      "exploitability": "high",
+      "is_reachable": true,
+      "detail": "2 known vulnerabilities (max CVSS 6.2).",
+      "score": 5.2,
+      "paths": [
+        [
+          "socket.io@5.13.10"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2021-1038": null,
+        "CVE-2022-1143": null
+      },
+      "max_cvss": 6.2,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "chai",
+      "version": "2.7.6",
+      "is_direct": true,
+      "risk_type": "vulnerable",
+      "severity": "medium",
+      "secondary_risks": [],
+      "cve_ids": [
+        "CVE-2023-1089",
+        "CVE-2024-1090",
+        "CVE-2024-1165"
+      ],
+      "exploitability": "high",
+      "is_reachable": true,
+      "detail": "3 known vulnerabilities (max CVSS 5.2).",
+      "score": 5.2,
+      "paths": [
+        [
+          "chai@2.7.6"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2023-1089": null,
+        "CVE-2024-1090": "3.7.0",
+        "CVE-2024-1165": "6.0.0"
+      },
+      "max_cvss": 5.2,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "node-fetch",
+      "version": "2.5.5",
+      "is_direct": false,
+      "risk_type": "transitive_vuln",
+      "severity": "high",
+      "secondary_risks": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2023-1119",
+        "CVE-2023-1173"
+      ],
+      "exploitability": "medium",
+      "is_reachable": true,
+      "detail": "2 known vulnerabilities (max CVSS 8.8). Transitive via 2-hop chain.",
+      "score": 4.8999999999999995,
+      "paths": [
+        [
+          "sharp@1.14.0",
+          "node-fetch@2.5.5"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2023-1119": "6.0.0",
+        "CVE-2023-1173": "5.0.0"
+      },
+      "max_cvss": 8.8,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "node-fetch",
+      "version": "1.10.5",
+      "is_direct": false,
+      "risk_type": "transitive_vuln",
+      "severity": "high",
+      "secondary_risks": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2023-1119",
+        "CVE-2023-1173"
+      ],
+      "exploitability": "medium",
+      "is_reachable": true,
+      "detail": "2 known vulnerabilities (max CVSS 8.8). Transitive via 2-hop chain.",
+      "score": 4.8999999999999995,
+      "paths": [
+        [
+          "multer@2.8.9",
+          "node-fetch@1.10.5"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2023-1119": "6.0.0",
+        "CVE-2023-1173": "5.0.0"
+      },
+      "max_cvss": 8.8,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "node-fetch",
+      "version": "4.11.2",
+      "is_direct": false,
+      "risk_type": "transitive_vuln",
+      "severity": "high",
+      "secondary_risks": [],
+      "cve_ids": [
+        "CVE-2023-1119",
+        "CVE-2023-1173"
+      ],
+      "exploitability": "medium",
+      "is_reachable": true,
+      "detail": "2 known vulnerabilities (max CVSS 8.8). Transitive via 1-hop chain.",
+      "score": 4.8999999999999995,
+      "paths": [
+        [
+          "node-fetch@4.11.2"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2023-1119": "6.0.0",
+        "CVE-2023-1173": "5.0.0"
+      },
+      "max_cvss": 8.8,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "ansible-core",
+      "version": "2.8.10",
+      "is_direct": true,
+      "risk_type": "vulnerable",
+      "severity": "medium",
+      "secondary_risks": [],
+      "cve_ids": [
+        "CVE-2025-1114",
+        "CVE-2025-1141",
+        "CVE-2022-1157"
+      ],
+      "exploitability": "medium",
+      "is_reachable": true,
+      "detail": "3 known vulnerabilities (max CVSS 6.3).",
+      "score": 4.0,
+      "paths": [
+        [
+          "ansible-core@2.8.10"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2025-1114": "6.0.0",
+        "CVE-2025-1141": null,
+        "CVE-2022-1157": "4.0.0"
+      },
+      "max_cvss": 6.3,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "morgan",
+      "version": "4.11.6",
+      "is_direct": true,
+      "risk_type": "vulnerable",
+      "severity": "medium",
+      "secondary_risks": [],
+      "cve_ids": [
+        "CVE-2025-1105"
+      ],
+      "exploitability": "medium",
+      "is_reachable": true,
+      "detail": "1 known vulnerability (max CVSS 4.6).",
+      "score": 4.0,
+      "paths": [
+        [
+          "morgan@4.11.6"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2025-1105": null
+      },
+      "max_cvss": 4.6,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "django",
+      "version": "3.15.10",
+      "is_direct": true,
+      "risk_type": "vulnerable",
+      "severity": "medium",
+      "secondary_risks": [],
+      "cve_ids": [
+        "CVE-2022-1033"
+      ],
+      "exploitability": "medium",
+      "is_reachable": true,
+      "detail": "1 known vulnerability (max CVSS 5.2).",
+      "score": 4.0,
+      "paths": [
+        [
+          "django@3.15.10"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2022-1033": "4.7.0"
+      },
+      "max_cvss": 5.2,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "prettier",
+      "version": "2.1.5",
+      "is_direct": false,
+      "risk_type": "transitive_vuln",
+      "severity": "medium",
+      "secondary_risks": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2023-1187"
+      ],
+      "exploitability": "high",
+      "is_reachable": true,
+      "detail": "1 known vulnerability (max CVSS 5.6). Transitive via 2-hop chain.",
+      "score": 3.6399999999999997,
+      "paths": [
+        [
+          "nanoid@2.3.5",
+          "prettier@2.1.5"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2023-1187": null
+      },
+      "max_cvss": 5.6,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "prettier",
+      "version": "3.2.5",
+      "is_direct": false,
+      "risk_type": "transitive_vuln",
+      "severity": "medium",
+      "secondary_risks": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2023-1187"
+      ],
+      "exploitability": "high",
+      "is_reachable": true,
+      "detail": "1 known vulnerability (max CVSS 5.6). Transitive via 2-hop chain.",
+      "score": 3.6399999999999997,
+      "paths": [
+        [
+          "dayjs@2.4.1",
+          "prettier@3.2.5"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2023-1187": null
+      },
+      "max_cvss": 5.6,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "prettier",
+      "version": "1.4.4",
+      "is_direct": false,
+      "risk_type": "transitive_vuln",
+      "severity": "medium",
+      "secondary_risks": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2023-1187"
+      ],
+      "exploitability": "high",
+      "is_reachable": true,
+      "detail": "1 known vulnerability (max CVSS 5.6). Transitive via 2-hop chain.",
+      "score": 3.6399999999999997,
+      "paths": [
+        [
+          "graphql@1.11.6",
+          "prettier@1.4.4"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2023-1187": null
+      },
+      "max_cvss": 5.6,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "prettier",
+      "version": "1.1.6",
+      "is_direct": false,
+      "risk_type": "transitive_vuln",
+      "severity": "medium",
+      "secondary_risks": [
+        "license_unknown"
+      ],
+      "cve_ids": [
+        "CVE-2023-1187"
+      ],
+      "exploitability": "high",
+      "is_reachable": true,
+      "detail": "1 known vulnerability (max CVSS 5.6). Transitive via 1-hop chain.",
+      "score": 3.6399999999999997,
+      "paths": [
+        [
+          "prettier@1.1.6"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2023-1187": null
+      },
+      "max_cvss": 5.6,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "eslint",
+      "version": "3.1.2",
+      "is_direct": false,
+      "risk_type": "transitive_vuln",
+      "severity": "medium",
+      "secondary_risks": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2022-1016"
+      ],
+      "exploitability": "medium",
+      "is_reachable": true,
+      "detail": "1 known vulnerability (max CVSS 6.2). Transitive via 2-hop chain.",
+      "score": 2.8,
+      "paths": [
+        [
+          "helmet@2.6.0",
+          "eslint@3.1.2"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2022-1016": "4.2.0"
+      },
+      "max_cvss": 6.2,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "nats",
+      "version": "2.1.6",
+      "is_direct": false,
+      "risk_type": "transitive_vuln",
+      "severity": "medium",
+      "secondary_risks": [
+        "transitive_license_conflict"
+      ],
+      "cve_ids": [
+        "CVE-2022-1051"
+      ],
+      "exploitability": "medium",
+      "is_reachable": true,
+      "detail": "1 known vulnerability (max CVSS 4.2). Transitive via 1-hop chain.",
+      "score": 2.8,
+      "paths": [
+        [
+          "nats@2.1.6"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2022-1051": "3.8.0"
+      },
+      "max_cvss": 4.2,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "axios",
+      "version": "4.14.1",
+      "is_direct": true,
+      "risk_type": "unmaintained",
+      "severity": "medium",
+      "secondary_risks": [
+        "vulnerable"
+      ],
+      "cve_ids": [],
+      "exploitability": "",
+      "is_reachable": null,
+      "detail": "Unmaintained: last updated 2021-07-25, 2 maintainers.",
+      "score": 2.0,
+      "paths": [],
+      "fixed_versions": {},
+      "max_cvss": 0.0,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "commander",
+      "version": "3.12.7",
+      "is_direct": true,
+      "risk_type": "unmaintained",
+      "severity": "medium",
+      "secondary_risks": [
+        "vulnerable"
+      ],
+      "cve_ids": [],
+      "exploitability": "",
+      "is_reachable": null,
+      "detail": "Unmaintained: last updated 2020-10-06, 2 maintainers.",
+      "score": 2.0,
+      "paths": [],
+      "fixed_versions": {},
+      "max_cvss": 0.0,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "puppeteer",
+      "version": "1.9.3",
+      "is_direct": true,
+      "risk_type": "unmaintained",
+      "severity": "medium",
+      "secondary_risks": [],
+      "cve_ids": [],
+      "exploitability": "",
+      "is_reachable": null,
+      "detail": "Unmaintained: last updated 2022-10-18, 2 maintainers.",
+      "score": 2.0,
+      "paths": [],
+      "fixed_versions": {},
+      "max_cvss": 0.0,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "graphql",
+      "version": "1.11.6",
+      "is_direct": true,
+      "risk_type": "vulnerable",
+      "severity": "low",
+      "secondary_risks": [],
+      "cve_ids": [
+        "CVE-2025-1158"
+      ],
+      "exploitability": "high",
+      "is_reachable": true,
+      "detail": "1 known vulnerability (max CVSS 0.7).",
+      "score": 1.9500000000000002,
+      "paths": [
+        [
+          "graphql@1.11.6"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2025-1158": "5.0.0"
+      },
+      "max_cvss": 0.7,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "winston",
+      "version": "2.2.10",
+      "is_direct": true,
+      "risk_type": "vulnerable",
+      "severity": "low",
+      "secondary_risks": [],
+      "cve_ids": [
+        "CVE-2023-1150"
+      ],
+      "exploitability": "medium",
+      "is_reachable": true,
+      "detail": "1 known vulnerability (max CVSS 3.6).",
+      "score": 1.5,
+      "paths": [
+        [
+          "winston@2.2.10"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2023-1150": "3.0.0"
+      },
+      "max_cvss": 3.6,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "chalk",
+      "version": "3.6.10",
+      "is_direct": true,
+      "risk_type": "vulnerable",
+      "severity": "low",
+      "secondary_risks": [],
+      "cve_ids": [
+        "CVE-2022-1170"
+      ],
+      "exploitability": "medium",
+      "is_reachable": true,
+      "detail": "1 known vulnerability (max CVSS 1.2).",
+      "score": 1.5,
+      "paths": [
+        [
+          "chalk@3.6.10"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2022-1170": "4.0.0"
+      },
+      "max_cvss": 1.2,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "nanoid",
+      "version": "2.3.5",
+      "is_direct": true,
+      "risk_type": "vulnerable",
+      "severity": "low",
+      "secondary_risks": [
+        "license_unknown"
+      ],
+      "cve_ids": [
+        "CVE-2025-1012"
+      ],
+      "exploitability": "medium",
+      "is_reachable": true,
+      "detail": "1 known vulnerability (max CVSS 0.7).",
+      "score": 1.5,
+      "paths": [
+        [
+          "nanoid@2.3.5"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2025-1012": null
+      },
+      "max_cvss": 0.7,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "dotenv",
+      "version": "1.7.4",
+      "is_direct": false,
+      "risk_type": "transitive_vuln",
+      "severity": "low",
+      "secondary_risks": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2023-1109",
+        "CVE-2024-1139",
+        "CVE-2023-1152"
+      ],
+      "exploitability": "high",
+      "is_reachable": true,
+      "detail": "3 known vulnerabilities (max CVSS 3.7). Transitive via 2-hop chain.",
+      "score": 1.365,
+      "paths": [
+        [
+          "webpack@4.13.10",
+          "dotenv@1.7.4"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2023-1109": "6.0.0",
+        "CVE-2024-1139": "3.0.0",
+        "CVE-2023-1152": null
+      },
+      "max_cvss": 3.7,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "express",
+      "version": "5.0.6",
+      "is_direct": true,
+      "risk_type": "vulnerable",
+      "severity": "medium",
+      "secondary_risks": [],
+      "cve_ids": [
+        "CVE-2022-1171"
+      ],
+      "exploitability": "none",
+      "is_reachable": false,
+      "detail": "1 known vulnerability (max CVSS 5.5). Exploitability NONE — deprioritized.",
+      "score": 1.2,
+      "paths": [
+        [
+          "express@5.0.6"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2022-1171": null
+      },
+      "max_cvss": 5.5,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "react",
+      "version": "4.2.4",
+      "is_direct": false,
+      "risk_type": "transitive_vuln",
+      "severity": "low",
+      "secondary_risks": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2022-1058",
+        "CVE-2024-1059"
+      ],
+      "exploitability": "medium",
+      "is_reachable": true,
+      "detail": "2 known vulnerabilities (max CVSS 3.7). Transitive via 2-hop chain.",
+      "score": 1.0499999999999998,
+      "paths": [
+        [
+          "jest@3.13.6",
+          "react@4.2.4"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2022-1058": "5.5.0",
+        "CVE-2024-1059": null
+      },
+      "max_cvss": 3.7,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "nodemon",
+      "version": "4.7.3",
+      "is_direct": false,
+      "risk_type": "transitive_vuln",
+      "severity": "low",
+      "secondary_risks": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2023-1132"
+      ],
+      "exploitability": "medium",
+      "is_reachable": true,
+      "detail": "1 known vulnerability (max CVSS 3.8). Transitive via 2-hop chain.",
+      "score": 1.0499999999999998,
+      "paths": [
+        [
+          "cryptography@3.6.0",
+          "nodemon@4.7.3"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2023-1132": null
+      },
+      "max_cvss": 3.8,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "dotenv",
+      "version": "4.7.1",
+      "is_direct": false,
+      "risk_type": "transitive_vuln",
+      "severity": "low",
+      "secondary_risks": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2023-1109",
+        "CVE-2023-1152"
+      ],
+      "exploitability": "medium",
+      "is_reachable": true,
+      "detail": "2 known vulnerabilities (max CVSS 3.7). Transitive via 2-hop chain.",
+      "score": 1.0499999999999998,
+      "paths": [
+        [
+          "ansible-core@2.8.10",
+          "dotenv@4.7.1"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2023-1109": "6.0.0",
+        "CVE-2023-1152": null
+      },
+      "max_cvss": 3.7,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "dotenv",
+      "version": "4.0.5",
+      "is_direct": false,
+      "risk_type": "transitive_vuln",
+      "severity": "low",
+      "secondary_risks": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2023-1109",
+        "CVE-2023-1152"
+      ],
+      "exploitability": "medium",
+      "is_reachable": true,
+      "detail": "2 known vulnerabilities (max CVSS 3.7). Transitive via 2-hop chain.",
+      "score": 1.0499999999999998,
+      "paths": [
+        [
+          "winston@2.2.10",
+          "dotenv@4.0.5"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2023-1109": "6.0.0",
+        "CVE-2023-1152": null
+      },
+      "max_cvss": 3.7,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "react",
+      "version": "1.6.5",
+      "is_direct": false,
+      "risk_type": "transitive_vuln",
+      "severity": "low",
+      "secondary_risks": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2022-1058",
+        "CVE-2024-1059"
+      ],
+      "exploitability": "medium",
+      "is_reachable": true,
+      "detail": "2 known vulnerabilities (max CVSS 3.7). Transitive via 2-hop chain.",
+      "score": 1.0499999999999998,
+      "paths": [
+        [
+          "winston@2.2.10",
+          "react@1.6.5"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2022-1058": "5.5.0",
+        "CVE-2024-1059": null
+      },
+      "max_cvss": 3.7,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "react",
+      "version": "2.0.0",
+      "is_direct": false,
+      "risk_type": "transitive_vuln",
+      "severity": "low",
+      "secondary_risks": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2022-1058",
+        "CVE-2024-1059"
+      ],
+      "exploitability": "medium",
+      "is_reachable": true,
+      "detail": "2 known vulnerabilities (max CVSS 3.7). Transitive via 2-hop chain.",
+      "score": 1.0499999999999998,
+      "paths": [
+        [
+          "commander@3.12.7",
+          "react@2.0.0"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2022-1058": "5.5.0",
+        "CVE-2024-1059": null
+      },
+      "max_cvss": 3.7,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "nodemon",
+      "version": "2.3.3",
+      "is_direct": false,
+      "risk_type": "transitive_vuln",
+      "severity": "low",
+      "secondary_risks": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2023-1132"
+      ],
+      "exploitability": "medium",
+      "is_reachable": true,
+      "detail": "1 known vulnerability (max CVSS 3.8). Transitive via 2-hop chain.",
+      "score": 1.0499999999999998,
+      "paths": [
+        [
+          "morgan@4.11.6",
+          "nodemon@2.3.3"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2023-1132": null
+      },
+      "max_cvss": 3.8,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "nodemon",
+      "version": "4.1.0",
+      "is_direct": false,
+      "risk_type": "transitive_vuln",
+      "severity": "low",
+      "secondary_risks": [
+        "license_unknown",
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2023-1132"
+      ],
+      "exploitability": "medium",
+      "is_reachable": true,
+      "detail": "1 known vulnerability (max CVSS 3.8). Transitive via 2-hop chain.",
+      "score": 1.0499999999999998,
+      "paths": [
+        [
+          "uuid@5.6.6",
+          "nodemon@4.1.0"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2023-1132": null
+      },
+      "max_cvss": 3.8,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "react",
+      "version": "2.9.7",
+      "is_direct": false,
+      "risk_type": "transitive_vuln",
+      "severity": "low",
+      "secondary_risks": [],
+      "cve_ids": [
+        "CVE-2022-1058",
+        "CVE-2024-1059"
+      ],
+      "exploitability": "medium",
+      "is_reachable": true,
+      "detail": "2 known vulnerabilities (max CVSS 3.7). Transitive via 1-hop chain.",
+      "score": 1.0499999999999998,
+      "paths": [
+        [
+          "react@2.9.7"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2022-1058": "5.5.0",
+        "CVE-2024-1059": null
+      },
+      "max_cvss": 3.7,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "dotenv",
+      "version": "3.3.4",
+      "is_direct": false,
+      "risk_type": "transitive_vuln",
+      "severity": "low",
+      "secondary_risks": [
+        "unmaintained"
+      ],
+      "cve_ids": [
+        "CVE-2023-1109",
+        "CVE-2023-1152"
+      ],
+      "exploitability": "medium",
+      "is_reachable": true,
+      "detail": "2 known vulnerabilities (max CVSS 3.7). Transitive via 1-hop chain.",
+      "score": 1.0499999999999998,
+      "paths": [
+        [
+          "dotenv@3.3.4"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2023-1109": "6.0.0",
+        "CVE-2023-1152": null
+      },
+      "max_cvss": 3.7,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "APP-009",
+      "library": "nodemon",
+      "version": "4.1.5",
+      "is_direct": false,
+      "risk_type": "transitive_vuln",
+      "severity": "low",
+      "secondary_risks": [],
+      "cve_ids": [
+        "CVE-2023-1132"
+      ],
+      "exploitability": "medium",
+      "is_reachable": true,
+      "detail": "1 known vulnerability (max CVSS 3.8). Transitive via 1-hop chain.",
+      "score": 1.0499999999999998,
+      "paths": [
+        [
+          "nodemon@4.1.5"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2023-1132": null
+      },
+      "max_cvss": 3.8,
+      "kev": false,
+      "epss": 0.0
+    }
+  ]
+}

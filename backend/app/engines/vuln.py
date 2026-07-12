@@ -10,6 +10,17 @@ import networkx as nx
 from ..models import Finding
 from ..util.constants import max_severity
 
+_EXPLOIT_ORDER = ["none", "low", "medium", "high"]
+
+
+def _max_exploitability(vulns) -> str:
+    best = ""
+    for v in vulns:
+        e = (getattr(v, "exploitability", "") or "").lower()
+        if e in _EXPLOIT_ORDER and (best == "" or _EXPLOIT_ORDER.index(e) > _EXPLOIT_ORDER.index(best)):
+            best = e
+    return best
+
 
 def find_vulnerabilities(g: nx.DiGraph) -> list[Finding]:
     findings: list[Finding] = []
@@ -30,7 +41,7 @@ def find_vulnerabilities(g: nx.DiGraph) -> list[Finding]:
             app_id=data["app_id"], library=data["library"], version=data["version"],
             is_direct=is_direct,
             risk_type="vulnerable" if is_direct else "transitive_vuln",
-            severity=severity, cve_ids=cve_ids,
+            severity=severity, cve_ids=cve_ids, exploitability=_max_exploitability(vulns),
             detail=f"{len(cve_ids)} known vulnerabilit{'y' if len(cve_ids) == 1 else 'ies'} "
                    f"(max CVSS {max_cvss}){' — CISA KEV' if kev else ''}.",
             fixed_versions=fixed, max_cvss=max_cvss, kev=kev, epss=epss,

@@ -104,10 +104,10 @@ export default function Portfolio() {
           sub="direct + transitive"
         />
         <StatTile
-          label="Exploitable criticals"
+          label="High-priority criticals"
           value={s.exploitable_criticals}
           accent={CRIT_HEX}
-          sub="reachable, CVSS ≥ 9"
+          sub="critical + high/med exploitability"
           icon={<ShieldAlert size={16} className="text-crit" />}
         />
         <StatTile label="Highest-risk app" value={s.highest_risk_app} sub="click below to inspect" />

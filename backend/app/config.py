@@ -19,8 +19,15 @@ class Settings:
         self.anthropic_api_key: str = os.getenv("ANTHROPIC_API_KEY", "").strip()
         self.llm_model: str = os.getenv("SENTINEL_LLM_MODEL", "claude-sonnet-4-5").strip()
         data_dir = os.getenv("SENTINEL_DATA_DIR", "data").strip()
-        self.data_dir: Path = (REPO_ROOT / data_dir).resolve()
+        self.data_dir: Path = (REPO_ROOT / data_dir).resolve()      # synthetic dataset
+        self.official_data_dir: Path = self.data_dir / "official"    # official benchmark
         self.cache_dir: Path = self.data_dir / "cache"
+        # "official" (default, judged benchmark) or "synthetic" (our generator).
+        self.dataset: str = os.getenv("SENTINEL_DATASET", "official").strip().lower()
+
+    @property
+    def active_data_dir(self) -> Path:
+        return self.official_data_dir if self.dataset == "official" else self.data_dir
 
     @property
     def llm_enabled(self) -> bool:

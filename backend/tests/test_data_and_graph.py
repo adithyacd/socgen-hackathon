@@ -1,5 +1,7 @@
 from backend.app.data.loader import load_dataset
 from backend.app.graph.builder import build_graph, library_nodes
+from backend.app.config import settings
+SYNTH = settings.data_dir  # synthetic dataset (official is default)
 
 
 def test_dataset_loads():

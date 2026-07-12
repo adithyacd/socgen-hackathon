@@ -9,30 +9,30 @@ Portfolio: 10 apps ranked worst‑first, **payments‑gateway** on top, the big 
 *exploitable criticals* number.
 
 **0:25 — The signature moment (War Room).**
-Click **War Room → "Simulate Log4Shell."** Watch the timer: "Portfolio resolved in ~0.4
-seconds — manual tracing takes ~40 hours." Four apps carry the vulnerable library; only
-**two are actually exploitable**. Point at the traced attack path
-`app → spring-boot-starter → enterprise-logging → log4j-core` and the LLM incident brief.
+Click **War Room → "Simulate top zero-day."** Watch the timer: "Portfolio resolved in ~0.4
+seconds — manual tracing takes ~40 hours." Show the affected apps ranked exploitable-first,
+the traced transitive attack path, and the LLM incident brief.
 
-**0:55 — The differentiator (App graph + reachability).**
-Open **payments‑gateway**. The dependency constellation: red vulnerable nodes, bold used
-paths, **dashed = code path not exercised**. "loan‑origination has the *same* Log4j version —
-but it's unreachable, so we suppress it. That's the difference between 40 alerts and the 2
-that matter."
+**0:55 — The differentiator (App graph + exploitability).**
+Open the worst app. The dependency constellation: red vulnerable nodes, traced paths,
+**dimmed = lower-exploitability**. "We flag every vulnerable dependency for completeness —
+but we rank by the CVE's *real exploitability*, so the analyst sees the HIGH/MEDIUM ones
+first, not a wall of noise."
 
 **1:20 — The decision (Fix Optimizer).**
-"Don't just tell me I'm on fire — tell me how to put it out." The optimizer: upgrade a
-handful of shared libraries to kill most criticals. Toggle **log4j‑core → 2.17.1** and show
-the **diamond conflict**: `enterprise-logging` pins `<2.16.0`, so you must bump it too.
+"Don't just tell me I'm on fire — tell me how to put it out." The optimizer: the minimum set
+of shared-library upgrades that removes the most exploitable risk, with **diamond-conflict**
+detection when an upgrade breaks a dependent's version pin.
 
 **1:40 — The proof (Accuracy) + copilot.**
-Accuracy page: "measured against ground truth — alert precision **69% → 100%**, **31%** of
-alerts eliminated." Then Copilot: type *"Which internet‑facing apps have exploitable
-criticals?"* — answered from the real graph, grounded, with the structured query shown.
+Accuracy page: "scored on the official 500-dependency benchmark — **91% detection recall**,
+**100% on license and maintenance**." Mention the rigor flex: "we even found their vuln
+labels are version-inconsistent with the DB." Then Copilot: *"Which internet-facing apps
+have exploitable criticals?"* — grounded in the real graph, with the structured query shown.
 
 **1:58 — Close.**
-"Detection is easy; it's a lookup. The hard, valuable part is telling you what's *actually
-exploitable* and the cheapest way to fix it. That's Sentinel."
+"Detection is the easy part — a lookup. The hard, valuable part is telling you what's
+*actually exploitable* and the cheapest way to fix it. That's Sentinel."
 
 ---
 
@@ -43,18 +43,20 @@ exploitable* and the cheapest way to fix it. That's Sentinel."
 3. **Approach** — SBOM → dependency graph → 6 engines → contextual risk. One diagram.
 4. **Differentiators** — Reachability · Fix Optimizer · Grounded Copilot · Zero‑Day War Room.
 5. **Live demo** — (switch to the app; War Room is the spine.)
-6. **Proof** — real metrics vs. ground truth: 100% detection, precision 69%→100%, 31% noise cut, FP 5%→0%.
-7. **Impact & roadmap** — 40 hrs → seconds; ≥50% fewer manual reviews; real SBOM (CycloneDX/SPDX) + live NVD/registry feeds next.
+6. **Proof** — official 500-dependency benchmark: 91% detection recall, 100% license + maintenance; exploitability prioritization surfaces the ~70% actionable set.
+7. **Impact & roadmap** — 40 hrs → seconds; real SBOM (CycloneDX/SPDX) + live NVD/registry feeds; static call-graph reachability next.
 
 ---
 
 ## Judge Q&A prep
 
-**"Isn't 100% detection just testing against your own labels?"**
-Yes — detection of *known* CVEs is a database lookup, so recall should be complete; we're
-honest that it's the easy part. The hard, differentiating metric is **precision**:
-reachability lifts vulnerability‑alert precision from 69% to 100% and removes 31% of alerts
-as unexploitable noise. That's the number that saves analyst time.
+**"How well do you score on the provided benchmark?"**
+We ingest the official `dependency_labels.csv` and hit **91% overall detection recall** with
+**100% on license and maintenance**. Vulnerability precision is bounded by *their* data: we
+found the provided vulnerability labels are version-inconsistent with the vulnerability DB
+(e.g. `log4j-api 4.8.3` is inside a CVE's affected range yet labeled clean). We detect every
+vulnerable library via the standard below-fixed-version rule and report honestly — then use
+each CVE's real **exploitability** to prioritize the ~70% that are actually actionable.
 
 **"How would this work on real data / at scale?"**
 The engines are pure functions over a NetworkX graph; swapping the synthetic loader for a

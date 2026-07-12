@@ -5,8 +5,6 @@ import { fetchWarRoomCves, fetchWarRoomImpact } from "../api/client";
 import type { AppImpact, WarRoomCve, WarRoomImpact } from "../api/types";
 import { severityText, SEVERITY_HEX } from "../lib/risk";
 
-const LOG4SHELL = "CVE-2021-44228";
-
 function AttackPath({ path }: { path: string[] }) {
   if (!path.length) return null;
   return (
@@ -39,11 +37,11 @@ function ImpactRow({ a, rank }: { a: AppImpact; rank: number }) {
         <div className="ml-auto">
           {a.is_reachable ? (
             <span className="inline-flex items-center gap-1 rounded-md bg-crit/15 px-2 py-0.5 text-xs font-semibold text-crit">
-              <ShieldAlert size={12} /> Exploitable
+              <ShieldAlert size={12} /> Exploitable{a.exploitability ? ` · ${a.exploitability}` : ""}
             </span>
           ) : (
             <span className="inline-flex items-center gap-1 rounded-md bg-panel2 px-2 py-0.5 text-xs font-semibold text-mist">
-              <ShieldCheck size={12} /> Unreachable
+              <ShieldCheck size={12} /> {a.exploitability ? `${a.exploitability} exploitability` : "Deprioritized"}
             </span>
           )}
         </div>
@@ -101,10 +99,11 @@ export default function WarRoom() {
 
       <div className="card mb-6 flex flex-wrap items-center gap-3 p-4">
         <button
-          onClick={() => run(LOG4SHELL)}
-          className="inline-flex items-center gap-2 rounded-lg bg-crit px-4 py-2.5 font-display font-semibold text-ink transition-transform hover:scale-[1.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-crit"
+          onClick={() => cves[0] && run(cves[0].cve_id)}
+          disabled={!cves.length}
+          className="inline-flex items-center gap-2 rounded-lg bg-crit px-4 py-2.5 font-display font-semibold text-ink transition-transform hover:scale-[1.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-crit disabled:opacity-50"
         >
-          <Zap size={18} /> Simulate Log4Shell
+          <Zap size={18} /> Simulate top zero-day
         </button>
         <span className="text-xs text-mist">or pick any CVE present in the portfolio:</span>
         <select
@@ -208,7 +207,7 @@ export default function WarRoom() {
         <div className="card grid place-items-center p-12 text-center">
           <Siren className="text-mist/40" size={40} />
           <p className="mt-3 max-w-sm text-sm text-mist">
-            Hit <span className="font-semibold text-crit">Simulate Log4Shell</span> to watch Sentinel
+            Hit <span className="font-semibold text-crit">Simulate top zero-day</span> to watch Sentinel
             trace the blast radius across every application in seconds.
           </p>
         </div>

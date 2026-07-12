@@ -1,20 +1,21 @@
 from backend.app.analysis import build_context
 from backend.app.warroom import notable_cves, war_room_impact
+from backend.app.config import settings
+SYNTH = settings.data_dir  # synthetic dataset (official is default)
 
 
-def test_notable_cves_ranked_kev_first():
-    ctx = build_context()
+def test_notable_cves_present_and_ranked_by_impact():
+    ctx = build_context(SYNTH)
     cves = notable_cves(ctx)
     ids = [c.cve_id for c in cves]
-    assert "CVE-2021-44228" in ids
-    # KEV entries should rank ahead of non-KEV.
-    first_non_kev = next((i for i, c in enumerate(cves) if not c.kev), len(cves))
-    last_kev = max((i for i, c in enumerate(cves) if c.kev), default=-1)
-    assert last_kev < first_non_kev
+    assert "CVE-2021-44228" in ids  # Log4Shell is in the synthetic portfolio
+    # Ranked by exploitable-app count (descending).
+    exploitable = [c.exploitable_apps for c in cves]
+    assert exploitable == sorted(exploitable, reverse=True)
 
 
 def test_log4shell_impact_ranks_exploitable_first():
-    ctx = build_context()
+    ctx = build_context(SYNTH)
     imp = war_room_impact(ctx, "CVE-2021-44228")
     assert imp is not None
     assert imp.affected_count == 4
@@ -28,5 +29,5 @@ def test_log4shell_impact_ranks_exploitable_first():
 
 
 def test_unknown_cve_returns_none():
-    ctx = build_context()
+    ctx = build_context(SYNTH)
     assert war_room_impact(ctx, "CVE-0000-0000") is None

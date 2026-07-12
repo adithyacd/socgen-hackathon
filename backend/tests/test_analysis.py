@@ -1,6 +1,8 @@
 from backend.app.analysis import run_analysis
 from backend.app.models import Application, Finding
 from backend.app.scoring.score import app_risk_score, risk_band, score_finding
+from backend.app.config import settings
+SYNTH = settings.data_dir  # synthetic dataset (official is default)
 
 
 def _app(**kw):
@@ -37,7 +39,7 @@ def test_app_score_bounded_and_banded():
 
 
 def test_run_analysis_shape():
-    result = run_analysis()
+    result = run_analysis(SYNTH)
     assert result.summary.app_count == 10
     assert len(result.apps) == 10
     # sorted worst-first
@@ -51,7 +53,7 @@ def test_run_analysis_shape():
 
 
 def test_highest_risk_is_critical_internet_app():
-    result = run_analysis()
+    result = run_analysis(SYNTH)
     top = result.apps[0]
     # The worst app should be business-critical (payments/trading are the planted hotspots)
     assert top.business_criticality in ("critical", "high")

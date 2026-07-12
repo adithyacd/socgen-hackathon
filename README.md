@@ -18,22 +18,23 @@ is **actually exploitable**, the **cheapest way to fix it**, and lets you **ask 
 
 | | Everyone builds | Sentinel adds |
 |---|---|---|
-| Detection | List matching CVEs | **Reachability analysis** — is the vulnerable code actually on a used call path? |
-| Prioritization | Sort by CVSS | **Contextual risk** — reachability × exploit signal (KEV/EPSS) × business criticality × internet exposure |
+| Detection | List matching CVEs | **Exploitability prioritization** — rank by the CVE's real exploitability, not just CVSS |
+| Prioritization | Sort by CVSS | **Contextual risk** — exploitability × severity × business criticality × internet exposure |
 | Remediation | "You have N criticals" | **Fix Optimizer** — the minimum set of upgrades that removes the most risk, with diamond‑conflict detection |
 | Interaction | Static report | **Grounded copilot** — ask in English, answered from the real graph (never hallucinated) |
 | Demo | A dashboard | **Zero‑Day War Room** — one click traces a CVE's blast radius across the whole portfolio |
 
-### The reachability dividend (measured against ground‑truth labels)
+### Measured on the official SG benchmark (500 labeled dependencies)
 
-- **100%** of known CVEs detected · **100%** transitive resolution · **100%** license‑conflict detection
-- Vulnerability‑alert precision: **69% → 100%** once unreachable vulns are suppressed
-- False‑positive rate: **5% → 0%**
-- **31%** of vulnerability alerts eliminated as noise (they're present but never called)
+Sentinel ingests the official PB‑10 sample data and scores against the provided
+`dependency_labels.csv`:
 
-The insight: a large share of *transitive* vulnerabilities are never actually executed.
-Naive scanners drown teams in them; Sentinel filters them out and proves the difference on
-the **Accuracy** page.
+- **91%** overall detection recall (target ≥ 85%) · **100%** license‑conflict & maintenance detection · **100%** exact match on those categories
+- **Exploitability prioritization:** every vulnerable dependency is flagged, but only ~**70%** are HIGH/MEDIUM exploitability — the actionable set an analyst should triage first
+- We also caught a **data‑quality issue in the provided labels** (their vulnerability labels are version‑inconsistent with the vuln DB); we detect every vulnerable library via the standard below‑fixed‑version rule and report honestly against the noisy labels
+
+The **Accuracy** page shows all of this live. A richer *synthetic* dataset (with a planted
+Log4Shell reachability scenario) is also included as an optional mode.
 
 ---
 
@@ -46,8 +47,7 @@ Requires Python 3.11+ and Node 18+.
 python -m venv .venv
 .venv/Scripts/activate           # Windows:  .venv\Scripts\activate   |  macOS/Linux: source .venv/bin/activate
 pip install -r backend/requirements.txt
-python -m backend.tools.generate_data          # writes the synthetic dataset to data/
-uvicorn backend.app.main:app --reload --port 8000
+uvicorn backend.app.main:app --reload --port 8000   # uses the official benchmark data by default
 
 # 2. Frontend (separate terminal)
 cd frontend
@@ -122,11 +122,16 @@ pytest
 
 ## Data
 
-The dataset is **synthetic** and generated with a fixed seed for reproducibility
-(`backend/tools/generate_data.py`), faithful to the PB‑10 schema and risk distribution. It
-includes a planted **Log4Shell** scenario reaching four applications through different
-transitive paths, with reachability deliberately varied so two apps are exploitable and two
-are present‑but‑unreachable — the core of the reachability story.
+**Primary (default): the official SG PB‑10 benchmark** in `data/official/` — 10 apps,
+500 dependencies, a simulated NVD, license rules, transitive edges, and ground‑truth
+`dependency_labels.csv`. Sentinel ingests this schema directly (`data/official_loader.py`)
+and the **Accuracy** page scores against their labels.
+
+**Optional: a synthetic dataset** (`backend/tools/generate_data.py`, fixed seed) with a
+planted **Log4Shell** reachability scenario. Switch with `SENTINEL_DATASET=synthetic`
+(after `python -m backend.tools.generate_data`). It demonstrates the used‑edge reachability
+model that the official data — lacking a reachability field — replaces with real
+exploitability ratings.
 
 ## Tests
 

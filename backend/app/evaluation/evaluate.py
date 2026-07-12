@@ -1,38 +1,27 @@
-"""Evaluation harness — score the engines against ground-truth labels.
+"""Evaluation harness — score the engines against the official ground-truth labels.
 
-The headline number is the false-positive rate WITH vs WITHOUT reachability: the
-same detector, minus the vulnerable-but-unreachable noise. Everything here is
-measured against data/labels.csv, so the pitch quotes real numbers.
+Reports the metrics the hackathon README specifies (precision/recall/F1 on is_risky,
+per-category recall, false-positive rate), plus the exploitability breakdown that
+powers the prioritization differentiator.
 """
 from __future__ import annotations
 
-from typing import Optional
+from collections import Counter
 
 from ..models import Dataset, Finding
 
 VULN_TYPES = ("vulnerable", "transitive_vuln")
+LICENSE_TYPES = ("license_conflict", "transitive_license_conflict", "license_unknown")
 
-
-def _reach_pred(f: Optional[Finding]) -> bool:
-    """Reachability-aware prediction: is this dependency a real risk?"""
-    if f is None:
-        return False
-    if f.risk_type in VULN_TYPES and f.is_reachable is False:
-        return False  # suppressed by reachability
-    return True
-
-
-def _naive_pred(f: Optional[Finding]) -> bool:
-    """Naive prediction: flag anything the scanners matched."""
-    return f is not None
-
-
-def _pred_type(f: Optional[Finding]) -> str:
-    if f is None:
-        return "clean"
-    if f.risk_type in VULN_TYPES and f.is_reachable is False:
-        return "clean"
-    return f.risk_type
+# label risk_type -> detection category
+_CATEGORY = {
+    "vulnerable": "vulnerability",
+    "transitive_vuln": "vulnerability",
+    "license_conflict": "license",
+    "transitive_license_conflict": "license",
+    "license_unknown": "license",
+    "unmaintained": "maintenance",
+}
 
 
 def _rate(num: int, den: int) -> float:
@@ -41,75 +30,94 @@ def _rate(num: int, den: int) -> float:
 
 def evaluate(ds: Dataset, findings: list[Finding]) -> dict:
     labels = {(l.app_id, l.library, l.version): l for l in ds.labels}
-    fmap = {(f.app_id, f.library, f.version): f for f in findings}
+    # predicted risk types per node (primary + secondary)
+    pred_types: dict[tuple, set[str]] = {}
+    pred_finding: dict[tuple, Finding] = {}
+    for f in findings:
+        k = (f.app_id, f.library, f.version)
+        pred_types.setdefault(k, set()).update({f.risk_type, *f.secondary_risks})
+        pred_finding[k] = f
 
-    total = len(labels)
-    risky_labels = [l for l in labels.values() if l.is_risk]
-    clean_labels = [l for l in labels.values() if not l.is_risk]
+    if not labels:
+        return {"available": False}
 
-    # Per-type recall.
-    def recall(pred_target: str, label_types: tuple[str, ...]) -> tuple[int, int]:
-        rel = [l for l in labels.values() if l.risk_type in label_types]
-        hit = sum(1 for l in rel if _pred_type(fmap.get((l.app_id, l.library, l.version))) == pred_target)
-        return hit, len(rel)
+    tp = fp = fn = tn = 0
+    cat_hit, cat_tot = Counter(), Counter()
+    sev_match = sev_total = 0
+    trans_hit = trans_tot = 0
 
-    v_hit, v_tot = recall("vulnerable", ("vulnerable",))
-    t_hit, t_tot = recall("transitive_vuln", ("transitive_vuln",))
-    lic_hit, lic_tot = recall("license_conflict", ("license_conflict",))
-    mnt_hit, mnt_tot = recall("unmaintained", ("unmaintained",))
-    # Combined vulnerability detection (direct + transitive).
-    vuln_hit, vuln_tot = v_hit + t_hit, v_tot + t_tot
+    for k, l in labels.items():
+        predicted = k in pred_types
+        if l.is_risk and predicted:
+            tp += 1
+        elif l.is_risk and not predicted:
+            fn += 1
+        elif not l.is_risk and predicted:
+            fp += 1
+        else:
+            tn += 1
 
-    # False positives on the clean set.
-    naive_fp = sum(1 for l in clean_labels if _naive_pred(fmap.get((l.app_id, l.library, l.version))))
-    reach_fp = sum(1 for l in clean_labels if _reach_pred(fmap.get((l.app_id, l.library, l.version))))
+        if l.is_risk:
+            cat = _CATEGORY.get(l.risk_type)
+            if cat:
+                cat_tot[cat] += 1
+                types = pred_types.get(k, set())
+                got = False
+                if cat == "vulnerability":
+                    got = bool(types & set(VULN_TYPES))
+                elif cat == "license":
+                    got = bool(types & set(LICENSE_TYPES))
+                elif cat == "maintenance":
+                    got = "unmaintained" in types
+                if got:
+                    cat_hit[cat] += 1
+            if l.risk_type == "transitive_vuln":
+                trans_tot += 1
+                if "transitive_vuln" in pred_types.get(k, set()) or "vulnerable" in pred_types.get(k, set()):
+                    trans_hit += 1
+            # severity agreement on detected risks
+            f = pred_finding.get(k)
+            if f is not None:
+                sev_total += 1
+                if f.severity == l.severity:
+                    sev_match += 1
 
-    # Overall reachability-aware accuracy + precision.
-    correct = sum(1 for l in labels.values()
-                  if _reach_pred(fmap.get((l.app_id, l.library, l.version))) == l.is_risk)
-    tp = sum(1 for l in risky_labels if _reach_pred(fmap.get((l.app_id, l.library, l.version))))
-    predicted_pos = tp + reach_fp
+    precision = _rate(tp, tp + fp)
+    recall = _rate(tp, tp + fn)
+    f1 = round(2 * precision * recall / (precision + recall), 4) if (precision + recall) else 0.0
 
-    # Noise reduction — the headline. Of all vulnerability alerts a naive scanner
-    # raises, how many survive reachability (i.e. are actually exploitable)?
+    # Exploitability prioritization (the differentiator).
     vuln_findings = [f for f in findings if f.risk_type in VULN_TYPES]
-    reachable_v = [f for f in vuln_findings if f.is_reachable is not False]
-    suppressed_v = [f for f in vuln_findings if f.is_reachable is False]
-    naive_v = len(vuln_findings)
-    noise_reduction = {
-        "naive_vuln_alerts": naive_v,
-        "reachable_vuln_alerts": len(reachable_v),
-        "suppressed_vuln_alerts": len(suppressed_v),
-        "vuln_precision_naive": _rate(len(reachable_v), naive_v),
-        "vuln_precision_reachable": 1.0 if reachable_v else 0.0,
-        "alert_reduction": _rate(len(suppressed_v), naive_v),
-        "review_reduction_target": 0.50,
-    }
-
-    # Severity agreement on detected risks.
-    sev_pairs = [
-        (l.severity, fmap[(l.app_id, l.library, l.version)].severity)
-        for l in risky_labels
-        if _reach_pred(fmap.get((l.app_id, l.library, l.version)))
-    ]
-    sev_match = sum(1 for a, b in sev_pairs if a == b)
+    expl = Counter((f.exploitability or "unknown").lower() for f in vuln_findings)
+    total_v = len(vuln_findings)
+    actionable = expl.get("high", 0) + expl.get("medium", 0)
 
     return {
-        "totals": {"labels": total, "risky": len(risky_labels), "clean": len(clean_labels)},
-        "vuln_detection": {"recall": _rate(vuln_hit, vuln_tot), "hit": vuln_hit, "total": vuln_tot, "target": 0.85},
-        "transitive_resolution": {"recall": _rate(t_hit, t_tot), "hit": t_hit, "total": t_tot, "target": 1.0},
-        "license_detection": {"recall": _rate(lic_hit, lic_tot), "hit": lic_hit, "total": lic_tot, "target": 0.90},
-        "maintenance_detection": {"recall": _rate(mnt_hit, mnt_tot), "hit": mnt_hit, "total": mnt_tot, "target": 0.90},
-        "false_positive_rate": {
-            "naive": _rate(naive_fp, len(clean_labels)),
-            "reachability_aware": _rate(reach_fp, len(clean_labels)),
-            "naive_count": naive_fp,
-            "reachability_count": reach_fp,
-            "suppressed": naive_fp - reach_fp,
-            "target": 0.20,
+        "available": True,
+        "dataset": "official",
+        "totals": {"labels": len(labels), "risky": sum(1 for l in labels.values() if l.is_risk),
+                   "clean": sum(1 for l in labels.values() if not l.is_risk)},
+        "overall": {"precision": precision, "recall": recall, "f1": f1,
+                    "false_positive_rate": _rate(fp, fp + tn),
+                    "tp": tp, "fp": fp, "fn": fn, "tn": tn},
+        "detection": {
+            "vulnerability": {"recall": _rate(cat_hit["vulnerability"], cat_tot["vulnerability"]),
+                              "hit": cat_hit["vulnerability"], "total": cat_tot["vulnerability"], "target": 0.85},
+            "transitive_resolution": {"recall": _rate(trans_hit, trans_tot),
+                                      "hit": trans_hit, "total": trans_tot, "target": 1.0},
+            "license": {"recall": _rate(cat_hit["license"], cat_tot["license"]),
+                        "hit": cat_hit["license"], "total": cat_tot["license"], "target": 0.90},
+            "maintenance": {"recall": _rate(cat_hit["maintenance"], cat_tot["maintenance"]),
+                            "hit": cat_hit["maintenance"], "total": cat_tot["maintenance"], "target": 0.90},
         },
-        "precision": _rate(tp, predicted_pos),
-        "overall_accuracy": _rate(correct, total),
-        "severity_agreement": {"rate": _rate(sev_match, len(sev_pairs)), "target": 0.90},
-        "noise_reduction": noise_reduction,
+        "false_positive_rate": {"value": _rate(fp, fp + tn), "target": 0.20},
+        "severity_agreement": {"rate": _rate(sev_match, sev_total), "target": 0.90},
+        "exploitability": {
+            "total_vuln_alerts": total_v,
+            "high": expl.get("high", 0), "medium": expl.get("medium", 0),
+            "low": expl.get("low", 0), "none": expl.get("none", 0),
+            "actionable": actionable,
+            "actionable_pct": _rate(actionable, total_v),
+            "deprioritized_pct": _rate(total_v - actionable, total_v),
+        },
     }

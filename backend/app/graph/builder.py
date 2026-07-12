@@ -17,7 +17,6 @@ from __future__ import annotations
 import networkx as nx
 
 from ..models import APP_PARENT, Dataset, Vulnerability
-from ..util.semver import version_in_range
 
 
 def app_node(app_id: str) -> str:
@@ -69,7 +68,7 @@ def _overlay_vulnerabilities(g: nx.DiGraph, vulns: list[Vulnerability]) -> None:
         if data.get("kind") != "library":
             continue
         matches = [v for v in by_lib.get(data["library"], [])
-                   if version_in_range(data["version"], v.version_range)]
+                   if v.matches(data["version"])]
         data["vulns"] = matches
 
 

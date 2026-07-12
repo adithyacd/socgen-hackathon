@@ -5,6 +5,8 @@ export type RiskType =
   | "vulnerable"
   | "transitive_vuln"
   | "license_conflict"
+  | "transitive_license_conflict"
+  | "license_unknown"
   | "unmaintained"
   | "clean";
 
@@ -17,6 +19,7 @@ export interface Finding {
   severity: Severity;
   secondary_risks: string[];
   cve_ids: string[];
+  exploitability: string;
   is_reachable: boolean | null;
   detail: string;
   score: number;
@@ -69,6 +72,7 @@ export interface GraphNode {
   is_direct: boolean;
   is_vulnerable: boolean;
   is_reachable: boolean | null;
+  exploitability: string;
   severity: Severity | null;
   risk_types: string[];
   cve_ids: string[];
@@ -116,6 +120,7 @@ export interface AppImpact {
   version: string;
   is_direct: boolean;
   is_reachable: boolean;
+  exploitability: string;
   path: string[];
 }
 

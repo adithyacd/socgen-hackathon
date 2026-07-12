@@ -2,6 +2,8 @@ from backend.app.analysis import build_context
 from backend.app.copilot.query import answer, parse_rule_based
 from backend.app.narratives.incident import incident_brief
 from backend.app.warroom import war_room_impact
+from backend.app.config import settings
+SYNTH = settings.data_dir  # synthetic dataset (official is default)
 
 
 def test_rule_parser_maps_keywords():
@@ -13,7 +15,7 @@ def test_rule_parser_maps_keywords():
 
 
 def test_answer_is_grounded_in_real_data():
-    ctx = build_context()
+    ctx = build_context(SYNTH)
     a = answer(ctx, "Show all GPL license conflicts")
     assert a.match_count > 0
     assert all(m.get("app") for m in a.matches)
@@ -23,14 +25,14 @@ def test_answer_is_grounded_in_real_data():
 
 
 def test_log4shell_question_finds_four_apps():
-    ctx = build_context()
+    ctx = build_context(SYNTH)
     a = answer(ctx, "Which apps are exposed to Log4Shell?")
     assert a.query.get("library") == "log4j"
     assert a.match_count == 4
 
 
 def test_incident_brief_mentions_cve_and_action():
-    ctx = build_context()
+    ctx = build_context(SYNTH)
     brief = incident_brief(war_room_impact(ctx, "CVE-2021-44228"))
     assert "CVE-2021-44228" in brief
     assert "log4j-core" in brief

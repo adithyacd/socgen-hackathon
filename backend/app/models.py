@@ -7,10 +7,19 @@ from pydantic import BaseModel
 
 Criticality = Literal["critical", "high", "medium", "low"]
 Severity = Literal["critical", "high", "medium", "low"]
-Ecosystem = Literal["npm", "pypi", "maven"]
-Environment = Literal["prod", "staging", "dev"]
+Ecosystem = str        # synthetic: npm/pypi/maven · official: Java/Python/JavaScript/Go
+Environment = str      # synthetic: prod/staging/dev · official: cloud/on-prem
+Exploitability = Literal["high", "medium", "low", "none"]
 LicenseCategory = Literal["permissive", "weak-copyleft", "copyleft", "proprietary", "unknown"]
-RiskType = Literal["vulnerable", "license_conflict", "unmaintained", "transitive_vuln", "clean"]
+RiskType = Literal[
+    "vulnerable",
+    "transitive_vuln",
+    "license_conflict",
+    "transitive_license_conflict",
+    "license_unknown",
+    "unmaintained",
+    "clean",
+]
 
 # Sentinel for the synthetic "parent is the application itself" edge.
 APP_PARENT = "__APP__"
@@ -56,16 +65,34 @@ class Dependency(BaseModel):
 class Vulnerability(BaseModel):
     cve_id: str
     affected_library: str
-    version_range: str  # e.g. ">=2.0.0,<2.17.1"
-    cvss: float
-    severity: Severity
-    patch_available: bool
+    version_range: str = "*"           # synthetic: semver range
+    affected_versions: list[str] = []  # official: explicit vulnerable versions (exact match)
+    cvss: float = 0.0
+    severity: Severity = "low"
+    patch_available: bool = False
     fixed_version: Optional[str] = None
     vulnerable_symbol: str = ""
-    kev: bool = False   # CISA Known-Exploited
-    epss: float = 0.0   # 0..1 exploit-prediction score
+    kev: bool = False                  # CISA Known-Exploited (synthetic)
+    epss: float = 0.0                  # 0..1 exploit-prediction score (synthetic)
+    exploitability: str = ""           # official: high/medium/low/none; empty for synthetic
     published: str = ""
     description: str = ""
+
+    def matches(self, version: str) -> bool:
+        """Is `version` affected? Official data: below the fixed version (or no fix).
+        Synthetic data: semver range."""
+        from .util.semver import parse_version, version_in_range
+        if self.affected_versions:
+            # Official schema: a dependency is vulnerable if it is below the patched
+            # release. (affected_versions in the provided data are version-inconsistent
+            # with the labels, so we use the standard below-fix rule.)
+            if not self.fixed_version:
+                return True
+            iv, fv = parse_version(version), parse_version(self.fixed_version)
+            if iv is None or fv is None:
+                return True
+            return iv < fv
+        return version_in_range(version, self.version_range)
 
 
 class LicenseRule(BaseModel):
@@ -99,7 +126,8 @@ class Finding(BaseModel):
     severity: Severity
     secondary_risks: list[str] = []      # other risk types also present on this node
     cve_ids: list[str] = []
-    is_reachable: Optional[bool] = None  # set by the reachability engine
+    exploitability: str = ""             # official: high/medium/low/none (prioritization)
+    is_reachable: Optional[bool] = None  # synthetic reachability (used-edge model)
     detail: str = ""
     score: float = 0.0
     paths: list[list[str]] = []          # attack paths (library@version chains)

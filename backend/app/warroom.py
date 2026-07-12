@@ -38,8 +38,8 @@ def notable_cves(ctx: AnalysisContext) -> list[WarRoomCve]:
             fixed_version=v.fixed_version, affected_apps=len(affected),
             exploitable_apps=len(exploitable),
         ))
-    out.sort(key=lambda c: (not c.kev, -c.cvss, -c.exploitable_apps))
-    return out
+    out.sort(key=lambda c: (-c.exploitable_apps, -c.affected_apps, -c.cvss))
+    return out[:40]
 
 
 def _blast_radius(affected: list[AppImpact], exploitable: int) -> str:
@@ -71,7 +71,7 @@ def war_room_impact(ctx: AnalysisContext, cve_id: str) -> Optional[WarRoomImpact
             app_id=app.app_id, name=app.name, business_criticality=app.business_criticality,
             internet_facing=app.internet_facing, environment=app.environment,
             library=f.library, version=f.version, is_direct=f.is_direct,
-            is_reachable=f.is_reachable is not False,
+            is_reachable=f.is_reachable is not False, exploitability=f.exploitability,
             path=f.paths[0] if f.paths else [],
         ))
     # Rank: exploitable first, then business criticality, then internet-facing.

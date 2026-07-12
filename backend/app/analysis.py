@@ -12,7 +12,9 @@ from typing import Optional
 
 import networkx as nx
 
+from .config import settings
 from .data.loader import load_dataset
+from .data.official_loader import load_official_dataset
 from .evaluation.evaluate import evaluate
 from .engines.license import find_license_conflicts
 from .engines.maintenance import find_unmaintained
@@ -25,7 +27,11 @@ from .scoring.score import app_risk_score, risk_band, score_finding
 from .schemas import AnalysisResult, AppRisk, Summary
 from .util.constants import REFERENCE_DATE
 
-RISK_TYPES = ["vulnerable", "transitive_vuln", "license_conflict", "unmaintained"]
+RISK_TYPES = [
+    "vulnerable", "transitive_vuln", "license_conflict",
+    "transitive_license_conflict", "license_unknown", "unmaintained",
+]
+_LICENSE_TYPES = ("license_conflict", "transitive_license_conflict", "license_unknown")
 
 
 def collect_findings(g, ds: Dataset) -> list[Finding]:
@@ -58,7 +64,7 @@ def _merge_by_node(findings: list[Finding]) -> list[Finding]:
     for _key, fs in groups.items():
         vulns = [f for f in fs if f.risk_type in ("vulnerable", "transitive_vuln")]
         reach_vulns = [f for f in vulns if f.is_reachable is not False]
-        lic = [f for f in fs if f.risk_type == "license_conflict"]
+        lic = [f for f in fs if f.risk_type in _LICENSE_TYPES]
         maint = [f for f in fs if f.risk_type == "unmaintained"]
         if reach_vulns:
             primary = reach_vulns[0]
@@ -74,11 +80,12 @@ def _merge_by_node(findings: list[Finding]) -> list[Finding]:
 
 
 def _is_exploitable_critical(f: Finding) -> bool:
-    return (
-        f.risk_type in ("vulnerable", "transitive_vuln")
-        and f.severity == "critical"
-        and f.is_reachable is not False
-    )
+    if f.risk_type not in ("vulnerable", "transitive_vuln") or f.severity != "critical":
+        return False
+    if f.is_reachable is False:  # synthetic reachability suppression
+        return False
+    expl = (f.exploitability or "").lower()
+    return expl not in ("low", "none")  # official: low/none exploitability = not high-priority
 
 
 def _aggregate(ds: Dataset, g, findings: list[Finding]) -> list[AppRisk]:
@@ -130,8 +137,19 @@ class AnalysisContext:
     result: AnalysisResult
 
 
+def _load_dataset(data_dir: Optional[Path]) -> Dataset:
+    if data_dir is not None:
+        p = Path(data_dir)
+        if (p / "sbom_dependencies.csv").exists():
+            return load_official_dataset(p)
+        return load_dataset(p)
+    if settings.dataset == "official":
+        return load_official_dataset(settings.official_data_dir)
+    return load_dataset(settings.data_dir)
+
+
 def build_context(data_dir: Optional[Path] = None) -> AnalysisContext:
-    ds = load_dataset(data_dir)
+    ds = _load_dataset(data_dir)
     g = build_graph(ds)
     findings = collect_findings(g, ds)
     for f in findings:

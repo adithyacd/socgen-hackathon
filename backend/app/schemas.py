@@ -50,6 +50,7 @@ class GraphNode(BaseModel):
     is_direct: bool = False
     is_vulnerable: bool = False
     is_reachable: bool | None = None
+    exploitability: str = ""     # official: high/medium/low/none
     severity: str | None = None  # worst finding severity on this node
     risk_types: list[str] = []
     cve_ids: list[str] = []
@@ -97,6 +98,7 @@ class AppImpact(BaseModel):
     version: str
     is_direct: bool
     is_reachable: bool
+    exploitability: str = ""
     path: list[str]
 
 

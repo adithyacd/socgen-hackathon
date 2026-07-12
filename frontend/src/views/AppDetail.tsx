@@ -6,7 +6,7 @@ import type { AppGraph, Finding, GraphNode } from "../api/types";
 import { Loading, ErrorState } from "../components/States";
 import DependencyGraph from "../components/DependencyGraph";
 import RiskMeter from "../components/RiskMeter";
-import { SEVERITY_HEX, RISK_TYPE_LABEL, severityText } from "../lib/risk";
+import { SEVERITY_HEX, RISK_TYPE_LABEL, severityText, EXPLOIT_HEX } from "../lib/risk";
 
 const LEGEND = [
   { c: SEVERITY_HEX.critical, label: "Critical" },
@@ -17,7 +17,15 @@ const LEGEND = [
   { c: "#26324e", label: "Clean" },
 ];
 
-function ReachBadge({ reachable }: { reachable: boolean | null }) {
+function ReachBadge({ reachable, exploitability }: { reachable: boolean | null; exploitability?: string }) {
+  if (exploitability) {
+    const hex = EXPLOIT_HEX[exploitability] ?? "#8A97B1";
+    return (
+      <span className="inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-xs font-semibold" style={{ background: `${hex}1a`, color: hex }}>
+        <ShieldAlert size={12} /> {exploitability.toUpperCase()} exploitability
+      </span>
+    );
+  }
   if (reachable === null) return null;
   return reachable ? (
     <span className="inline-flex items-center gap-1 rounded-md bg-crit/15 px-2 py-0.5 text-xs font-semibold text-crit">
@@ -46,7 +54,7 @@ function NodeDetails({ node, finding }: { node: GraphNode; finding?: Finding }) 
       </div>
 
       <div className="mt-3 flex flex-wrap gap-2">
-        {node.is_vulnerable && <ReachBadge reachable={node.is_reachable} />}
+        {node.is_vulnerable && <ReachBadge reachable={node.is_reachable} exploitability={node.exploitability} />}
         {node.risk_types
           .filter((r) => r !== "clean")
           .map((r) => (
@@ -161,7 +169,7 @@ export default function AppDetail() {
             ))}
           </div>
           <div className="absolute bottom-3 left-3 z-10 font-mono text-[10px] text-mist/70">
-            click a node to trace its path · dashed edge = code path not exercised
+            click a node to trace its path · dimmed = lower-exploitability
           </div>
           <DependencyGraph graph={graph} onSelect={setSelected} />
         </div>
@@ -186,7 +194,7 @@ export default function AppDetail() {
                       <span className="text-[11px] text-mist">
                         {RISK_TYPE_LABEL[f.risk_type as keyof typeof RISK_TYPE_LABEL]}
                       </span>
-                      {f.risk_type.includes("vuln") && <ReachBadge reachable={f.is_reachable} />}
+                      {f.risk_type.includes("vuln") && <ReachBadge reachable={f.is_reachable} exploitability={f.exploitability} />}
                     </div>
                   </li>
                 ))}

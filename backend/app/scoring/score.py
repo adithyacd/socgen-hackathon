@@ -21,11 +21,23 @@ from ..util.constants import (
 _SATURATION_K = 80.0
 
 
+# Exploitability -> prioritization multiplier (official data's real signal).
+_EXPLOIT_FACTOR = {"high": 1.3, "medium": 1.0, "low": 0.55, "none": 0.3, "": 1.0}
+_LICENSE_TYPES = ("license_conflict", "transitive_license_conflict", "license_unknown")
+
+
 def reachability_factor(finding: Finding) -> float:
-    # Only vulnerabilities have a meaningful reachability distinction.
+    # Official data prioritizes via exploitability_factor instead; skip here.
+    if finding.exploitability:
+        return REACHABLE_FACTOR
+    # Synthetic-only: unreachable vulns are down-weighted.
     if finding.risk_type in ("vulnerable", "transitive_vuln") and finding.is_reachable is False:
         return UNREACHABLE_FACTOR
     return REACHABLE_FACTOR
+
+
+def exploitability_factor(finding: Finding) -> float:
+    return _EXPLOIT_FACTOR.get((finding.exploitability or "").lower(), 1.0)
 
 
 def score_finding(finding: Finding) -> float:
@@ -33,8 +45,8 @@ def score_finding(finding: Finding) -> float:
     if finding.risk_type in ("vulnerable", "transitive_vuln"):
         exploit = 1.0 + (0.5 if finding.kev else 0.0) + finding.epss * 0.5
         depth = 1.0 if finding.is_direct else 0.7
-        return base * reachability_factor(finding) * exploit * depth
-    if finding.risk_type == "license_conflict":
+        return base * reachability_factor(finding) * exploitability_factor(finding) * exploit * depth
+    if finding.risk_type in _LICENSE_TYPES:
         return base  # severity already reflects license risk_level
     if finding.risk_type == "unmaintained":
         return base * 0.5

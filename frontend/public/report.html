@@ -21,34 +21,35 @@
     <span class="sub">Generated 2026-04-01</span>
   </div>
   <p class="sub">Software Bill of Materials risk across 10 applications ·
-  326 dependencies analyzed.</p>
+  869 dependencies analyzed.</p>
 
   <div class="grid">
-    <div class="kpi"><div class="n" style="color:#c81e3a">10</div><div class="l">Exploitable criticals</div></div>
-    <div class="kpi"><div class="n">42&rarr;29</div><div class="l">Vuln alerts after reachability</div></div>
-    <div class="kpi"><div class="n" style="color:#1f8a6d">31%</div><div class="l">Alert noise removed</div></div>
-    <div class="kpi"><div class="n">payments-gateway</div><div class="l">Highest-risk app</div></div>
+    <div class="kpi"><div class="n" style="color:#c81e3a">43</div><div class="l">High-priority criticals</div></div>
+    <div class="kpi"><div class="n">326/379</div><div class="l">Actionable vuln alerts (high/med exploitability)</div></div>
+    <div class="kpi"><div class="n" style="color:#1f8a6d">91%</div><div class="l">Detection recall vs. labels</div></div>
+    <div class="kpi"><div class="n">HRPortal</div><div class="l">Highest-risk app</div></div>
   </div>
 
   <h2>Application risk ranking</h2>
   <table><thead><tr><th>Application</th><th>Criticality</th><th>Internet</th><th>Score</th>
     <th>Exploitable</th><th>Vulnerable</th><th>License</th><th>Unmaintained</th></tr></thead>
-    <tbody><tr><td>payments-gateway</td><td>critical</td><td>yes</td><td style='color:#c81e3a;font-weight:700'>82</td><td>2</td><td>5</td><td>1</td><td>4</td></tr><tr><td>trading-engine</td><td>critical</td><td>no</td><td style='color:#c26a12;font-weight:700'>75</td><td>2</td><td>5</td><td>1</td><td>5</td></tr><tr><td>loan-origination</td><td>high</td><td>no</td><td style='color:#c26a12;font-weight:700'>59</td><td>1</td><td>5</td><td>1</td><td>5</td></tr><tr><td>mobile-banking-api</td><td>critical</td><td>yes</td><td style='color:#c26a12;font-weight:700'>58</td><td>1</td><td>2</td><td>2</td><td>2</td></tr><tr><td>market-data-feed</td><td>medium</td><td>yes</td><td style='color:#9a7d10;font-weight:700'>49</td><td>1</td><td>6</td><td>1</td><td>5</td></tr><tr><td>customer-portal</td><td>high</td><td>yes</td><td style='color:#9a7d10;font-weight:700'>48</td><td>0</td><td>5</td><td>1</td><td>6</td></tr><tr><td>internal-wiki</td><td>low</td><td>no</td><td style='color:#9a7d10;font-weight:700'>43</td><td>1</td><td>5</td><td>1</td><td>2</td></tr><tr><td>fraud-detection</td><td>high</td><td>no</td><td style='color:#9a7d10;font-weight:700'>41</td><td>1</td><td>2</td><td>2</td><td>1</td></tr><tr><td>notifications-service</td><td>medium</td><td>yes</td><td style='color:#9a7d10;font-weight:700'>39</td><td>0</td><td>5</td><td>1</td><td>5</td></tr><tr><td>hr-portal</td><td>medium</td><td>no</td><td style='color:#9a7d10;font-weight:700'>32</td><td>1</td><td>2</td><td>2</td><td>2</td></tr></tbody></table>
+    <tbody><tr><td>HRPortal</td><td>high</td><td>yes</td><td style='color:#c81e3a;font-weight:700'>100</td><td>5</td><td>40</td><td>1</td><td>4</td></tr><tr><td>VendorGateway</td><td>high</td><td>yes</td><td style='color:#c81e3a;font-weight:700'>100</td><td>10</td><td>45</td><td>1</td><td>1</td></tr><tr><td>PaymentService</td><td>critical</td><td>yes</td><td style='color:#c81e3a;font-weight:700'>100</td><td>4</td><td>31</td><td>1</td><td>3</td></tr><tr><td>MobileBackend</td><td>high</td><td>yes</td><td style='color:#c81e3a;font-weight:700'>100</td><td>2</td><td>36</td><td>0</td><td>8</td></tr><tr><td>ComplianceEngine</td><td>critical</td><td>no</td><td style='color:#c81e3a;font-weight:700'>100</td><td>1</td><td>24</td><td>1</td><td>7</td></tr><tr><td>AnalyticsDashboard</td><td>medium</td><td>yes</td><td style='color:#c81e3a;font-weight:700'>100</td><td>7</td><td>38</td><td>1</td><td>4</td></tr><tr><td>CustomerPortal</td><td>high</td><td>yes</td><td style='color:#c81e3a;font-weight:700'>100</td><td>2</td><td>44</td><td>1</td><td>5</td></tr><tr><td>NotificationService</td><td>medium</td><td>yes</td><td style='color:#c81e3a;font-weight:700'>99</td><td>8</td><td>41</td><td>1</td><td>3</td></tr><tr><td>InternalAPI</td><td>medium</td><td>no</td><td style='color:#c81e3a;font-weight:700'>99</td><td>1</td><td>46</td><td>3</td><td>3</td></tr><tr><td>DevToolkit</td><td>low</td><td>no</td><td style='color:#c81e3a;font-weight:700'>96</td><td>3</td><td>34</td><td>0</td><td>7</td></tr></tbody></table>
 
-  <h2>Zero-day exposure — Log4Shell (CVE-2021-44228)</h2>
-  <div class="brief">CVE-2021-44228 in log4j-core (CVSS 10.0, CISA KEV) is present in 4 applications; 2 are actually exploitable and 2 carry the vulnerable code on an unreachable path. Highest priority is payments-gateway (critical, internet-facing), reached via app → spring-boot-starter@2.5.4 → enterprise-logging@1.4.0 → log4j-core@2.14.1. Remediate by upgrading log4j-core to 2.17.1. Blast radius: 2 app(s) exploitable · 2 business-critical · 1 internet-facing.</div>
+  <h2>Zero-day exposure — CVE-2021-1061 (hibernate-validator)</h2>
+  <div class="brief">CVE-2021-1061 in hibernate-validator (CVSS 5.2) is present in 7 applications; 7 are actually exploitable and 0 carry the vulnerable code on an unreachable path. Highest priority is PaymentService (critical, internet-facing), reached via app → hibernate-validator@4.10.5. Remediate hibernate-validator per vendor guidance. Blast radius: 7 app(s) exploitable · 2 business-critical · 6 internet-facing.</div>
 
   <h2>Recommended remediation — cheapest path to safe</h2>
   <table><thead><tr><th>Library</th><th>Upgrade</th><th>Apps fixed</th><th>CVEs</th>
-    <th>Criticals</th><th>Conflict</th></tr></thead><tbody><tr><td>commons-text</td><td>&rarr; 1.10.0</td><td>4</td><td>1</td><td>4</td><td>—</td></tr><tr><td>pyyaml</td><td>&rarr; 5.4</td><td>3</td><td>1</td><td>3</td><td>—</td></tr><tr><td>snakeyaml</td><td>&rarr; 2.0</td><td>4</td><td>1</td><td>0</td><td>—</td></tr><tr><td>bcprov-jdk15on</td><td>&rarr; 1.70</td><td>4</td><td>1</td><td>0</td><td>—</td></tr><tr><td>log4j-core</td><td>&rarr; 2.17.1</td><td>2</td><td>1</td><td>2</td><td>⚠ enterprise-logging</td></tr><tr><td>lodash</td><td>&rarr; 4.17.21</td><td>3</td><td>1</td><td>0</td><td>—</td></tr><tr><td>jackson-databind</td><td>&rarr; 2.13.2.1</td><td>3</td><td>1</td><td>0</td><td>—</td></tr><tr><td>urllib3</td><td>&rarr; 1.26.5</td><td>2</td><td>1</td><td>0</td><td>⚠ requests</td></tr></tbody></table>
+    <th>Criticals</th><th>Conflict</th></tr></thead><tbody><tr><td>bcrypt</td><td>&rarr; 5.0.0</td><td>4</td><td>3</td><td>14</td><td>—</td></tr><tr><td>testify</td><td>&rarr; 5.8.0</td><td>3</td><td>3</td><td>5</td><td>—</td></tr><tr><td>numpy</td><td>&rarr; 6.0.0</td><td>5</td><td>3</td><td>0</td><td>—</td></tr><tr><td>bouncycastle-bcprov</td><td>&rarr; 4.9.0</td><td>5</td><td>3</td><td>1</td><td>—</td></tr><tr><td>httpx</td><td>&rarr; 5.5.0</td><td>3</td><td>6</td><td>5</td><td>—</td></tr><tr><td>hibernate-validator</td><td>&rarr; 4.9.0</td><td>6</td><td>3</td><td>5</td><td>—</td></tr><tr><td>aiohttp</td><td>&rarr; 5.11.0</td><td>4</td><td>4</td><td>0</td><td>—</td></tr><tr><td>jackson-annotations</td><td>&rarr; 5.5.0</td><td>4</td><td>4</td><td>0</td><td>—</td></tr></tbody></table>
 
   <h2>Detection accuracy (vs. ground-truth labels)</h2>
   <table><tbody>
-    <tr><td>Vulnerability detection</td><td>100%</td></tr>
-    <tr><td>Transitive resolution</td><td>100%</td></tr>
+    <tr><td>Vulnerability detection recall</td><td>85%</td></tr>
+    <tr><td>Transitive resolution</td><td>87%</td></tr>
     <tr><td>License-conflict detection</td><td>100%</td></tr>
-    <tr><td>False-positive rate (naive &rarr; reachability)</td><td>5% &rarr; 0%</td></tr>
-    <tr><td>Vulnerability-alert precision (naive &rarr; reachability)</td><td>69% &rarr; 100%</td></tr>
+    <tr><td>Maintenance detection</td><td>100%</td></tr>
+    <tr><td>Overall recall / precision (is_risky)</td><td>91% / 71%</td></tr>
+    <tr><td>Actionable vuln alerts (high/med exploitability)</td><td>326 of 379 (86%)</td></tr>
   </tbody></table>
 
   <p class="foot">Sentinel · Société Générale PSG Hackathon · synthetic dataset · generated by build_static.py</p>
