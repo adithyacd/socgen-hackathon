@@ -6,7 +6,7 @@ import { SEVERITY_HEX } from "../lib/risk";
 
 cytoscape.use(fcose);
 
-const APP_HEX = "#F4F4F5";   // the application node is neutral (not a risk)
+const APP_HEX = "#17171C";   // the application node — a dark, outlined hub (not a risk)
 const LICENSE_HEX = "#79808F";
 const CLEAN_HEX = "#33333A";  // faintly visible on pure black
 const STALE_HEX = "#5A5A63";
@@ -77,13 +77,15 @@ const STYLE: any[] = [
     selector: 'node[kind="app"]',
     style: {
       shape: "round-rectangle",
-      "font-size": 12,
+      "font-size": 11,
       "font-weight": 700,
       color: "#F4F4F5",
       "text-valign": "center",
       "text-margin-y": 0,
+      "text-max-width": "70px",
+      "text-wrap": "wrap",
       "border-width": 2,
-      "border-color": APP_HEX,
+      "border-color": "#F4F4F5",
     },
   },
   { selector: "node.suppressed", style: { "border-style": "dashed", "border-color": "#4A4A52", opacity: 0.55 } },
