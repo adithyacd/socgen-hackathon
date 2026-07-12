@@ -10,9 +10,11 @@ import type {
   WarRoomImpact,
 } from "./types";
 
-// In dev, hit the FastAPI server. For the static deploy build, set
-// VITE_API_BASE="" and drop a prebuilt analysis.json next to index.html.
-const API_BASE = import.meta.env.VITE_API_BASE ?? "http://localhost:8000";
+// If VITE_API_BASE is explicitly set (a live backend URL), use it. Otherwise the dev
+// server talks to the local FastAPI, and any production build runs fully static
+// (relative JSON next to index.html) — so a frontend-only deploy never calls a backend.
+const API_BASE =
+  import.meta.env.VITE_API_BASE || (import.meta.env.DEV ? "http://localhost:8000" : "");
 
 async function getJSON<T>(path: string): Promise<T> {
   const url = API_BASE ? `${API_BASE}${path}` : `.${path}`;
