@@ -86,18 +86,6 @@ Everything works **without an API key** (deterministic templates + a keyword par
 enable Claude‑written incident briefs and LLM question parsing, copy `backend/.env.example`
 to `backend/.env` and set `ANTHROPIC_API_KEY`. Results are cached to `data/cache/`.
 
-### Static build (bulletproof deployed URL)
-
-```bash
-python -m backend.tools.build_static     # precompute every API response into frontend/public/
-cd frontend && npm run build             # dist/ is a fully self-contained static site
-```
-
-`dist/` runs entirely client‑side (no backend needed) — deploy it to any static host
-(Vercel, Netlify, GitHub Pages). A print‑ready risk report is generated at `dist/report.html`.
-
----
-
 ## Architecture
 
 ```
