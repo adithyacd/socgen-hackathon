@@ -14,11 +14,14 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from backend.app.analysis import AnalysisContext, build_context  # noqa: E402
+from backend.app.audit import audit_dataset  # noqa: E402
 from backend.app.config import REPO_ROOT  # noqa: E402
 from backend.app.copilot.query import SUGGESTIONS, answer  # noqa: E402
+from backend.app.engines.malicious import scan_threats  # noqa: E402
 from backend.app.graphview import build_app_graph  # noqa: E402
 from backend.app.narratives.incident import incident_brief  # noqa: E402
 from backend.app.optimizer import build_fix_plan  # noqa: E402
+from backend.app.scan import scan_manifest  # noqa: E402
 from backend.app.warroom import notable_cves, war_room_impact  # noqa: E402
 
 PUBLIC = REPO_ROOT / "frontend" / "public"
@@ -134,6 +137,11 @@ def main() -> None:
         _dump(PUBLIC / "warroom" / f"{c.cve_id}.json", imp)
     _dump(PUBLIC / "optimizer.json", build_fix_plan(ctx))
     _dump(PUBLIC / "copilot.json", {q: answer(ctx, q).model_dump() for q in SUGGESTIONS})
+    threats = scan_threats(ctx.ds)
+    _dump(PUBLIC / "threats.json", {"threats": threats, "count": len(threats)})
+    _dump(PUBLIC / "audit.json", audit_dataset(ctx.ds))
+    sample = (REPO_ROOT / "examples" / "sample-sbom.cdx.json").read_text("utf-8")
+    _dump(PUBLIC / "scan-sample.json", scan_manifest(sample, "auto", ctx.ds))
     (PUBLIC / "report.html").write_text(render_report(ctx), encoding="utf-8")
 
     print(f"Static export written to {PUBLIC}")

@@ -1,0 +1,283 @@
+{
+  "format": "cyclonedx",
+  "dependency_count": 8,
+  "app": {
+    "app_id": "UPLOAD",
+    "name": "Uploaded project",
+    "business_criticality": "high",
+    "owner": "you",
+    "internet_facing": true,
+    "environment": "upload",
+    "ecosystem": "mixed",
+    "license_context": "proprietary",
+    "risk_score": 26.1,
+    "risk_band": "medium",
+    "dependency_count": 8,
+    "direct_count": 8,
+    "counts": {
+      "vulnerable": 3,
+      "transitive_vuln": 0,
+      "license_conflict": 1,
+      "transitive_license_conflict": 0,
+      "license_unknown": 0,
+      "unmaintained": 0,
+      "exploitable_criticals": 0
+    },
+    "top_findings": [
+      {
+        "app_id": "UPLOAD",
+        "library": "internal-auth-sdk",
+        "version": "5.2.0",
+        "is_direct": true,
+        "risk_type": "license_conflict",
+        "severity": "critical",
+        "secondary_risks": [],
+        "cve_ids": [],
+        "exploitability": "",
+        "is_reachable": null,
+        "detail": "Copyleft license 'GPL-3.0' is incompatible with the proprietary application.",
+        "score": 10.0,
+        "paths": [],
+        "fixed_versions": {},
+        "max_cvss": 0.0,
+        "kev": false,
+        "epss": 0.0
+      },
+      {
+        "app_id": "UPLOAD",
+        "library": "axios",
+        "version": "1.6.2",
+        "is_direct": true,
+        "risk_type": "vulnerable",
+        "severity": "medium",
+        "secondary_risks": [],
+        "cve_ids": [
+          "CVE-2022-1196"
+        ],
+        "exploitability": "low",
+        "is_reachable": false,
+        "detail": "1 known vulnerability (max CVSS 4.2). Exploitability LOW \u2014 deprioritized.",
+        "score": 2.2,
+        "paths": [
+          [
+            "axios@1.6.2"
+          ]
+        ],
+        "fixed_versions": {
+          "CVE-2022-1196": null
+        },
+        "max_cvss": 4.2,
+        "kev": false,
+        "epss": 0.0
+      },
+      {
+        "app_id": "UPLOAD",
+        "library": "react",
+        "version": "18.2.0",
+        "is_direct": true,
+        "risk_type": "vulnerable",
+        "severity": "low",
+        "secondary_risks": [],
+        "cve_ids": [
+          "CVE-2024-1059"
+        ],
+        "exploitability": "medium",
+        "is_reachable": true,
+        "detail": "1 known vulnerability (max CVSS 3.0).",
+        "score": 1.5,
+        "paths": [
+          [
+            "react@18.2.0"
+          ]
+        ],
+        "fixed_versions": {
+          "CVE-2024-1059": null
+        },
+        "max_cvss": 3.0,
+        "kev": false,
+        "epss": 0.0
+      },
+      {
+        "app_id": "UPLOAD",
+        "library": "express",
+        "version": "99.0.0",
+        "is_direct": true,
+        "risk_type": "vulnerable",
+        "severity": "medium",
+        "secondary_risks": [],
+        "cve_ids": [
+          "CVE-2022-1171"
+        ],
+        "exploitability": "none",
+        "is_reachable": false,
+        "detail": "1 known vulnerability (max CVSS 5.5). Exploitability NONE \u2014 deprioritized.",
+        "score": 1.2,
+        "paths": [
+          [
+            "express@99.0.0"
+          ]
+        ],
+        "fixed_versions": {
+          "CVE-2022-1171": null
+        },
+        "max_cvss": 5.5,
+        "kev": false,
+        "epss": 0.0
+      }
+    ]
+  },
+  "findings": [
+    {
+      "app_id": "UPLOAD",
+      "library": "react",
+      "version": "18.2.0",
+      "is_direct": true,
+      "risk_type": "vulnerable",
+      "severity": "low",
+      "secondary_risks": [],
+      "cve_ids": [
+        "CVE-2024-1059"
+      ],
+      "exploitability": "medium",
+      "is_reachable": true,
+      "detail": "1 known vulnerability (max CVSS 3.0).",
+      "score": 1.5,
+      "paths": [
+        [
+          "react@18.2.0"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2024-1059": null
+      },
+      "max_cvss": 3.0,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "UPLOAD",
+      "library": "express",
+      "version": "99.0.0",
+      "is_direct": true,
+      "risk_type": "vulnerable",
+      "severity": "medium",
+      "secondary_risks": [],
+      "cve_ids": [
+        "CVE-2022-1171"
+      ],
+      "exploitability": "none",
+      "is_reachable": false,
+      "detail": "1 known vulnerability (max CVSS 5.5). Exploitability NONE \u2014 deprioritized.",
+      "score": 1.2,
+      "paths": [
+        [
+          "express@99.0.0"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2022-1171": null
+      },
+      "max_cvss": 5.5,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "UPLOAD",
+      "library": "axios",
+      "version": "1.6.2",
+      "is_direct": true,
+      "risk_type": "vulnerable",
+      "severity": "medium",
+      "secondary_risks": [],
+      "cve_ids": [
+        "CVE-2022-1196"
+      ],
+      "exploitability": "low",
+      "is_reachable": false,
+      "detail": "1 known vulnerability (max CVSS 4.2). Exploitability LOW \u2014 deprioritized.",
+      "score": 2.2,
+      "paths": [
+        [
+          "axios@1.6.2"
+        ]
+      ],
+      "fixed_versions": {
+        "CVE-2022-1196": null
+      },
+      "max_cvss": 4.2,
+      "kev": false,
+      "epss": 0.0
+    },
+    {
+      "app_id": "UPLOAD",
+      "library": "internal-auth-sdk",
+      "version": "5.2.0",
+      "is_direct": true,
+      "risk_type": "license_conflict",
+      "severity": "critical",
+      "secondary_risks": [],
+      "cve_ids": [],
+      "exploitability": "",
+      "is_reachable": null,
+      "detail": "Copyleft license 'GPL-3.0' is incompatible with the proprietary application.",
+      "score": 10.0,
+      "paths": [],
+      "fixed_versions": {},
+      "max_cvss": 0.0,
+      "kev": false,
+      "epss": 0.0
+    }
+  ],
+  "threats": [
+    {
+      "app_id": "UPLOAD",
+      "app": "Uploaded project",
+      "library": "event-stream",
+      "version": "3.3.6",
+      "threat_type": "known_malicious",
+      "severity": "critical",
+      "confidence": 0.95,
+      "detail": "'event-stream' matches a known compromised/protestware package (bad version 3.3.6).",
+      "suggested": ""
+    },
+    {
+      "app_id": "UPLOAD",
+      "app": "Uploaded project",
+      "library": "requsts",
+      "version": "2.28.0",
+      "threat_type": "typosquat",
+      "severity": "high",
+      "confidence": 0.85,
+      "detail": "'requsts' is one edit from the popular package 'requests' \u2014 likely typosquat.",
+      "suggested": "requests"
+    },
+    {
+      "app_id": "UPLOAD",
+      "app": "Uploaded project",
+      "library": "lodahs",
+      "version": "1.0.0",
+      "threat_type": "typosquat",
+      "severity": "high",
+      "confidence": 0.85,
+      "detail": "'lodahs' is one edit from the popular package 'lodash' \u2014 likely typosquat.",
+      "suggested": "lodash"
+    },
+    {
+      "app_id": "UPLOAD",
+      "app": "Uploaded project",
+      "library": "express",
+      "version": "99.0.0",
+      "threat_type": "dependency_confusion",
+      "severity": "high",
+      "confidence": 0.7,
+      "detail": "'express' is a well-known public package pinned to an implausible version 99.0.0 \u2014 a classic dependency-confusion signal.",
+      "suggested": "express"
+    }
+  ],
+  "summary": {
+    "vulnerable": 3,
+    "license": 1,
+    "unmaintained": 0,
+    "threats": 4
+  }
+}

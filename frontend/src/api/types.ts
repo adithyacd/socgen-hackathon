@@ -177,3 +177,44 @@ export interface CopilotAnswer {
   match_count: number;
   source: "llm" | "rules";
 }
+
+export interface Threat {
+  app_id: string;
+  app: string;
+  library: string;
+  version: string;
+  threat_type: "typosquat" | "dependency_confusion" | "known_malicious";
+  severity: Severity;
+  confidence: number;
+  detail: string;
+  suggested: string;
+}
+
+export interface AuditIssue {
+  issue: string;
+  severity: "high" | "medium" | "low" | "info";
+  metric: string;
+  detail: string;
+  evidence: string[];
+  recommendation: string;
+}
+
+export interface AuditReport {
+  dataset: string;
+  total_labels: number;
+  integrity_score: number;
+  verdict: string;
+  issue_count: number;
+  issues: AuditIssue[];
+  summary: Record<string, number>;
+}
+
+export interface ScanResult {
+  format: string;
+  dependency_count: number;
+  app: AppRisk | null;
+  findings: Finding[];
+  threats: Threat[];
+  summary: { vulnerable: number; license: number; unmaintained: number; threats: number };
+  error?: string;
+}

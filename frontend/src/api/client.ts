@@ -1,8 +1,11 @@
 import type {
   AnalysisResult,
   AppGraph,
+  AuditReport,
   CopilotAnswer,
   FixPlan,
+  ScanResult,
+  Threat,
   WarRoomCve,
   WarRoomImpact,
 } from "./types";
@@ -74,6 +77,28 @@ export async function askCopilot(question: string): Promise<CopilotAnswer> {
       source: "rules",
     }
   );
+}
+
+export async function fetchThreats(): Promise<{ threats: Threat[]; count: number }> {
+  return getJSON(API_BASE ? "/api/threats" : "/threats.json");
+}
+
+export async function fetchAudit(): Promise<AuditReport> {
+  return getJSON(API_BASE ? "/api/audit" : "/audit.json");
+}
+
+export async function scanManifest(content: string, format = "auto"): Promise<ScanResult> {
+  if (API_BASE) {
+    const res = await fetch(`${API_BASE}/api/scan`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ content, format }),
+    });
+    if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+    return res.json();
+  }
+  // Static mode: return the precomputed sample scan.
+  return getJSON<ScanResult>("/scan-sample.json");
 }
 
 export { API_BASE };

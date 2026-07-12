@@ -140,6 +140,11 @@ class CopilotRequest(BaseModel):
     question: str
 
 
+class ScanRequest(BaseModel):
+    content: str
+    format: str = "auto"  # auto | package.json | requirements.txt | cyclonedx | spdx
+
+
 class CopilotAnswer(BaseModel):
     question: str
     answer: str

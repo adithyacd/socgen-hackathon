@@ -891,8 +891,7 @@
       "exploitability": "",
       "severity": "high",
       "risk_types": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [],
       "license": "UNKNOWN",
@@ -913,8 +912,7 @@
       "severity": "critical",
       "risk_types": [
         "license_unknown",
-        "transitive_vuln",
-        "unmaintained"
+        "transitive_vuln"
       ],
       "cve_ids": [
         "CVE-2022-1075",
@@ -939,8 +937,7 @@
       "severity": "low",
       "risk_types": [
         "license_unknown",
-        "transitive_vuln",
-        "unmaintained"
+        "transitive_vuln"
       ],
       "cve_ids": [
         "CVE-2022-1058",
@@ -963,8 +960,7 @@
       "exploitability": "",
       "severity": "high",
       "risk_types": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [],
       "license": "UNKNOWN",
@@ -985,8 +981,7 @@
       "severity": "low",
       "risk_types": [
         "license_unknown",
-        "transitive_vuln",
-        "unmaintained"
+        "transitive_vuln"
       ],
       "cve_ids": [
         "CVE-2023-1132"
@@ -1009,8 +1004,7 @@
       "severity": "critical",
       "risk_types": [
         "license_unknown",
-        "transitive_vuln",
-        "unmaintained"
+        "transitive_vuln"
       ],
       "cve_ids": [
         "CVE-2022-1075",
@@ -1034,8 +1028,7 @@
       "exploitability": "",
       "severity": "high",
       "risk_types": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [],
       "license": "UNKNOWN",
@@ -1055,8 +1048,7 @@
       "exploitability": "",
       "severity": "high",
       "risk_types": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [],
       "license": "UNKNOWN",
@@ -1077,8 +1069,7 @@
       "severity": "low",
       "risk_types": [
         "license_unknown",
-        "transitive_vuln",
-        "unmaintained"
+        "transitive_vuln"
       ],
       "cve_ids": [
         "CVE-2023-1109",
@@ -1101,8 +1092,7 @@
       "exploitability": "",
       "severity": "high",
       "risk_types": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [],
       "license": "UNKNOWN",
@@ -1123,8 +1113,7 @@
       "severity": "high",
       "risk_types": [
         "license_unknown",
-        "transitive_vuln",
-        "unmaintained"
+        "transitive_vuln"
       ],
       "cve_ids": [
         "CVE-2023-1119",
@@ -1147,8 +1136,7 @@
       "exploitability": "",
       "severity": "high",
       "risk_types": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [],
       "license": "UNKNOWN",
@@ -1169,8 +1157,7 @@
       "severity": "critical",
       "risk_types": [
         "license_unknown",
-        "transitive_vuln",
-        "unmaintained"
+        "transitive_vuln"
       ],
       "cve_ids": [
         "CVE-2022-1075",
@@ -1195,8 +1182,7 @@
       "severity": "low",
       "risk_types": [
         "license_unknown",
-        "transitive_vuln",
-        "unmaintained"
+        "transitive_vuln"
       ],
       "cve_ids": [
         "CVE-2023-1109",
@@ -1220,8 +1206,7 @@
       "severity": "low",
       "risk_types": [
         "license_unknown",
-        "transitive_vuln",
-        "unmaintained"
+        "transitive_vuln"
       ],
       "cve_ids": [
         "CVE-2022-1058",
@@ -1245,8 +1230,7 @@
       "severity": "medium",
       "risk_types": [
         "license_unknown",
-        "transitive_vuln",
-        "unmaintained"
+        "transitive_vuln"
       ],
       "cve_ids": [
         "CVE-2023-1187"
@@ -1268,8 +1252,7 @@
       "exploitability": "",
       "severity": "high",
       "risk_types": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [],
       "license": "UNKNOWN",
@@ -1290,8 +1273,7 @@
       "severity": "critical",
       "risk_types": [
         "license_unknown",
-        "transitive_vuln",
-        "unmaintained"
+        "transitive_vuln"
       ],
       "cve_ids": [
         "CVE-2022-1075",
@@ -1316,8 +1298,7 @@
       "severity": "medium",
       "risk_types": [
         "license_unknown",
-        "transitive_vuln",
-        "unmaintained"
+        "transitive_vuln"
       ],
       "cve_ids": [
         "CVE-2023-1187"
@@ -1339,8 +1320,7 @@
       "exploitability": "",
       "severity": "high",
       "risk_types": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [],
       "license": "UNKNOWN",
@@ -1361,8 +1341,7 @@
       "severity": "medium",
       "risk_types": [
         "license_unknown",
-        "transitive_vuln",
-        "unmaintained"
+        "transitive_vuln"
       ],
       "cve_ids": [
         "CVE-2023-1187"
@@ -1385,8 +1364,7 @@
       "severity": "low",
       "risk_types": [
         "license_unknown",
-        "transitive_vuln",
-        "unmaintained"
+        "transitive_vuln"
       ],
       "cve_ids": [
         "CVE-2022-1058",
@@ -1409,8 +1387,7 @@
       "exploitability": "",
       "severity": "high",
       "risk_types": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [],
       "license": "UNKNOWN",
@@ -1431,8 +1408,7 @@
       "severity": "low",
       "risk_types": [
         "license_unknown",
-        "transitive_vuln",
-        "unmaintained"
+        "transitive_vuln"
       ],
       "cve_ids": [
         "CVE-2023-1132"
@@ -1454,8 +1430,7 @@
       "exploitability": "",
       "severity": "high",
       "risk_types": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [],
       "license": "UNKNOWN",
@@ -1476,8 +1451,7 @@
       "severity": "high",
       "risk_types": [
         "license_unknown",
-        "transitive_vuln",
-        "unmaintained"
+        "transitive_vuln"
       ],
       "cve_ids": [
         "CVE-2023-1119",
@@ -1500,8 +1474,7 @@
       "exploitability": "",
       "severity": "high",
       "risk_types": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [],
       "license": "UNKNOWN",
@@ -1522,8 +1495,7 @@
       "severity": "low",
       "risk_types": [
         "license_unknown",
-        "transitive_vuln",
-        "unmaintained"
+        "transitive_vuln"
       ],
       "cve_ids": [
         "CVE-2023-1132"
@@ -1545,8 +1517,7 @@
       "exploitability": "",
       "severity": "high",
       "risk_types": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [],
       "license": "UNKNOWN",
@@ -1567,8 +1538,7 @@
       "severity": "low",
       "risk_types": [
         "license_unknown",
-        "transitive_vuln",
-        "unmaintained"
+        "transitive_vuln"
       ],
       "cve_ids": [
         "CVE-2023-1109",
@@ -1592,8 +1562,7 @@
       "exploitability": "",
       "severity": "high",
       "risk_types": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [],
       "license": "UNKNOWN",
@@ -1614,8 +1583,7 @@
       "severity": "critical",
       "risk_types": [
         "license_unknown",
-        "transitive_vuln",
-        "unmaintained"
+        "transitive_vuln"
       ],
       "cve_ids": [
         "CVE-2022-1075",
@@ -1640,8 +1608,7 @@
       "severity": "medium",
       "risk_types": [
         "license_unknown",
-        "transitive_vuln",
-        "unmaintained"
+        "transitive_vuln"
       ],
       "cve_ids": [
         "CVE-2022-1016"
@@ -1663,8 +1630,7 @@
       "exploitability": "",
       "severity": "high",
       "risk_types": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [],
       "license": "UNKNOWN",
@@ -1684,8 +1650,7 @@
       "exploitability": "",
       "severity": "high",
       "risk_types": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [],
       "license": "UNKNOWN",
@@ -2682,8 +2647,7 @@
       "risk_type": "transitive_vuln",
       "severity": "critical",
       "secondary_risks": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [
         "CVE-2023-1074",
@@ -2717,8 +2681,7 @@
       "risk_type": "transitive_vuln",
       "severity": "critical",
       "secondary_risks": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [
         "CVE-2023-1074",
@@ -2752,8 +2715,7 @@
       "risk_type": "transitive_vuln",
       "severity": "critical",
       "secondary_risks": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [
         "CVE-2023-1074",
@@ -2787,8 +2749,7 @@
       "risk_type": "transitive_vuln",
       "severity": "critical",
       "secondary_risks": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [
         "CVE-2023-1074",
@@ -2822,8 +2783,7 @@
       "risk_type": "transitive_vuln",
       "severity": "critical",
       "secondary_risks": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [
         "CVE-2023-1074",
@@ -2887,9 +2847,7 @@
       "is_direct": false,
       "risk_type": "license_unknown",
       "severity": "high",
-      "secondary_risks": [
-        "unmaintained"
-      ],
+      "secondary_risks": [],
       "cve_ids": [],
       "exploitability": "",
       "is_reachable": null,
@@ -2908,9 +2866,7 @@
       "is_direct": false,
       "risk_type": "license_unknown",
       "severity": "high",
-      "secondary_risks": [
-        "unmaintained"
-      ],
+      "secondary_risks": [],
       "cve_ids": [],
       "exploitability": "",
       "is_reachable": null,
@@ -2929,9 +2885,7 @@
       "is_direct": false,
       "risk_type": "license_unknown",
       "severity": "high",
-      "secondary_risks": [
-        "unmaintained"
-      ],
+      "secondary_risks": [],
       "cve_ids": [],
       "exploitability": "",
       "is_reachable": null,
@@ -2950,9 +2904,7 @@
       "is_direct": false,
       "risk_type": "license_unknown",
       "severity": "high",
-      "secondary_risks": [
-        "unmaintained"
-      ],
+      "secondary_risks": [],
       "cve_ids": [],
       "exploitability": "",
       "is_reachable": null,
@@ -2971,9 +2923,7 @@
       "is_direct": false,
       "risk_type": "license_unknown",
       "severity": "high",
-      "secondary_risks": [
-        "unmaintained"
-      ],
+      "secondary_risks": [],
       "cve_ids": [],
       "exploitability": "",
       "is_reachable": null,
@@ -2992,9 +2942,7 @@
       "is_direct": false,
       "risk_type": "license_unknown",
       "severity": "high",
-      "secondary_risks": [
-        "unmaintained"
-      ],
+      "secondary_risks": [],
       "cve_ids": [],
       "exploitability": "",
       "is_reachable": null,
@@ -3013,9 +2961,7 @@
       "is_direct": false,
       "risk_type": "license_unknown",
       "severity": "high",
-      "secondary_risks": [
-        "unmaintained"
-      ],
+      "secondary_risks": [],
       "cve_ids": [],
       "exploitability": "",
       "is_reachable": null,
@@ -3034,9 +2980,7 @@
       "is_direct": false,
       "risk_type": "license_unknown",
       "severity": "high",
-      "secondary_risks": [
-        "unmaintained"
-      ],
+      "secondary_risks": [],
       "cve_ids": [],
       "exploitability": "",
       "is_reachable": null,
@@ -3055,9 +2999,7 @@
       "is_direct": false,
       "risk_type": "license_unknown",
       "severity": "high",
-      "secondary_risks": [
-        "unmaintained"
-      ],
+      "secondary_risks": [],
       "cve_ids": [],
       "exploitability": "",
       "is_reachable": null,
@@ -3076,9 +3018,7 @@
       "is_direct": false,
       "risk_type": "license_unknown",
       "severity": "high",
-      "secondary_risks": [
-        "unmaintained"
-      ],
+      "secondary_risks": [],
       "cve_ids": [],
       "exploitability": "",
       "is_reachable": null,
@@ -3097,9 +3037,7 @@
       "is_direct": false,
       "risk_type": "license_unknown",
       "severity": "high",
-      "secondary_risks": [
-        "unmaintained"
-      ],
+      "secondary_risks": [],
       "cve_ids": [],
       "exploitability": "",
       "is_reachable": null,
@@ -3118,9 +3056,7 @@
       "is_direct": false,
       "risk_type": "license_unknown",
       "severity": "high",
-      "secondary_risks": [
-        "unmaintained"
-      ],
+      "secondary_risks": [],
       "cve_ids": [],
       "exploitability": "",
       "is_reachable": null,
@@ -3139,9 +3075,7 @@
       "is_direct": false,
       "risk_type": "license_unknown",
       "severity": "high",
-      "secondary_risks": [
-        "unmaintained"
-      ],
+      "secondary_risks": [],
       "cve_ids": [],
       "exploitability": "",
       "is_reachable": null,
@@ -3160,9 +3094,7 @@
       "is_direct": false,
       "risk_type": "license_unknown",
       "severity": "high",
-      "secondary_risks": [
-        "unmaintained"
-      ],
+      "secondary_risks": [],
       "cve_ids": [],
       "exploitability": "",
       "is_reachable": null,
@@ -3181,9 +3113,7 @@
       "is_direct": false,
       "risk_type": "license_unknown",
       "severity": "high",
-      "secondary_risks": [
-        "unmaintained"
-      ],
+      "secondary_risks": [],
       "cve_ids": [],
       "exploitability": "",
       "is_reachable": null,
@@ -3263,8 +3193,7 @@
       "risk_type": "transitive_vuln",
       "severity": "high",
       "secondary_risks": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [
         "CVE-2023-1119",
@@ -3296,8 +3225,7 @@
       "risk_type": "transitive_vuln",
       "severity": "high",
       "secondary_risks": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [
         "CVE-2023-1119",
@@ -3443,8 +3371,7 @@
       "risk_type": "transitive_vuln",
       "severity": "medium",
       "secondary_risks": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [
         "CVE-2023-1187"
@@ -3474,8 +3401,7 @@
       "risk_type": "transitive_vuln",
       "severity": "medium",
       "secondary_risks": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [
         "CVE-2023-1187"
@@ -3505,8 +3431,7 @@
       "risk_type": "transitive_vuln",
       "severity": "medium",
       "secondary_risks": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [
         "CVE-2023-1187"
@@ -3565,8 +3490,7 @@
       "risk_type": "transitive_vuln",
       "severity": "medium",
       "secondary_risks": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [
         "CVE-2022-1016"
@@ -3796,8 +3720,7 @@
       "risk_type": "transitive_vuln",
       "severity": "low",
       "secondary_risks": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [
         "CVE-2023-1109",
@@ -3858,8 +3781,7 @@
       "risk_type": "transitive_vuln",
       "severity": "low",
       "secondary_risks": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [
         "CVE-2022-1058",
@@ -3891,8 +3813,7 @@
       "risk_type": "transitive_vuln",
       "severity": "low",
       "secondary_risks": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [
         "CVE-2023-1132"
@@ -3922,8 +3843,7 @@
       "risk_type": "transitive_vuln",
       "severity": "low",
       "secondary_risks": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [
         "CVE-2023-1109",
@@ -3955,8 +3875,7 @@
       "risk_type": "transitive_vuln",
       "severity": "low",
       "secondary_risks": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [
         "CVE-2023-1109",
@@ -3988,8 +3907,7 @@
       "risk_type": "transitive_vuln",
       "severity": "low",
       "secondary_risks": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [
         "CVE-2022-1058",
@@ -4021,8 +3939,7 @@
       "risk_type": "transitive_vuln",
       "severity": "low",
       "secondary_risks": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [
         "CVE-2022-1058",
@@ -4054,8 +3971,7 @@
       "risk_type": "transitive_vuln",
       "severity": "low",
       "secondary_risks": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [
         "CVE-2023-1132"
@@ -4085,8 +4001,7 @@
       "risk_type": "transitive_vuln",
       "severity": "low",
       "secondary_risks": [
-        "license_unknown",
-        "unmaintained"
+        "license_unknown"
       ],
       "cve_ids": [
         "CVE-2023-1132"

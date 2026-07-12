@@ -6,6 +6,9 @@ import {
   Sparkles,
   Target,
   Radar,
+  Bug,
+  ShieldQuestion,
+  FileUp,
   type LucideIcon,
 } from "lucide-react";
 import type { ReactNode } from "react";
@@ -14,7 +17,10 @@ const NAV: { to: string; label: string; icon: LucideIcon }[] = [
   { to: "/", label: "Portfolio", icon: LayoutGrid },
   { to: "/warroom", label: "War Room", icon: Siren },
   { to: "/optimizer", label: "Fix Optimizer", icon: Wrench },
+  { to: "/threats", label: "Threats", icon: Bug },
+  { to: "/scan", label: "Scan SBOM", icon: FileUp },
   { to: "/copilot", label: "Copilot", icon: Sparkles },
+  { to: "/audit", label: "Benchmark Audit", icon: ShieldQuestion },
   { to: "/accuracy", label: "Accuracy", icon: Target },
 ];
 

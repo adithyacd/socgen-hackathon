@@ -184,7 +184,7 @@
   },
   "List unmaintained libraries": {
     "question": "List unmaintained libraries",
-    "answer": "440 unmaintained dependencies: sqlalchemy in CustomerPortal, lombok in CustomerPortal, werkzeug in CustomerPortal, pyyaml in CustomerPortal, hibernate-validator in CustomerPortal, aws-sdk-s3 in PaymentService\u2026.",
+    "answer": "71 unmaintained dependencies: sqlalchemy in CustomerPortal, lombok in CustomerPortal, werkzeug in CustomerPortal, pyyaml in CustomerPortal, hibernate-validator in CustomerPortal, aws-sdk-s3 in PaymentService\u2026.",
     "query": {
       "entity": "findings",
       "risk_type": "unmaintained"
@@ -487,325 +487,270 @@
         ]
       },
       {
-        "app_id": "APP-001",
-        "app": "CustomerPortal",
-        "library": "assertj-core",
-        "version": "2.1.1",
-        "risk_type": "transitive_vuln",
-        "severity": "medium",
-        "reachable": true,
-        "cves": [
-          "CVE-2024-1118",
-          "CVE-2023-1146"
-        ]
-      },
-      {
-        "app_id": "APP-001",
-        "app": "CustomerPortal",
-        "library": "eslint",
-        "version": "3.4.1",
-        "risk_type": "transitive_vuln",
-        "severity": "medium",
-        "reachable": true,
-        "cves": [
-          "CVE-2022-1016"
-        ]
-      },
-      {
-        "app_id": "APP-001",
-        "app": "CustomerPortal",
-        "library": "jackson-core",
-        "version": "2.2.2",
-        "risk_type": "transitive_vuln",
-        "severity": "medium",
-        "reachable": true,
-        "cves": [
-          "CVE-2026-1020",
-          "CVE-2022-1021",
-          "CVE-2026-1022"
-        ]
-      },
-      {
-        "app_id": "APP-001",
-        "app": "CustomerPortal",
-        "library": "httpcore",
-        "version": "2.2.1",
-        "risk_type": "transitive_vuln",
-        "severity": "medium",
-        "reachable": true,
-        "cves": [
-          "CVE-2023-1122",
-          "CVE-2023-1131",
-          "CVE-2023-1149"
-        ]
-      },
-      {
-        "app_id": "APP-001",
-        "app": "CustomerPortal",
-        "library": "jackson-core",
-        "version": "4.9.0",
-        "risk_type": "transitive_vuln",
-        "severity": "medium",
-        "reachable": true,
-        "cves": [
-          "CVE-2022-1021",
-          "CVE-2026-1022"
-        ]
-      },
-      {
-        "app_id": "APP-001",
-        "app": "CustomerPortal",
-        "library": "eslint",
-        "version": "2.2.5",
-        "risk_type": "transitive_vuln",
-        "severity": "medium",
-        "reachable": true,
-        "cves": [
-          "CVE-2022-1016"
-        ]
-      },
-      {
-        "app_id": "APP-001",
-        "app": "CustomerPortal",
-        "library": "httpcore",
-        "version": "2.6.2",
-        "risk_type": "transitive_vuln",
-        "severity": "medium",
-        "reachable": true,
-        "cves": [
-          "CVE-2023-1122",
-          "CVE-2023-1131",
-          "CVE-2023-1149"
-        ]
-      },
-      {
-        "app_id": "APP-001",
-        "app": "CustomerPortal",
-        "library": "commons-io",
-        "version": "3.7.0",
-        "risk_type": "transitive_vuln",
-        "severity": "high",
-        "reachable": true,
-        "cves": [
-          "CVE-2025-1072",
-          "CVE-2021-1073"
-        ]
-      },
-      {
-        "app_id": "APP-001",
-        "app": "CustomerPortal",
-        "library": "eslint",
-        "version": "3.3.1",
-        "risk_type": "transitive_vuln",
-        "severity": "medium",
-        "reachable": true,
-        "cves": [
-          "CVE-2022-1016"
-        ]
-      },
-      {
-        "app_id": "APP-001",
-        "app": "CustomerPortal",
-        "library": "fabric",
-        "version": "1.5.2",
-        "risk_type": "transitive_vuln",
-        "severity": "medium",
-        "reachable": true,
-        "cves": [
-          "CVE-2024-1154",
-          "CVE-2025-1186"
-        ]
-      },
-      {
-        "app_id": "APP-001",
-        "app": "CustomerPortal",
-        "library": "eslint",
-        "version": "2.9.3",
-        "risk_type": "transitive_vuln",
-        "severity": "medium",
-        "reachable": true,
-        "cves": [
-          "CVE-2022-1016"
-        ]
-      },
-      {
-        "app_id": "APP-001",
-        "app": "CustomerPortal",
-        "library": "netty-handler",
-        "version": "4.2.2",
-        "risk_type": "transitive_vuln",
-        "severity": "medium",
-        "reachable": true,
-        "cves": [
-          "CVE-2024-1079",
-          "CVE-2024-1081",
-          "CVE-2025-1151"
-        ]
-      },
-      {
-        "app_id": "APP-001",
-        "app": "CustomerPortal",
-        "library": "httpcore",
-        "version": "4.8.5",
-        "risk_type": "transitive_vuln",
-        "severity": "medium",
-        "reachable": true,
-        "cves": [
-          "CVE-2023-1131"
-        ]
-      },
-      {
-        "app_id": "APP-001",
-        "app": "CustomerPortal",
-        "library": "commons-io",
-        "version": "2.3.1",
-        "risk_type": "transitive_vuln",
-        "severity": "high",
-        "reachable": true,
-        "cves": [
-          "CVE-2023-1070",
-          "CVE-2024-1071",
-          "CVE-2025-1072",
-          "CVE-2021-1073"
-        ]
-      },
-      {
-        "app_id": "APP-001",
-        "app": "CustomerPortal",
-        "library": "netty-handler",
-        "version": "2.2.4",
-        "risk_type": "transitive_vuln",
-        "severity": "medium",
-        "reachable": true,
-        "cves": [
-          "CVE-2024-1079",
-          "CVE-2024-1081",
-          "CVE-2025-1151"
-        ]
-      },
-      {
-        "app_id": "APP-001",
-        "app": "CustomerPortal",
-        "library": "netty-handler",
-        "version": "3.3.0",
-        "risk_type": "transitive_vuln",
-        "severity": "medium",
-        "reachable": true,
-        "cves": [
-          "CVE-2024-1079",
-          "CVE-2024-1081",
-          "CVE-2025-1151"
-        ]
-      },
-      {
-        "app_id": "APP-001",
-        "app": "CustomerPortal",
-        "library": "eslint",
-        "version": "2.2.2",
-        "risk_type": "transitive_vuln",
-        "severity": "medium",
-        "reachable": true,
-        "cves": [
-          "CVE-2022-1016"
-        ]
-      },
-      {
-        "app_id": "APP-001",
-        "app": "CustomerPortal",
-        "library": "fabric",
-        "version": "4.5.2",
-        "risk_type": "transitive_vuln",
-        "severity": "medium",
-        "reachable": true,
-        "cves": [
-          "CVE-2024-1154"
-        ]
-      },
-      {
-        "app_id": "APP-001",
-        "app": "CustomerPortal",
-        "library": "assertj-core",
-        "version": "1.3.2",
-        "risk_type": "transitive_vuln",
-        "severity": "medium",
-        "reachable": true,
-        "cves": [
-          "CVE-2024-1118",
-          "CVE-2023-1146"
-        ]
-      },
-      {
         "app_id": "APP-002",
         "app": "PaymentService",
-        "library": "lombok",
-        "version": "2.6.0",
+        "library": "morgan",
+        "version": "3.0.8",
         "risk_type": "transitive_vuln",
-        "severity": "critical",
+        "severity": "medium",
         "reachable": true,
         "cves": [
-          "CVE-2023-1002",
-          "CVE-2022-1142"
+          "CVE-2025-1105"
         ]
       },
       {
-        "app_id": "APP-002",
-        "app": "PaymentService",
-        "library": "disruptor",
-        "version": "1.1.0",
-        "risk_type": "license_unknown",
-        "severity": "high",
+        "app_id": "APP-003",
+        "app": "InternalAPI",
+        "library": "idna",
+        "version": "2.1.4",
+        "risk_type": "transitive_vuln",
+        "severity": "medium",
+        "reachable": true,
+        "cves": [
+          "CVE-2021-1088"
+        ]
+      },
+      {
+        "app_id": "APP-003",
+        "app": "InternalAPI",
+        "library": "urllib3",
+        "version": "2.7.6",
+        "risk_type": "transitive_vuln",
+        "severity": "medium",
+        "reachable": true,
+        "cves": [
+          "CVE-2023-1140"
+        ]
+      },
+      {
+        "app_id": "APP-005",
+        "app": "AnalyticsDashboard",
+        "library": "axios",
+        "version": "4.0.1",
+        "risk_type": "unmaintained",
+        "severity": "medium",
         "reachable": null,
         "cves": []
       },
       {
-        "app_id": "APP-002",
-        "app": "PaymentService",
-        "library": "commons-lang3",
-        "version": "1.2.5",
-        "risk_type": "transitive_vuln",
+        "app_id": "APP-005",
+        "app": "AnalyticsDashboard",
+        "library": "express",
+        "version": "3.4.3",
+        "risk_type": "unmaintained",
         "severity": "medium",
-        "reachable": true,
-        "cves": [
-          "CVE-2025-1182"
-        ]
-      },
-      {
-        "app_id": "APP-002",
-        "app": "PaymentService",
-        "library": "disruptor",
-        "version": "1.10.5",
-        "risk_type": "license_unknown",
-        "severity": "high",
         "reachable": null,
         "cves": []
       },
       {
-        "app_id": "APP-002",
-        "app": "PaymentService",
-        "library": "lombok",
-        "version": "3.8.4",
+        "app_id": "APP-006",
+        "app": "MobileBackend",
+        "library": "paramiko",
+        "version": "3.9.1",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-006",
+        "app": "MobileBackend",
+        "library": "inquirer",
+        "version": "3.1.8",
         "risk_type": "transitive_vuln",
-        "severity": "critical",
+        "severity": "low",
         "reachable": true,
         "cves": [
-          "CVE-2023-1002",
-          "CVE-2022-1142"
+          "CVE-2022-1032"
         ]
       },
       {
-        "app_id": "APP-002",
-        "app": "PaymentService",
-        "library": "jackson-annotations",
-        "version": "4.0.5",
+        "app_id": "APP-007",
+        "app": "DevToolkit",
+        "library": "black",
+        "version": "3.6.2",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-008",
+        "app": "ComplianceEngine",
+        "library": "setuptools",
+        "version": "1.1.2",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-009",
+        "app": "NotificationService",
+        "library": "dotenv",
+        "version": "3.3.4",
         "risk_type": "transitive_vuln",
-        "severity": "high",
+        "severity": "low",
         "reachable": true,
         "cves": [
-          "CVE-2023-1017"
+          "CVE-2023-1109",
+          "CVE-2023-1152"
         ]
+      },
+      {
+        "app_id": "APP-010",
+        "app": "VendorGateway",
+        "library": "nodemon",
+        "version": "2.3.0",
+        "risk_type": "transitive_vuln",
+        "severity": "low",
+        "reachable": true,
+        "cves": [
+          "CVE-2023-1132"
+        ]
+      },
+      {
+        "app_id": "APP-008",
+        "app": "ComplianceEngine",
+        "library": "guava",
+        "version": "3.9.7",
+        "risk_type": "license_conflict",
+        "severity": "critical",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-010",
+        "app": "VendorGateway",
+        "library": "logrus",
+        "version": "3.14.5",
+        "risk_type": "license_conflict",
+        "severity": "critical",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-001",
+        "app": "CustomerPortal",
+        "library": "commons-collections4",
+        "version": "4.7.1",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-001",
+        "app": "CustomerPortal",
+        "library": "junit-jupiter",
+        "version": "4.1.8",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-001",
+        "app": "CustomerPortal",
+        "library": "sarama",
+        "version": "5.0.2",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-003",
+        "app": "InternalAPI",
+        "library": "aws-sdk-s3",
+        "version": "5.13.2",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-003",
+        "app": "InternalAPI",
+        "library": "pandas",
+        "version": "5.5.10",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-003",
+        "app": "InternalAPI",
+        "library": "mocha",
+        "version": "2.10.7",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-004",
+        "app": "HRPortal",
+        "library": "pytest",
+        "version": "2.8.5",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-005",
+        "app": "AnalyticsDashboard",
+        "library": "cheerio",
+        "version": "3.15.7",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-005",
+        "app": "AnalyticsDashboard",
+        "library": "spring-boot-starter",
+        "version": "2.11.8",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-006",
+        "app": "MobileBackend",
+        "library": "sarama",
+        "version": "4.2.1",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-006",
+        "app": "MobileBackend",
+        "library": "logrus",
+        "version": "5.6.9",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
+      },
+      {
+        "app_id": "APP-006",
+        "app": "MobileBackend",
+        "library": "fiber",
+        "version": "1.4.8",
+        "risk_type": "unmaintained",
+        "severity": "medium",
+        "reachable": null,
+        "cves": []
       }
     ],
-    "match_count": 440,
+    "match_count": 71,
     "source": "rules"
   },
   "Which transitive dependencies are exploitable?": {

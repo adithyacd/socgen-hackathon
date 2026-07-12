@@ -148,8 +148,8 @@ def _load_dataset(data_dir: Optional[Path]) -> Dataset:
     return load_dataset(settings.data_dir)
 
 
-def build_context(data_dir: Optional[Path] = None) -> AnalysisContext:
-    ds = _load_dataset(data_dir)
+def analyze_dataset(ds: Dataset) -> AnalysisContext:
+    """Run the full pipeline on an in-memory Dataset (used by disk load AND upload scan)."""
     g = build_graph(ds)
     findings = collect_findings(g, ds)
     for f in findings:
@@ -162,6 +162,10 @@ def build_context(data_dir: Optional[Path] = None) -> AnalysisContext:
         apps=apps, findings=findings, summary=summary, metrics=metrics,
     )
     return AnalysisContext(ds=ds, g=g, findings=findings, result=result)
+
+
+def build_context(data_dir: Optional[Path] = None) -> AnalysisContext:
+    return analyze_dataset(_load_dataset(data_dir))
 
 
 def run_analysis(data_dir: Optional[Path] = None) -> AnalysisResult:

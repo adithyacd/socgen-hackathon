@@ -9,18 +9,22 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
 from .analysis import build_context
+from .audit import audit_dataset
 from .copilot.query import SUGGESTIONS as COPILOT_SUGGESTIONS
 from .copilot.query import answer as copilot_answer
+from .engines.malicious import scan_threats
 from .graphview import build_app_graph
 from .narratives.incident import incident_brief
 from .narratives.llm import llm_available
 from .optimizer import build_fix_plan
+from .scan import scan_manifest
 from .schemas import (
     AnalysisResult,
     AppGraph,
     CopilotAnswer,
     CopilotRequest,
     FixPlan,
+    ScanRequest,
     WarRoomCve,
     WarRoomImpact,
 )
@@ -84,3 +88,19 @@ def copilot_suggestions() -> dict:
 @app.post("/api/copilot/ask", response_model=CopilotAnswer)
 def copilot_ask(req: CopilotRequest) -> CopilotAnswer:
     return copilot_answer(CTX, req.question)
+
+
+@app.get("/api/threats")
+def threats() -> dict:
+    t = scan_threats(CTX.ds)
+    return {"threats": t, "count": len(t)}
+
+
+@app.get("/api/audit")
+def audit() -> dict:
+    return audit_dataset(CTX.ds)
+
+
+@app.post("/api/scan")
+def scan(req: ScanRequest) -> dict:
+    return scan_manifest(req.content, req.format, CTX.ds)

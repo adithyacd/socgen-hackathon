@@ -1,0 +1,23 @@
+name: Supply Chain Gate
+
+# Fails the pull request if a dependency change introduces supply-chain risk.
+on:
+  pull_request:
+    paths:
+      - "**/package.json"
+      - "**/requirements.txt"
+      - "**/*.cdx.json"
+      - "**/sbom*.json"
+
+jobs:
+  sentinel:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install Sentinel
+        run: pip install -r backend/requirements.txt
+      - name: Run supply-chain gate
+        run: python -m backend.cli examples/sample-sbom.cdx.json --policy sentinel-policy.json

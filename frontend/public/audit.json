@@ -1,0 +1,67 @@
+{
+  "dataset": "official",
+  "total_labels": 500,
+  "integrity_score": 42,
+  "verdict": "Noisy \u2014 labels are internally inconsistent",
+  "issue_count": 2,
+  "issues": [
+    {
+      "issue": "Vulnerability labels are version-inconsistent with the CVE database",
+      "severity": "high",
+      "metric": "176/176 (100%)",
+      "detail": "Exact-version matching against the provided vuln DB recovers almost none of the vulnerable labels \u2014 they were assigned independently of the CVE affected_versions.",
+      "evidence": [
+        "micrometer-core 3.0.10 labeled VULNERABLE, but its CVE lists affected_versions=['4.1.0', '4.4.0']",
+        "sqlalchemy 5.13.5 labeled VULNERABLE, but its CVE lists affected_versions=['1.4.0', '3.10.0']",
+        "netty-all 2.7.4 labeled VULNERABLE, but its CVE lists affected_versions=['4.3.0', '2.8.0']",
+        "json-iterator 2.3.2 labeled VULNERABLE, but its CVE lists affected_versions=['4.0.0', '4.2.0']"
+      ],
+      "recommendation": "Detect via the standard below-fixed-version rule (Sentinel's approach), not exact-version membership."
+    },
+    {
+      "issue": "Clean-labeled dependencies fall inside a CVE's affected range",
+      "severity": "medium",
+      "metric": "26 deps",
+      "detail": "Versions explicitly listed as affected by a CVE are labeled not-risky, contradicting the vuln DB.",
+      "evidence": [
+        "fabric 3.0.6 is inside CVE-2024-1154's affected range ['4.2.0', '2.7.0'] \u2014 labeled CLEAN",
+        "assertj-core 3.6.6 is inside CVE-2024-1118's affected range ['2.1.0', '4.10.0'] \u2014 labeled CLEAN",
+        "aws-sdk-sqs 2.15.7 is inside CVE-2022-1107's affected range ['1.3.0', '4.6.0'] \u2014 labeled CLEAN",
+        "disruptor 2.3.4 is inside CVE-2024-1174's affected range ['4.2.0', '1.8.0'] \u2014 labeled CLEAN"
+      ],
+      "recommendation": "Treat the labels as noisy; report detection with a robust, defensible rule."
+    },
+    {
+      "issue": "Labeled severity frequently disagrees with the CVE's CVSS severity",
+      "severity": "low",
+      "metric": "35/176 (20%)",
+      "detail": "The severity in the labels often differs from the severity implied by the CVE's CVSS score.",
+      "evidence": [
+        "json-iterator: label MEDIUM vs CVSS-implied LOW",
+        "jackson-annotations: label LOW vs CVSS-implied HIGH",
+        "caffeine: label MEDIUM vs CVSS-implied LOW",
+        "hibernate-validator: label LOW vs CVSS-implied CRITICAL"
+      ],
+      "recommendation": "Derive severity from CVSS rather than the label."
+    },
+    {
+      "issue": "Risk-type distribution vs the README's stated mix",
+      "severity": "info",
+      "metric": "500 labels",
+      "detail": "Reference only \u2014 the actual distribution of the provided labels.",
+      "evidence": [
+        "vulnerable: 24% actual vs ~18% stated",
+        "transitive_vuln: 11% actual vs ~10% stated",
+        "license_conflict: 2% actual vs ~8% stated",
+        "unmaintained: 8% actual vs ~15% stated"
+      ],
+      "recommendation": ""
+    }
+  ],
+  "summary": {
+    "version_inconsistent_vuln_labels": 176,
+    "clean_but_affected": 26,
+    "contradictions": 0,
+    "severity_mismatches": 35
+  }
+}

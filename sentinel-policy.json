@@ -1,0 +1,7 @@
+{
+  "fail_on_exploitable_critical": true,
+  "fail_on_known_malicious": true,
+  "fail_on_typosquat": true,
+  "fail_on_dependency_confusion": true,
+  "max_license_conflicts": 0
+}

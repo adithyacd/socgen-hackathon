@@ -8,6 +8,9 @@ import Accuracy from "./views/Accuracy";
 import WarRoom from "./views/WarRoom";
 import Optimizer from "./views/Optimizer";
 import Copilot from "./views/Copilot";
+import Threats from "./views/Threats";
+import Audit from "./views/Audit";
+import Scan from "./views/Scan";
 
 export default function App() {
   return (
@@ -19,6 +22,9 @@ export default function App() {
           <Route path="/warroom" element={<WarRoom />} />
           <Route path="/optimizer" element={<Optimizer />} />
           <Route path="/copilot" element={<Copilot />} />
+          <Route path="/threats" element={<Threats />} />
+          <Route path="/scan" element={<Scan />} />
+          <Route path="/audit" element={<Audit />} />
           <Route path="/accuracy" element={<Accuracy />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
