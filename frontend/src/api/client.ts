@@ -70,7 +70,7 @@ export async function askCopilot(question: string): Promise<CopilotAnswer> {
   return (
     canned[question] ?? {
       question,
-      answer: "Free-form questions need the live backend. Try one of the suggested questions.",
+      answer: "Try one of the suggested questions.",
       query: {},
       matches: [],
       match_count: 0,

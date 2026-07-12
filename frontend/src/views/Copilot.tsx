@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Sparkles, Send, Database, CornerDownLeft } from "lucide-react";
-import { askCopilot, fetchCopilotSuggestions } from "../api/client";
+import { API_BASE, askCopilot } from "../api/client";
 import type { CopilotAnswer } from "../api/types";
+import { useAnalysis } from "../lib/analysisContext";
+import { answerLocal, SUGGESTIONS } from "../lib/copilot";
 import { severityText } from "../lib/risk";
 
 function QueryChips({ query }: { query: Record<string, any> }) {
@@ -59,21 +61,12 @@ function AnswerCard({ a }: { a: CopilotAnswer }) {
 }
 
 export default function Copilot() {
-  const [suggestions, setSuggestions] = useState<string[]>([]);
-  const [llm, setLlm] = useState(false);
+  const { data } = useAnalysis();
+  const suggestions = SUGGESTIONS;
   const [input, setInput] = useState("");
   const [history, setHistory] = useState<CopilotAnswer[]>([]);
   const [busy, setBusy] = useState(false);
   const endRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    fetchCopilotSuggestions()
-      .then((s) => {
-        setSuggestions(s.suggestions);
-        setLlm(s.llm_enabled);
-      })
-      .catch(() => {});
-  }, []);
 
   useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -81,11 +74,11 @@ export default function Copilot() {
 
   async function ask(q: string) {
     const question = q.trim();
-    if (!question || busy) return;
+    if (!question || busy || (!API_BASE && !data)) return;
     setBusy(true);
     setInput("");
     try {
-      const a = await askCopilot(question);
+      const a = API_BASE ? await askCopilot(question) : answerLocal(data!, question);
       setHistory((h) => [...h, a]);
     } catch (e) {
       setHistory((h) => [
@@ -108,10 +101,7 @@ export default function Copilot() {
         </h1>
         <p className="mt-1 max-w-2xl text-sm text-mist">
           Questions become a structured query executed over the real dependency graph — the
-          copilot explains results, it never invents them.{" "}
-          <span className="font-mono text-[11px] text-mist/80">
-            {llm ? "LLM parsing enabled." : "Running on the keyword parser (no API key set)."}
-          </span>
+          copilot explains results, it never invents them.
         </p>
       </header>
 

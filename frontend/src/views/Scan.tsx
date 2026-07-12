@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FileUp, Play, ShieldX, Copy, PackageX, ScrollText } from "lucide-react";
 import { scanManifest, API_BASE } from "../api/client";
 import type { ScanResult, Threat } from "../api/types";
+import { scanLocal } from "../lib/scan";
 import { severityText, RISK_TYPE_LABEL } from "../lib/risk";
 
 const SAMPLE = `{
@@ -45,7 +46,7 @@ export default function Scan() {
     setBusy(true);
     setError(null);
     try {
-      const r = await scanManifest(content, "auto");
+      const r = API_BASE ? await scanManifest(content, "auto") : scanLocal(content, "auto");
       if (r.error) setError(r.error);
       setResult(r);
     } catch (e) {
@@ -63,8 +64,7 @@ export default function Scan() {
         <p className="mt-1 max-w-2xl text-sm text-mist">
           Paste a real <span className="font-mono text-paper">package.json</span>,
           {" "}<span className="font-mono text-paper">requirements.txt</span>, or a CycloneDX / SPDX SBOM.
-          Sentinel parses it and runs the same license, maintenance, and supply-chain threat engines live.
-          {!API_BASE && <span className="text-signal"> (Static demo — shows the bundled sample.)</span>}
+          Sentinel parses it and runs the license and supply-chain threat engines on it live.
         </p>
       </header>
 
