@@ -2,6 +2,324 @@
   "generated_at": "2026-04-01",
   "apps": [
     {
+      "app_id": "APP-010",
+      "name": "VendorGateway",
+      "business_criticality": "high",
+      "owner": "David Okafor",
+      "internet_facing": true,
+      "environment": "cloud",
+      "ecosystem": "Go",
+      "license_context": "proprietary",
+      "risk_score": 83.3,
+      "risk_band": "critical",
+      "dependency_count": 89,
+      "direct_count": 35,
+      "counts": {
+        "vulnerable": 20,
+        "transitive_vuln": 25,
+        "license_conflict": 1,
+        "transitive_license_conflict": 0,
+        "license_unknown": 24,
+        "unmaintained": 1,
+        "exploitable_criticals": 10
+      },
+      "top_findings": [
+        {
+          "app_id": "APP-010",
+          "library": "cobra",
+          "version": "3.5.6",
+          "is_direct": true,
+          "risk_type": "vulnerable",
+          "severity": "critical",
+          "secondary_risks": [],
+          "cve_ids": [
+            "CVE-2025-1164"
+          ],
+          "exploitability": "high",
+          "is_reachable": true,
+          "detail": "1 known vulnerability (max CVSS 9.6).",
+          "score": 13.0,
+          "paths": [
+            [
+              "cobra@3.5.6"
+            ]
+          ],
+          "fixed_versions": {
+            "CVE-2025-1164": "4.0.0"
+          },
+          "max_cvss": 9.6,
+          "kev": false,
+          "epss": 0.0
+        },
+        {
+          "app_id": "APP-010",
+          "library": "aws-sdk-go",
+          "version": "1.5.5",
+          "is_direct": true,
+          "risk_type": "vulnerable",
+          "severity": "critical",
+          "secondary_risks": [],
+          "cve_ids": [
+            "CVE-2025-1102",
+            "CVE-2023-1103",
+            "CVE-2025-1130"
+          ],
+          "exploitability": "medium",
+          "is_reachable": true,
+          "detail": "3 known vulnerabilities (max CVSS 9.2).",
+          "score": 10.0,
+          "paths": [
+            [
+              "aws-sdk-go@1.5.5"
+            ]
+          ],
+          "fixed_versions": {
+            "CVE-2025-1102": null,
+            "CVE-2023-1103": null,
+            "CVE-2025-1130": "3.0.0"
+          },
+          "max_cvss": 9.2,
+          "kev": false,
+          "epss": 0.0
+        },
+        {
+          "app_id": "APP-010",
+          "library": "logrus",
+          "version": "3.14.5",
+          "is_direct": true,
+          "risk_type": "license_conflict",
+          "severity": "critical",
+          "secondary_risks": [
+            "unmaintained"
+          ],
+          "cve_ids": [],
+          "exploitability": "",
+          "is_reachable": null,
+          "detail": "Copyleft license 'GPL-2.0' is incompatible with the proprietary application.",
+          "score": 10.0,
+          "paths": [],
+          "fixed_versions": {},
+          "max_cvss": 0.0,
+          "kev": false,
+          "epss": 0.0
+        },
+        {
+          "app_id": "APP-010",
+          "library": "jackson-annotations",
+          "version": "3.5.6",
+          "is_direct": true,
+          "risk_type": "vulnerable",
+          "severity": "high",
+          "secondary_risks": [
+            "unmaintained"
+          ],
+          "cve_ids": [
+            "CVE-2023-1017",
+            "CVE-2021-1018",
+            "CVE-2026-1019"
+          ],
+          "exploitability": "high",
+          "is_reachable": true,
+          "detail": "3 known vulnerabilities (max CVSS 8.0).",
+          "score": 9.1,
+          "paths": [
+            [
+              "jackson-annotations@3.5.6"
+            ]
+          ],
+          "fixed_versions": {
+            "CVE-2023-1017": "5.5.0",
+            "CVE-2021-1018": "3.6.0",
+            "CVE-2026-1019": "3.6.0"
+          },
+          "max_cvss": 8.0,
+          "kev": false,
+          "epss": 0.0
+        },
+        {
+          "app_id": "APP-010",
+          "library": "yaml-go",
+          "version": "1.4.2",
+          "is_direct": true,
+          "risk_type": "vulnerable",
+          "severity": "high",
+          "secondary_risks": [
+            "license_unknown"
+          ],
+          "cve_ids": [
+            "CVE-2024-1112"
+          ],
+          "exploitability": "high",
+          "is_reachable": true,
+          "detail": "1 known vulnerability (max CVSS 7.8).",
+          "score": 9.1,
+          "paths": [
+            [
+              "yaml-go@1.4.2"
+            ]
+          ],
+          "fixed_versions": {
+            "CVE-2024-1112": "2.0.0"
+          },
+          "max_cvss": 7.8,
+          "kev": false,
+          "epss": 0.0
+        }
+      ]
+    },
+    {
+      "app_id": "APP-002",
+      "name": "PaymentService",
+      "business_criticality": "critical",
+      "owner": "Mike Torres",
+      "internet_facing": true,
+      "environment": "cloud",
+      "ecosystem": "Java",
+      "license_context": "proprietary",
+      "risk_score": 83.0,
+      "risk_band": "critical",
+      "dependency_count": 80,
+      "direct_count": 35,
+      "counts": {
+        "vulnerable": 13,
+        "transitive_vuln": 18,
+        "license_conflict": 1,
+        "transitive_license_conflict": 0,
+        "license_unknown": 20,
+        "unmaintained": 3,
+        "exploitable_criticals": 4
+      },
+      "top_findings": [
+        {
+          "app_id": "APP-002",
+          "library": "netty-all",
+          "version": "5.4.7",
+          "is_direct": true,
+          "risk_type": "license_conflict",
+          "severity": "critical",
+          "secondary_risks": [
+            "unmaintained",
+            "vulnerable"
+          ],
+          "cve_ids": [],
+          "exploitability": "",
+          "is_reachable": null,
+          "detail": "Copyleft license 'AGPL-3.0' is incompatible with the proprietary application.",
+          "score": 10.0,
+          "paths": [],
+          "fixed_versions": {},
+          "max_cvss": 0.0,
+          "kev": false,
+          "epss": 0.0
+        },
+        {
+          "app_id": "APP-002",
+          "library": "testify",
+          "version": "2.2.6",
+          "is_direct": false,
+          "risk_type": "transitive_vuln",
+          "severity": "critical",
+          "secondary_risks": [],
+          "cve_ids": [
+            "CVE-2025-1043",
+            "CVE-2026-1044",
+            "CVE-2026-1045"
+          ],
+          "exploitability": "high",
+          "is_reachable": true,
+          "detail": "3 known vulnerabilities (max CVSS 9.9). Transitive via 1-hop chain.",
+          "score": 9.1,
+          "paths": [
+            [
+              "testify@2.2.6"
+            ]
+          ],
+          "fixed_versions": {
+            "CVE-2025-1043": "2.11.0",
+            "CVE-2026-1044": "5.8.0",
+            "CVE-2026-1045": "2.10.0"
+          },
+          "max_cvss": 9.9,
+          "kev": false,
+          "epss": 0.0
+        },
+        {
+          "app_id": "APP-002",
+          "library": "lombok",
+          "version": "2.6.0",
+          "is_direct": false,
+          "risk_type": "transitive_vuln",
+          "severity": "critical",
+          "secondary_risks": [
+            "license_unknown"
+          ],
+          "cve_ids": [
+            "CVE-2023-1002",
+            "CVE-2022-1142"
+          ],
+          "exploitability": "medium",
+          "is_reachable": true,
+          "detail": "2 known vulnerabilities (max CVSS 9.9). Transitive via 2-hop chain.",
+          "score": 7.0,
+          "paths": [
+            [
+              "snakeyaml@3.15.2",
+              "lombok@2.6.0"
+            ]
+          ],
+          "fixed_versions": {
+            "CVE-2023-1002": "4.10.0",
+            "CVE-2022-1142": null
+          },
+          "max_cvss": 9.9,
+          "kev": false,
+          "epss": 0.0
+        },
+        {
+          "app_id": "APP-002",
+          "library": "disruptor",
+          "version": "1.1.0",
+          "is_direct": false,
+          "risk_type": "license_unknown",
+          "severity": "high",
+          "secondary_risks": [
+            "transitive_vuln"
+          ],
+          "cve_ids": [],
+          "exploitability": "",
+          "is_reachable": null,
+          "detail": "License 'UNKNOWN' is unrecognized — legal review needed.",
+          "score": 7.0,
+          "paths": [],
+          "fixed_versions": {},
+          "max_cvss": 0.0,
+          "kev": false,
+          "epss": 0.0
+        },
+        {
+          "app_id": "APP-002",
+          "library": "disruptor",
+          "version": "1.10.5",
+          "is_direct": false,
+          "risk_type": "license_unknown",
+          "severity": "high",
+          "secondary_risks": [
+            "transitive_vuln"
+          ],
+          "cve_ids": [],
+          "exploitability": "",
+          "is_reachable": null,
+          "detail": "License 'UNKNOWN' is unrecognized — legal review needed.",
+          "score": 7.0,
+          "paths": [],
+          "fixed_versions": {},
+          "max_cvss": 0.0,
+          "kev": false,
+          "epss": 0.0
+        }
+      ]
+    },
+    {
       "app_id": "APP-004",
       "name": "HRPortal",
       "business_criticality": "high",
@@ -10,7 +328,7 @@
       "environment": "cloud",
       "ecosystem": "Python",
       "license_context": "proprietary",
-      "risk_score": 100.0,
+      "risk_score": 82.5,
       "risk_band": "critical",
       "dependency_count": 97,
       "direct_count": 35,
@@ -180,256 +498,37 @@
       ]
     },
     {
-      "app_id": "APP-010",
-      "name": "VendorGateway",
+      "app_id": "APP-001",
+      "name": "CustomerPortal",
       "business_criticality": "high",
-      "owner": "David Okafor",
-      "internet_facing": true,
-      "environment": "cloud",
-      "ecosystem": "Go",
-      "license_context": "proprietary",
-      "risk_score": 100.0,
-      "risk_band": "critical",
-      "dependency_count": 89,
-      "direct_count": 35,
-      "counts": {
-        "vulnerable": 20,
-        "transitive_vuln": 25,
-        "license_conflict": 1,
-        "transitive_license_conflict": 0,
-        "license_unknown": 24,
-        "unmaintained": 1,
-        "exploitable_criticals": 10
-      },
-      "top_findings": [
-        {
-          "app_id": "APP-010",
-          "library": "cobra",
-          "version": "3.5.6",
-          "is_direct": true,
-          "risk_type": "vulnerable",
-          "severity": "critical",
-          "secondary_risks": [],
-          "cve_ids": [
-            "CVE-2025-1164"
-          ],
-          "exploitability": "high",
-          "is_reachable": true,
-          "detail": "1 known vulnerability (max CVSS 9.6).",
-          "score": 13.0,
-          "paths": [
-            [
-              "cobra@3.5.6"
-            ]
-          ],
-          "fixed_versions": {
-            "CVE-2025-1164": "4.0.0"
-          },
-          "max_cvss": 9.6,
-          "kev": false,
-          "epss": 0.0
-        },
-        {
-          "app_id": "APP-010",
-          "library": "aws-sdk-go",
-          "version": "1.5.5",
-          "is_direct": true,
-          "risk_type": "vulnerable",
-          "severity": "critical",
-          "secondary_risks": [],
-          "cve_ids": [
-            "CVE-2025-1102",
-            "CVE-2023-1103",
-            "CVE-2025-1130"
-          ],
-          "exploitability": "medium",
-          "is_reachable": true,
-          "detail": "3 known vulnerabilities (max CVSS 9.2).",
-          "score": 10.0,
-          "paths": [
-            [
-              "aws-sdk-go@1.5.5"
-            ]
-          ],
-          "fixed_versions": {
-            "CVE-2025-1102": null,
-            "CVE-2023-1103": null,
-            "CVE-2025-1130": "3.0.0"
-          },
-          "max_cvss": 9.2,
-          "kev": false,
-          "epss": 0.0
-        },
-        {
-          "app_id": "APP-010",
-          "library": "logrus",
-          "version": "3.14.5",
-          "is_direct": true,
-          "risk_type": "license_conflict",
-          "severity": "critical",
-          "secondary_risks": [
-            "unmaintained"
-          ],
-          "cve_ids": [],
-          "exploitability": "",
-          "is_reachable": null,
-          "detail": "Copyleft license 'GPL-2.0' is incompatible with the proprietary application.",
-          "score": 10.0,
-          "paths": [],
-          "fixed_versions": {},
-          "max_cvss": 0.0,
-          "kev": false,
-          "epss": 0.0
-        },
-        {
-          "app_id": "APP-010",
-          "library": "jackson-annotations",
-          "version": "3.5.6",
-          "is_direct": true,
-          "risk_type": "vulnerable",
-          "severity": "high",
-          "secondary_risks": [
-            "unmaintained"
-          ],
-          "cve_ids": [
-            "CVE-2023-1017",
-            "CVE-2021-1018",
-            "CVE-2026-1019"
-          ],
-          "exploitability": "high",
-          "is_reachable": true,
-          "detail": "3 known vulnerabilities (max CVSS 8.0).",
-          "score": 9.1,
-          "paths": [
-            [
-              "jackson-annotations@3.5.6"
-            ]
-          ],
-          "fixed_versions": {
-            "CVE-2023-1017": "5.5.0",
-            "CVE-2021-1018": "3.6.0",
-            "CVE-2026-1019": "3.6.0"
-          },
-          "max_cvss": 8.0,
-          "kev": false,
-          "epss": 0.0
-        },
-        {
-          "app_id": "APP-010",
-          "library": "yaml-go",
-          "version": "1.4.2",
-          "is_direct": true,
-          "risk_type": "vulnerable",
-          "severity": "high",
-          "secondary_risks": [
-            "license_unknown"
-          ],
-          "cve_ids": [
-            "CVE-2024-1112"
-          ],
-          "exploitability": "high",
-          "is_reachable": true,
-          "detail": "1 known vulnerability (max CVSS 7.8).",
-          "score": 9.1,
-          "paths": [
-            [
-              "yaml-go@1.4.2"
-            ]
-          ],
-          "fixed_versions": {
-            "CVE-2024-1112": "2.0.0"
-          },
-          "max_cvss": 7.8,
-          "kev": false,
-          "epss": 0.0
-        }
-      ]
-    },
-    {
-      "app_id": "APP-002",
-      "name": "PaymentService",
-      "business_criticality": "critical",
-      "owner": "Mike Torres",
+      "owner": "Sarah Chen",
       "internet_facing": true,
       "environment": "cloud",
       "ecosystem": "Java",
       "license_context": "proprietary",
-      "risk_score": 99.9,
+      "risk_score": 79.8,
       "risk_band": "critical",
-      "dependency_count": 80,
+      "dependency_count": 82,
       "direct_count": 35,
       "counts": {
-        "vulnerable": 13,
-        "transitive_vuln": 18,
+        "vulnerable": 17,
+        "transitive_vuln": 27,
         "license_conflict": 1,
         "transitive_license_conflict": 0,
-        "license_unknown": 20,
-        "unmaintained": 3,
-        "exploitable_criticals": 4
+        "license_unknown": 13,
+        "unmaintained": 5,
+        "exploitable_criticals": 2
       },
       "top_findings": [
         {
-          "app_id": "APP-002",
-          "library": "netty-all",
-          "version": "5.4.7",
-          "is_direct": true,
-          "risk_type": "license_conflict",
-          "severity": "critical",
-          "secondary_risks": [
-            "unmaintained",
-            "vulnerable"
-          ],
-          "cve_ids": [],
-          "exploitability": "",
-          "is_reachable": null,
-          "detail": "Copyleft license 'AGPL-3.0' is incompatible with the proprietary application.",
-          "score": 10.0,
-          "paths": [],
-          "fixed_versions": {},
-          "max_cvss": 0.0,
-          "kev": false,
-          "epss": 0.0
-        },
-        {
-          "app_id": "APP-002",
-          "library": "testify",
-          "version": "2.2.6",
-          "is_direct": false,
-          "risk_type": "transitive_vuln",
-          "severity": "critical",
-          "secondary_risks": [],
-          "cve_ids": [
-            "CVE-2025-1043",
-            "CVE-2026-1044",
-            "CVE-2026-1045"
-          ],
-          "exploitability": "high",
-          "is_reachable": true,
-          "detail": "3 known vulnerabilities (max CVSS 9.9). Transitive via 1-hop chain.",
-          "score": 9.1,
-          "paths": [
-            [
-              "testify@2.2.6"
-            ]
-          ],
-          "fixed_versions": {
-            "CVE-2025-1043": "2.11.0",
-            "CVE-2026-1044": "5.8.0",
-            "CVE-2026-1045": "2.10.0"
-          },
-          "max_cvss": 9.9,
-          "kev": false,
-          "epss": 0.0
-        },
-        {
-          "app_id": "APP-002",
+          "app_id": "APP-001",
           "library": "lombok",
-          "version": "2.6.0",
-          "is_direct": false,
-          "risk_type": "transitive_vuln",
+          "version": "4.1.2",
+          "is_direct": true,
+          "risk_type": "vulnerable",
           "severity": "critical",
           "secondary_risks": [
-            "license_unknown"
+            "unmaintained"
           ],
           "cve_ids": [
             "CVE-2023-1002",
@@ -437,12 +536,11 @@
           ],
           "exploitability": "medium",
           "is_reachable": true,
-          "detail": "2 known vulnerabilities (max CVSS 9.9). Transitive via 2-hop chain.",
-          "score": 7.0,
+          "detail": "2 known vulnerabilities (max CVSS 9.9).",
+          "score": 10.0,
           "paths": [
             [
-              "snakeyaml@3.15.2",
-              "lombok@2.6.0"
+              "lombok@4.1.2"
             ]
           ],
           "fixed_versions": {
@@ -454,20 +552,51 @@
           "epss": 0.0
         },
         {
-          "app_id": "APP-002",
-          "library": "disruptor",
-          "version": "1.1.0",
-          "is_direct": false,
-          "risk_type": "license_unknown",
-          "severity": "high",
+          "app_id": "APP-001",
+          "library": "hibernate-validator",
+          "version": "1.13.1",
+          "is_direct": true,
+          "risk_type": "vulnerable",
+          "severity": "critical",
           "secondary_risks": [
-            "transitive_vuln"
+            "unmaintained"
           ],
+          "cve_ids": [
+            "CVE-2024-1060",
+            "CVE-2021-1061",
+            "CVE-2021-1062"
+          ],
+          "exploitability": "medium",
+          "is_reachable": true,
+          "detail": "3 known vulnerabilities (max CVSS 9.7).",
+          "score": 10.0,
+          "paths": [
+            [
+              "hibernate-validator@1.13.1"
+            ]
+          ],
+          "fixed_versions": {
+            "CVE-2024-1060": "2.8.0",
+            "CVE-2021-1061": null,
+            "CVE-2021-1062": "4.9.0"
+          },
+          "max_cvss": 9.7,
+          "kev": false,
+          "epss": 0.0
+        },
+        {
+          "app_id": "APP-001",
+          "library": "kafka-clients",
+          "version": "4.8.5",
+          "is_direct": true,
+          "risk_type": "license_conflict",
+          "severity": "critical",
+          "secondary_risks": [],
           "cve_ids": [],
           "exploitability": "",
           "is_reachable": null,
-          "detail": "License 'UNKNOWN' is unrecognized — legal review needed.",
-          "score": 7.0,
+          "detail": "Copyleft license 'GPL-3.0' is incompatible with the proprietary application.",
+          "score": 10.0,
           "paths": [],
           "fixed_versions": {},
           "max_cvss": 0.0,
@@ -475,23 +604,58 @@
           "epss": 0.0
         },
         {
-          "app_id": "APP-002",
-          "library": "disruptor",
-          "version": "1.10.5",
-          "is_direct": false,
-          "risk_type": "license_unknown",
+          "app_id": "APP-001",
+          "library": "jackson-annotations",
+          "version": "5.0.6",
+          "is_direct": true,
+          "risk_type": "vulnerable",
           "severity": "high",
-          "secondary_risks": [
-            "transitive_vuln"
+          "secondary_risks": [],
+          "cve_ids": [
+            "CVE-2023-1017"
           ],
-          "cve_ids": [],
-          "exploitability": "",
-          "is_reachable": null,
-          "detail": "License 'UNKNOWN' is unrecognized — legal review needed.",
+          "exploitability": "high",
+          "is_reachable": true,
+          "detail": "1 known vulnerability (max CVSS 8.0).",
+          "score": 9.1,
+          "paths": [
+            [
+              "jackson-annotations@5.0.6"
+            ]
+          ],
+          "fixed_versions": {
+            "CVE-2023-1017": "5.5.0"
+          },
+          "max_cvss": 8.0,
+          "kev": false,
+          "epss": 0.0
+        },
+        {
+          "app_id": "APP-001",
+          "library": "mockito-core",
+          "version": "1.2.10",
+          "is_direct": true,
+          "risk_type": "vulnerable",
+          "severity": "high",
+          "secondary_risks": [],
+          "cve_ids": [
+            "CVE-2025-1076",
+            "CVE-2023-1188"
+          ],
+          "exploitability": "medium",
+          "is_reachable": true,
+          "detail": "2 known vulnerabilities (max CVSS 8.7).",
           "score": 7.0,
-          "paths": [],
-          "fixed_versions": {},
-          "max_cvss": 0.0,
+          "paths": [
+            [
+              "mockito-core@1.2.10"
+            ]
+          ],
+          "fixed_versions": {
+            "CVE-2025-1076": null,
+            "CVE-2023-1188": "4.0.0"
+          },
+          "max_cvss": 8.7,
           "kev": false,
           "epss": 0.0
         }
@@ -506,7 +670,7 @@
       "environment": "cloud",
       "ecosystem": "Go",
       "license_context": "proprietary",
-      "risk_score": 99.9,
+      "risk_score": 79.7,
       "risk_band": "critical",
       "dependency_count": 85,
       "direct_count": 35,
@@ -691,7 +855,7 @@
       "environment": "on-prem",
       "ecosystem": "Java",
       "license_context": "proprietary",
-      "risk_score": 99.9,
+      "risk_score": 76.1,
       "risk_band": "critical",
       "dependency_count": 89,
       "direct_count": 35,
@@ -851,7 +1015,7 @@
       "environment": "cloud",
       "ecosystem": "JavaScript",
       "license_context": "proprietary",
-      "risk_score": 99.8,
+      "risk_score": 75.1,
       "risk_band": "critical",
       "dependency_count": 92,
       "direct_count": 35,
@@ -1005,170 +1169,6 @@
       ]
     },
     {
-      "app_id": "APP-001",
-      "name": "CustomerPortal",
-      "business_criticality": "high",
-      "owner": "Sarah Chen",
-      "internet_facing": true,
-      "environment": "cloud",
-      "ecosystem": "Java",
-      "license_context": "proprietary",
-      "risk_score": 99.6,
-      "risk_band": "critical",
-      "dependency_count": 82,
-      "direct_count": 35,
-      "counts": {
-        "vulnerable": 17,
-        "transitive_vuln": 27,
-        "license_conflict": 1,
-        "transitive_license_conflict": 0,
-        "license_unknown": 13,
-        "unmaintained": 5,
-        "exploitable_criticals": 2
-      },
-      "top_findings": [
-        {
-          "app_id": "APP-001",
-          "library": "lombok",
-          "version": "4.1.2",
-          "is_direct": true,
-          "risk_type": "vulnerable",
-          "severity": "critical",
-          "secondary_risks": [
-            "unmaintained"
-          ],
-          "cve_ids": [
-            "CVE-2023-1002",
-            "CVE-2022-1142"
-          ],
-          "exploitability": "medium",
-          "is_reachable": true,
-          "detail": "2 known vulnerabilities (max CVSS 9.9).",
-          "score": 10.0,
-          "paths": [
-            [
-              "lombok@4.1.2"
-            ]
-          ],
-          "fixed_versions": {
-            "CVE-2023-1002": "4.10.0",
-            "CVE-2022-1142": null
-          },
-          "max_cvss": 9.9,
-          "kev": false,
-          "epss": 0.0
-        },
-        {
-          "app_id": "APP-001",
-          "library": "hibernate-validator",
-          "version": "1.13.1",
-          "is_direct": true,
-          "risk_type": "vulnerable",
-          "severity": "critical",
-          "secondary_risks": [
-            "unmaintained"
-          ],
-          "cve_ids": [
-            "CVE-2024-1060",
-            "CVE-2021-1061",
-            "CVE-2021-1062"
-          ],
-          "exploitability": "medium",
-          "is_reachable": true,
-          "detail": "3 known vulnerabilities (max CVSS 9.7).",
-          "score": 10.0,
-          "paths": [
-            [
-              "hibernate-validator@1.13.1"
-            ]
-          ],
-          "fixed_versions": {
-            "CVE-2024-1060": "2.8.0",
-            "CVE-2021-1061": null,
-            "CVE-2021-1062": "4.9.0"
-          },
-          "max_cvss": 9.7,
-          "kev": false,
-          "epss": 0.0
-        },
-        {
-          "app_id": "APP-001",
-          "library": "kafka-clients",
-          "version": "4.8.5",
-          "is_direct": true,
-          "risk_type": "license_conflict",
-          "severity": "critical",
-          "secondary_risks": [],
-          "cve_ids": [],
-          "exploitability": "",
-          "is_reachable": null,
-          "detail": "Copyleft license 'GPL-3.0' is incompatible with the proprietary application.",
-          "score": 10.0,
-          "paths": [],
-          "fixed_versions": {},
-          "max_cvss": 0.0,
-          "kev": false,
-          "epss": 0.0
-        },
-        {
-          "app_id": "APP-001",
-          "library": "jackson-annotations",
-          "version": "5.0.6",
-          "is_direct": true,
-          "risk_type": "vulnerable",
-          "severity": "high",
-          "secondary_risks": [],
-          "cve_ids": [
-            "CVE-2023-1017"
-          ],
-          "exploitability": "high",
-          "is_reachable": true,
-          "detail": "1 known vulnerability (max CVSS 8.0).",
-          "score": 9.1,
-          "paths": [
-            [
-              "jackson-annotations@5.0.6"
-            ]
-          ],
-          "fixed_versions": {
-            "CVE-2023-1017": "5.5.0"
-          },
-          "max_cvss": 8.0,
-          "kev": false,
-          "epss": 0.0
-        },
-        {
-          "app_id": "APP-001",
-          "library": "mockito-core",
-          "version": "1.2.10",
-          "is_direct": true,
-          "risk_type": "vulnerable",
-          "severity": "high",
-          "secondary_risks": [],
-          "cve_ids": [
-            "CVE-2025-1076",
-            "CVE-2023-1188"
-          ],
-          "exploitability": "medium",
-          "is_reachable": true,
-          "detail": "2 known vulnerabilities (max CVSS 8.7).",
-          "score": 7.0,
-          "paths": [
-            [
-              "mockito-core@1.2.10"
-            ]
-          ],
-          "fixed_versions": {
-            "CVE-2025-1076": null,
-            "CVE-2023-1188": "4.0.0"
-          },
-          "max_cvss": 8.7,
-          "kev": false,
-          "epss": 0.0
-        }
-      ]
-    },
-    {
       "app_id": "APP-009",
       "name": "NotificationService",
       "business_criticality": "medium",
@@ -1177,8 +1177,8 @@
       "environment": "cloud",
       "ecosystem": "JavaScript",
       "license_context": "proprietary",
-      "risk_score": 99.1,
-      "risk_band": "critical",
+      "risk_score": 73.4,
+      "risk_band": "high",
       "dependency_count": 85,
       "direct_count": 35,
       "counts": {
@@ -1331,8 +1331,8 @@
       "environment": "on-prem",
       "ecosystem": "Python",
       "license_context": "proprietary",
-      "risk_score": 98.8,
-      "risk_band": "critical",
+      "risk_score": 66.9,
+      "risk_band": "high",
       "dependency_count": 84,
       "direct_count": 35,
       "counts": {
@@ -1471,8 +1471,8 @@
       "environment": "on-prem",
       "ecosystem": "Python",
       "license_context": "internal-only",
-      "risk_score": 95.6,
-      "risk_band": "critical",
+      "risk_score": 52.0,
+      "risk_band": "high",
       "dependency_count": 86,
       "direct_count": 35,
       "counts": {
@@ -18716,7 +18716,7 @@
       "license_unknown": 234,
       "unmaintained": 45
     },
-    "highest_risk_app": "HRPortal"
+    "highest_risk_app": "VendorGateway"
   },
   "metrics": {
     "available": true,

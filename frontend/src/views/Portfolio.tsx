@@ -7,7 +7,7 @@ import RiskMeter from "../components/RiskMeter";
 import type { AppRisk } from "../api/types";
 import { RISK_TYPE_HEX } from "../lib/risk";
 
-const CRIT_HEX = "#F0324F";
+const CRIT_HEX = "#E60028";
 
 function CountDot({ color, label, n }: { color: string; label: string; n: number }) {
   return (
@@ -38,7 +38,7 @@ function AppCard({ app }: { app: AppRisk }) {
         <div className="flex flex-col items-end gap-1">
           <span
             className="chip"
-            style={{ borderColor: `${CRIT_HEX}44`, color: "#E8ECF5" }}
+            style={{ borderColor: `${CRIT_HEX}44`, color: "#F4F4F5" }}
             title="Business criticality"
           >
             {app.business_criticality}

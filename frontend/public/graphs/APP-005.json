@@ -8,7 +8,7 @@
     "environment": "cloud",
     "ecosystem": "JavaScript",
     "license_context": "proprietary",
-    "risk_score": 99.8,
+    "risk_score": 75.1,
     "risk_band": "critical",
     "dependency_count": 92,
     "direct_count": 35,

@@ -26,7 +26,7 @@ function MetricRow({
       </div>
       <div className="w-40">
         <div className="h-1.5 w-full overflow-hidden rounded-full bg-panel2">
-          <div className="h-1.5 rounded-full" style={{ width: `${Math.min(100, value * 100)}%`, background: pass ? "#4CC9A0" : "#F2913D" }} />
+          <div className="h-1.5 rounded-full" style={{ width: `${Math.min(100, value * 100)}%`, background: pass ? "#45B08A" : "#F2733B" }} />
         </div>
       </div>
       <div className="w-16 text-right font-mono text-sm font-semibold text-paper">{pct(value)}</div>
@@ -75,10 +75,10 @@ export default function Accuracy() {
             </p>
             <div className="mt-4">
               <div className="flex h-6 w-full overflow-hidden rounded-md">
-                <div className="flex items-center justify-center text-[10px] font-semibold text-ink" style={{ width: `${(ex.high / ex.total_vuln_alerts) * 100}%`, background: "#F0324F" }}>{ex.high} high</div>
-                <div className="flex items-center justify-center text-[10px] font-semibold text-ink" style={{ width: `${(ex.medium / ex.total_vuln_alerts) * 100}%`, background: "#F2913D" }}>{ex.medium} med</div>
-                <div className="flex items-center justify-center text-[10px] font-semibold text-ink" style={{ width: `${(ex.low / ex.total_vuln_alerts) * 100}%`, background: "#E7C548" }}>{ex.low} low</div>
-                <div className="flex items-center justify-center text-[10px] font-semibold text-mist" style={{ width: `${(ex.none / ex.total_vuln_alerts) * 100}%`, background: "#26324e" }}>{ex.none}</div>
+                <div className="flex items-center justify-center text-[10px] font-semibold text-white" style={{ width: `${(ex.high / ex.total_vuln_alerts) * 100}%`, background: "#E60028" }}>{ex.high} high</div>
+                <div className="flex items-center justify-center text-[10px] font-semibold text-ink" style={{ width: `${(ex.medium / ex.total_vuln_alerts) * 100}%`, background: "#F2733B" }}>{ex.medium} med</div>
+                <div className="flex items-center justify-center text-[10px] font-semibold text-ink" style={{ width: `${(ex.low / ex.total_vuln_alerts) * 100}%`, background: "#D9A441" }}>{ex.low} low</div>
+                <div className="flex items-center justify-center text-[10px] font-semibold text-mist" style={{ width: `${(ex.none / ex.total_vuln_alerts) * 100}%`, background: "#16161A" }}>{ex.none}</div>
               </div>
               <div className="mt-1 font-mono text-[11px] text-mist">{pct(ex.actionable_pct)} actionable · prioritized by real CVE exploitability</div>
             </div>

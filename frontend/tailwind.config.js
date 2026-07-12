@@ -4,18 +4,20 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: "#0B1220",       // base background (blue-black SOC)
-        panel: "#141E33",     // surface
-        panel2: "#1B2740",    // raised surface
-        line: "#263350",      // borders
-        mist: "#8A97B1",      // secondary text
-        paper: "#E8ECF5",     // primary text
-        signal: "#E8B23A",    // brand accent — "the watch" (use with restraint)
-        crit: "#F0324F",      // risk: critical — the ember red that spreads on the landing
-        high: "#F2913D",      // risk: high
-        med: "#E7C548",       // risk: medium
-        low: "#4CC9A0",       // risk: low / ok
-        info: "#5AA6FF",      // reachable / graph edges
+        // Société Générale palette: pure black, one red, disciplined neutrals.
+        ink: "#000000",       // page background — pure black
+        panel: "#0C0C0E",     // surface
+        panel2: "#151519",    // raised surface
+        line: "#26262C",      // borders
+        mist: "#8A8A93",      // secondary text
+        paper: "#F4F4F5",     // primary text
+        signal: "#E60028",    // Société Générale red — the single accent
+        crit: "#E60028",      // risk: critical = SG red
+        high: "#F2733B",      // risk: high (warm)
+        med: "#D9A441",       // risk: medium (muted amber)
+        low: "#45B08A",       // risk: low (muted green)
+        slate: "#79808F",     // governance risks (license) — neutral, not chromatic
+        info: "#8A8A93",      // neutral
       },
       fontFamily: {
         display: ['"Space Grotesk"', "system-ui", "sans-serif"],
@@ -23,8 +25,8 @@ export default {
         mono: ['"JetBrains Mono"', "ui-monospace", "monospace"],
       },
       boxShadow: {
-        panel: "0 1px 0 0 rgba(255,255,255,0.03) inset, 0 8px 24px -12px rgba(0,0,0,0.6)",
-        glow: "0 0 0 1px rgba(232,178,58,0.35), 0 0 24px -6px rgba(232,178,58,0.35)",
+        panel: "0 1px 0 0 rgba(255,255,255,0.03) inset, 0 8px 24px -12px rgba(0,0,0,0.7)",
+        glow: "0 0 0 1px rgba(230,0,40,0.35), 0 0 24px -6px rgba(230,0,40,0.35)",
       },
     },
   },

@@ -18,11 +18,11 @@ const SAMPLE = `{
 }`;
 
 const T_ICON: Record<string, any> = { known_malicious: ShieldX, typosquat: Copy, dependency_confusion: PackageX };
-const T_HEX: Record<string, string> = { known_malicious: "#F0324F", typosquat: "#F2913D", dependency_confusion: "#E7C548" };
+const T_HEX: Record<string, string> = { known_malicious: "#E60028", typosquat: "#F2733B", dependency_confusion: "#D9A441" };
 
 function ThreatRow({ t }: { t: Threat }) {
   const Icon = T_ICON[t.threat_type] ?? ShieldX;
-  const hex = T_HEX[t.threat_type] ?? "#F0324F";
+  const hex = T_HEX[t.threat_type] ?? "#E60028";
   return (
     <div className="flex items-start gap-2 rounded-lg border p-2.5" style={{ borderColor: `${hex}44` }}>
       <Icon size={15} className="mt-0.5 shrink-0" style={{ color: hex }} />
@@ -76,7 +76,7 @@ export default function Scan() {
           className="h-44 w-full resize-y rounded-lg border border-line bg-panel2 p-3 font-mono text-xs text-paper placeholder:text-mist/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-signal"
         />
         <div className="mt-3 flex items-center gap-3">
-          <button onClick={run} disabled={busy || !content.trim()} className="inline-flex items-center gap-2 rounded-lg bg-signal px-4 py-2 font-display font-semibold text-ink transition-transform hover:scale-[1.02] disabled:opacity-40">
+          <button onClick={run} disabled={busy || !content.trim()} className="inline-flex items-center gap-2 rounded-lg bg-signal px-4 py-2 font-display font-semibold text-white transition-transform hover:scale-[1.02] disabled:opacity-40">
             <Play size={16} /> {busy ? "Scanning…" : "Scan"}
           </button>
           <button onClick={() => setContent(SAMPLE)} className="inline-flex items-center gap-1.5 text-xs text-mist hover:text-paper">
@@ -91,10 +91,10 @@ export default function Scan() {
         <div className="mt-5 space-y-4">
           <div className="grid grid-cols-4 gap-3">
             {[
-              ["Dependencies", result.dependency_count, "#E8ECF5"],
-              ["Vulnerable", result.summary.vulnerable, "#F0324F"],
-              ["License issues", result.summary.license, "#B47DFF"],
-              ["Threats", result.summary.threats, "#F2913D"],
+              ["Dependencies", result.dependency_count, "#F4F4F5"],
+              ["Vulnerable", result.summary.vulnerable, "#E60028"],
+              ["License issues", result.summary.license, "#79808F"],
+              ["Threats", result.summary.threats, "#F2733B"],
             ].map(([l, v, c]) => (
               <div key={l as string} className="card p-3 text-center">
                 <div className="font-display text-2xl font-bold" style={{ color: c as string }}>{v as number}</div>

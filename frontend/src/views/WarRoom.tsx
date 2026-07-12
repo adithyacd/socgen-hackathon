@@ -97,21 +97,21 @@ export default function WarRoom() {
         </p>
       </header>
 
-      <div className="card mb-6 flex flex-wrap items-center gap-3 p-4">
+      <div className="card mb-6 flex flex-col gap-3 p-4 sm:flex-row sm:items-center">
         <button
           onClick={() => cves[0] && run(cves[0].cve_id)}
           disabled={!cves.length}
-          className="inline-flex items-center gap-2 rounded-lg bg-crit px-4 py-2.5 font-display font-semibold text-ink transition-transform hover:scale-[1.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-crit disabled:opacity-50"
+          className="inline-flex shrink-0 items-center gap-2 rounded-lg bg-crit px-4 py-2.5 font-display font-semibold text-white transition-transform hover:scale-[1.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-crit disabled:opacity-50"
         >
           <Zap size={18} /> Simulate top zero-day
         </button>
-        <span className="text-xs text-mist">or pick any CVE present in the portfolio:</span>
+        <span className="hidden text-xs text-mist sm:inline">or</span>
         <select
           value={selected}
           onChange={(e) => run(e.target.value)}
-          className="ml-auto rounded-lg border border-line bg-panel2 px-3 py-2 font-mono text-sm text-paper focus:outline-none focus-visible:ring-2 focus-visible:ring-signal"
+          className="min-w-0 flex-1 rounded-lg border border-line bg-panel2 px-3 py-2.5 font-mono text-sm text-paper focus:outline-none focus-visible:ring-2 focus-visible:ring-signal"
         >
-          <option value="">Select CVE…</option>
+          <option value="">Pick any CVE in the portfolio…</option>
           {cves.map((c) => (
             <option key={c.cve_id} value={c.cve_id}>
               {c.cve_id} · {c.affected_library} · {c.severity} ({c.exploitable_apps} exploitable)

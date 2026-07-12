@@ -8,7 +8,7 @@
     "environment": "on-prem",
     "ecosystem": "Java",
     "license_context": "proprietary",
-    "risk_score": 99.9,
+    "risk_score": 76.1,
     "risk_band": "critical",
     "dependency_count": 89,
     "direct_count": 35,

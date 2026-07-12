@@ -153,7 +153,7 @@ export default function Optimizer() {
           </div>
           <div>
             <div className="eyebrow">Conflicts to manage</div>
-            <div className="mt-1 font-display text-3xl font-bold" style={{ color: stats.conflicts ? "#F2913D" : "#4CC9A0" }}>
+            <div className="mt-1 font-display text-3xl font-bold" style={{ color: stats.conflicts ? "#F2733B" : "#45B08A" }}>
               {stats.conflicts}
             </div>
           </div>

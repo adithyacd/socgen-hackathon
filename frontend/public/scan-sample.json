@@ -10,7 +10,7 @@
     "environment": "upload",
     "ecosystem": "mixed",
     "license_context": "proprietary",
-    "risk_score": 26.1,
+    "risk_score": 36.6,
     "risk_band": "medium",
     "dependency_count": 8,
     "direct_count": 8,

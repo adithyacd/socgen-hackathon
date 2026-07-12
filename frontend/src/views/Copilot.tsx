@@ -162,7 +162,7 @@ export default function Copilot() {
         <button
           type="submit"
           disabled={busy || !input.trim()}
-          className="grid h-10 w-10 place-items-center rounded-xl bg-signal text-ink transition-transform hover:scale-105 disabled:opacity-40"
+          className="grid h-10 w-10 place-items-center rounded-xl bg-signal text-white transition-transform hover:scale-105 disabled:opacity-40"
         >
           <Send size={16} />
         </button>

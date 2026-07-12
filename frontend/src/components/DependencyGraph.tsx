@@ -6,10 +6,10 @@ import { SEVERITY_HEX } from "../lib/risk";
 
 cytoscape.use(fcose);
 
-const APP_HEX = "#E8B23A";
-const LICENSE_HEX = "#B47DFF";
-const CLEAN_HEX = "#26324e";
-const STALE_HEX = "#5b6a8c";
+const APP_HEX = "#F4F4F5";   // the application node is neutral (not a risk)
+const LICENSE_HEX = "#79808F";
+const CLEAN_HEX = "#33333A";  // faintly visible on pure black
+const STALE_HEX = "#5A5A63";
 
 function nodeColor(n: GraphNode): string {
   if (n.kind === "app") return APP_HEX;
@@ -44,7 +44,7 @@ function toElements(graph: AppGraph): ElementDefinition[] {
       id: `e${i}`,
       source: e.source,
       target: e.target,
-      ecolor: e.used ? "#4d6da3" : "#33415e",
+      ecolor: e.used ? "#3A3A40" : "#26262C",
       width: e.is_direct ? 2.2 : 1.2,
     },
     classes: e.used ? "" : "unused",
@@ -60,14 +60,14 @@ const STYLE: any[] = [
       width: "data(size)",
       height: "data(size)",
       label: "data(label)",
-      color: "#B9C4DB",
+      color: "#8A8A93",
       "font-family": "JetBrains Mono, monospace",
       "font-size": 8,
       "text-valign": "bottom",
       "text-margin-y": 3,
       "text-max-width": "90px",
       "border-width": 1.5,
-      "border-color": "#0B1220",
+      "border-color": "#000000",
       "border-opacity": 0.6,
       "transition-property": "opacity, border-color, border-width",
       "transition-duration": 150,
@@ -79,14 +79,14 @@ const STYLE: any[] = [
       shape: "round-rectangle",
       "font-size": 12,
       "font-weight": 700,
-      color: "#E8ECF5",
+      color: "#F4F4F5",
       "text-valign": "center",
       "text-margin-y": 0,
       "border-width": 2,
       "border-color": APP_HEX,
     },
   },
-  { selector: "node.suppressed", style: { "border-style": "dashed", "border-color": "#5b6a8c", opacity: 0.55 } },
+  { selector: "node.suppressed", style: { "border-style": "dashed", "border-color": "#4A4A52", opacity: 0.55 } },
   {
     selector: "edge",
     style: {

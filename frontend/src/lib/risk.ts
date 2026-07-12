@@ -1,10 +1,10 @@
 import type { RiskType, Severity } from "../api/types";
 
 export const SEVERITY_HEX: Record<Severity, string> = {
-  critical: "#F0324F", // the landing's ember red — danger, everywhere
-  high: "#F2913D",
-  medium: "#E7C548",
-  low: "#4CC9A0",
+  critical: "#E60028", // the landing's ember red — danger, everywhere
+  high: "#F2733B",
+  medium: "#D9A441",
+  low: "#45B08A",
 };
 
 // Tailwind text colour per severity/band.
@@ -26,19 +26,19 @@ export const RISK_TYPE_LABEL: Record<RiskType, string> = {
 };
 
 export const RISK_TYPE_HEX: Record<string, string> = {
-  vulnerable: "#F0324F",
-  transitive_vuln: "#F2913D",
-  license_conflict: "#B47DFF",
-  transitive_license_conflict: "#9A6BFF",
-  license_unknown: "#7C8AA8",
-  unmaintained: "#8A97B1",
+  vulnerable: "#E60028",
+  transitive_vuln: "#F2733B",
+  license_conflict: "#79808F",
+  transitive_license_conflict: "#79808F",
+  license_unknown: "#79808F",
+  unmaintained: "#8A8A93",
 };
 
 export const EXPLOIT_HEX: Record<string, string> = {
-  high: "#F0324F",
-  medium: "#F2913D",
-  low: "#E7C548",
-  none: "#8A97B1",
+  high: "#E60028",
+  medium: "#F2733B",
+  low: "#D9A441",
+  none: "#8A8A93",
 };
 
 export function bandLabel(band: Severity): string {

@@ -8,7 +8,7 @@
     "environment": "cloud",
     "ecosystem": "Go",
     "license_context": "proprietary",
-    "risk_score": 100.0,
+    "risk_score": 83.3,
     "risk_band": "critical",
     "dependency_count": 89,
     "direct_count": 35,

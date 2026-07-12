@@ -8,8 +8,8 @@
     "environment": "on-prem",
     "ecosystem": "Python",
     "license_context": "proprietary",
-    "risk_score": 98.8,
-    "risk_band": "critical",
+    "risk_score": 66.9,
+    "risk_band": "high",
     "dependency_count": 84,
     "direct_count": 35,
     "counts": {

@@ -4,10 +4,10 @@ import { fetchAudit } from "../api/client";
 import type { AuditIssue, AuditReport } from "../api/types";
 import { Loading, ErrorState } from "../components/States";
 
-const SEV_HEX: Record<string, string> = { high: "#F0324F", medium: "#F2913D", low: "#E7C548", info: "#5AA6FF" };
+const SEV_HEX: Record<string, string> = { high: "#E60028", medium: "#F2733B", low: "#D9A441", info: "#8A8A93" };
 
 function IssueCard({ issue }: { issue: AuditIssue }) {
-  const hex = SEV_HEX[issue.severity] ?? "#8A97B1";
+  const hex = SEV_HEX[issue.severity] ?? "#8A8A93";
   const Icon = issue.severity === "info" ? Info : AlertTriangle;
   return (
     <div className="card p-4">
@@ -62,13 +62,13 @@ export default function Audit() {
       <div className="card mb-6 flex items-center gap-6 p-5">
         <div className="text-center">
           <div className="eyebrow">Integrity</div>
-          <div className="font-display text-4xl font-bold" style={{ color: noisy ? "#F2913D" : "#4CC9A0" }}>
+          <div className="font-display text-4xl font-bold" style={{ color: noisy ? "#F2733B" : "#45B08A" }}>
             {report.integrity_score}<span className="text-lg text-mist">/100</span>
           </div>
         </div>
         <div className="h-12 w-px bg-line" />
         <div>
-          <div className="font-display text-lg font-semibold" style={{ color: noisy ? "#F2913D" : "#4CC9A0" }}>{report.verdict}</div>
+          <div className="font-display text-lg font-semibold" style={{ color: noisy ? "#F2733B" : "#45B08A" }}>{report.verdict}</div>
           <div className="mt-0.5 text-sm text-mist">
             {report.summary.version_inconsistent_vuln_labels} version-inconsistent labels ·
             {" "}{report.summary.contradictions} contradictory library@version pairs ·

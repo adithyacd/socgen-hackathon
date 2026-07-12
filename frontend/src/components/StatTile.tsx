@@ -21,7 +21,7 @@ export default function StatTile({
       </div>
       <div
         className="mt-2 font-display text-3xl font-bold tracking-tight"
-        style={{ color: accent ?? "#E8ECF5" }}
+        style={{ color: accent ?? "#F4F4F5" }}
       >
         {value}
       </div>

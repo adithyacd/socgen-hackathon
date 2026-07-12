@@ -18,7 +18,8 @@ from ..util.constants import (
     UNREACHABLE_FACTOR,
 )
 
-_SATURATION_K = 80.0
+_SATURATION_K = 48.0
+_DECAY = 0.82  # the worst findings dominate; a long tail of minor ones barely adds
 
 
 # Exploitability -> prioritization multiplier (official data's real signal).
@@ -54,7 +55,9 @@ def score_finding(finding: Finding) -> float:
 
 
 def app_risk_score(findings: list[Finding], app: Application) -> float:
-    weighted_raw = sum(f.score for f in findings)
+    # Geometric decay over the worst-first findings so a big app doesn't auto-saturate.
+    ranked = sorted((f.score for f in findings), reverse=True)
+    weighted_raw = sum(s * (_DECAY ** i) for i, s in enumerate(ranked))
     weighted_raw *= CRITICALITY_MULTIPLIER[app.business_criticality]
     weighted_raw *= INTERNET_FACING_FACTOR if app.internet_facing else INTERNAL_FACTOR
     return round(100.0 * (1.0 - math.exp(-weighted_raw / _SATURATION_K)), 1)

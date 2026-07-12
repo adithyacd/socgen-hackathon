@@ -6,13 +6,13 @@ import type { Threat } from "../api/types";
 import { Loading, ErrorState } from "../components/States";
 
 const TYPE_META: Record<string, { label: string; hex: string; icon: any }> = {
-  known_malicious: { label: "Known malicious", hex: "#F0324F", icon: ShieldX },
-  typosquat: { label: "Typosquat", hex: "#F2913D", icon: Copy },
-  dependency_confusion: { label: "Dependency confusion", hex: "#E7C548", icon: PackageX },
+  known_malicious: { label: "Known malicious", hex: "#E60028", icon: ShieldX },
+  typosquat: { label: "Typosquat", hex: "#F2733B", icon: Copy },
+  dependency_confusion: { label: "Dependency confusion", hex: "#D9A441", icon: PackageX },
 };
 
 function ThreatCard({ t }: { t: Threat }) {
-  const meta = TYPE_META[t.threat_type] ?? { label: t.threat_type, hex: "#8A97B1", icon: Bug };
+  const meta = TYPE_META[t.threat_type] ?? { label: t.threat_type, hex: "#8A8A93", icon: Bug };
   const Icon = meta.icon;
   return (
     <div className="card p-4" style={{ borderColor: `${meta.hex}44` }}>

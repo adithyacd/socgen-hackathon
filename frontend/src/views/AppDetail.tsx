@@ -12,14 +12,14 @@ const LEGEND = [
   { c: SEVERITY_HEX.critical, label: "Critical" },
   { c: SEVERITY_HEX.high, label: "High" },
   { c: SEVERITY_HEX.medium, label: "Medium" },
-  { c: "#B47DFF", label: "License" },
-  { c: "#5b6a8c", label: "Unmaintained" },
-  { c: "#26324e", label: "Clean" },
+  { c: "#79808F", label: "License" },
+  { c: "#4A4A52", label: "Unmaintained" },
+  { c: "#16161A", label: "Clean" },
 ];
 
 function ReachBadge({ reachable, exploitability }: { reachable: boolean | null; exploitability?: string }) {
   if (exploitability) {
-    const hex = EXPLOIT_HEX[exploitability] ?? "#8A97B1";
+    const hex = EXPLOIT_HEX[exploitability] ?? "#8A8A93";
     return (
       <span className="inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-xs font-semibold" style={{ background: `${hex}1a`, color: hex }}>
         <ShieldAlert size={12} /> {exploitability.toUpperCase()} exploitability
@@ -134,7 +134,7 @@ export default function AppDetail() {
   const app = graph.app;
   return (
     <div className="mx-auto max-w-7xl">
-      <Link to="/" className="mb-4 inline-flex items-center gap-1.5 text-sm text-mist hover:text-paper">
+      <Link to="/portfolio" className="mb-4 inline-flex items-center gap-1.5 text-sm text-mist hover:text-paper">
         <ArrowLeft size={15} /> Portfolio
       </Link>
 

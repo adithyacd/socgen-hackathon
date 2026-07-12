@@ -8,7 +8,7 @@
     "environment": "cloud",
     "ecosystem": "Java",
     "license_context": "proprietary",
-    "risk_score": 99.6,
+    "risk_score": 79.8,
     "risk_band": "critical",
     "dependency_count": 82,
     "direct_count": 35,
